@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+    <link href="../../Content/styling.css" rel="stylesheet" />
+
+    <link href="../../Content/bootstrap.css" rel="stylesheet"/>
+    <link href="../../Content/multi.css" rel="stylesheet"/>
+    <link rel="icon" href="../../Images/SickeCell.png" style="width:50px;height:50px;"/>
+</head>
+
+<body style="background-color:white; height:100%; max-height:100%; width:100%;" ng-controller="viewController">
+
+  <div id="nav1" class="navbar navbar-inverse navbar-fixed-top" style="background-color:#F0F2F6;font-weight:500; height:58px; margin-left:-37px;">   
+
+      <!--This is for Container 1-->
+      <div class="container" id ="cnt1" style="visibility:hidden;">
+                <div class="row">
+                      <div class="navbar-header" id="navigation" style="visibility:hidden;;">
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>                              
+                          </button>  
+                              @Html.ActionLink("SickleCell", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })                           
+                      </div>
+                      <div class="navbar-collapse collapse">             
+                           <ul class="nav navbar-nav" id="ul" style="visibility:hidden; width:auto;">                      
+                                  <li class="dropdown" onclick="dropdmenu1()">
+                                      <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Home <span class="caret"></span></a>                                    
+                                      <ul class="dropdown-menu" role="menu" id="dropdmenu1">
+                                          <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                                          <li>@Html.ActionLink("Patient Entry Form", "Entry", "Home", null, new { id = "Patient_Entry_Form" })</li>
+                                          <li>@Html.ActionLink("Case Notes", "Casenotes", "Home", null, new { id = "Case_Notes" })</li>
+                                          <li>@Html.ActionLink("Patient Overview", "PatientOverview", "Home", null, new { id = "Patient_Overview" })</li>                                          
+                                      </ul>                                       
+                                  </li>
+                                  <!--<li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>-->
+                           </ul>                           
+                               <img src="../../Images/SickeCell2.png" style="margin-top:7px;margin-left:-235px;" class="icon1" />                                                          
+                               <!--<select id='my_account' name='account' onchange ="validateacct()" style="background-color:slategray; color:white; margin-top:0px;margin-left:850px;width:180px; border-color:ghostwhite; border-width:1px; font-weight:600; visibility:hidden;">-->
+                               <select id='my_account' name='account' onchange ="validateacct()" class="account1">
+                                     <option value='0' id="option1">User</option>
+                                     <option value='1'>Log Out</option>                                     
+                               </select>     
+                               <!--<span id="username" style="font-size:14px;color:navy; font-weight:500; visibility:hidden;"></span>-->                                                      
+                               <span id="username" class="username1"></span>                           
+                      </div>                                                                 
+                </div>                                           
+      </div>
+  </div>
+
+  <!--This is for Container 2-->
+  <div id="nav2" class="navbar navbar-inverse navbar-fixed-top" style="background-color:#F0F2F6;font-weight:500; height:58px; margin-left:-37px;">
+      <div class="container" id ="cnt2" style="visibility:hidden;">
+                <div class="row">
+                      <div class="navbar-header" id="navigation2" style="visibility:hidden;">
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>                              
+                          </button>                                 
+                               @Html.ActionLink("SickleCell", "Index_Admin", "Home", new { area = "" }, new { @class = "navbar-brand" })                                             
+                      </div>
+                      <div class="navbar-collapse collapse">             
+                           <ul class="nav navbar-nav" id="ul2" style="visibility:hidden; width:auto;">                      
+                                  <li class="dropdown" onclick="dropdmenu2()">
+                                      <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Home <span class="caret"></span></a>                                    
+                                      <ul class="dropdown-menu" role="menu" id="dropdmenu2">
+                                          <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                                          <li>@Html.ActionLink("Patient Entry Form", "Entry", "Home", null, new { id = "Patient_Entry_Form" })</li>
+                                          <li>@Html.ActionLink("Case Notes", "Casenotes", "Home", null, new { id = "Case_Notes" })</li>
+                                          <li>@Html.ActionLink("Patient Overview", "PatientOverview", "Home", null, new { id = "Patient_Overview" })</li>                                          
+                                      </ul>                                       
+                                  </li>
+                                  <!--<li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>-->
+                           </ul>                           
+                           <img src="../../Images/SickeCell2.png" style="margin-top:7px;margin-left:-235px;" class="icon2"/>                                                            
+                               <!--<select id='my_account2' name='account' onchange ="validateacct()" style="background-color:slategray; color:white; margin-top:0px;margin-left:850px;width:180px; border-color:ghostwhite; border-width:1px; font-weight:600; visibility:hidden;">-->
+                               <select id='my_account2' name='account' onchange ="validateacct()" class="account2">
+                                       <option value='0' id="option2">User</option>
+                                       <option value='1'>Log Out</option>                                     
+                               </select>     
+                               <!--<span id="username2" style="font-size:14px;color:navy; font-weight:500; visibility:hidden;"></span>-->                                                      
+                               <span id="username2" class="username2"></span>
+                      </div>                                                                 
+                </div>                                           
+      </div>
+
+  </div>         
+
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+      let sPath = window.location.pathname;
+      let sPage = sPath.substring(sPath.lastIndexOf('/') + 1); 
+      let vstatus = "";
+        function Classes() {          
+            globalRole = localStorage.getItem("variableRole");
+            if (globalRole.trim() ==="Admin/Super User" || globalRole === "Head Teacher" || globalRole === "Super Admin") {
+                //document.location = '@Url.Action("Classes","Classes")'; 
+                window.location.href = "../../Classes.html";
+            } else {               
+                alert("You Dont' have an access in this View Logs module");
+                document.location = '@Url.Action("Index","Home")';
+            }        
+        }     
+
+        function Viewlogs() {
+            globalRole = localStorage.getItem("variableRole");
+            if (globalRole.trim() ==="Admin/Super User" || globalRole === "Head Teacher" || globalRole === "Super Admin" || globalRole === "Teacher") {
+                document.location = '@Url.Action("Viewlogs","Home")'; 
+            } else {               
+                alert("You Dont' have an access in this View Logs module");
+                document.location = '@Url.Action("Index","Home")';
+            }        
+        }        
+
+        function Attendance() {
+            globalRole = localStorage.getItem("variableRole");
+            if (globalRole.trim() ==="Admin/Super User" || globalRole === "Head Teacher" || globalRole === "Super Admin") {
+                document.location = '@Url.Action("Attendance","Home")'; 
+            } else {               
+                alert("You Dont' have an access in this Attendance module");
+                document.location = '@Url.Action("Index","Home")';
+            }   
+        }       
+
+        function Staff_Attendance() {
+            globalRole = localStorage.getItem("variableRole");
+            if (globalRole.trim() ==="Admin/Super User" || globalRole === "Head Teacher" || globalRole === "Super Admin") {
+                document.location = '@Url.Action("Staff_Attendance","Home")'; 
+            } else {               
+                alert("You Dont' have an access in this Attendance module");
+                document.location = '@Url.Action("Index","Home")';
+            }   
+        }       
+
+        function validateacct() {
+            if (document.getElementById("my_account")["value"] == 1 || document.getElementById("my_account2")["value"] == 1) {
+                localStorage.setItem("variableName","");                
+                localStorage.setItem("variableEmail", "");  
+                localStorage.setItem("variableEmail2", ""); 
+                localStorage.setItem("variableRole", "");      
+
+                window.location.href = "/home/login";
+            } 
+         }      
+
+        $(function () {
+            //Set the value of your TypeId <select> list to the element with value '0'
+            //$('#my_account').val('0');    
+             var globalName     = localStorage.getItem("variableName");
+             var globalEmail    = localStorage.getItem("variableEmail2"); 
+             var globalRoleName = localStorage.getItem("variableRole"); 
+
+             var globalusrfname  = localStorage.getItem("userglobalfirstname");
+             var globalusrlname = localStorage.getItem("usergloballastname");          
+
+             if (globalRoleName === "Admin/Super User" || globalRoleName === "Admin User") {
+                if (globalRoleName === "Admin User") {
+                    globalRoleName = globalRoleName.slice(0, 5).trim();
+                    document.getElementById("option1").innerHTML = "User :         " + globalRoleName;
+                    document.getElementById("username").innerHTML = "  " + globalusrfname + "  " + globalusrlname;
+                } else {
+                    document.getElementById("option2").innerHTML = "User :         " + globalRoleName;
+                    document.getElementById("username2").innerHTML = "  " + globalusrfname + "  " + globalusrlname;
+                }                                 
+             } else {            
+                document.getElementById("option1").innerHTML = "User :         " + globalRoleName;
+                document.getElementById("username").innerHTML = "  " + globalusrfname + "  " + globalusrlname;
+             }                                                         
+        });
+       
+        window.addEventListener("resize", function (event) {
+            if (document.body.clientWidth > 1 && document.body.clientWidth < 601) {                
+                 localStorage.setItem("layout", "Mobile Phone");
+           } else if (document.body.clientWidth > 600 && document.body.clientWidth < 961) {
+               
+           } else {
+               localStorage.setItem("layout", "Desktop");
+           }
+        }); 
+
+        if (sPage === "Index" || sPage === "index") {
+        localStorage.setItem("variableEmail", "");
+
+        let validdropdown = 0;
+        function dropdmenu1() {            
+            vstatus = localStorage.getItem("layout");
+            if (validdropdown === 1) {               
+                validdropdown = 0;
+                if (vstatus === "Mobile Phone") {                        
+                    document.getElementById("clmenu").style.visibility = "visible";                    
+                }                        
+            } else {
+                if (document.getElementById("dropdmenu1").style.visibility = "visible") {                    
+                    validdropdown = 1;
+
+                    if (vstatus === "Mobile Phone") {                        
+                        document.getElementById("clmenu").style.visibility = "hidden";                                                
+                    }                                    
+                }
+            }
+        }        
+    }
+                
+    </script>
+    
+    <script src="../../Scripts/multi.js"></script>
+</body>
+</html>

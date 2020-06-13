@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SickeCellModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SickeCell.dbo.Information' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Information">
+          <Key>
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="ClientID" Type="bigint" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Mi" Type="varchar" MaxLength="50" />
+          <Property Name="UniqueID" Type="varchar" MaxLength="50" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="Age" Type="varchar" MaxLength="50" />
+          <Property Name="AgeGroup" Type="varchar" MaxLength="50" />
+          <Property Name="Ageat" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="Race" Type="varchar" MaxLength="50" />
+          <Property Name="Ethnicity" Type="varchar" MaxLength="50" />
+          <Property Name="SSSno" Type="varchar" MaxLength="50" />
+          <Property Name="CpNumber" Type="varchar" MaxLength="50" />
+          <Property Name="FullStreetAddress" Type="varchar(max)" />
+          <Property Name="FullStreetAddress2" Type="varchar(max)" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+          <Property Name="CountryCode" Type="varchar" MaxLength="50" />
+          <Property Name="CountyCodeDescription" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Eligibility" Type="varchar" MaxLength="50" />
+          <Property Name="SickleCellDiagnosis" Type="varchar" MaxLength="50" />
+          <Property Name="PMPProviderName" Type="varchar" MaxLength="50" />
+          <Property Name="CCUCase" Type="varchar" MaxLength="50" />
+          <Property Name="Email_Address" Type="varchar" MaxLength="50" />
+          <Property Name="ClientresideinruralID" Type="varchar" MaxLength="50" />
+          <Property Name="Nameofmother" Type="varchar" MaxLength="50" />
+          <Property Name="Motheraddress" Type="varchar" MaxLength="50" />
+          <Property Name="Mothertel" Type="varchar" MaxLength="50" />
+          <Property Name="Nameoffather" Type="varchar" MaxLength="50" />
+          <Property Name="Fatheraddress" Type="varchar" MaxLength="50" />
+          <Property Name="Fathertel" Type="varchar" MaxLength="50" />
+          <Property Name="Nameofguardian" Type="varchar" MaxLength="50" />
+          <Property Name="Guardianaddress" Type="varchar" MaxLength="50" />
+          <Property Name="Guardiantel" Type="varchar" MaxLength="50" />
+          <Property Name="Emercont1" Type="varchar" MaxLength="50" />
+          <Property Name="Emercont1homephone" Type="varchar" MaxLength="50" />
+          <Property Name="Emercont1cellphone" Type="varchar" MaxLength="50" />
+          <Property Name="Emercont2" Type="varchar" MaxLength="50" />
+          <Property Name="Emercont2homephone" Type="varchar" MaxLength="50" />
+          <Property Name="Emercont2cellphone" Type="varchar" MaxLength="50" />
+          <Property Name="SicklecelltypeID" Type="varchar" MaxLength="50" />
+          <Property Name="HydroxyureaheardID" Type="varchar" MaxLength="50" />
+          <Property Name="HydroxyureatakenID" Type="varchar" MaxLength="50" />
+          <Property Name="HydroxyureacurrentlyID" Type="varchar" MaxLength="50" />
+          <Property Name="HydroxyureapasttakenID" Type="varchar" MaxLength="50" />
+          <Property Name="Comments" Type="varchar(max)" />
+          <Property Name="UserFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="UserLastName" Type="varchar" MaxLength="50" />
+          <Property Name="TimeStamp" Type="varchar" MaxLength="50" />
+          <Property Name="Datenotescreated" Type="date" />
+        </EntityType>
+        <EntityContainer Name="SickeCellModelStoreContainer">
+          <EntitySet Name="Information" EntityType="Self.Information" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Information].[ClientID] AS [ClientID], 
+[Information].[FirstName] AS [FirstName], 
+[Information].[LastName] AS [LastName], 
+[Information].[Mi] AS [Mi], 
+[Information].[UniqueID] AS [UniqueID], 
+[Information].[DOB] AS [DOB], 
+[Information].[Age] AS [Age], 
+[Information].[AgeGroup] AS [AgeGroup], 
+[Information].[Ageat] AS [Ageat], 
+[Information].[Gender] AS [Gender], 
+[Information].[Race] AS [Race], 
+[Information].[Ethnicity] AS [Ethnicity], 
+[Information].[SSSno] AS [SSSno], 
+[Information].[CpNumber] AS [CpNumber], 
+[Information].[FullStreetAddress] AS [FullStreetAddress], 
+[Information].[FullStreetAddress2] AS [FullStreetAddress2], 
+[Information].[City] AS [City], 
+[Information].[State] AS [State], 
+[Information].[ZipCode] AS [ZipCode], 
+[Information].[CountryCode] AS [CountryCode], 
+[Information].[CountyCodeDescription] AS [CountyCodeDescription], 
+[Information].[PhoneNumber] AS [PhoneNumber], 
+[Information].[Eligibility] AS [Eligibility], 
+[Information].[SickleCellDiagnosis] AS [SickleCellDiagnosis], 
+[Information].[PMPProviderName] AS [PMPProviderName], 
+[Information].[CCUCase] AS [CCUCase], 
+[Information].[Email_Address] AS [Email_Address], 
+[Information].[ClientresideinruralID] AS [ClientresideinruralID], 
+[Information].[Nameofmother] AS [Nameofmother], 
+[Information].[Motheraddress] AS [Motheraddress], 
+[Information].[Mothertel] AS [Mothertel], 
+[Information].[Nameoffather] AS [Nameoffather], 
+[Information].[Fatheraddress] AS [Fatheraddress], 
+[Information].[Fathertel] AS [Fathertel], 
+[Information].[Nameofguardian] AS [Nameofguardian], 
+[Information].[Guardianaddress] AS [Guardianaddress], 
+[Information].[Guardiantel] AS [Guardiantel], 
+[Information].[Emercont1] AS [Emercont1], 
+[Information].[Emercont1homephone] AS [Emercont1homephone], 
+[Information].[Emercont1cellphone] AS [Emercont1cellphone], 
+[Information].[Emercont2] AS [Emercont2], 
+[Information].[Emercont2homephone] AS [Emercont2homephone], 
+[Information].[Emercont2cellphone] AS [Emercont2cellphone], 
+[Information].[SicklecelltypeID] AS [SicklecelltypeID], 
+[Information].[HydroxyureaheardID] AS [HydroxyureaheardID], 
+[Information].[HydroxyureatakenID] AS [HydroxyureatakenID], 
+[Information].[HydroxyureacurrentlyID] AS [HydroxyureacurrentlyID], 
+[Information].[HydroxyureapasttakenID] AS [HydroxyureapasttakenID], 
+[Information].[Comments] AS [Comments], 
+[Information].[UserFirstName] AS [UserFirstName], 
+[Information].[UserLastName] AS [UserLastName], 
+[Information].[TimeStamp] AS [TimeStamp], 
+[Information].[Datenotescreated] AS [Datenotescreated]
+FROM [dbo].[Information] AS [Information]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SickeCellModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Information">
+          <Key>
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="ClientID" Type="Int64" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UniqueID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" Precision="0" />
+          <Property Name="Age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AgeGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ageat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Race" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ethnicity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SSSno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CpNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FullStreetAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FullStreetAddress2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CountyCodeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Eligibility" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SickleCellDiagnosis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PMPProviderName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CCUCase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClientresideinruralID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nameofmother" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Motheraddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mothertel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nameoffather" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fatheraddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fathertel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nameofguardian" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Guardianaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Guardiantel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Emercont1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Emercont1homephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Emercont1cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Emercont2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Emercont2homephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Emercont2cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SicklecelltypeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HydroxyureaheardID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HydroxyureatakenID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HydroxyureacurrentlyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HydroxyureapasttakenID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TimeStamp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Datenotescreated" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="SickeCellEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Information" EntityType="Self.Information" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SickeCellModelStoreContainer" CdmEntityContainer="SickeCellEntities1">
+          <EntitySetMapping Name="Information">
+            <EntityTypeMapping TypeName="SickeCellModel.Information">
+              <MappingFragment StoreEntitySet="Information">
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Mi" ColumnName="Mi" />
+                <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="AgeGroup" ColumnName="AgeGroup" />
+                <ScalarProperty Name="Ageat" ColumnName="Ageat" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="Ethnicity" ColumnName="Ethnicity" />
+                <ScalarProperty Name="SSSno" ColumnName="SSSno" />
+                <ScalarProperty Name="CpNumber" ColumnName="CpNumber" />
+                <ScalarProperty Name="FullStreetAddress" ColumnName="FullStreetAddress" />
+                <ScalarProperty Name="FullStreetAddress2" ColumnName="FullStreetAddress2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="CountyCodeDescription" ColumnName="CountyCodeDescription" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Eligibility" ColumnName="Eligibility" />
+                <ScalarProperty Name="SickleCellDiagnosis" ColumnName="SickleCellDiagnosis" />
+                <ScalarProperty Name="PMPProviderName" ColumnName="PMPProviderName" />
+                <ScalarProperty Name="CCUCase" ColumnName="CCUCase" />
+                <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+                <ScalarProperty Name="ClientresideinruralID" ColumnName="ClientresideinruralID" />
+                <ScalarProperty Name="Nameofmother" ColumnName="Nameofmother" />
+                <ScalarProperty Name="Motheraddress" ColumnName="Motheraddress" />
+                <ScalarProperty Name="Mothertel" ColumnName="Mothertel" />
+                <ScalarProperty Name="Nameoffather" ColumnName="Nameoffather" />
+                <ScalarProperty Name="Fatheraddress" ColumnName="Fatheraddress" />
+                <ScalarProperty Name="Fathertel" ColumnName="Fathertel" />
+                <ScalarProperty Name="Nameofguardian" ColumnName="Nameofguardian" />
+                <ScalarProperty Name="Guardianaddress" ColumnName="Guardianaddress" />
+                <ScalarProperty Name="Guardiantel" ColumnName="Guardiantel" />
+                <ScalarProperty Name="Emercont1" ColumnName="Emercont1" />
+                <ScalarProperty Name="Emercont1homephone" ColumnName="Emercont1homephone" />
+                <ScalarProperty Name="Emercont1cellphone" ColumnName="Emercont1cellphone" />
+                <ScalarProperty Name="Emercont2" ColumnName="Emercont2" />
+                <ScalarProperty Name="Emercont2homephone" ColumnName="Emercont2homephone" />
+                <ScalarProperty Name="Emercont2cellphone" ColumnName="Emercont2cellphone" />
+                <ScalarProperty Name="SicklecelltypeID" ColumnName="SicklecelltypeID" />
+                <ScalarProperty Name="HydroxyureaheardID" ColumnName="HydroxyureaheardID" />
+                <ScalarProperty Name="HydroxyureatakenID" ColumnName="HydroxyureatakenID" />
+                <ScalarProperty Name="HydroxyureacurrentlyID" ColumnName="HydroxyureacurrentlyID" />
+                <ScalarProperty Name="HydroxyureapasttakenID" ColumnName="HydroxyureapasttakenID" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="Datenotescreated" ColumnName="Datenotescreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

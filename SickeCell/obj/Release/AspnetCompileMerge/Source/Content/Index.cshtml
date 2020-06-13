@@ -1,0 +1,236 @@
+﻿<link href="../../Content/bootstrap.css" rel="stylesheet" />
+<link href="../../Content/multi.css" rel="stylesheet" />
+<script src="../../Scripts/jquery-3.3.1.js"></script>
+<script src="../../Library/angular.min.js"></script>
+
+<section ng-app="app">
+    <div class="container" ng-controller="viewController">
+         <div class="col-md-12">
+              <div class="row">
+                   <div class="col-md-4">
+                    <!--    <br /> -->                       
+                   </div>                   
+                   <div class="col-md-4" style="position:fixed;top:50%;left:50%;margin-top:-15em;margin-left:-7em; font-size:18px;font-weight:600;">
+                        <div style="height:3px;"></div>
+                        <!--<span ng-click="main()"><a href="#" style="color:slategray;" id="golbalschoolname">FAVORED KIDS HOME DAY CARE</a></span>-->
+                        <span onclick="homepage()"><a href="#" style="color:slategray;" id="golbalschoolname"></a></span><br/>
+                        <script>
+                               globalSchool = localStorage.getItem("globalschool");
+                               //document.getElementById("golbalschoolname").innerHTML = globalSchool.toUpperCase();
+
+                               function homepage() {
+                                    var varRole = localStorage.getItem("vRole");
+                                    if (varRole === "Super Admin") {
+                                           window.location.href = "/Home/index_Admin";
+                                    } else {window.location.href = "/Home/index";}
+                               }
+
+                               let idleTime = 0;
+                               $(document).ready(function () {
+                                   //Increment the idle time counter every minute.
+                                   idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+
+                                   //Zero the idle timer on mouse movement.
+                                   $('body').mousemove(function (e) {                              
+                                      idleTime = 0;
+                                   });
+
+                                   $('body').keypress(function (e) {                              
+                                      idleTime = 0;
+                                   });
+
+                                   $('body').click(function() {                              
+                                      idleTime = 0;
+                                   });
+
+                                   function timerIncrement() {
+                                      idleTime = idleTime + 1;
+                                      if (idleTime > 6) { 
+                                          window.location.href = "/Home/Login";
+                                      }
+                                   }
+                               });
+
+                        </script>
+                        <div style="height:1px; margin-top:-5px;"></div>
+                             <span style="margin-left:50px;font-size:18px; color:slategray;">SICKECELL ENTRY FORM</span>
+                        </div>
+                   <div class="col-md-4"></div>
+              </div>
+         </div>       
+    </div>       
+        
+    <div ng-controller="viewController" class="container" style="border-style:solid;border-color:slategray;border-width:2px; border-radius:7px;position:fixed;top:50%;left:50%;width:95em;max-width:94em;height:39em;margin-top:-16em;margin-left:-47em;">    
+         <form role="form" onSubmit="return false;">
+            
+             <div class="col-md-10">
+                  <div class="row" style="width:1255px;">
+                       <div style="height:7px;"></div>
+                       <span style="font-weight:600;color:darkslategrey">NFORMATION</span><br/> 
+                       <div style="height:7px;"></div>
+                       <div class="col-md-5" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">First Name:</span><br/>
+                            <input id="wfname" ng-model="wfname" name="wfname" type="text" tabindex="1" class="form-control" placeholder="First Name" onkeyup="wfnamekeyup(event.keyCode)" style="max-width:550px;height:30px;"/> 
+                       </div>              
+                       <div class="col-md-5"style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">Last Name:</span><br/>
+                            <input id="wlname" ng-model="wlname" type="text" tabindex="2" class="form-control" placeholder="Last Name" onkeyup="wlnamekeyup(event.keyCode)" style="max-width:550px;height:30px;"/>
+                       </div>                        
+                  </div>
+                 
+                  <div class="row" style="width:1300px;">
+                       <div style="height:7px;"></div>
+                       <div class="col-md-4" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">Key ID:</span><br/>
+                            <input id="keyid" ng-model="keyid" type="text" tabindex="3" class="form-control" placeholder="Key ID" onkeyup="keyidkeyup(event.keyCode)" style="max-width:433px;height:30px;"/> 
+                       </div>
+                       <div class="col-md-3" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">Date Of Birth:</span><br/>
+                            <input id="dob" ng-model="dob" type="date" tabindex="4" class="form-control" onkeyup="dobkeyup(event.keyCode)" style="max-width:271px;height:30px;"/> 
+                       </div>
+                       <div class="col-md-3" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">Gender:</span><br/>
+                            <select id="gender" ng-model="gender" tabindex="5" class="form-control" onkeyup="genderkeyup(event.keyCode)" onchange="genderchange()" style="max-width:271px;height:30px;">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>                                 
+                            </select>
+                       </div>
+                  </div>
+                 
+                  <div class="row">
+                       <div style="height:12px;"></div>
+                      <!-- <span style="font-weight:600;color:darkslategrey">PARENT/GUARDIAN INFORMATION</span><br/> -->
+                       <span style="font-weight:600;color:darkslategrey"></span><br/> 
+                       <div style="height:7px;"></div>
+                       <div class="col-md-5" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">First Name:</span><br/>
+                            <input id="pfname" ng-model="pfname" type="text" tabindex="6" class="form-control" onkeyup="pfnamekeyup(event.keyCode)" placeholder="First Name" style="max-width:485px;height:30px;"/> 
+                       </div>              
+                       <div class="col-md-5"style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">Last Name:</span><br/>
+                            <input id="plname" ng-model="plname" type="text" tabindex="7" class="form-control" onkeyup="plnamekeyup(event.keyCode)" placeholder="Last Name" style="max-width:485px;height:30px;"/>
+                       </div>         
+                  </div>
+                  
+                  <div class="row" style="width:1300px;">
+                       <div style="height:7px;"></div>
+                       <div class="col-md-2" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">Relationship:</span><br/>
+                            <select id="relationship" ng-model="relationship" tabindex="8" class="form-control" onkeyup="relationkeyup(event.keyCode)" onchange="relationchange()" style="max-width:325px;height:30px;">
+                                 <option value="Father">Father</option>
+                                 <option value="Mother">Mother</option>
+                                 <option value="Elder Sister">Elder Sister</option>
+                                 <option value="Elder Brother">Elder Brother</option>
+                                 <option value="Cousin">Cousin</option>
+                            </select>
+                       </div>
+                       <div class="col-md-2" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">Parental Title:</span><br/>
+                            <select id="ptitle" ng-model="ptitle" tabindex="9" class="form-control" onkeyup="ptitlekeyup(event.keyCode)" onchange="ptitlechange()" style="max-width:325px;height:30px;">
+                                 <option value="Parent">Parent</option>
+                                 <option value="Brother">Brother</option>
+                                 <option value="Sister">Sister</option>
+                                 <option value="Relative">Relative</option>
+                            </select>
+                       </div>
+                       <div class="col-md-3" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">Phone Number:</span><br/>                            
+                            <input id="phnumber" ng-model="phnumber" type="tel" tabindex="10" maxlength="12" placeholder="555-555-5555" class="form-control" onkeyup="phnumberkeyup(event.keyCode)" style="max-width:285px;height:30px;" onkeypress="telnokeypress(event)">
+                       </div>
+                       <div class="col-md-3" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">Email Address:</span><br/>
+                            <input id="email" ng-model="email" type="email" tabindex="11" class="form-control" onkeyup="emailkeyup(event.keyCode)" placeholder="enail@domain.com" style="max-width:285px;height:30px;"/> 
+                       </div>
+                  </div>
+                     
+                  <div class="row" style="width:1100px;">
+                       <div class="col-md-12" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">Address:</span><br/>
+                            <input id="address" ng-model="address" type="text" tabindex="12" class="form-control" onkeyup="addresskeyup(event.keyCode)" placeholder="Address" style="max-width:999px;height:30px;"/> 
+                       </div>
+                  </div>
+
+                  <div class="row" style="width:1085px;">
+                       <div style="height:7px;"></div>
+                       <div class="col-md-4" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">City:</span><br/>
+                            <input id="city" ng-model="city" type="text" tabindex="13" class="form-control" onkeyup="citykeyup(event.keyCode)" placeholder="City" style="max-width:385px;height:30px;"/> 
+                       </div>
+                       <div class="col-md-4" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">State:</span><br/>
+                            <input id="state" ng-model="state" type="text" tabindex="14" class="form-control" onkeyup="statekeyup(event.keyCode)" placeholder="TX" style="max-width:385px;height:30px;"/> 
+                       </div>
+                       <div class="col-md-2" style="margin-left:-15px; width:337px;">
+                            <span style="color:slategray;font-weight:600;">Zip Code:</span><br/>
+                            <input id="zipcode" ng-model="zipcode" onKeyPress="if(this.value.length==5) return false;" onclick="onclickzipcode()" min="0" type="number" tabindex="15" class="form-control" onkeyup="zipcodekeyup(event.keyCode)" value="11111" style="max-width:385px;height:30px;"/> 
+                       </div>
+                  </div>
+
+                  <div class="row" style="width:1140px;">
+                       <div style="height:12px;"></div>
+                       <!--<span style="font-weight:600;color:darkslategrey">ENROLLMENT INFORMATION</span><br/> -->
+                       <span style="font-weight:600;color:darkslategrey"></span><br/> 
+                       <div style="height:7px;"></div>
+                       <div class="col-md-3" style="margin-left:-15px;">
+                            <span style="color:slategray;font-weight:600;">Student Type:</span><br/>                            
+                            <select id="studenttype" ng-model="studenttype" tabindex="16" class="form-control" onkeyup="studenttype(event.keyCode)" onchange="studenttypechange()" style="max-width:250px;height:30px;">
+                                 <option value="Creche/Daycare">Creche/Daycare</option>
+                                 <option value="Primary School">Primary School</option>
+                            </select>
+                       </div>              
+                       <div style="height:7px;"></div>
+                       <div class="col-md-3" style="margin-left:-15px; margin-top:-7px;">
+                            <span style="color:slategray;font-weight:600;">Enrollment Type:</span><br/>                            
+                            <select id="enrollmenttype" ng-model="enrollmenttype" tabindex="17" class="form-control" onkeyup="enrolltype(event.keyCode)" onchange="enrolltypechange()" style="max-width:250px;height:30px;">
+                                 <option value="Full Time">Full Time</option>
+                                 <option value="Part Time">Part Time</option>                                 
+                            </select>
+                       </div>              
+                       <div class="col-md-3"style="margin-left:-15px; margin-top:-7px;">
+                            <span style="color:slategray;font-weight:600;">Enrollment Status:</span><br/>                            
+                            <select id="enrollmentstatus" ng-model="enrollmentstatus" tabindex="18" class="form-control" onkeyup="enrollstat(event.keyCode)" onchange="enrollstatchange()" style="max-width:250px;height:30px;">
+                                 <option value="Active">Active</option>
+                                 <option value="Inactive">Inactive</option>                                 
+                            </select>
+                       </div>         
+                       <div class="col-md-2" style="margin-left:-15px; width:220px; margin-top:-7px;">
+                            <span style="color:slategray;font-weight:600;">Enrollment Rate:</span><br/>
+                            <input id="enrollmentrate" ng-model="enrollmentrate" type="text" tabindex="19" class="form-control" onkeyup="enrollrate(event.keyCode)" onkeypress="enrollratekeypress(event);if(this.value.length==6) return false;" placeholder="00.00" style="max-width:250px;height:30px;"/> 
+                       </div>                                              
+                  </div>                   
+             </div>
+             
+             <div class="col-md-2" style="margin-left:-20px;">
+                  <div class="div" id="checkboxlist">
+                       <fieldset ng-model="checkbox" class="group" ng-show="mulcheckbox" ng-keyup="hideCheckBox($event.keyCode)">
+                         <br />                                                      
+                          <span class="span">Search</span>: <input id="search" type="text" placeholder="First Name..." ng-model="searchname"/ class="input" ng-show="inputboxshow">                                                             
+                          <br />
+                          <br />
+                          <ul class="checkbox" id="lists" ng-model="mlist" ng-show="mlistshow">                                    
+                              <li ng-repeat="person in name | filter: searchname | limitTo:200 | orderBy:person.Full_Name track by $index" id="list" ng-model="mlist"><input type="checkbox" id="todo" value="1" name="todo[]" ng-click="Select()">                              
+                                  {{person}}
+                              </li>
+                          </ul>                                                    
+                       </fieldset>                                                                                             
+                </div>             
+             </div>
+            
+         </form>             
+         <div class="row" style="width:1085px;">
+                       <div class="col-md-4" style="width:300px;"></div>
+                       <div class="col-md-4" style="width:685px;margin-top:-10px;">
+                            <input type="submit" id="register" tabindex="19" value="Add" onclick="Register()" style="margin-left:100px; width:90px; border-radius:05px; height:30px; margin-top:18px; background-color:#436280;color:white;"/>          
+                            <input type="submit" id="edit" tabindex="20" value="List" ng-click="Edit()" style="margin-left:0px; width:90px; border-radius:05px; height:30px; margin-top:18px; background-color:#436280;color:white;"/>        
+                            <input type="submit" id="update" tabindex="21" value="Update" ng-click="Update()" style="margin-left:0px; width:90px; border-radius:05px; height:30px; margin-top:18px; background-color:#436280;color:white;"/>           
+                            <input type="submit" id="delete" tabindex="22" value="Delete" ng-click="Delete()" style="margin-left:0px; width:90px; border-radius:05px; height:30px; margin-top:18px; background-color:#436280;color:white;"/>  
+                       </div>
+                       <div class="col-md-4" style="width:100px;"></div>
+         </div>
+         <!--<div style="position:fixed;top:50%;left:50%;width:38em;height:18em;margin-top:35em;margin-left:-54em; color:slategray;font-weight:800; font-size:12px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+              <p>&copy; @DateTime.Now.Year Primeshire Technologies All Rights Reserved V 1 0 2</p>
+         </div>-->
+    </div>      
+    <script src="../../Scripts/multi.js"></script>
+</section>
+

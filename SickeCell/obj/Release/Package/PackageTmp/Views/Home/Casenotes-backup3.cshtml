@@ -1,0 +1,175 @@
+﻿<link rel="stylesheet" href="../../Content/responsive.css">
+
+<link href="../../Content/styling.css" rel="stylesheet"/>
+<link href="../../Content/stylingcasenotes.css" rel="stylesheet"/>
+
+<link href="../../Content/bootstrap.css" rel="stylesheet"/>
+<link href="../../Content/multinotes.css" rel="stylesheet"/>
+<script src="../../Scripts/jquery-3.3.1.js"></script>
+<script src="../../Library/angular.min.js"></script>
+<section ng-app="app" class="col-md-12">     
+<br />
+<br />
+<!--<br />-->
+   <div ng-controller="viewController" class="container">    
+                       
+        <div class="col-md-12">                                       
+                  <!--<div class="col-md-4 col-md-offset-4">-->                        
+                        <div class="casenotesbox">                     			                 
+                             <div class="row">
+                                  <div class="col-md-3">
+                                      <div class="div" id="checkboxlist" style="margin-top:-15px; margin-left:63px;">
+                                         <fieldset ng-model="checkbox" class="group" ng-show="mulcheckbox" ng-keyup="hideCheckBox($event.keyCode)">
+                                            <br />                                                      
+                                            <span class="span">Search</span>: <input id="search" type="text" placeholder="First Name..." ng-model="searchname"/ class="input" ng-show="inputboxshow">                                                             
+                                            <br />
+                                            <br />
+                                            <ul class="checkbox" id="lists" ng-model="mlist" ng-show="mlistshow">                                    
+                                                <li ng-repeat="person in name | filter: searchname | limitTo:200 | orderBy:person.Full_Name track by $index" id="list" ng-model="mlist"><input type="checkbox" id="todo" value="1" name="todo[]" ng-click="Selectnotes()">                              
+                                                   {{person}}
+                                                </li>
+                                            </ul>                                                    
+                                         </fieldset>                                                                                             
+                                      </div>             
+                                  </div>   
+
+                                  <div class="col-md-9">
+                                    <!--<div class="content-wrap" style="margin-left:-125px;margin-top:8px; width:675px;">-->
+                                     <div class="content-wrap">
+			                           <h6 onclick="homepage()"><a href ="#" style="color:#f37946;font-size:25px;font-weight:700; margin-top:-25px;">Case Notes</a></h6>  
+			                           <form action="" method="post" id="login">
+                                             
+                                            <div class="mobileclass">
+                                                 <div class="form-group" style="margin-left:0px;">                                              
+                                                   <!--<p><span style="color:#f37946;font-size:13px;font-weight:600;">Client ID</span> <span style="margin-left:55px; color:#f37946;font-size:13px;font-weight:600;">FirstName</span>  <span style="margin-left:146px; color:#f37946;font-size:13px;font-weight:600;">LastName</span>  <span style="margin-left:146px; color:#f37946;font-size:13px;font-weight:600;">DOB</span></p>-->                                              
+                                                      <input placeholder="Client ID" type="text" id="clientid2" name="clientid" ng-model="obj.clientid" ng-change="clientidchange(obj.clientid)"  class="form-control" disabled="disabled" style="height:30px; width:320px; max-width:320px; background-color:white; border-radius:5px;"/>
+                                                      <input placeholder="FirstName" type="text" id="fname2"    name="fname"    ng-model="obj.fname" class="form-control" disabled="disabled" style="height:30px;margin-top:10px; width:320px; max-width:320px; background-color:white; border-radius:5px;"/>                                                  
+                                                      <input placeholder="LastName" type="text" id="lname2"    name="lname"    ng-model="obj.lname" class="form-control" disabled="disabled" style="height:30px;margin-top:10px; width:320px; max-width:320px; background-color:white; border-radius:5px;"/>                                                  
+                                                      <input placeholder="DOB" type="text" id="dob2"      name="dob"      ng-model="obj.dob" class="form-control" disabled="disabled"   style="height:30px;margin-top:10px; width:320px; max-width:320px; background-color:white; border-radius:5px;"/>
+                                                 </div>
+                                            </div>
+                                            <div class="desktopclass">
+                                                 <div class="form-group" style="margin-left:0px;">                                              
+                                                   <p><span style="color:#f37946;font-size:13px;font-weight:600;">Client ID</span> <span style="margin-left:55px; color:#f37946;font-size:13px;font-weight:600;">FirstName</span>  <span style="margin-left:146px; color:#f37946;font-size:13px;font-weight:600;">LastName</span>  <span style="margin-left:146px; color:#f37946;font-size:13px;font-weight:600;">DOB</span></p>                                              
+                                                      <input type="text" id="clientid" name="clientid" ng-model="obj.clientid" ng-change="clientidchange(obj.clientid)"  class="form-control" disabled="disabled" style="height:27px;"/>
+                                                      <input type="text" id="fname"    name="fname"    ng-model="obj.fname" class="form-control" disabled="disabled" style="height:27px;"/>                                                  
+                                                      <input type="text" id="lname"    name="lname"    ng-model="obj.lname" class="form-control" disabled="disabled" style="height:27px;"/>                                                  
+                                                      <input type="text" id="dob"      name="dob"      ng-model="obj.dob" class="form-control" disabled="disabled"   style="height:27px;"/>
+                                                 </div>
+                                            </div>
+                                               
+                                           <!--<br />-->
+                                              
+                                              <span id="oldnotes" style="color:#f37946; font-weight:600; margin-top:-73px;">Comments / Notes</span>                                                                                            
+                                              <select id="comments2" ng-model="comments" name="comments" class="commentsphone" style="position:absolute; font-weight:900; width:320px; max-width:320px;height:285px; max-height:284px; text-align:justify; text-justify:inter-word; Courier New, Courier, monospace;font-size:13px;border-width:2px; margin-left:-123px; margin-top:17px; border-style:solid;border-width:1px;border-bottom-color:#28c4f4; border-top-color:#28c4f4;border-right-color:#28c4f4;border-left-color:#28c4f4;" multiple="multiple">                                              
+                                                   <option ng-repeat="v in comm | orderBy:v.Comm track by $index">{{ v.Comments }}</option>
+                                              </select>   
+                                              
+                                              <select id="comments" ng-model="comments" name="comments" class="commentsdesktop" style="position:absolute; font-weight:900; width:1118px; max-width:1117px;height:285px; max-height:284px; text-align:justify; text-justify:inter-word; Courier New, Courier, monospace;font-size:13px;border-width:2px; margin-left:-123px; margin-top:17px; border-style:solid;border-width:1px;border-bottom-color:none;" multiple="multiple">                                              
+                                                   <option ng-repeat="v in comm | orderBy:v.Comm track by $index">{{ v.Comments }}</option>
+                                              </select>                                                 
+
+                                              <div style="margin-top:280px;">
+                                                   <!--<input value=" New Comments / Notes" class="newcomments" style="color:#f37946; font-weight:600; width:1120px; max-width:1119px; background-color:white; border-style:solid; border-width:1px; border-top-color:none; border-bottom-color:none; border-right-color:#28c4f4; border-left-color:#28c4f4; border-width:1px;" disabled="disabled"/> -->
+                                                   <input value=" New Comments / Notes" class="newcomments" disabled="disabled"/> 
+                                              </div>  
+                                           
+                                              <div class="textarea1">
+                                                   <textarea class="form-control" id="notes" style="height:100px; max-height:99px; width:1120px; max-width:1120px; margin-top:-1px; position:fixed; border-left-color:#28c4f4; border-right-color:#28c4f4; border-bottom-color:#28c4f4; border-top-color:none;">                                                     
+                                                   </textarea>                                                                                                                                                                                           
+                                              </div>                                              
+                                              <div class="textarea2">
+                                                   <textarea class="form-control" id="notes2" style="height:100px; max-height:99px; width:320px; max-width:320px; margin-top:-1px; border-left-color:#28c4f4; border-right-color:#28c4f4; border-bottom-color:#28c4f4; border-top-color:none;">                                                     
+                                                   </textarea>                                                                                                                                                                                           
+                                              </div>                                                 
+
+                                              <!--<textarea class="form-control" id="notes" style="height:90px; max-height:85px; width:100%;max-width:75%; margin-top:0px; position:fixed;border-top-color:white;"></textarea>-->
+                                                                         			                              
+                                           <div class="action" style="margin-top:83px;margin-left:250px;">                                           
+                                               <input type="submit" id="savenotes" tabindex="22"   value="Save"   ng-click="Savenotes()" class="submit1"/>          
+                                               <input type="submit" id="searchnotes" tabindex="23" value="Search" ng-click="Searchnotes()" style="margin-left:0px; width:90px; border-radius:05px; height:30px; margin-top:18px; background-color:#436280;color:white;"/>                                                       
+                                               <!--<input type="submit" id="updatenotes" tabindex="24" value="Update" ng-click="Updatenotes()" style="margin-left:0px; width:90px; border-radius:05px; height:30px; margin-top:18px; background-color:#436280;color:white; visibility:hidden;"/>           -->
+                                               <!--<input type="submit" id="deletenotes" tabindex="25" value="Delete" ng-click="Deletenotes()" style="margin-left:0px; width:90px; border-radius:05px; height:30px; margin-top:18px; background-color:#436280;color:white; visibility:hidden;"/>                                                                                                -->
+			                              </div>                
+			                           </form>			                     
+			                        </div>
+                                  </div>                                   
+                                  <div class="col-md-2">                                      
+                                      <br />                                      
+                                      <span style="margin-left:-90px; color:#f37946; font-weight:600; font-size:12px;" id="timestamp"></span>                                      
+                                      <br />
+                                      <span style="margin-left:-88px;margin-top:30px; color:#f37946; font-weight:600; font-size:12px;" id="usersname2"></span>                                      
+                                  </div>                                   
+                                 
+                                  <div class="div2" id="checkboxlist2" style="margin-top:-15px; margin-left:63px;">
+                                         <fieldset ng-model="checkbox" class="group2" ng-show="mulcheckbox" ng-keyup="hideCheckBox($event.keyCode)">
+                                            <br />                                                      
+                                            <span class="span">Search</span>: <input id="search2" type="text" placeholder="First Name..." ng-model="searchname"/ class="input" ng-show="inputboxshow">                                                             
+                                            <br />
+                                            <br />
+                                            <ul class="checkbox" id="lists2" ng-model="mlist" ng-show="mlistshow">                                    
+                                                <li ng-repeat="person in name | filter: searchname | limitTo:200 | orderBy:person.Full_Name track by $index" id="list2" ng-model="mlist"><input type="checkbox" id="todo2" value="1" name="todo[]" ng-click="Selectnotes()">                              
+                                                   {{person}}
+                                                </li>
+                                            </ul>                                                    
+                                         </fieldset>                                                                                             
+                                  </div>             
+                             </div>       
+                             <div class="casenotesfooter">
+                                <p>&copy; @DateTime.Now.Year Primeshire Technologies All Rights Reserved V 1.0.2</p>
+                             </div>
+			            </div>
+                    <div>
+
+                    </div>                     
+                          <script>                              
+
+                              function focusemail() {
+                                 document.getElementById("email").focus();
+                              }
+
+                              let idleTime = 0;
+                              let vcurrtime = Date.now();
+                              $(document).ready(function () {
+                                   //Increment the idle time counter every minute.
+                                   idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+
+                                   //Zero the idle timer on mouse movement.
+                                   $('body').mousemove(function (e) {                              
+                                      idleTime = 0;
+                                   });
+
+                                   $('body').keypress(function (e) {                              
+                                      idleTime = 0;
+                                   });
+
+                                   $('body').click(function() {                              
+                                      idleTime = 0;
+                                   });
+
+                                   function timerIncrement() {
+                                      idleTime = idleTime + 1;
+                                      if (idleTime > 6) { 
+                                          window.location.href = "/Home/Login";
+                                      }
+                                   }
+                              });
+
+                                function homepage() {
+                                    var varRole = localStorage.getItem("vRole");
+                                    if (varRole === "Super Admin") {
+                                           window.location.href = "/Home/index_Admin";
+                                    } else {window.location.href = "/Home/index";}
+                                }
+
+                          </script>
+                  <!--</div> -->                                          			                                        
+
+        </div>
+
+   </div>               
+      <br /> 
+      <script src="../../Scripts/login.js"></script>
+      <script src="../../Scripts/multi.js"></script>   
+</section>
+
