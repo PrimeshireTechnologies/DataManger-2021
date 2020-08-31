@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SickeCellModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SickeCell.dbo.Information' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="bigint" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Mi" Type="varchar" MaxLength="50" />
+    <Property Name="UniqueID" Type="varchar" MaxLength="50" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Age" Type="varchar" MaxLength="50" />
+    <Property Name="AgeGroup" Type="varchar" MaxLength="50" />
+    <Property Name="Ageat" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="Race" Type="varchar" MaxLength="50" />
+    <Property Name="Ethnicity" Type="varchar" MaxLength="50" />
+    <Property Name="SSSno" Type="varchar" MaxLength="50" />
+    <Property Name="CpNumber" Type="varchar" MaxLength="50" />
+    <Property Name="FullStreetAddress" Type="varchar(max)" />
+    <Property Name="FullStreetAddress2" Type="varchar(max)" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="CountryCode" Type="varchar" MaxLength="50" />
+    <Property Name="CountyCodeDescription" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Eligibility" Type="varchar" MaxLength="50" />
+    <Property Name="SickleCellDiagnosis" Type="varchar" MaxLength="50" />
+    <Property Name="PMPProviderName" Type="varchar" MaxLength="50" />
+    <Property Name="CCUCase" Type="varchar" MaxLength="50" />
+    <Property Name="Email_Address" Type="varchar" MaxLength="50" />
+    <Property Name="ClientresideinruralID" Type="varchar" MaxLength="50" />
+    <Property Name="Nameofmother" Type="varchar" MaxLength="50" />
+    <Property Name="Motheraddress" Type="varchar" MaxLength="50" />
+    <Property Name="Mothertel" Type="varchar" MaxLength="50" />
+    <Property Name="Nameoffather" Type="varchar" MaxLength="50" />
+    <Property Name="Fatheraddress" Type="varchar" MaxLength="50" />
+    <Property Name="Fathertel" Type="varchar" MaxLength="50" />
+    <Property Name="Nameofguardian" Type="varchar" MaxLength="50" />
+    <Property Name="Guardianaddress" Type="varchar" MaxLength="50" />
+    <Property Name="Guardiantel" Type="varchar" MaxLength="50" />
+    <Property Name="Emercont1" Type="varchar" MaxLength="50" />
+    <Property Name="Emercont1homephone" Type="varchar" MaxLength="50" />
+    <Property Name="Emercont1cellphone" Type="varchar" MaxLength="50" />
+    <Property Name="Emercont2" Type="varchar" MaxLength="50" />
+    <Property Name="Emercont2homephone" Type="varchar" MaxLength="50" />
+    <Property Name="Emercont2cellphone" Type="varchar" MaxLength="50" />
+    <Property Name="SicklecelltypeID" Type="varchar" MaxLength="50" />
+    <Property Name="HydroxyureaheardID" Type="varchar" MaxLength="50" />
+    <Property Name="HydroxyureatakenID" Type="varchar" MaxLength="50" />
+    <Property Name="HydroxyureacurrentlyID" Type="varchar" MaxLength="50" />
+    <Property Name="HydroxyureapasttakenID" Type="varchar" MaxLength="50" />
+    <Property Name="Comments" Type="varchar(max)" />
+    <Property Name="UserFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="UserLastName" Type="varchar" MaxLength="50" />
+    <Property Name="TimeStamp" Type="varchar" MaxLength="50" />
+    <Property Name="Datenotescreated" Type="date" />
+  </EntityType>
+  <EntityContainer Name="SickeCellModelStoreContainer">
+    <EntitySet Name="Information" EntityType="Self.Information" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Information].[ClientID] AS [ClientID], 
+[Information].[FirstName] AS [FirstName], 
+[Information].[LastName] AS [LastName], 
+[Information].[Mi] AS [Mi], 
+[Information].[UniqueID] AS [UniqueID], 
+[Information].[DOB] AS [DOB], 
+[Information].[Age] AS [Age], 
+[Information].[AgeGroup] AS [AgeGroup], 
+[Information].[Ageat] AS [Ageat], 
+[Information].[Gender] AS [Gender], 
+[Information].[Race] AS [Race], 
+[Information].[Ethnicity] AS [Ethnicity], 
+[Information].[SSSno] AS [SSSno], 
+[Information].[CpNumber] AS [CpNumber], 
+[Information].[FullStreetAddress] AS [FullStreetAddress], 
+[Information].[FullStreetAddress2] AS [FullStreetAddress2], 
+[Information].[City] AS [City], 
+[Information].[State] AS [State], 
+[Information].[ZipCode] AS [ZipCode], 
+[Information].[CountryCode] AS [CountryCode], 
+[Information].[CountyCodeDescription] AS [CountyCodeDescription], 
+[Information].[PhoneNumber] AS [PhoneNumber], 
+[Information].[Eligibility] AS [Eligibility], 
+[Information].[SickleCellDiagnosis] AS [SickleCellDiagnosis], 
+[Information].[PMPProviderName] AS [PMPProviderName], 
+[Information].[CCUCase] AS [CCUCase], 
+[Information].[Email_Address] AS [Email_Address], 
+[Information].[ClientresideinruralID] AS [ClientresideinruralID], 
+[Information].[Nameofmother] AS [Nameofmother], 
+[Information].[Motheraddress] AS [Motheraddress], 
+[Information].[Mothertel] AS [Mothertel], 
+[Information].[Nameoffather] AS [Nameoffather], 
+[Information].[Fatheraddress] AS [Fatheraddress], 
+[Information].[Fathertel] AS [Fathertel], 
+[Information].[Nameofguardian] AS [Nameofguardian], 
+[Information].[Guardianaddress] AS [Guardianaddress], 
+[Information].[Guardiantel] AS [Guardiantel], 
+[Information].[Emercont1] AS [Emercont1], 
+[Information].[Emercont1homephone] AS [Emercont1homephone], 
+[Information].[Emercont1cellphone] AS [Emercont1cellphone], 
+[Information].[Emercont2] AS [Emercont2], 
+[Information].[Emercont2homephone] AS [Emercont2homephone], 
+[Information].[Emercont2cellphone] AS [Emercont2cellphone], 
+[Information].[SicklecelltypeID] AS [SicklecelltypeID], 
+[Information].[HydroxyureaheardID] AS [HydroxyureaheardID], 
+[Information].[HydroxyureatakenID] AS [HydroxyureatakenID], 
+[Information].[HydroxyureacurrentlyID] AS [HydroxyureacurrentlyID], 
+[Information].[HydroxyureapasttakenID] AS [HydroxyureapasttakenID], 
+[Information].[Comments] AS [Comments], 
+[Information].[UserFirstName] AS [UserFirstName], 
+[Information].[UserLastName] AS [UserLastName], 
+[Information].[TimeStamp] AS [TimeStamp], 
+[Information].[Datenotescreated] AS [Datenotescreated]
+FROM [dbo].[Information] AS [Information]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

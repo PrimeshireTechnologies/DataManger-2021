@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SickeCellModelStoreContainer" CdmEntityContainer="SickeCellEntities1">
+    <EntitySetMapping Name="Information">
+      <EntityTypeMapping TypeName="SickeCellModel.Information">
+        <MappingFragment StoreEntitySet="Information">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Mi" ColumnName="Mi" />
+          <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="AgeGroup" ColumnName="AgeGroup" />
+          <ScalarProperty Name="Ageat" ColumnName="Ageat" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Race" ColumnName="Race" />
+          <ScalarProperty Name="Ethnicity" ColumnName="Ethnicity" />
+          <ScalarProperty Name="SSSno" ColumnName="SSSno" />
+          <ScalarProperty Name="CpNumber" ColumnName="CpNumber" />
+          <ScalarProperty Name="FullStreetAddress" ColumnName="FullStreetAddress" />
+          <ScalarProperty Name="FullStreetAddress2" ColumnName="FullStreetAddress2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountyCodeDescription" ColumnName="CountyCodeDescription" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Eligibility" ColumnName="Eligibility" />
+          <ScalarProperty Name="SickleCellDiagnosis" ColumnName="SickleCellDiagnosis" />
+          <ScalarProperty Name="PMPProviderName" ColumnName="PMPProviderName" />
+          <ScalarProperty Name="CCUCase" ColumnName="CCUCase" />
+          <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+          <ScalarProperty Name="ClientresideinruralID" ColumnName="ClientresideinruralID" />
+          <ScalarProperty Name="Nameofmother" ColumnName="Nameofmother" />
+          <ScalarProperty Name="Motheraddress" ColumnName="Motheraddress" />
+          <ScalarProperty Name="Mothertel" ColumnName="Mothertel" />
+          <ScalarProperty Name="Nameoffather" ColumnName="Nameoffather" />
+          <ScalarProperty Name="Fatheraddress" ColumnName="Fatheraddress" />
+          <ScalarProperty Name="Fathertel" ColumnName="Fathertel" />
+          <ScalarProperty Name="Nameofguardian" ColumnName="Nameofguardian" />
+          <ScalarProperty Name="Guardianaddress" ColumnName="Guardianaddress" />
+          <ScalarProperty Name="Guardiantel" ColumnName="Guardiantel" />
+          <ScalarProperty Name="Emercont1" ColumnName="Emercont1" />
+          <ScalarProperty Name="Emercont1homephone" ColumnName="Emercont1homephone" />
+          <ScalarProperty Name="Emercont1cellphone" ColumnName="Emercont1cellphone" />
+          <ScalarProperty Name="Emercont2" ColumnName="Emercont2" />
+          <ScalarProperty Name="Emercont2homephone" ColumnName="Emercont2homephone" />
+          <ScalarProperty Name="Emercont2cellphone" ColumnName="Emercont2cellphone" />
+          <ScalarProperty Name="SicklecelltypeID" ColumnName="SicklecelltypeID" />
+          <ScalarProperty Name="HydroxyureaheardID" ColumnName="HydroxyureaheardID" />
+          <ScalarProperty Name="HydroxyureatakenID" ColumnName="HydroxyureatakenID" />
+          <ScalarProperty Name="HydroxyureacurrentlyID" ColumnName="HydroxyureacurrentlyID" />
+          <ScalarProperty Name="HydroxyureapasttakenID" ColumnName="HydroxyureapasttakenID" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+          <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Datenotescreated" ColumnName="Datenotescreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

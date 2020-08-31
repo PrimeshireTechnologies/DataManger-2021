@@ -1,0 +1,48 @@
+﻿<!--e--> 
+<link href="../../Content/styling.css" rel="stylesheet"/>
+<!--<link href="../../Content/bootstrap.css" rel="stylesheet"/>-->
+<link href="../../Content/multi.css" rel="stylesheet"/>
+<script src="../../Scripts/jquery-3.3.1.js"></script>
+<script src="../../Library/angular.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<section ng-app="app" class="col-md-12">        
+    <br/>
+    <br/>             
+      <div ng-controller="viewController" class="container">
+           <div class="col-md-12">                   
+                     <div class="box">                            
+			               <div class="content-wrap" style="margin-left:30px;margin-top:40px;">
+			                     <h6 style="font-size:17px;font-weight:700;"><a href="#" style="color:#f37946;" onclick="tologin()">Please type your email to change password</a></h6>
+			                	  <div style="height:8px;"></div>	                                  
+                                  <form action="" method="post" id="login">
+	                                 <div>
+                                         <input class="form-control" type="email" placeholder="E-mail address" id="email" style="height:30px;" autocomplete="off">
+                                         <div style="height:5px;"></div>
+
+			                             <div class="action" ng-click="changepassword()" style="margin-top:55px;margin-left:110px;">
+                                              <a class="btn btn-primary signup" style="width:120px; background-color:#436280; color:white;">Submit</a>
+			                             </div>                                         
+	                                 </div>	                                
+                                  </form>
+			               </div>                                                                         
+
+                           <div style="position:fixed;top:50%;left:50%;width:38em;height:18em;margin-top:15em;margin-left:-14em; color:#f37946;font-weight:900; font-size:12px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                <p>&copy; @DateTime.Now.Year Primeshire Technologies All Rights Reserved<span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.4</span></p>
+                           </div>
+			         </div>                                       
+           </div>                                           			                      
+
+           <script>
+               function tologin() {
+                   window.location.href = "/Home/login";
+               }
+           </script>
+
+      </div>
+      <!--</div>  -->             
+      <br />    
+      <script src="../../Scripts/login.js"></script>    
+      <script src="../../Scripts/multi.js"></script>
+</section>
+

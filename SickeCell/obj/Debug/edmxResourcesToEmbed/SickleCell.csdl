@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SickeCellModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="Int64" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UniqueID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="Age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AgeGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ageat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Race" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ethnicity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SSSno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CpNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FullStreetAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FullStreetAddress2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountyCodeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Eligibility" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SickleCellDiagnosis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PMPProviderName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CCUCase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClientresideinruralID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nameofmother" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Motheraddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mothertel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nameoffather" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fatheraddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fathertel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nameofguardian" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Guardianaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Guardiantel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emercont1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emercont1homephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emercont1cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emercont2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emercont2homephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emercont2cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SicklecelltypeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HydroxyureaheardID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HydroxyureatakenID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HydroxyureacurrentlyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HydroxyureapasttakenID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeStamp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Datenotescreated" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="SickeCellEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Information" EntityType="Self.Information" />
+  </EntityContainer>
+</Schema>

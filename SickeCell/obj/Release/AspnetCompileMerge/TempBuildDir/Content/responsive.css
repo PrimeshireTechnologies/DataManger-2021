@@ -1,0 +1,54 @@
+
+
+@media screen and (max-width:1020px) {
+.wrapper{  max-width:767px;}
+#footer{  max-width:747px;}
+.select-sale [class*="col-"] { padding: 0 20px 20px 20px;}
+.select-sale .row{ margin:0 -20px;}
+.select-sale-col h6 { right: -36px;}
+.top-search .input-group {    width: 480px;}
+.top-search h1 {font-size: 16px;}
+.title-small h2 .btn-purple {display: block; margin: 10px 0 0;}
+
+}
+
+
+@media screen and (max-width:767px) {
+.wrapper{  max-width:500px;}
+#footer{ max-width:480px; }
+.top-search h1 {font-size: 16px; float:none; text-align:center; padding:0 0 20px 0;}
+.top-search .input-group {    width: auto; float:none}
+.top-search .input-group-addon img{ width:100px;}
+.top-search .form-control { font-size: 14px; height: 38px;}
+.top-search {   padding: 15px 0;}
+.select-sale-col h6{ position:inherit; margin:4px auto -15px auto; clear:both; right:0px;}
+.select-sale-col h6{ background: url(../images/arrow1.png) no-repeat;}
+.choosestate {  min-height: inherit;}
+.logo{ text-align:center;}
+.sidebar{ margin-bottom:15px;}
+.title-small h2 {  font-size: 15px; line-height:20px;
+
+}
+
+
+@media screen and (max-width:520px) {
+.wrapper{  max-width:300px;}
+#footer{ max-width:280px; }
+.content-box{ padding:10px;}
+.breadcrumb-menu a {  font-size: 13px;}
+.title { font-size: 19px; line-height: 22px;}
+.facilities-details h2 {  font-size: 15px;}
+}
+
+/*--------Menu--width---------*/
+/*@media screen and (max-width:100px) {
+.navbar-header {float: none;}
+.navbar-toggle {display: block;}
+.navbar-collapse.collapse {display: none!important;}
+.navbar-nav { float: none!important;}
+.navbar-nav>li {float: none;}
+}*/
+/*---Menu--width--class-End---*/
+
+
+

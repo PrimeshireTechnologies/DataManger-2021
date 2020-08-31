@@ -1,0 +1,206 @@
+﻿
+<link rel="stylesheet" href="../../Content/styling-2.css">
+<!-- Responsive stylesheet -->
+<link rel="stylesheet" href="../../Content/responsive.css">
+
+<link href="../../Content/stylingpatientoverview.css" rel="stylesheet" />
+
+<link href="../../Content/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="../../Content/jquery.bxslider.css" rel="stylesheet" />
+<link href="../../Content/imp.css" rel="stylesheet" />
+
+<link href="../../Content/bootstrap.css" rel="stylesheet" />
+<link href="../../Content/multiview.css" rel="stylesheet" />
+<script src="../../Scripts/jquery-3.3.1.js"></script>
+
+<script src="../../Scripts/jquery-1.6.4.js"></script>
+
+<script src="../../Scripts/jquery-1.7.1.js"></script>
+<script src="../../Library/angular.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<!-- Modal content -->
+<div class="modal" id="myModal">
+    <span class="close">&times;</span>
+    <!-- <p>Some text in the Modal..</p>-->
+    <p id="spanmssg" style="color:darkslategray;font-weight:600;">/p>
+</div>
+
+<div style="height:15px;"></div>
+<span class="searchby">Search by</span>
+<div class="desktopclass" ng-controller="viewController" style="border-style:solid;border-color:transparent;border-width:2px; border-radius:1px;position:fixed;top:50%;left:50%;width:95em;max-width:93em;height:2em;margin-top:-17em;margin-left:-47em;" ng-app="app">
+
+    @*<div class="desktopclass" ng-controller="viewController" style="border-style:solid;border-color:white;border-width:2px; border-radius:1px;position:fixed;top:50%;left:50%;width:95em;max-width:93em;height:2em;margin-top:-17em;margin-left:-47em;" ng-app="app">*@
+
+    <!--<input style="margin-top:0px; margin-left:2px; border-radius:5px; width:200px; max-width:200px;" type="text" id="myInput" onkeyup="myFunction()" placeholder="Type to search.."><input type="submit" value="search" style="margin-left:3px;"/>-->
+    <!--<input style="margin-top:0px; margin-left:0px; border-radius:5px; width:160px; max-width:160px;" type="text" id="search"placeholder="Type to search.."><input ng-controller="viewController" type="button" value="search" style="margin-left:1px;" ng-click="searchslcd()"/> -->
+
+    <span style="font-family:Tahoma;color:darkslategrey; font-weight:600;">ClientID :</span><input style="margin-top:0px; margin-left:5px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" ng-click="empname()" type="text" id="searchclient" placeholder="ClientID...." autocomplete="off">
+    <a href="#"><img src="../../Images/search3.png" width="30" height="28" style="margin-left:-2px; margin-top:-4px;" ng-click="searchclient()" ng-mouseover="buttonone()" /></a>
+    <input type="submit" value="List all Patients" id="listmembers" style="visibility:hidden;background-color:slategray;color:white; font-weight:600; margin-left:10px; border-radius:4px;" ng-click="listall()" /><br />
+    <div style="height:3px;"></div>
+    <span style="font-family:Tahoma;color:darkslategrey; font-weight:600;">Name :</span> <input style="margin-top:0px; margin-left:18px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" type="text" ng-click="empclientid()" id="firstname" placeholder="FirstName..">
+    <input style="margin-top:0px; margin-left:0px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" type="text" ng-click="empclientid()" id="lastname" placeholder="LastName..">
+    <input type="date" style="margin-top:0px; margin-left:0px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" id="dob" placeholder="Date Of Birth..">
+    <a href="#"><img src="../../Images/search3.png" width="30" height="28" style="margin-left:1px; margin-top:-4px;" ng-click="searchclient()" ng-mouseover="buttontwo()" /></a>
+    <span style="margin-left:50px;margin-top:15px; font-size:18px;" onclick="homepage()"><a href="#" style="color:#f37946; font-weight:600">SICKLECELL PATIENT OVERVIEW</a></span>
+    <a href="#"><input ng-click="reportserver()" type="submit" value="Generate Report Server" style="margin-left:230px; font-weight:600; background-color:slategray; color:white; margin-top:-3px; border-radius:4px;" /></a>
+    <br />
+    <br />
+    <br />
+</div>
+<!--<input ng-app="app" ng-controller="viewController" type="button" onclick="selected2()" value="select" style="margin-left:400px;"/>-->
+<div class="mobileclass" ng-controller="viewController" style="border-style:solid;border-color:white;border-width:2px; border-radius:1px;position:absolute;top:55%;left:1%;width:95em;max-width:93em;height:2em;margin-top:-18em;margin-left:-42em; font-size:13px;">
+    <span style="margin-left:550px;margin-top:15px;" onclick="homepage()"><a href="#" style="color:#f37946; font-weight:800">SICKLECELL PATIENT OVERVIEW</a></span>
+    <input ng-click="exportoverview()" type="submit" value="Export into Excel" style="margin-left:45px; font-weight:700; background-color:slategray; color:white; margin-top:-3px;" />
+</div>
+
+<!--Start Preloader -->
+<div class="preloader"></div>
+
+<section ng-app="app" ng-controller="viewController">
+
+    <div class="container" ng-controller="viewController">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <!--    <br /> -->
+                </div>
+                <!--<input type="text" style="width:300px;" ng-model="searchname" ng-controller="viewController"/>-->
+                <div class="col-md-4" style="position:fixed;top:50%;left:50%;margin-top:-15em;margin-left:-7em; font-size:18px;font-weight:600;">
+                    <div style="height:3px;"></div>
+                    <!--<span ng-click="main()"><a href="#" style="color:slategray;" id="golbalschoolname">FAVORED KIDS HOME DAY CARE</a></span>-->
+                    <span onclick="homepage()"><a href="#" style="color:slategray;" id="golbalschoolname"></a></span><br />
+                    <div style="height:1px; margin-top:-3px;"></div>
+                    <!--<span style="margin-left:5px;font-size:18px;" onclick="homepage()"><a href ="#" style="color:slategray;">SICKLECELL PATIENT OVERVIEW</a></span>-->
+                </div>
+                <script>
+                    globalSchool = localStorage.getItem("globalschool");
+                    //document.getElementById("golbalschoolname").innerHTML = globalSchool.toUpperCase();
+
+                    function homepage() {
+                        var varRole = localStorage.getItem("vRole");
+                        if (varRole === "Super Admin") {
+                            window.location.href = "/Home/index";
+                        } else { window.location.href = "/Home/index"; }
+                    }
+
+                    let idleTime = 0;
+                    $(document).ready(function () {
+                        //Increment the idle time counter every minute.
+                        idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+
+                        //Zero the idle timer on mouse movement.
+                        $('body').mousemove(function (e) {
+                            idleTime = 0;
+                        });
+
+                        $('body').keypress(function (e) {
+                            idleTime = 0;
+                        });
+
+                        $('body').click(function () {
+                            idleTime = 0;
+                        });
+
+                        function timerIncrement() {
+                            idleTime = idleTime + 1;
+                            if (idleTime > 6) {
+                                window.location.href = "/Home/Login";
+                            }
+                        }
+                    });
+
+                    function myFunction() {
+                        // Declare variables
+                        var input, filter, table, tr, td, i, txtValue;
+                        input = document.getElementById("myInput");
+                        filter = input.value.toUpperCase();
+                        table = document.getElementById("myTable");
+                        tr = table.getElementsByTagName("tr");
+
+                        // Loop through all table rows, and hide those who don't match the search query
+                        for (i = 0; i < tr.length; i++) {
+                            if (document.getElementById("searchoption").value === "ClientID") {
+                                td = tr[i].getElementsByTagName("td")[0];
+                            } else if (document.getElementById("searchoption").value === "Name") {
+                                td = tr[i].getElementsByTagName("td")[1];
+                            }
+                            if (td) {
+                                txtValue = td.textContent || td.innerText;
+                                //txtValue = td.textContent || td.innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    tr[i].style.display = "";
+                                } else {
+                                    tr[i].style.display = "none";
+                                }
+                            }
+                        }
+                    }
+                </script>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lbloverview">
+        <input id="assignments" class="assign0" type="text" ng-keyup="assignkeyup()" value="Client ID" disabled="disabled" />
+        <input id="assignment1" class="assign1" onkeyup="assignment1keyup()" type="text" value="Name" disabled="disabled" />
+        <input id="assignment2" class="assign2" onkeyup="assignment2keyup()" type="text" value="Date of Birth" disabled="disabled" />
+        <input id="assignment3" class="assign3" onkeyup="assignment3keyup()" type="text" value="Gender" disabled="disabled" />
+        <input id="assignment4" class="assign4" onkeyup="assignment4keyup()" type="text" value="Address" disabled="disabled" />
+        <input id="assignment5" class="assign5" onkeyup="assignment5keyup()" type="text" value="City" disabled="disabled" />
+        <input id="assignment6" class="assign6" onkeyup="assignment6keyup()" type="text" value="State" disabled="disabled" />
+        <input id="assignment7" class="assign7" onkeyup="assignment7keyup()" type="text" value="Email Address" disabled="disabled" />
+    </div>
+
+    <div ng-controller="viewController" class="boxed_wrapper">
+
+        <form role="form" onSubmit="return false;">
+
+            <div class="col-md-12" style="width:120%; margin-left:-10px;">
+
+                <div class="row">
+                    <div class="col-md-12" style="margin-left:-20px; width:100%;">
+
+                        <div style="padding:0; width:1400px; max-width:1290px; margin-left:4px;" ng-controller="viewController">
+
+                            <div class="col-md-12" style="width:100%;">
+                                <div class="row">
+                                    <table id="myTable" class="mtable">
+                                        <!-- <tr class="rowFocus" tabindex="10">-->
+                                        <tr tabindex="0">
+                                            <td id="col1" class="col1class"></td>
+                                            <td id="col2" class="col2class"></td>
+                                            <td id="col3" class="col3class"></td>
+                                            <td id="col4" class="col4class"></td>
+                                            <td id="col5" class="col5class"></td>
+                                            <td id="col6" class="col6class"></td>
+                                            <td id="col7" class="col7class"></td>
+                                            <td id="col8" class="col8class"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <div style="position:fixed;top:50%;left:50%;width:38em;height:18em;margin-top:28em;margin-left:-15em; color:#f37946;font-weight:900; font-size:12px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            <p>&copy; @DateTime.Now.Year Primeshire Technologies All Rights Reserved<span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.4</span></p>
+        </div>
+    </div>
+
+    <select ng-controller="viewController" id="comments3" class="inform2" ng-model="comments" name="comments" style="position:absolute; width:1000px; margin-left: 12em; margin-top: 8em; font-weight:700; height:420px; max-height:420px;font-family:Courier New, Courier, monospace;font-size:16px;border-width:2px; border-color:#f37946; resize:both; max-width: 100%;box-sizing: border-box; overflow:auto; border-radius:9px;" multiple="multiple"></select>
+
+    <!--<select ng-controller="viewController" id="comments3" class="inform2" ng-model="comments" name="comments" style="position:absolute; margin-left: 23em; margin-top: 8em; font-weight:700; width:927px; max-width:750px;height:390px; max-height:385px;font-family:Courier New, Courier, monospace;font-size:16px;border-width:2px; border-color:#f37946; resize:both; overflow:auto; border-radius:9px" multiple="multiple">
+    </select>      -->
+
+    <script src="../../Scripts/multi.js"></script>
+</section>
+
