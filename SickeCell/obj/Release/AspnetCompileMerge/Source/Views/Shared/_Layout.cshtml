@@ -34,7 +34,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            @Html.ActionLink("SickleCell", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                            @Html.ActionLink("Data Prairie", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
                             <div id="mobile1">
                                 <img src="../../Images/Primeshire.png" style="margin-top:6px;margin-left:-240px;" class="icon2" />
@@ -47,9 +47,9 @@
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav" id="ul" style="visibility:hidden; width:auto;">
-                                <li class="dropdown" onclick="dropdmenu1()">
-                                    @*<a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Home1 <span class="caret"></span></a>*@
-                                    <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><img src="~/Images/hamburger.png" style="margin-top:-17px; margin-left:-5px; height:46px;width:50px;"/> </a>
+                                <li class="dropdown" onclick="dropdmenu1()">                                    
+                                    @*<a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><img src="~/Images/hamburger.png" style="margin-top:-17px; margin-left:-5px; height:46px;width:50px;"/> </a>*@
+                                    <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><img src="~/Images/hamburger.png" style="margin-top:-4px; margin-left:-5px; height:35px;width:40px;" /></a>
                                     <ul class="dropdown-menu" role="menu" id="dropdmenu1">
                                         <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
                                         <li>@Html.ActionLink("Patient Entry Form", "Entry", "Home", null, new { id = "Patient_Entry_Form" })</li>
@@ -60,7 +60,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                            <img src="../../Images/Primeshire.png" style="margin-top:6px;margin-left:-240px;" class="icon1" />
+                            <img src="../../Images/Primeshire.png" style="margin-top:6px;margin-left:-280px;" class="icon1" />
                             <select id='my_account' name='account' onchange="validateacct()" class="account1">
                                 <option value='0' id="option1">User</option>
                                 <option value='1'>Log Out</option>
@@ -73,50 +73,64 @@
 
             <!--This is for Container 2-->
             <div id="nav2" class="navbar navbar-inverse navbar-fixed-top" style="background-color:#f37946;font-weight:500; height:58px; margin-left:-37px;">
-                <div class="container" id="cnt2" style="visibility:hidden; width:auto;">
+               <div class="col-md-12">
                     <div class="row">
-                        <div class="navbar-header" id="navigation2" style="visibility:hidden;">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            @Html.ActionLink("SickleCell", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                          <div class="col-md-2">
+                                @*text-shadow: 2px 2px 4px #000000;*@
+                                <div id="break" style="height:15px;"></div>
+                                <span id="project_title" style="margin-left:100px; font-size:20px;color:#FDFD96; text-shadow: 1px 1px 2px #000000;font-family:Jokerman; font-weight:600; visibility:visible;">Data Prairie</span>
+                                @*<span id="project_title" style="margin-left:100px; font-size:20px;color:#FDFD96; text-shadow: 1px 1px 2px #000000;font-family:Jokerman; font-weight:600; visibility:visible;">Data Prairie</span>*@
+                          </div>
+                          <div class="col-md-10">
+                              <div class="container" id="cnt2" style="visibility:hidden; width:auto;">
+                                  <div class="row">
+                                      <div class="navbar-header" id="navigation2" style="visibility:hidden;">
+                                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                              <span class="icon-bar"></span>
+                                              <span class="icon-bar"></span>
+                                              <span class="icon-bar"></span>
+                                          </button>
+                                          @Html.ActionLink("Data Prairie", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
-                            <div id="mobile2">
-                                <img src="../../Images/Primeshire.png" style="margin-top:6px;margin-left:-240px;" class="icon2" />
-                                <select id='my_account4' name='account' onchange="validateacct()" class="account4">
-                                    <option value='0' id="option4">User</option>
-                                    <option value='1'>Log Out</option>
-                                </select>
-                                <span id="username4" class="username4"></span>
-                            </div>
+                                          <div id="mobile2">
+                                              <img src="../../Images/Primeshire.png" style="margin-top:6px;margin-left:-240px;" class="icon2" />
+                                              <select id='my_account4' name='account' onchange="validateacct()" class="account4">
+                                                  <option value='0' id="option4">User</option>
+                                                  <option value='1'>Log Out</option>
+                                              </select>
+                                              <span id="username4" class="username4"></span>
+                                          </div>
 
-                        </div>
-                        <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav" id="ul2" style="visibility:hidden; width:auto;">
-                                <li class="dropdown" onclick="dropdmenu2()">
-                                    <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Home <span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu" id="dropdmenu2">
-                                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                                        <li>@Html.ActionLink("Patient Entry Form", "Entry", "Home", null, new { id = "Patient_Entry_Form" })</li>
-                                        <li>@Html.ActionLink("Case Notes", "Casenotes", "Home", null, new { id = "Case_Notes" })</li>
-                                        <li>@Html.ActionLink("Upload CSV File", "Uploadcsv", "Home", null, new { id = "Uploadcsv" })</li>
-                                        <li>@Html.ActionLink("Management Console", "Manageconsole", "Home", null, new { id = "Manageconsole" })</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div id="destop">
-                                <img src="../../Images/Primeshire.png" style="margin-top:7px;margin-left:-240px;" class="icon2" />
-                                <select id='my_account2' name='account' onchange="validateacct()" class="account2">
-                                    <option value='0' id="option2">User</option>
-                                    <option value='1'>Log Out</option>
-                                </select>
-                                <span id="username2" class="username2"></span>
-                            </div>
-                        </div>
+                                      </div>
+                                      <div class="navbar-collapse collapse">
+                                          <ul class="nav navbar-nav" id="ul2" style="visibility:hidden; width:auto;">
+                                              <li class="dropdown" onclick="dropdmenu2()">                                                  
+                                                  @*<a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><img src="~/Images/hamburger.png" style="margin-top:-17px; margin-left:-5px; height:46px;width:50px;" /></a>*@
+                                                  <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><img src="~/Images/hamburger.png" style="margin-top:-4px; margin-left:-5px; height:35px;width:40px;" /></a>
+                                                  <ul class="dropdown-menu" role="menu" id="dropdmenu2">
+                                                      <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                                                      <li>@Html.ActionLink("Patient Entry Form", "Entry", "Home", null, new { id = "Patient_Entry_Form" })</li>
+                                                      <li>@Html.ActionLink("Case Notes", "Casenotes", "Home", null, new { id = "Case_Notes" })</li>
+                                                      <li>@Html.ActionLink("Upload CSV File", "Uploadcsv", "Home", null, new { id = "Uploadcsv" })</li>
+                                                      <li>@Html.ActionLink("Management Console", "Manageconsole", "Home", null, new { id = "Manageconsole" })</li>
+                                                  </ul>
+                                              </li>
+                                          </ul>
+                                          <div id="destop">
+                                              <img src="../../Images/Primeshire.png" style="margin-top:7px;margin-left:-280px;" class="icon2" />
+                                              <select id='my_account2' name='account' onchange="validateacct()" class="account2">
+                                                  <option value='0' id="option2">User</option>
+                                                  <option value='1'>Log Out</option>
+                                              </select>
+                                              <span id="username2" class="username2"></span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
                     </div>
-                </div>
+               </div>
+                
             </div>
 
             @RenderBody()
@@ -135,6 +149,10 @@
              if (sPage.trim() !== "entry") {
                  var vheight = $(window).height();
                  var vwidth = $(window).width();
+
+                 if (vwidth > 2054) {
+                     document.body.style.backgroundImage = "url('../Images/watermark6.png')";
+                 }
                  if (vwidth >= 1924 && vwidth <= 2053) {
                      document.body.style.backgroundImage = "url('../Images/watermark5.png')";
                  }

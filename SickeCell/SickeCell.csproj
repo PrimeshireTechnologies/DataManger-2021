@@ -204,6 +204,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ForgotpassController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\Login2Controller.cs" />
@@ -211,6 +212,7 @@
     <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SignController.cs" />
+    <Compile Include="Controllers\UpdateController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\ViewallpatientsController.cs" />
@@ -299,12 +301,14 @@
     <Content Include="Images\watermark3.png" />
     <Content Include="Images\watermark4.png" />
     <Content Include="Images\watermark5.png" />
+    <Content Include="Images\watermark6.png" />
     <Content Include="Reports\Report.aspx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\globalvariable.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\login3.js" />
     <Content Include="Scripts\multi.js" />
     <Content Include="Scripts\multi_sicklecell_backup.js" />
     <Content Include="Scripts\stoppreloader.js" />
@@ -421,6 +425,11 @@
     <Content Include="Views\Home\Changepassword.cshtml" />
     <Content Include="Views\Home\Changepassverify.cshtml" />
     <Content Include="Views\Home\Banner.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Home\Verificationcode.cshtml" />
+    <Content Include="Views\Home\ResetPassword.cshtml" />
+    <Content Include="Views\Home\Resetsuccess.cshtml" />
+    <Content Include="Views\Home\ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

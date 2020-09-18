@@ -332,17 +332,18 @@
     }
 
     .indexbox {
-        border-style: solid;
+        /*border-style: solid;
         border-color: #28c4f4;
-        border-width: 3px;
+        border-width: 3px;*/
         border-radius: 9px;
         position: fixed;
         top: 50%;
         left: 50%;
         width: 30em;
-        height: 16em;
+        height: 218px;
         margin-top: -6em;
         margin-left: -15em;
+        border: 2px solid #28c4f4;
     }
 
     .consoleoptionbox {
@@ -487,7 +488,7 @@
 
 }
 
-@media only screen and (min-width: 2052px) {
+@media only screen and (min-width: 2054px) and (max-width: 2310px ) {
     .preloader {
         position: fixed;
         left: 0px;
@@ -502,7 +503,7 @@
     }
 
         .preloader:after {
-            content: "LOADING . . . . . . . . . .";
+            content: "Loading    .     .     .   ";
             -webkit-font-smoothing: antialiased;
             font-family: 'Inconsolata',;
             font-size: 14px;
@@ -512,13 +513,13 @@
             width: 400px;
             padding-left: 45px;
             letter-spacing: 0.8px;
-            font-weight: 500;
-            margin-top: 41em;
-            margin-left: 66em;
+            font-weight: 600;
+            margin-top: 44em;
+            margin-left: 70em;
         }
 }
 
-@media only screen and (min-width: 1924px) and (max-width: 2051px) {
+@media only screen and (min-width: 2051px) and (max-width: 2054px ){
     .preloader {
         position: fixed;
         left: 0px;
@@ -533,7 +534,7 @@
     }
 
         .preloader:after {
-            content: "LOADING . . . . . . . . . .";
+            content: "Loading  .    .    .   ";
             -webkit-font-smoothing: antialiased;
             font-family: 'Inconsolata',;
             font-size: 14px;
@@ -543,13 +544,13 @@
             width: 400px;
             padding-left: 45px;
             letter-spacing: 0.8px;
-            font-weight: 500;
+            font-weight: 600;
             margin-top: 40em;
-            margin-left: 63em;
+            margin-left: 61em;
         }
 }
 
-@media only screen and (min-width: 1710px) and (max-width: 1923px) {
+@media only screen and (min-width: 1712px) and (max-width: 2051px) {
     .preloader {
         position: fixed;
         left: 0px;
@@ -564,7 +565,7 @@
     }
 
         .preloader:after {
-            content: "LOADING . . . . . . . . . .";
+            content: "Loading   .   .   .  ";
             -webkit-font-smoothing: antialiased;
             font-family: 'Inconsolata',;
             font-size: 14px;
@@ -574,13 +575,13 @@
             width: 400px;
             padding-left: 45px;
             letter-spacing: 0.8px;
-            font-weight: 500;
-            margin-top: 36em;
-            margin-left: 55em;
+            font-weight: 600;
+            margin-top: 38em;
+            margin-left: 56em;
         }
 }
 
-@media only screen and (min-width: 1538px) and (max-width: 1709px) {
+@media only screen and (min-width: 1541px) and (max-width: 1712px) {
     .preloader {
         position: fixed;
         left: 0px;
@@ -595,7 +596,7 @@
     }
 
         .preloader:after {
-            content: "LOADING . . . . . . . . . .";
+            content: "Loading   .   .   . ";
             -webkit-font-smoothing: antialiased;
             font-family: 'Inconsolata',;
             font-size: 14px;
@@ -605,13 +606,13 @@
             width: 400px;
             padding-left: 45px;
             letter-spacing: 0.8px;
-            font-weight: 500;
-            margin-top: 32em;
-            margin-left: 50em;
+            font-weight: 600;
+            margin-top: 34em;
+            margin-left: 48em;
         }
 }
 
-@media only screen and (max-width: 1537px) {
+@media only screen and (max-width: 1540px) {
     .preloader {
         position: fixed;
         left: 0px;
@@ -626,7 +627,7 @@
     }
 
         .preloader:after {
-            content: "LOADING . . . . . . . . . .";
+            content: "Loading .  .  . ";
             -webkit-font-smoothing: antialiased;
             font-family: 'Inconsolata',;
             font-size: 14px;
@@ -637,8 +638,8 @@
             padding-left: 45px;
             letter-spacing: 0.8px;
             font-weight: 500;
-            margin-top: 32em;
-            margin-left: 50em;
+            margin-top: 31em;
+            margin-left: 43em;
         }
 }
 

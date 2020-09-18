@@ -2192,7 +2192,8 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     }
                 }                                              
             }
-        }
+            document.getElementById("project_title").style.visibility = "hidden";
+        }        
     }    
 
     if (sPage.trim() === "Manageconsole" || sPage.trim() === "manageconsole") {                               
@@ -2647,16 +2648,17 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                         localStorage.setItem("variableEmail", confirmedmail);
 
                         window.location.href = "/Home/Successful";
-                    } else {
-                        //alert('This Email Address is already exist in our Database please retype');
-                        swal("Exist!", "The email address is already being used. Please login  or sign up with a different email!", {
+                    } else {                        
+                        swal("Invalid email!", "The email address is already being used. Please login  or sign up with a different email!", {
                             className: "swal-title"
                         }); 
                     }
                     count = 0;
                     window.location.href = "#signup";
-                }, function (failed) {
-                    alert('Data posted failed');
+                }, function (failed) {                    
+                    swal("Invalid email!", "Data posted failed!", {
+                        className: "swal-title"
+                    }); 
                 });
 
             } else {

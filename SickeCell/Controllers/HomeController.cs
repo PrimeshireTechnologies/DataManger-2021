@@ -358,6 +358,41 @@ namespace SickeCell.Controllers
             ViewBag.Title = "Change Password Verification";
 
             return View();
+        }
+
+        public ActionResult Test()
+        {
+            ViewBag.Title = "Testing";
+
+            return View();
+        }
+
+        public ActionResult ForgotPassword()
+        {
+            ViewBag.Title = "ForgotPassword";
+
+            return View();
+        }
+
+        public ActionResult Verificationcode()
+        {
+            ViewBag.Title = "ForgotPassword";
+
+            return View();
+        }
+
+        public ActionResult ResetPassword()
+        {
+            ViewBag.Title = "ResetPassword";
+
+            return View();
+        }
+
+        public ActionResult Resetsuccess()
+        {
+            ViewBag.Title = "Resetsuccess";
+
+            return View();
         }        
 
         //[HttpPost]

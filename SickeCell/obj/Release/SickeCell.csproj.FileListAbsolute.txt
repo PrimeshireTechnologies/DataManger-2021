@@ -597,3 +597,4 @@ C:\net_projects\SickleCell\SickeCell\obj\Release\SickeCell.csproj.CoreCompileInp
 C:\net_projects\SickleCell\SickeCell\obj\Release\SickeCell.csproj.CopyComplete
 C:\net_projects\SickleCell\SickeCell\obj\Release\SickeCell.dll
 C:\net_projects\SickleCell\SickeCell\obj\Release\SickeCell.pdb
+C:\net_projects\SickleCell\SickeCell\obj\Release\SickeCell.csprojAssemblyReference.cache
