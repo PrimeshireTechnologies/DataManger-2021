@@ -288,6 +288,7 @@
     <Content Include="Images\hamburger.png" />
     <Content Include="Images\Home.png" />
     <Content Include="Images\icon\preloader.gif" />
+    <Content Include="Images\one.png" />
     <Content Include="Images\Primeshire.png" />
     <Content Include="Images\search.png" />
     <Content Include="Images\search2.png" />
@@ -296,6 +297,8 @@
     <Content Include="Images\sub-menu.png" />
     <Content Include="Images\submenu.png" />
     <Content Include="Images\System_Admini.jpg" />
+    <Content Include="Images\three.png" />
+    <Content Include="Images\two.png" />
     <Content Include="Images\watermark1.png" />
     <Content Include="Images\watermark2.png" />
     <Content Include="Images\watermark3.png" />
@@ -430,6 +433,7 @@
     <Content Include="Views\Home\ResetPassword.cshtml" />
     <Content Include="Views\Home\Resetsuccess.cshtml" />
     <Content Include="Views\Home\ForgotPassword.cshtml" />
+    <Content Include="Views\Home\Entry_Backup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -513,9 +517,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59788</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59784/</IISUrl>
+          <IISUrl>http://localhost:59785/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:59784/</IISAppRootUrl>
+          <IISAppRootUrl>http://localhost:59785/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -102,10 +102,30 @@ namespace SickeCell.Controllers
             public string Emercont2cellphone { get; set; }
             public string SicklecelltypeID { get; set; }
             public string Medication { get; set; }
+            public string Medication2 { get; set; }
+            public string Medication3 { get; set; }
+            public string Medication4 { get; set; }
             public string HydroxyureaheardID { get; set; }
             public string HydroxyureatakenID { get; set; }
             public string HydroxyureacurrentlyID { get; set; }
             public string HydroxyureapasttakenID { get; set; }
+            public string Hydroxyureadosage { get; set; }
+            public string Hydroxyureadosageunknown { get; set; }
+            public string Hydroxyureacapsulescolor { get; set; }
+            public string Pharma1heardID { get; set; }
+            public string Pharma1takenID { get; set; }
+            public string Pharma1currentlyID { get; set; }
+            public string Pharma1pasttakenID { get; set; }
+            public string Pharma1dosage { get; set; }
+            public string Pharma1dosageunknown { get; set; }
+            public string Pharma1capsulescolor { get; set; }
+            public string Pharma2heardID { get; set; }
+            public string Pharma2takenID { get; set; }
+            public string Pharma2currentlyID { get; set; }
+            public string Pharma2pasttakenID { get; set; }
+            public string Pharma2dosage { get; set; }
+            public string Pharma2dosageunknown { get; set; }
+            public string Pharma2capsulescolor { get; set; }
             public string Globalid { get; set; }
             public string FullName { get; set; }
             public string SelectedSearch { get; set; }
@@ -118,18 +138,7 @@ namespace SickeCell.Controllers
         }
 
         public class SickleCelloverviewclass
-        {
-            //public string Clientidx { get; set; }
-            //public int ClientID { get; set; }
-            //public string LastName { get; set; }
-            //public string FirstName { get; set; }
-            //public string DOB { get; set; }
-            //public string Gender { get; set; }
-            //public string FullStreetAddress { get; set; }
-            //public string City { get; set; }
-            //public string State { get; set; }
-            //public string Email_Address { get; set; }
-
+        {            
             public string Clientidx { get; set; }
             public int ClientID { get; set; }
             public string LastName { get; set; }
@@ -180,6 +189,23 @@ namespace SickeCell.Controllers
             public string HydroxyureatakenID { get; set; }
             public string HydroxyureacurrentlyID { get; set; }
             public string HydroxyureapasttakenID { get; set; }
+            public string Hydroxyureadosage { get; set; }
+            public string Hydroxyureadosageunknown { get; set; }
+            public string Hydroxyureacapsulescolor { get; set; }
+            public string Pharma1heardID { get; set; }
+            public string Pharma1takenID { get; set; }
+            public string Pharma1currentlyID { get; set; }
+            public string Pharma1pasttakenID { get; set; }
+            public string Pharma1dosage { get; set; }
+            public string Pharma1dosageunknown { get; set; }
+            public string Pharma1capsulescolor { get; set; }
+            public string Pharma2heardID { get; set; }
+            public string Pharma2takenID { get; set; }
+            public string Pharma2currentlyID { get; set; }
+            public string Pharma2pasttakenID { get; set; }
+            public string Pharma2dosage { get; set; }
+            public string Pharma2dosageunknown { get; set; }
+            public string Pharma2capsulescolor { get; set; }
             public string Globalid { get; set; }
             public string FullName { get; set; }
             public string SelectedSearch { get; set; }
@@ -436,9 +462,12 @@ namespace SickeCell.Controllers
                             overviewddatagroup.PMPProviderName = overviewreader["PMPProviderName"].ToString();
                             overviewddatagroup.CCUCase = overviewreader["CCUCase"].ToString();
                             overviewddatagroup.Specialist = overviewreader["Specialist"].ToString();
-                            overviewddatagroup.Medication = overviewreader["Medication"].ToString();                            
+                            overviewddatagroup.Medication = overviewreader["Medication"].ToString();
+                            overviewddatagroup.Emercont1 = overviewreader["Emercont1"].ToString();
+                            overviewddatagroup.Emercont1homephone = overviewreader["Emercont1homephone"].ToString();
+                            overviewddatagroup.Emercont1cellphone = overviewreader["Emercont1cellphone"].ToString();
 
-                                   connect.Open();
+                            connect.Open();
                                    SqlCommand RecentCommentcmd = new SqlCommand("select Notesid, ClientID, Comments, TimeStamp from Notes where ClientID= '" + patientdataview.ClientID + "' order by Notesid  DESC", connect);
                                    SqlDataReader recentcommentreader = RecentCommentcmd.ExecuteReader();
                                    while (recentcommentreader.Read())
@@ -660,7 +689,8 @@ namespace SickeCell.Controllers
                 long longdata = 0;
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone,  @SicklecelltypeID, @Medication, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID";
+                //command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone,  @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID";
+                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor";
                 SqlCommand command2 = new SqlCommand("select top 1 ClientID from Information order by ClientID DESC", connection);
                 SqlDataReader clientidreader = command2.ExecuteReader();
 
@@ -1078,6 +1108,33 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@Medication", SqlDbType.VarChar, 50).Value = datavalue.Medication;
                         }
 
+                        if (datavalue.Medication2 == "" || datavalue.Medication2 == null)
+                        {
+                            command.Parameters.Add("@Medication2", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Medication2", SqlDbType.VarChar, 50).Value = datavalue.Medication2;
+                        }
+
+                        if (datavalue.Medication3 == "" || datavalue.Medication3 == null)
+                        {
+                            command.Parameters.Add("@Medication3", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Medication3", SqlDbType.VarChar, 50).Value = datavalue.Medication3;
+                        }
+
+                        if (datavalue.Medication4 == "" || datavalue.Medication4 == null)
+                        {
+                            command.Parameters.Add("@Medication4", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Medication4", SqlDbType.VarChar, 50).Value = datavalue.Medication4;
+                        }
+
                         if (datavalue.HydroxyureaheardID == "" || datavalue.HydroxyureaheardID == null)
                         {
                             command.Parameters.Add("@HydroxyureaheardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -1112,6 +1169,159 @@ namespace SickeCell.Controllers
                         else
                         {
                             command.Parameters.Add("@HydroxyureapasttakenID", SqlDbType.VarChar, 50).Value = datavalue.HydroxyureapasttakenID;
+                        }
+
+                        if (datavalue.Hydroxyureadosage == "" || datavalue.Hydroxyureadosage == null)
+                        {
+                            command.Parameters.Add("@Hydroxyureadosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Hydroxyureadosage", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureadosage;
+                        }
+
+                        if (datavalue.Hydroxyureadosageunknown == "" || datavalue.Hydroxyureadosageunknown == null)
+                        {
+                            command.Parameters.Add("@Hydroxyureadosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Hydroxyureadosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureadosageunknown;
+                        }
+
+                        if (datavalue.Hydroxyureacapsulescolor == "" || datavalue.Hydroxyureacapsulescolor == null)
+                        {
+                            command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureacapsulescolor;
+                        }
+
+                        if (datavalue.Pharma1heardID == "" || datavalue.Pharma1heardID == null)
+                        {
+                            command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1heardID;
+                        }
+
+                        if (datavalue.Pharma1takenID == "" || datavalue.Pharma1takenID == null)
+                        {
+                            command.Parameters.Add("@Pharma1takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma1takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1takenID;
+                        }
+
+                        if (datavalue.Pharma1currentlyID == "" || datavalue.Pharma1currentlyID == null)
+                        {
+                            command.Parameters.Add("@Pharma1currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma1currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1currentlyID;
+                        }
+
+                        if (datavalue.Pharma1pasttakenID == "" || datavalue.Pharma1pasttakenID == null)
+                        {
+                            command.Parameters.Add("@Pharma1pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma1pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1pasttakenID;
+                        }
+                        
+                        if (datavalue.Pharma1dosage == "" || datavalue.Pharma1dosage == null)
+                        {
+                            command.Parameters.Add("@Pharma1dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma1dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma1dosage;
+                        }
+
+                        if (datavalue.Pharma1dosageunknown == "" || datavalue.Pharma1dosageunknown == null)
+                        {
+                            command.Parameters.Add("@Pharma1dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma1dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma1dosageunknown;
+                        }
+
+                        if (datavalue.Pharma1capsulescolor == "" || datavalue.Pharma1capsulescolor == null)
+                        {
+                            command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma1capsulescolor;
+                        }
+
+                        if (datavalue.Pharma2heardID == "" || datavalue.Pharma2heardID == null)
+                        {
+                            command.Parameters.Add("@Pharma2heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma2heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2heardID;
+                        }
+
+                        if (datavalue.Pharma2takenID == "" || datavalue.Pharma2takenID == null)
+                        {
+                            command.Parameters.Add("@Pharma2takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma2takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2takenID;
+                        }
+
+                        if (datavalue.Pharma2currentlyID == "" || datavalue.Pharma2currentlyID == null)
+                        {
+                            command.Parameters.Add("@Pharma2currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma2currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2currentlyID;
+                        }
+
+                        if (datavalue.Pharma2pasttakenID == "" || datavalue.Pharma2pasttakenID == null)
+                        {
+                            command.Parameters.Add("@Pharma2pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma2pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2pasttakenID;
+                        }
+
+                        if (datavalue.Pharma2dosage == "" || datavalue.Pharma2dosage == null)
+                        {
+                            command.Parameters.Add("@Pharma2dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma2dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma2dosage;
+                        }
+
+                        if (datavalue.Pharma2dosageunknown == "" || datavalue.Pharma2dosageunknown == null)
+                        {
+                            command.Parameters.Add("@Pharma2dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma2dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma2dosageunknown;
+                        }
+
+                        if (datavalue.Pharma2capsulescolor == "" || datavalue.Pharma2capsulescolor == null)
+                        {
+                            command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma2capsulescolor;
                         }
                     }
                     clientidreader.Close();
@@ -1399,7 +1609,6 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = datavalue.Mothertel;
                     }
 
-
                     if (datavalue.Nameoffather == "" || datavalue.Nameoffather == null)
                     {
                         command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -1526,6 +1735,33 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@Medication", SqlDbType.VarChar, 50).Value = datavalue.Medication;
                     }
 
+                    if (datavalue.Medication2 == "" || datavalue.Medication2 == null)
+                    {
+                        command.Parameters.Add("@Medication2", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Medication2", SqlDbType.VarChar, 50).Value = datavalue.Medication2;
+                    }
+
+                    if (datavalue.Medication3 == "" || datavalue.Medication3 == null)
+                    {
+                        command.Parameters.Add("@Medication3", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Medication3", SqlDbType.VarChar, 50).Value = datavalue.Medication3;
+                    }
+
+                    if (datavalue.Medication4 == "" || datavalue.Medication4 == null)
+                    {
+                        command.Parameters.Add("@Medication4", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Medication4", SqlDbType.VarChar, 50).Value = datavalue.Medication4;
+                    }
+
                     if (datavalue.HydroxyureaheardID == "" || datavalue.HydroxyureaheardID == null)
                     {
                         command.Parameters.Add("@HydroxyureaheardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -1560,6 +1796,159 @@ namespace SickeCell.Controllers
                     else
                     {
                         command.Parameters.Add("@HydroxyureapasttakenID", SqlDbType.VarChar, 50).Value = datavalue.HydroxyureapasttakenID;
+                    }
+
+                    if (datavalue.Hydroxyureadosage == "" || datavalue.Hydroxyureadosage == null)
+                    {
+                        command.Parameters.Add("@Hydroxyureadosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Hydroxyureadosage", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureadosage;
+                    }
+
+                    if (datavalue.Hydroxyureadosageunknown == "" || datavalue.Hydroxyureadosageunknown == null)
+                    {
+                        command.Parameters.Add("@Hydroxyureadosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Hydroxyureadosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureadosageunknown;
+                    }
+
+                    if (datavalue.Hydroxyureacapsulescolor == "" || datavalue.Hydroxyureacapsulescolor == null)
+                    {
+                        command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureacapsulescolor;
+                    }
+
+                    if (datavalue.Pharma1heardID == "" || datavalue.Pharma1heardID == null)
+                    {
+                        command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1heardID;
+                    }
+
+                    if (datavalue.Pharma1takenID == "" || datavalue.Pharma1takenID == null)
+                    {
+                        command.Parameters.Add("@Pharma1takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma1takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1takenID;
+                    }
+
+                    if (datavalue.Pharma1currentlyID == "" || datavalue.Pharma1currentlyID == null)
+                    {
+                        command.Parameters.Add("@Pharma1currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma1currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1currentlyID;
+                    }
+
+                    if (datavalue.Pharma1pasttakenID == "" || datavalue.Pharma1pasttakenID == null)
+                    {
+                        command.Parameters.Add("@Pharma1pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma1pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1pasttakenID;
+                    }
+
+                    if (datavalue.Pharma1dosage == "" || datavalue.Pharma1dosage == null)
+                    {
+                        command.Parameters.Add("@Pharma1dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma1dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma1dosage;
+                    }
+
+                    if (datavalue.Pharma1dosageunknown == "" || datavalue.Pharma1dosageunknown == null)
+                    {
+                        command.Parameters.Add("@Pharma1dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma1dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma1dosageunknown;
+                    }
+
+                    if (datavalue.Pharma1capsulescolor == "" || datavalue.Pharma1capsulescolor == null)
+                    {
+                        command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma1capsulescolor;
+                    }
+
+                    if (datavalue.Pharma2heardID == "" || datavalue.Pharma2heardID == null)
+                    {
+                        command.Parameters.Add("@Pharma2heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma2heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2heardID;
+                    }
+
+                    if (datavalue.Pharma2takenID == "" || datavalue.Pharma2takenID == null)
+                    {
+                        command.Parameters.Add("@Pharma2takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma2takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2takenID;
+                    }
+
+                    if (datavalue.Pharma2currentlyID == "" || datavalue.Pharma2currentlyID == null)
+                    {
+                        command.Parameters.Add("@Pharma2currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma2currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2currentlyID;
+                    }
+
+                    if (datavalue.Pharma2pasttakenID == "" || datavalue.Pharma2pasttakenID == null)
+                    {
+                        command.Parameters.Add("@Pharma2pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma2pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2pasttakenID;
+                    }
+
+                    if (datavalue.Pharma2dosage == "" || datavalue.Pharma2dosage == null)
+                    {
+                        command.Parameters.Add("@Pharma2dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma2dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma2dosage;
+                    }
+
+                    if (datavalue.Pharma2dosageunknown == "" || datavalue.Pharma2dosageunknown == null)
+                    {
+                        command.Parameters.Add("@Pharma2dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma2dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma2dosageunknown;
+                    }
+
+                    if (datavalue.Pharma2capsulescolor == "" || datavalue.Pharma2capsulescolor == null)
+                    {
+                        command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma2capsulescolor;
                     }
                     clientidreader.Close();
                 }
@@ -1646,10 +2035,30 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Emercont2cellphone = searchfullnamereader["Emercont2cellphone"].ToString();
                                 selecteddatagroup.SicklecelltypeID = searchfullnamereader["SicklecelltypeID"].ToString();
                                 selecteddatagroup.Medication = searchfullnamereader["Medication"].ToString();
+                                selecteddatagroup.Medication2 = searchfullnamereader["Medication2"].ToString();
+                                selecteddatagroup.Medication3 = searchfullnamereader["Medication3"].ToString();
+                                selecteddatagroup.Medication4 = searchfullnamereader["Medication4"].ToString();
                                 selecteddatagroup.HydroxyureaheardID = searchfullnamereader["HydroxyureaheardID"].ToString();
                                 selecteddatagroup.HydroxyureatakenID = searchfullnamereader["HydroxyureatakenID"].ToString();
                                 selecteddatagroup.HydroxyureacurrentlyID = searchfullnamereader["HydroxyureacurrentlyID"].ToString();
                                 selecteddatagroup.HydroxyureapasttakenID = searchfullnamereader["HydroxyureapasttakenID"].ToString();
+                                selecteddatagroup.Hydroxyureadosage = searchfullnamereader["Hydroxyureadosage"].ToString();
+                                selecteddatagroup.Hydroxyureadosageunknown = searchfullnamereader["Hydroxyureadosageunknown"].ToString();
+                                selecteddatagroup.Hydroxyureacapsulescolor = searchfullnamereader["Hydroxyureacapsulescolor"].ToString();
+                                selecteddatagroup.Pharma1heardID = searchfullnamereader["Pharma1heardID"].ToString();
+                                selecteddatagroup.Pharma1takenID = searchfullnamereader["Pharma1takenID"].ToString();
+                                selecteddatagroup.Pharma1currentlyID = searchfullnamereader["Pharma1currentlyID"].ToString();
+                                selecteddatagroup.Pharma1pasttakenID = searchfullnamereader["Pharma1pasttakenID"].ToString();
+                                selecteddatagroup.Pharma1dosage = searchfullnamereader["Pharma1dosage"].ToString();
+                                selecteddatagroup.Pharma1dosageunknown = searchfullnamereader["Pharma1dosageunknown"].ToString();
+                                selecteddatagroup.Pharma1capsulescolor = searchfullnamereader["Pharma1capsulescolor"].ToString();
+                                selecteddatagroup.Pharma2heardID = searchfullnamereader["Pharma2heardID"].ToString();
+                                selecteddatagroup.Pharma2takenID = searchfullnamereader["Pharma2takenID"].ToString();
+                                selecteddatagroup.Pharma2currentlyID = searchfullnamereader["Pharma2currentlyID"].ToString();
+                                selecteddatagroup.Pharma2pasttakenID = searchfullnamereader["Pharma2pasttakenID"].ToString();
+                                selecteddatagroup.Pharma2dosage = searchfullnamereader["Pharma2dosage"].ToString();
+                                selecteddatagroup.Pharma2dosageunknown = searchfullnamereader["Pharma2dosageunknown"].ToString();
+                                selecteddatagroup.Pharma2capsulescolor = searchfullnamereader["Pharma2capsulescolor"].ToString();
                                 selecteddatagroup.Comments = searchfullnamereader["Comments"].ToString();
 
                                 selecteddata.Add(selecteddatagroup);
@@ -1727,10 +2136,30 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Emercont2cellphone = searchfullnamereader["Emercont2cellphone"].ToString();
                                 selecteddatagroup.SicklecelltypeID = searchfullnamereader["SicklecelltypeID"].ToString();
                                 selecteddatagroup.Medication = searchfullnamereader["Medication"].ToString();
+                                selecteddatagroup.Medication2 = searchfullnamereader["Medication2"].ToString();
+                                selecteddatagroup.Medication3 = searchfullnamereader["Medication3"].ToString();
+                                selecteddatagroup.Medication4 = searchfullnamereader["Medication4"].ToString();
                                 selecteddatagroup.HydroxyureaheardID = searchfullnamereader["HydroxyureaheardID"].ToString();
                                 selecteddatagroup.HydroxyureatakenID = searchfullnamereader["HydroxyureatakenID"].ToString();
                                 selecteddatagroup.HydroxyureacurrentlyID = searchfullnamereader["HydroxyureacurrentlyID"].ToString();
                                 selecteddatagroup.HydroxyureapasttakenID = searchfullnamereader["HydroxyureapasttakenID"].ToString();
+                                selecteddatagroup.Hydroxyureadosage = searchfullnamereader["Hydroxyureadosage"].ToString();
+                                selecteddatagroup.Hydroxyureadosageunknown = searchfullnamereader["Hydroxyureadosageunknown"].ToString();
+                                selecteddatagroup.Hydroxyureacapsulescolor = searchfullnamereader["Hydroxyureacapsulescolor"].ToString();
+                                selecteddatagroup.Pharma1heardID = searchfullnamereader["Pharma1heardID"].ToString();
+                                selecteddatagroup.Pharma1takenID = searchfullnamereader["Pharma1takenID"].ToString();
+                                selecteddatagroup.Pharma1currentlyID = searchfullnamereader["Pharma1currentlyID"].ToString();
+                                selecteddatagroup.Pharma1pasttakenID = searchfullnamereader["Pharma1pasttakenID"].ToString();
+                                selecteddatagroup.Pharma1dosage = searchfullnamereader["Pharma1dosage"].ToString();
+                                selecteddatagroup.Pharma1dosageunknown = searchfullnamereader["Pharma1dosageunknown"].ToString();
+                                selecteddatagroup.Pharma1capsulescolor = searchfullnamereader["Pharma1capsulescolor"].ToString();
+                                selecteddatagroup.Pharma2heardID = searchfullnamereader["Pharma2heardID"].ToString();
+                                selecteddatagroup.Pharma2takenID = searchfullnamereader["Pharma2takenID"].ToString();
+                                selecteddatagroup.Pharma2currentlyID = searchfullnamereader["Pharma2currentlyID"].ToString();
+                                selecteddatagroup.Pharma2pasttakenID = searchfullnamereader["Pharma2pasttakenID"].ToString();
+                                selecteddatagroup.Pharma2dosage = searchfullnamereader["Pharma2dosage"].ToString();
+                                selecteddatagroup.Pharma2dosageunknown = searchfullnamereader["Pharma2dosageunknown"].ToString();
+                                selecteddatagroup.Pharma2capsulescolor = searchfullnamereader["Pharma2capsulescolor"].ToString();
                                 selecteddatagroup.Comments = searchfullnamereader["Comments"].ToString();
 
                                 selecteddata.Add(selecteddatagroup);
@@ -1750,15 +2179,13 @@ namespace SickeCell.Controllers
                             return selecteddata;
                         }
                         return selecteddata;
-
-
                     }
                     //return selecteddata;
                 }
             }
             catch (Exception ab)
             {
-                ab.ToString();
+                ab.Message.ToString();
             }
             return Json(selecteddata, JsonRequestBehavior.AllowGet);
         }
@@ -1779,7 +2206,7 @@ namespace SickeCell.Controllers
 
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone,  @SicklecelltypeID, @Medication, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID";
+                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor";
 
                 SqlCommand searchclientid = new SqlCommand("SickeCell_Stored_Search_idx", connection);
                 searchclientid.CommandType = CommandType.StoredProcedure;
@@ -2085,7 +2512,6 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = datavalue.Mothertel;
                             }
 
-
                             if (datavalue.Nameoffather == "" || datavalue.Nameoffather == null)
                             {
                                 command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -2212,6 +2638,33 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@Medication", SqlDbType.VarChar, 50).Value = datavalue.Medication;
                             }
 
+                            if (datavalue.Medication2 == "" || datavalue.Medication2 == null)
+                            {
+                                command.Parameters.Add("@Medication2", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Medication2", SqlDbType.VarChar, 50).Value = datavalue.Medication2;
+                            }
+
+                            if (datavalue.Medication3 == "" || datavalue.Medication3 == null)
+                            {
+                                command.Parameters.Add("@Medication3", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Medication3", SqlDbType.VarChar, 50).Value = datavalue.Medication3;
+                            }
+
+                            if (datavalue.Medication4 == "" || datavalue.Medication4 == null)
+                            {
+                                command.Parameters.Add("@Medication4", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Medication4", SqlDbType.VarChar, 50).Value = datavalue.Medication4;
+                            }
+
                             if (datavalue.HydroxyureaheardID == "" || datavalue.HydroxyureaheardID == null)
                             {
                                 command.Parameters.Add("@HydroxyureaheardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -2246,6 +2699,159 @@ namespace SickeCell.Controllers
                             else
                             {
                                 command.Parameters.Add("@HydroxyureapasttakenID", SqlDbType.VarChar, 50).Value = datavalue.HydroxyureapasttakenID;
+                            }
+
+                            if (datavalue.Hydroxyureadosage == "" || datavalue.Hydroxyureadosage == null)
+                            {
+                                command.Parameters.Add("@Hydroxyureadosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Hydroxyureadosage", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureadosage;
+                            }
+
+                            if (datavalue.Hydroxyureadosageunknown == "" || datavalue.Hydroxyureadosageunknown == null)
+                            {
+                                command.Parameters.Add("@Hydroxyureadosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Hydroxyureadosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureadosageunknown;
+                            }
+
+                            if (datavalue.Hydroxyureacapsulescolor == "" || datavalue.Hydroxyureacapsulescolor == null)
+                            {
+                                command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureacapsulescolor;
+                            }
+
+                            if (datavalue.Pharma1heardID == "" || datavalue.Pharma1heardID == null)
+                            {
+                                command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1heardID;
+                            }
+
+                            if (datavalue.Pharma1takenID == "" || datavalue.Pharma1takenID == null)
+                            {
+                                command.Parameters.Add("@Pharma1takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma1takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1takenID;
+                            }
+
+                            if (datavalue.Pharma1currentlyID == "" || datavalue.Pharma1currentlyID == null)
+                            {
+                                command.Parameters.Add("@Pharma1currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma1currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1currentlyID;
+                            }
+
+                            if (datavalue.Pharma1pasttakenID == "" || datavalue.Pharma1pasttakenID == null)
+                            {
+                                command.Parameters.Add("@Pharma1pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma1pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1pasttakenID;
+                            }
+
+                            if (datavalue.Pharma1dosage == "" || datavalue.Pharma1dosage == null)
+                            {
+                                command.Parameters.Add("@Pharma1dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma1dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma1dosage;
+                            }
+
+                            if (datavalue.Pharma1dosageunknown == "" || datavalue.Pharma1dosageunknown == null)
+                            {
+                                command.Parameters.Add("@Pharma1dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma1dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma1dosageunknown;
+                            }
+
+                            if (datavalue.Pharma1capsulescolor == "" || datavalue.Pharma1capsulescolor == null)
+                            {
+                                command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma1capsulescolor;
+                            }
+
+                            if (datavalue.Pharma2heardID == "" || datavalue.Pharma2heardID == null)
+                            {
+                                command.Parameters.Add("@Pharma2heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma2heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2heardID;
+                            }
+
+                            if (datavalue.Pharma2takenID == "" || datavalue.Pharma2takenID == null)
+                            {
+                                command.Parameters.Add("@Pharma2takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma2takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2takenID;
+                            }
+
+                            if (datavalue.Pharma2currentlyID == "" || datavalue.Pharma2currentlyID == null)
+                            {
+                                command.Parameters.Add("@Pharma2currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma2currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2currentlyID;
+                            }
+
+                            if (datavalue.Pharma2pasttakenID == "" || datavalue.Pharma2pasttakenID == null)
+                            {
+                                command.Parameters.Add("@Pharma2pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma2pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2pasttakenID;
+                            }
+
+                            if (datavalue.Pharma2dosage == "" || datavalue.Pharma2dosage == null)
+                            {
+                                command.Parameters.Add("@Pharma2dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma2dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma2dosage;
+                            }
+
+                            if (datavalue.Pharma2dosageunknown == "" || datavalue.Pharma2dosageunknown == null)
+                            {
+                                command.Parameters.Add("@Pharma2dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma2dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma2dosageunknown;
+                            }
+
+                            if (datavalue.Pharma2capsulescolor == "" || datavalue.Pharma2capsulescolor == null)
+                            {
+                                command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma2capsulescolor;
                             }
                             count = 1;
                             break;
@@ -2664,6 +3270,23 @@ namespace SickeCell.Controllers
                     Integrate_Data.HydroxyureatakenID = clientidreader["HydroxyureatakenID"].ToString();
                     Integrate_Data.HydroxyureacurrentlyID = clientidreader["HydroxyureacurrentlyID"].ToString();
                     Integrate_Data.HydroxyureapasttakenID = clientidreader["HydroxyureapasttakenID"].ToString();
+                    Integrate_Data.Hydroxyureadosage = clientidreader["Hydroxyureadosage"].ToString();
+                    Integrate_Data.Hydroxyureadosageunknown = clientidreader["Hydroxyureadosageunknown"].ToString();
+                    Integrate_Data.Hydroxyureacapsulescolor = clientidreader["Hydroxyureacapsulescolor"].ToString();
+                    Integrate_Data.Pharma1heardID = clientidreader["Pharma1heardID"].ToString();
+                    Integrate_Data.Pharma1takenID = clientidreader["Pharma1takenID"].ToString();
+                    Integrate_Data.Pharma1currentlyID = clientidreader["Pharma1currentlyID"].ToString();
+                    Integrate_Data.Pharma1pasttakenID = clientidreader["Pharma1pasttakenID"].ToString();
+                    Integrate_Data.Pharma1dosage = clientidreader["Pharma1dosage"].ToString();
+                    Integrate_Data.Pharma1dosageunknown = clientidreader["Pharma1dosageunknown"].ToString();
+                    Integrate_Data.Pharma1capsulescolor = clientidreader["Pharma1capsulescolor"].ToString();
+                    Integrate_Data.Pharma2heardID = clientidreader["Pharma2heardID"].ToString();
+                    Integrate_Data.Pharma2takenID = clientidreader["Pharma2takenID"].ToString();
+                    Integrate_Data.Pharma2currentlyID = clientidreader["Pharma2currentlyID"].ToString();
+                    Integrate_Data.Pharma2pasttakenID = clientidreader["Pharma2pasttakenID"].ToString();
+                    Integrate_Data.Pharma2dosage = clientidreader["Pharma2dosage"].ToString();
+                    Integrate_Data.Pharma2dosageunknown = clientidreader["Pharma2dosageunknown"].ToString();
+                    Integrate_Data.Pharma2capsulescolor = clientidreader["Pharma2capsulescolor"].ToString();
                     Integrate_Data.Comments = clientidreader["Comments"].ToString();
                     listIntegrate.Add(Integrate_Data);
                 }           

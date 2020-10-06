@@ -54,6 +54,9 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
     let vCCUCase;
     let vspecialist;
     let vmedication;
+    let vemercont1;
+    let vemercont1homephone;
+    let vemercont1cellphone;
     let vcomments;
     let dragged;         
     let searchoption;
@@ -584,11 +587,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
         }
     };
 
-    if (sPage.trim() === "Entry" || sPage.trim() === "entry") {
-
-
-        //document.getElementById("test").style.width = "240px";
-        //document.getElementById("test").style.marginLeft = "-20px";
+    if (sPage.trim() === "Entry" || sPage.trim() === "entry") {       
 
         // this is for client reside //
         $scope.clientresyes = function () {
@@ -671,6 +670,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
             document.getElementById("sicklecellspecify").focus();
         };
 
+        // This is for Hydroxyurea //
         // Have you ever heard of Hydroxyurea //
         $scope.hydroxyureaeverheardyes = function () {
             document.getElementById("hydroxyureaheardyes").checked = true;
@@ -716,7 +716,104 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
             document.getElementById("hydroxyureapasttakenno").checked = true;
             document.getElementById("hydroxyureadosage").focus();
         };
+        // This is for Hydroxyurea //
 
+
+        // This is for Pharma 1 //
+        // Have you ever heard of Pharma 1 //
+        $scope.pharma1everheardyes = function () {
+            document.getElementById("pharma1heardyes").checked = true;
+            document.getElementById("pharma1heardno").checked = false;
+        };
+
+        $scope.pharma1everheardno = function () {
+            document.getElementById("pharma1heardyes").checked = false;
+            document.getElementById("pharma1heardno").checked = true;
+        };
+
+        // Have you ever taken Pharma 1 before //
+        $scope.pharma1evertakenyes = function () {
+            document.getElementById("pharma1takenyes").checked = true;
+            document.getElementById("pharma1takenno").checked = false;
+        };
+
+        $scope.pharma1evertakenno = function () {
+            document.getElementById("pharma1takenyes").checked = false;
+            document.getElementById("pharma1takenno").checked = true;
+        };
+
+        // Do you currently use Pharma 1 //
+        $scope.pharma1curryes = function () {
+            document.getElementById("pharma1currentlyyes").checked = true;
+            document.getElementById("pharma1currentlyno").checked = false;
+        };
+
+        $scope.pharma1currno = function () {
+            document.getElementById("pharma1currentlyyes").checked = false;
+            document.getElementById("pharma1currentlyno").checked = true;
+        };
+
+        // If No: Have you taken it in the past //
+        $scope.pharma1takenpastyes = function () {
+            document.getElementById("pharma1pasttakenyes").checked = true;
+            document.getElementById("pharma1pasttakenno").checked = false;
+            document.getElementById("pharma1dosage").focus();
+        };
+
+        $scope.pharma1takenpastno = function () {
+            document.getElementById("pharma1pasttakenyes").checked = false;
+            document.getElementById("pharma1pasttakenno").checked = true;
+            document.getElementById("pharma1dosage").focus();
+        };
+        // This is for Pharma 1 //
+
+        // This is for Pharma 2 //
+        // Have you ever heard of Pharma 2 //
+        $scope.pharma2everheardyes = function () {
+            document.getElementById("pharma2heardyes").checked = true;
+            document.getElementById("pharma2heardno").checked = false;
+        };
+
+        $scope.pharma2everheardno = function () {
+            document.getElementById("pharma2heardyes").checked = false;
+            document.getElementById("pharma2heardno").checked = true;
+        };
+
+        // Have you ever taken Pharma 2 before //
+        $scope.pharma2evertakenyes = function () {
+            document.getElementById("pharma2takenyes").checked = true;
+            document.getElementById("pharma2takenno").checked = false;
+        };
+
+        $scope.pharma2evertakenno = function () {
+            document.getElementById("pharma2takenyes").checked = false;
+            document.getElementById("pharma2takenno").checked = true;
+        };
+
+        // Do you currently use Pharma 2 //
+        $scope.pharma2curryes = function () {
+            document.getElementById("pharma2currentlyyes").checked = true;
+            document.getElementById("pharma2currentlyno").checked = false;
+        };
+
+        $scope.pharma2currno = function () {
+            document.getElementById("pharma2currentlyyes").checked = false;
+            document.getElementById("pharma2currentlyno").checked = true;
+        };
+
+        // If No: Have you taken it in the past //
+        $scope.pharma2takenpastyes = function () {
+            document.getElementById("pharma2pasttakenyes").checked = true;
+            document.getElementById("pharma2pasttakenno").checked = false;
+            document.getElementById("pharma2dosage").focus();
+        };
+
+        $scope.pharma2takenpastno = function () {
+            document.getElementById("pharma2pasttakenyes").checked = false;
+            document.getElementById("pharma2pasttakenno").checked = true;
+            document.getElementById("pharma2dosage").focus();
+        };
+        // This is for Pharma 2 //
     }        
 
     ////// first load for Registration module//////
@@ -815,7 +912,11 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 document.getElementById("sicklecellother").checked = false;
 
                 document.getElementById('medication')['value'] = '';
+                document.getElementById('medication3')['value'] = '';
+                document.getElementById('medication4')['value'] = '';
+                document.getElementById('medication5')['value'] = '';
 
+                // This is for Hydroxyurea //
                 // Have you ever heard of Hydroxyurea //
                 document.getElementById("hydroxyureaheardyes").checked = false;
                 document.getElementById("hydroxyureaheardno").checked = false;
@@ -837,6 +938,55 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 document.getElementById('hydroxyureacapsulescolor')['value'] = '';
                 document.getElementById('hydroxyureadatelasttaken')['value'] = '';
                 document.getElementById('hydroxyureadatepickedup')['value'] = '';
+                // This is for Hydroxyurea //
+
+                // This is for Pharma 1 //
+                // Have you ever heard of Pharma 1 //
+                document.getElementById("pharma1heardyes").checked = false;
+                document.getElementById("pharma1heardno").checked = false;
+
+                // Have you ever taken Pharma 1 before //
+                document.getElementById("pharma1takenyes").checked = false;
+                document.getElementById("pharma1takenno").checked = false;
+
+                // Do you currently use Hydroxyurea //
+                document.getElementById("pharma1currentlyyes").checked = false;
+                document.getElementById("pharma1currentlyno").checked = false;
+
+                // If No: Have you taken it in the past //
+                document.getElementById("pharma1pasttakenyes").checked = false;
+                document.getElementById("pharma1pasttakenno").checked = false;
+
+                document.getElementById('pharma1dosage')['value'] = '';
+                document.getElementById('pharma1dosageunknown')['value'] = '';
+                document.getElementById('pharma1capsulescolor')['value'] = '';
+                document.getElementById('pharma1datelasttaken')['value'] = '';
+                document.getElementById('pharma1datepickedup')['value'] = '';
+                // This is for Pharma 1 //
+
+                // This is for Pharma 2 //
+                // Have you ever heard of Pharma 1 //
+                document.getElementById("pharma2heardyes").checked = false;
+                document.getElementById("pharma2heardno").checked = false;
+
+                // Have you ever taken Pharma 1 before //
+                document.getElementById("pharma2takenyes").checked = false;
+                document.getElementById("pharma2takenno").checked = false;
+
+                // Do you currently use Hydroxyurea //
+                document.getElementById("pharma2currentlyyes").checked = false;
+                document.getElementById("pharma2currentlyno").checked = false;
+
+                // If No: Have you taken it in the past //
+                document.getElementById("pharma2pasttakenyes").checked = false;
+                document.getElementById("pharma2pasttakenno").checked = false;
+
+                document.getElementById('pharma2dosage')['value'] = '';
+                document.getElementById('pharma2dosageunknown')['value'] = '';
+                document.getElementById('pharma2capsulescolor')['value'] = '';
+                document.getElementById('pharma2datelasttaken')['value'] = '';
+                document.getElementById('phrama2datepickedup')['value'] = '';
+                // This is for Pharma 2 //
 
                 //alert("This person is already exist in the Database");
                 swal("Exist!", "This person is already exist in the Database!", {
@@ -850,6 +1000,16 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 let hydroxyureatakenid;
                 let hydroxyureacurrentlyid;
                 let hydroxyureapasttakenid;
+
+                let pharma1heardid;
+                let pharma1takenid;
+                let pharma1currentlyid;
+                let pharma1pasttakenid;
+
+                let pharma2heardid;
+                let pharma2takenid;
+                let pharma2currentlyid;
+                let pharma2pasttakenid;
                 updatecounter = 0;
 
                 // this is for client reside //
@@ -906,6 +1066,24 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 } else {
                     hydroxyureaheardid = "";
                 }
+                // Have you ever heard of Pharma 1 Desktop//
+                if (document.getElementById('pharma1heardyes').checked === true) {
+                    pharma1heardid = "yes";
+                } else if (document.getElementById('pharma1heardno').checked === true) {
+                    pharma1heardid = "no";
+                } else {
+                    pharma1heardid = "";
+                }
+                // Have you ever heard of Pharma 2 Desktop//
+                if (document.getElementById('pharma2heardyes').checked === true) {
+                    pharma1heardid = "yes";
+                } else if (document.getElementById('pharma2heardno').checked === true) {
+                    pharma2heardid = "no";
+                } else {
+                    pharma2heardid = "";
+                }
+
+
                 // Have you ever heard of Hydroxyurea Mobile Phone//
                 if (document.getElementById('hydroxyureaheardyes2').checked === true) {
                     hydroxyureaheardid = "yes";
@@ -915,6 +1093,25 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     hydroxyureaheardid = "";
                 }
 
+                // Have you ever heard of Pharma 1 Mobile Phone//
+                //if (document.getElementById('phrama1heardyes2').checked === true) {
+                //    pharma1heardid = "yes";
+                //} else if (document.getElementById('phrama1heardno2').checked === true) {
+                //    pharma1heardid = "no";
+                //} else {
+                //    pharma1heardid = "";
+                //}
+
+                // Have you ever heard of Pharma 2 Mobile Phone//
+                //if (document.getElementById('phrama2heardyes2').checked === true) {
+                //    pharma2heardid = "yes";
+                //} else if (document.getElementById('phrama2heardno2').checked === true) {
+                //    pharma2heardid = "no";
+                //} else {
+                //    pharma2heardid = "";
+                //}
+
+
                 // Have you ever taken Hydroxyurea before Desktop//
                 if (document.getElementById('hydroxyureatakenyes').checked === true) {
                     hydroxyureatakenid = "yes";
@@ -923,6 +1120,24 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 } else {
                     hydroxyureatakenid = "";
                 }
+                // Have you ever taken Pharma 1 before Desktop//
+                if (document.getElementById('pharma1takenyes').checked === true) {
+                    pharma1takenid = "yes";
+                } else if (document.getElementById('pharma1takenno').checked === true) {
+                    pharma1takenid = "no";
+                } else {
+                    pharma1takenid = "";
+                }
+                // Have you ever taken Pharma 2 before Desktop//
+                if (document.getElementById('pharma2takenyes').checked === true) {
+                    pharma2takenid = "yes";
+                } else if (document.getElementById('pharma2takenno').checked === true) {
+                    pharma2takenid = "no";
+                } else {
+                    pharma2takenid = "";
+                }
+
+
                 // Have you ever taken Hydroxyurea before Mobile Phone//
                 if (document.getElementById('hydroxyureatakenyes2').checked === true) {
                     hydroxyureatakenid = "yes";
@@ -932,6 +1147,25 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     hydroxyureatakenid = "";
                 }
 
+                // Have you ever taken Pharma 1 before Mobile Phone//
+                //if (document.getElementById('phrama1takenyes2').checked === true) {
+                //    pharma1takenid = "yes";
+                //} else if (document.getElementById('phrama1takenno2').checked === true) {
+                //    pharma1takenid = "no";
+                //} else {
+                //    pharma1takenid = "";
+                //}
+
+                // Have you ever taken Pharma 2 before Mobile Phone//
+                //if (document.getElementById('phrama2takenyes2').checked === true) {
+                //    pharma2takenid = "yes";
+                //} else if (document.getElementById('phrama2takenno2').checked === true) {
+                //    pharma2takenid = "no";
+                //} else {
+                //    pharma2takenid = "";
+                //}
+
+
                 // Do you currently use Hydroxyurea Desktop 
                 if (document.getElementById('hydroxyureacurrentlyyes').checked === true) {
                     hydroxyureacurrentlyid = "yes";
@@ -940,6 +1174,23 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 } else {
                     hydroxyureacurrentlyid = "";
                 }
+                // Do you currently use Pharma 1 Desktop 
+                if (document.getElementById('pharma1currentlyyes').checked === true) {
+                    pharma1currentlyid = "yes";
+                } else if (document.getElementById('pharma1currentlyno').checked === true) {
+                    pharma1currentlyid = "no";
+                } else {
+                    pharma1currentlyid = "";
+                }
+                // Do you currently use Pharma 2 Desktop 
+                if (document.getElementById('pharma2currentlyyes').checked === true) {
+                    pharma2currentlyid = "yes";
+                } else if (document.getElementById('pharma2currentlyno').checked === true) {
+                    pharma2currentlyid = "no";
+                } else {
+                    pharma2currentlyid = "";
+                }
+
                 // Do you currently use Hydroxyurea Mobile Phone
                 if (document.getElementById('hydroxyureacurrentlyyes2').checked === true) {
                     hydroxyureacurrentlyid = "yes";
@@ -949,6 +1200,25 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     hydroxyureacurrentlyid = "";
                 }
 
+                // Do you currently use Pharma 1 Mobile Phone
+                //if (document.getElementById('pharma1currentlyyes2').checked === true) {
+                //    pharma1currentlyid = "yes";
+                //} else if (document.getElementById('pharma1currentlyno2').checked === true) {
+                //    pharma1currentlyid = "no";
+                //} else {
+                //    pharma1currentlyid = "";
+                //}
+
+                // Do you currently use Pharma 2 Mobile Phone
+                //if (document.getElementById('pharma2currentlyyes2').checked === true) {
+                //    pharma2currentlyid = "yes";
+                //} else if (document.getElementById('pharma2currentlyno2').checked === true) {
+                //    pharma2currentlyid = "no";
+                //} else {
+                //    pharma2currentlyid = "";
+                //}
+
+
                 // If No: Have you taken it in the past Desktop//
                 if (document.getElementById('hydroxyureapasttakenyes').checked === true) {
                     hydroxyureapasttakenid = "yes";
@@ -957,6 +1227,24 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 } else {
                     hydroxyureapasttakenid = "";
                 }
+                // If No: Have you taken it in the past Desktop//
+                if (document.getElementById('pharma1pasttakenyes').checked === true) {
+                    pharma1pasttakenid = "yes";
+                } else if (document.getElementById('pharma1pasttakenno').checked === true) {
+                    pharma1pasttakenid = "no";
+                } else {
+                    pharma1pasttakenid = "";
+                }
+                // If No: Have you taken it in the past Desktop//
+                if (document.getElementById('pharma2pasttakenyes').checked === true) {
+                    pharma2pasttakenid = "yes";
+                } else if (document.getElementById('pharma2pasttakenno').checked === true) {
+                    pharma2pasttakenid = "no";
+                } else {
+                    pharma2pasttakenid = "";
+                }
+
+
                 // If No: Have you taken it in the past Mobile Phone//
                 if (document.getElementById('hydroxyureapasttakenyes2').checked === true) {
                     hydroxyureapasttakenid = "yes";
@@ -965,6 +1253,24 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 } else {
                     hydroxyureapasttakenid = "";
                 }
+
+                // If No: Have you taken it in the past Mobile Phone//
+                //if (document.getElementById('pharma1pasttakenyes2').checked === true) {
+                //    pharma1pasttakenid = "yes";
+                //} else if (document.getElementById('pharma1pasttakenno2').checked === true) {
+                //    pharma1pasttakenid = "no";
+                //} else {
+                //    pharma1pasttakenid = "";
+                //}
+
+                // If No: Have you taken it in the past Mobile Phone//
+                //if (document.getElementById('pharma2pasttakenyes2').checked === true) {
+                //    pharma2pasttakenid = "yes";
+                //} else if (document.getElementById('pharma2pasttakenno2').checked === true) {
+                //    pharma2pasttakenid = "no";
+                //} else {
+                //    pharma2pasttakenid = "";
+                //}
 
                 datavalue = {
                     'ClientID': document.getElementById('clientid')['value'],
@@ -1012,10 +1318,21 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     'Emercont2cellphone': document.getElementById('emercont2cellphone')['value'],
                     'SicklecelltypeID': sicklecelltypeid,
                     'Medication': document.getElementById('medication')['value'],
+                    'Medication2': document.getElementById('medication3')['value'],
+                    'Medication3': document.getElementById('medication4')['value'],
+                    'Medication4': document.getElementById('medication5')['value'],
                     'HydroxyureaheardID': hydroxyureaheardid,
                     'HydroxyureatakenID': hydroxyureatakenid,
                     'HydroxyureacurrentlyID': hydroxyureacurrentlyid,
                     'HydroxyureapasttakenID': hydroxyureapasttakenid,
+                    'Pharma1heardID': pharma1heardid,
+                    'Pharma1takenID': pharma1takenid,
+                    'Pharma1currentlyID': pharma1currentlyid,
+                    'Pharma1pasttakenID': pharma1pasttakenid,
+                    'Pharma2heardID': pharma2heardid,
+                    'Pharma2takenID': pharma2takenid,
+                    'Pharma2currentlyID': pharma2currentlyid,
+                    'Pharma2pasttakenID': pharma2pasttakenid,
                     'Globalid': globalID
                 };
             }
@@ -1084,7 +1401,12 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     document.getElementById("sicklecellother").checked = false;
 
                     document.getElementById('medication')['value'] = '';
+                    document.getElementById('medication3')['value'] = '';
+                    document.getElementById('medication4')['value'] = '';
+                    document.getElementById('medication5')['value'] = '';
 
+
+                    // this is for Hydroxyurea //
                     // Have you ever heard of Hydroxyurea //
                     document.getElementById("hydroxyureaheardyes").checked = false;
                     document.getElementById("hydroxyureaheardno").checked = false;
@@ -1106,6 +1428,56 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     document.getElementById('hydroxyureacapsulescolor')['value'] = '';
                     document.getElementById('hydroxyureadatelasttaken')['value'] = '';
                     document.getElementById('hydroxyureadatepickedup')['value'] = '';
+                    // this is for Hydroxyurea //
+
+                    // this is for Phrama 1 //
+                    // Have you ever heard of Phrama 1 //
+                    document.getElementById("pharma1heardyes").checked = false;
+                    document.getElementById("pharma1heardno").checked = false;
+
+                    // Have you ever taken Phrama 1 before //
+                    document.getElementById("pharma1takenyes").checked = false;
+                    document.getElementById("pharma1takenno").checked = false;
+
+                    // Do you currently use Phrama 1 //
+                    document.getElementById("pharma1currentlyyes").checked = false;
+                    document.getElementById("pharma1currentlyno").checked = false;
+
+                    // If No: Have you taken it in the past //
+                    document.getElementById("pharma1pasttakenyes").checked = false;
+                    document.getElementById("pharma1pasttakenno").checked = false;
+
+                    document.getElementById('pharma1dosage')['value'] = '';
+                    document.getElementById('pharma1dosageunknown')['value'] = '';
+                    document.getElementById('pharma1capsulescolor')['value'] = '';
+                    document.getElementById('pharma1datelasttaken')['value'] = '';
+                    document.getElementById('pharma1datepickedup')['value'] = '';
+                    // this is for Phrama 1 //
+
+                    // this is for Phrama 2 //
+                    // Have you ever heard of Phrama 2 //
+                    document.getElementById("pharma2heardyes").checked = false;
+                    document.getElementById("pharma2heardno").checked = false;
+
+                    // Have you ever taken Phrama 2 before //
+                    document.getElementById("pharma2takenyes").checked = false;
+                    document.getElementById("pharma2takenno").checked = false;
+
+                    // Do you currently use Phrama 2 //
+                    document.getElementById("pharma2currentlyyes").checked = false;
+                    document.getElementById("pharma2currentlyno").checked = false;
+
+                    // If No: Have you taken it in the past //
+                    document.getElementById("pharma2pasttakenyes").checked = false;
+                    document.getElementById("pharma2pasttakenno").checked = false;
+
+                    document.getElementById('pharma2dosage')['value'] = '';
+                    document.getElementById('pharma2dosageunknown')['value'] = '';
+                    document.getElementById('pharma2capsulescolor')['value'] = '';
+                    document.getElementById('pharma2datelasttaken')['value'] = '';
+                    document.getElementById('pharma2datepickedup')['value'] = '';
+                    // this is for Phrama 2 //
+
                     document.getElementById('clientid').focus();
 
                     //alert("Successfully Save");
@@ -1201,11 +1573,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 'FirstName': document.getElementById("firstname")["value"],
                 'LastName': document.getElementById("lastname")["value"],
                 'DOB': document.getElementById("dob1")["value"]
-            };
-
-            //var selected = {
-            //    'FullName': this.person
-            //};
+            };            
 
             var items = document.getElementsByName('todo[]');
             var numselected = this.$index;
@@ -1353,8 +1721,12 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                         document.getElementById("sicklecellother").checked = false;
                     }
 
-                    document.getElementById('medication')['value'] = response["0"].Medication;
+                        document.getElementById('medication')['value']  = response["0"].Medication;
+                        document.getElementById('medication3')['value'] = response["0"].Medication2;
+                        document.getElementById('medication4')['value'] = response["0"].Medication3;
+                        document.getElementById('medication5')['value'] = response["0"].Medication4;
 
+                    // this is for Hydroxyurea //
                     if (response["0"].HydroxyureaheardID === "yes") {
                         document.getElementById("hydroxyureaheardyes").checked = true;
                         document.getElementById("hydroxyureaheardno").checked = false;
@@ -1398,6 +1770,108 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                         document.getElementById("hydroxyureapasttakenyes").checked = false;
                         document.getElementById("hydroxyureapasttakenno").checked = false;
                     }
+                        document.getElementById('hydroxyureadosage')['value'] = response["0"].Hydroxyureadosage;
+                        document.getElementById('hydroxyureadosageunknown')['value'] = response["0"].Hydroxyureadosageunknown;
+                        document.getElementById('hydroxyureacapsulescolor')['value'] = response["0"].Hydroxyureacapsulescolor;
+                    // this is for Hydroxyurea //
+
+                    // this is for Pharma 1 //
+                    if (response["0"].Pharma1heardID === "yes") {
+                        document.getElementById("pharma1heardyes").checked = true;
+                        document.getElementById("pharma1heardno").checked = false;
+                    } else if (response["0"].Pharma1heardID === "no") {
+                        document.getElementById("pharma1heardyes").checked = false;
+                        document.getElementById("pharma1heardno").checked = true;
+                    } else {
+                        document.getElementById("pharma1heardyes").checked = false;
+                        document.getElementById("pharma1heardno").checked = false;
+                    }
+
+                    if (response["0"].Pharma1takenID === "yes") {
+                        document.getElementById("pharma1takenyes").checked = true;
+                        document.getElementById("pharma1takenno").checked = false;
+                    } else if (response["0"].Pharma1takenID === "no") {
+                        document.getElementById("pharma1takenyes").checked = false;
+                        document.getElementById("pharma1takenno").checked = true;
+                    } else {
+                        document.getElementById("pharma1takenyes").checked = false;
+                        document.getElementById("pharma1takenno").checked = false;
+                    }
+
+                    if (response["0"].Pharma1currentlyID === "yes") {
+                        document.getElementById("pharma1currentlyyes").checked = true;
+                        document.getElementById("pharma1currentlyno").checked = false;
+                    } else if (response["0"].Pharma1currentlyID === "no") {
+                        document.getElementById("pharma1currentlyyes").checked = false;
+                        document.getElementById("pharma1currentlyno").checked = true;
+                    } else {
+                        document.getElementById("pharma1currentlyyes").checked = false;
+                        document.getElementById("pharma1currentlyno").checked = false;
+                    }
+
+                    if (response["0"].Pharma1pasttakenID === "yes") {
+                        document.getElementById("pharma1pasttakenyes").checked = true;
+                        document.getElementById("pharma1pasttakenno").checked = false;
+                    } else if (response["0"].Pharma1pasttakenID === "no") {
+                        document.getElementById("pharma1pasttakenyes").checked = false;
+                        document.getElementById("pharma1pasttakenno").checked = true;
+                    } else {
+                        document.getElementById("pharma1pasttakenyes").checked = false;
+                        document.getElementById("pharma1pasttakenno").checked = false;
+                    }
+                        document.getElementById('pharma1dosage')['value'] = response["0"].Pharma1dosage;
+                        document.getElementById('pharma1dosageunknown')['value'] = response["0"].Pharma1dosageunknown;
+                        document.getElementById('pharma1capsulescolor')['value'] = response["0"].Pharma1capsulescolor;
+                    // this is for Pharma 1 //
+
+                    // this is for Pharma 2 //
+                    if (response["0"].Pharma2heardID === "yes") {
+                        document.getElementById("pharma2heardyes").checked = true;
+                        document.getElementById("pharma2heardno").checked = false;
+                    } else if (response["0"].Pharma2heardID === "no") {
+                        document.getElementById("pharma2heardyes").checked = false;
+                        document.getElementById("pharma2heardno").checked = true;
+                    } else {
+                        document.getElementById("pharma2heardyes").checked = false;
+                        document.getElementById("pharma2heardno").checked = false;
+                    }
+
+                    if (response["0"].Pharma2takenID === "yes") {
+                        document.getElementById("pharma2takenyes").checked = true;
+                        document.getElementById("pharma2takenno").checked = false;
+                    } else if (response["0"].Pharma2takenID === "no") {
+                        document.getElementById("pharma2takenyes").checked = false;
+                        document.getElementById("pharma2takenno").checked = true;
+                    } else {
+                        document.getElementById("pharma2takenyes").checked = false;
+                        document.getElementById("pharma2takenno").checked = false;
+                    }
+
+                    if (response["0"].Pharma2currentlyID === "yes") {
+                        document.getElementById("pharma2currentlyyes").checked = true;
+                        document.getElementById("pharma2currentlyno").checked = false;
+                    } else if (response["0"].Pharma2currentlyID === "no") {
+                        document.getElementById("pharma2currentlyyes").checked = false;
+                        document.getElementById("pharma2currentlyno").checked = true;
+                    } else {
+                        document.getElementById("pharma2currentlyyes").checked = false;
+                        document.getElementById("pharma2currentlyno").checked = false;
+                    }
+
+                    if (response["0"].Pharma2pasttakenID === "yes") {
+                        document.getElementById("pharma2pasttakenyes").checked = true;
+                        document.getElementById("pharma2pasttakenno").checked = false;
+                    } else if (response["0"].Pharma2pasttakenID === "no") {
+                        document.getElementById("pharma2pasttakenyes").checked = false;
+                        document.getElementById("pharma2pasttakenno").checked = true;
+                    } else {
+                        document.getElementById("pharma2pasttakenyes").checked = false;
+                        document.getElementById("pharma2pasttakenno").checked = false;
+                    }
+                        document.getElementById('pharma2dosage')['value'] = response["0"].Pharma2dosage;
+                        document.getElementById('pharma2dosageunknown')['value'] = response["0"].Pharma2dosageunknown;
+                        document.getElementById('pharma2capsulescolor')['value'] = response["0"].Pharma2capsulescolor;
+                    // this is for Pharma 2 //
 
                     document.getElementById('lblclientid').innerHTML = response["0"].ClientID;
 
@@ -1415,8 +1889,10 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                         document.getElementById("searching").style.visibility = "hidden";
                     } else { document.getElementById("searching").style.visibility = "visible"; }
 
-                }, function (failed) {
-                    alert("failed");
+                }, function (failed) {                    
+                    swal("Failed!", "Selection failed!", {
+                        className: "swal-title"
+                    });  
                 });
             } else {
                 if (searchoption === 3) {
@@ -1434,6 +1910,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
     }    
 
     $scope.Update = function () {
+        
      if (globalRoleName ==="Case Manager") {
          alert("You are not authorized to Update");
      } else {
@@ -1447,6 +1924,16 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
         let hydroxyureatakenid;
         let hydroxyureacurrentlyid;
         let hydroxyureapasttakenid;
+
+        let pharma1heardid;
+        let pharma1takenid;
+        let pharma1currentlyid;
+        let pharma1pasttakenid;
+
+        let pharma2heardid;
+        let pharma2takenid;
+        let pharma2currentlyid;
+        let pharma2pasttakenid;
         updatecounter = 0;
 
         // this is for client reside //
@@ -1475,27 +1962,9 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
             sicklecelltypeid = "Other";
         } else {
             sicklecelltypeid = "";
-        }
+        }         
 
-         // this is for sicklecelltype Mobile Phone//
-         //if (document.getElementById('sicklecellss2').checked === true) {
-         //    sicklecelltypeid = "SS";
-         //} else if (document.getElementById("sicklecellsc2").checked === true) {
-         //    sicklecelltypeid = "SC";
-         //} else if (document.getElementById("sicklecellThal2").checked === true) {
-         //    sicklecelltypeid = "SBThal";
-         //} else if (document.getElementById("sicklecellThal02").checked === true) {
-         //    sicklecelltypeid = "SBThal0";
-         //} else if (document.getElementById("sicklecellTraits2").checked === true) {
-         //    sicklecelltypeid = "Traits";
-         //} else if (document.getElementById("sicklecellnotsure2").checked === true) {
-         //    sicklecelltypeid = "NotSure";
-         //} else if (document.getElementById("sicklecellother2").checked === true) {
-         //    sicklecelltypeid = "Other";
-         //} else {
-         //    sicklecelltypeid = "";
-         //}
-
+        // This is for Hydroxyurea //
         // Have you ever heard of Hydroxyurea //
         if (document.getElementById('hydroxyureaheardyes').checked === true) {
             hydroxyureaheardid = "yes";
@@ -1531,7 +2000,86 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
         } else {
             hydroxyureapasttakenid = "";
         }
-        
+        // This is for Hydroxyurea //
+
+
+         // This is for Pharma 1 //
+         // Have you ever heard of Pharma 1 //
+         if (document.getElementById('pharma1heardyes').checked === true) {
+             pharma1heardid = "yes";
+         } else if (document.getElementById('pharma1heardno').checked === true) {
+             pharma1heardid = "no";
+         } else {
+             pharma1heardid = "";
+         }
+
+         // Have you ever taken Pharma 1 before //
+         if (document.getElementById('pharma1takenyes').checked === true) {
+             pharma1takenid = "yes";
+         } else if (document.getElementById('pharma1takenno').checked === true) {
+             pharma1takenid = "no";
+         } else {
+             pharma1takenid = "";
+         }
+
+         // Do you currently use Pharma 1
+         if (document.getElementById('pharma1currentlyyes').checked === true) {
+             pharma1currentlyid = "yes";
+         } else if (document.getElementById('pharma1currentlyno').checked === true) {
+             pharma1currentlyid = "no";
+         } else {
+             pharma1currentlyid = "";
+         }
+
+         // If No: Have you taken it in the past //
+         if (document.getElementById('pharma1pasttakenyes').checked === true) {
+             pharma1pasttakenid = "yes";
+         } else if (document.getElementById('pharma1pasttakenno').checked === true) {
+             pharma1pasttakenid = "no";
+         } else {
+             pharma1pasttakenid = "";
+         }
+         // This is for Pharma 1 //
+
+
+         // This is for Pharma 2 //
+         // Have you ever heard of Pharma 2 //
+         if (document.getElementById('pharma2heardyes').checked === true) {
+             pharma2heardid = "yes";
+         } else if (document.getElementById('pharma2heardno').checked === true) {
+             pharma2heardid = "no";
+         } else {
+             pharma2heardid = "";
+         }
+
+         // Have you ever taken Pharma 2 before //
+         if (document.getElementById('pharma2takenyes').checked === true) {
+             pharma2takenid = "yes";
+         } else if (document.getElementById('pharma2takenno').checked === true) {
+             pharma2takenid = "no";
+         } else {
+             pharma2takenid = "";
+         }
+
+         // Do you currently use Pharma 2
+         if (document.getElementById('pharma2currentlyyes').checked === true) {
+             pharma2currentlyid = "yes";
+         } else if (document.getElementById('pharma2currentlyno').checked === true) {
+             pharma2currentlyid = "no";
+         } else {
+             pharma2currentlyid = "";
+         }
+
+         // If No: Have you taken it in the past //
+         if (document.getElementById('pharma2pasttakenyes').checked === true) {
+             pharma2pasttakenid = "yes";
+         } else if (document.getElementById('pharma2pasttakenno').checked === true) {
+             pharma2pasttakenid = "no";
+         } else {
+             pharma2pasttakenid = "";
+         }
+         // This is for Pharma 2 //
+
         let datavalue = {
                 'Clientidx'             : lblclient, 
                 'ClientID'              : document.getElementById('clientid')['value'],
@@ -1572,22 +2120,42 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 'Guardianaddress'       : document.getElementById('guardianaddress')['value'],
                 'Guardiantel'           : document.getElementById('guardiantel')['value'],
                 'Emercont1'             : document.getElementById('emercont1')['value'],
-                'Emercont1homephon'     : document.getElementById('emercont1homephone')['value'],
+                'Emercont1homephone'    : document.getElementById('emercont1homephone')['value'],
                 'Emercont1cellphone'    : document.getElementById('emercont1cellphone')['value'],
                 'Emercont2'             : document.getElementById('emercont2')['value'],
                 'Emercont2homephone'    : document.getElementById('emercont2homephone')['value'],
                 'Emercont2cellphone'    : document.getElementById('emercont2cellphone')['value'],
                 'SicklecelltypeID'      : sicklecelltypeid,
                 'Medication'            : document.getElementById('medication')['value'],                    
+                'Medication2'           : document.getElementById('medication3')['value'],                    
+                'Medication3'           : document.getElementById('medication4')['value'],                    
+                'Medication4'           : document.getElementById('medication5')['value'],                    
                 'HydroxyureaheardID'    : hydroxyureaheardid,
                 'HydroxyureatakenID'    : hydroxyureatakenid,
                 'HydroxyureacurrentlyID': hydroxyureacurrentlyid,
                 'HydroxyureapasttakenID': hydroxyureapasttakenid,
-            };
-
+                'Hydroxyureadosage'     : document.getElementById('hydroxyureadosage')['value'],  
+                'Hydroxyureadosageunknown': document.getElementById('hydroxyureadosageunknown')['value'], 
+                'Hydroxyureacapsulescolor': document.getElementById('hydroxyureacapsulescolor')['value'], 
+                'Pharma1heardID'        : pharma1heardid,
+                'Pharma1takenID'        : pharma1takenid,
+                'Pharma1currentlyID'    : pharma1currentlyid,
+                'Pharma1pasttakenID'    : pharma1pasttakenid,
+                'Pharma1dosage'         : document.getElementById('pharma1dosage')['value'],
+                'Pharma1dosageunknown'  : document.getElementById('pharma1dosageunknown')['value'],
+                'Pharma1capsulescolor'  : document.getElementById('pharma1capsulescolor')['value'], 
+                'Pharma2heardID'        : pharma2heardid,
+                'Pharma2takenID'        : pharma2takenid,
+                'Pharma2currentlyID'    : pharma2currentlyid,
+                'Pharma2pasttakenID'    : pharma2pasttakenid,
+                'Pharma2dosage'         : document.getElementById('pharma2dosage')['value'],
+                'Pharma2dosageunknown'  : document.getElementById('pharma2dosageunknown')['value'],
+                'Pharma2capsulescolor'  : document.getElementById('pharma2capsulescolor')['value']
+         };
+            
             $http({ method: "POST", url: "/Home/Update", data: JSON.stringify(datavalue), dataType: 'json', contentType: "application/json" }).success(function (response) {
 
-             if (updatecounter===0) {
+              if (updatecounter===0) {
                     document.getElementById('lblclientid').innerHTML   = '';
                     document.getElementById('clientid')['value'] = '';
                     document.getElementById('lname')['value'] = '';
@@ -1650,8 +2218,10 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     document.getElementById("sicklecellnotsure").checked = false;
                     document.getElementById("sicklecellother").checked = false;
 
-                    document.getElementById("medication")["value"] = "";
-
+                    document.getElementById("medication")["value"]  = "";
+                    document.getElementById("medication3")["value"] = "";
+                    document.getElementById("medication4")["value"] = "";
+                    document.getElementById("medication5")["value"] = "";
 
                     // Have you ever heard of Hydroxyurea //
                     document.getElementById("hydroxyureaheardyes").checked = false;
@@ -1674,20 +2244,76 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     document.getElementById('hydroxyureacapsulescolor')['value'] = '';
                     document.getElementById('hydroxyureadatelasttaken')['value'] = '';
                     document.getElementById('hydroxyureadatepickedup')['value'] = '';
+                    //document.getElementById('hydroxyureadosageunknown')['value'] = "";
+                    //document.getElementById('hydroxyureacapsulescolor')['value'] = "";
+
+                    // this is for Phrama 1 //
+                    // Have you ever heard of Phrama 1 //
+                    document.getElementById("pharma1heardyes").checked = false;
+                    document.getElementById("pharma1heardno").checked = false;
+
+                    // Have you ever taken Phrama 1 before //
+                    document.getElementById("pharma1takenyes").checked = false;
+                    document.getElementById("pharma1takenno").checked = false;
+
+                    // Do you currently use Phrama 1 //
+                    document.getElementById("pharma1currentlyyes").checked = false;
+                    document.getElementById("pharma1currentlyno").checked = false;
+
+                    // If No: Have you taken it in the past //
+                    document.getElementById("pharma1pasttakenyes").checked = false;
+                    document.getElementById("pharma1pasttakenno").checked = false;
+
+                    document.getElementById('pharma1dosage')['value'] = '';
+                    document.getElementById('pharma1dosageunknown')['value'] = '';
+                    document.getElementById('pharma1capsulescolor')['value'] = '';
+                    document.getElementById('pharma1datelasttaken')['value'] = '';
+                    document.getElementById('pharma1datepickedup')['value'] = '';
+                    document.getElementById('pharma1dosage')['value'] = "";
+                    document.getElementById('pharma1dosageunknown')['value'] = "";
+                    document.getElementById('pharma1capsulescolor')['value'] = "";
+                    // this is for Phrama 1 //
+
+                    // this is for Phrama 2 //
+                    // Have you ever heard of Phrama 2 //
+                    document.getElementById("pharma2heardyes").checked = false;
+                    document.getElementById("pharma2heardno").checked = false;
+
+                    // Have you ever taken Phrama 2 before //
+                    document.getElementById("pharma2takenyes").checked = false;
+                    document.getElementById("pharma2takenno").checked = false;
+
+                    // Do you currently use Phrama 2 //
+                    document.getElementById("pharma2currentlyyes").checked = false;
+                    document.getElementById("pharma2currentlyno").checked = false;
+
+                    // If No: Have you taken it in the past //
+                    document.getElementById("pharma2pasttakenyes").checked = false;
+                    document.getElementById("pharma2pasttakenno").checked = false;
+
+                    document.getElementById('pharma2dosage')['value'] = '';
+                    document.getElementById('pharma2dosageunknown')['value'] = '';
+                    document.getElementById('pharma2capsulescolor')['value'] = '';
+                    document.getElementById('pharma2datelasttaken')['value'] = '';
+                    document.getElementById('pharma2datepickedup')['value'] = '';
+                    document.getElementById('pharma2dosage')['value'] = "";
+                    document.getElementById('pharma2dosageunknown')['value'] = "";
+                    document.getElementById('pharma2capsulescolor')['value'] = "";
+                    // this is for Phrama 2 //
+
                     document.getElementById('clientid').focus();
                     updatecounter = 1; 
                     //alert("Updated successfully");
                     swal("Updated!", "Updated successfully!", {
                           className: "swal-title"
-                    }); 
-                    
-             }
+                    });                     
+              }
 
             }, function (failed) {
                 swal("Failed!", "Updated Failed!", {
                     className: "swal-title"
                 }); 
-             });        
+            });        
      }
     };       
 
@@ -2933,7 +3559,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
         };
     }
             
-    if (sPage.trim() === "PatientOverview" || sPage.trim() === "patientoverview") {             
+    if (sPage.trim() === "PatientOverview" || sPage.trim() === "patientoverview") {                     
 
         $scope.buttonone = function () {
             searchoption = 3;
@@ -3228,8 +3854,8 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
 
         $scope.searchfeild = function () {
             document.getElementById("search").focus();
-        };                   
-       
+        };                           
+
         function selected() {                   
             var vrow = document.getElementById("col1").innerHTML;            
             var table = document.getElementById("myTable");
@@ -3240,8 +3866,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     return function () {
                         var cell = row.getElementsByTagName("td")[0];
                         //var id = cell.innerHTML;
-                        var id = cell.children[0].firstChild.nodeValue;
-                        //document.getElementById("information").style.display = "grid";
+                        var id = cell.children[0].firstChild.nodeValue;                        
 
                         localStorage.setItem("SelectedClientID", id);
 
@@ -3255,9 +3880,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                             if (day.length < 2) day = '0' + day;
 
                             return [year, month, day].join('-');
-                        }
-
-                        let txt = "Hello World!";
+                        }                        
 
                         var integrateClientID = localStorage.getItem("SelectedClientID");
                         let editcust = [];
@@ -3265,7 +3888,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
 
                             if (patientview[i].ClientID === undefined) {
                                 vClientID = "";
-                            } else { vClientID = patientview[i].ClientID; }
+                            } else { vClientID = patientview[i].ClientID;}
 
                             if (patientview[i].FirstName === undefined) {
                                 vFirstName = "";
@@ -3347,15 +3970,29 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                                 vmedication = "";
                             } else { vmedication = patientview[i].Medication; }
 
+                            if (patientview[i].Emercont1 === undefined) {
+                                vemercont1 = "";
+                            } else { vemercont1 = patientview[i].Emercont1; }
+
+                            if (patientview[i].Emercont1homephone === undefined) {
+                                vemercont1homephone = "";
+                            } else { vemercont1homephone = patientview[i].Emercont1homephone; }
+
+                            if (patientview[i].Emercont1cellphone === undefined) {
+                                vemercont1cellphone = "";
+                            } else { vemercont1cellphone = patientview[i].Emercont1cellphone; }
+
                             if (patientview[i].Comments === undefined) {
                                 vcomments = "";
                             } else { vcomments = patientview[i].Comments; }
+
+                            //editcust.push({ DOB: "Date Of Birth          :    " + formatDate(vDOB) });
 
                             if (patientview[i].ClientID.toString().trim() === integrateClientID.toString()) {
                                 editcust.push({ ClientID: "Client ID         :    " + vClientID });
                                 editcust.push({ FirstName: "FirstName         :    " + vFirstName });
                                 editcust.push({ LastName: "LastName          :    " + vLastName });
-                                editcust.push({ DOB: "Date Of Birth          :    " + formatDate(vDOB) });
+                                editcust.push({ DOB: "Date Of Birth          :    " + vDOB.substring(0,11) });
                                 editcust.push({ Gender: "Gender            :    " + vGender });
                                 editcust.push({ Race: "Race              :    " + vrace });
                                 editcust.push({ Ethnicity: "Ethnicity         :    " + vEthnicity });
@@ -3373,7 +4010,9 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                                 editcust.push({ CCUCase: "CCU Case        :    " + vCCUCase });
                                 editcust.push({ Specialist: "Specialist Provider        :    " + vspecialist });
                                 editcust.push({ Medication: "Medication        :    " + vmedication });
-                                editcust.push({ Comments: "Most Recent Case Note      :    " + vcomments });
+                                editcust.push({ Emercont1: "Emergency Contact        :    " + vemercont1 });
+                                editcust.push({ Homephone: "Home phone        :" + vemercont1homephone + "," + "   " + "Mobile        :" + vemercont1cellphone });
+                                editcust.push({ Comments: "Most Recent Case Note      :    " + vcomments });                                                                                      
                                 break;
                             }
                         }
@@ -3381,7 +4020,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                         var newSelect = document.createElement('select');
                         index = 0;
                         var optn = document.createElement("option");
-                        optn.style.marginLeft = "962px";
+                        optn.style.marginLeft = "975px";
                         optn.style.position = "inherit";
                         optn.style.color = "white";
                         optn.style.backgroundColor = "darkslategrey";
@@ -3391,8 +4030,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                         //optn.style.fontFamily = "Tahoma";
                         optn.onclick = close;
                         optn.innerHTML = "X";
-
-                        //document.getElementById("comments3").onmouseover = mouseout;
+                        
                         document.getElementById("comments3").onmouseleave = mouseout;
 
                         $("#comments3").empty();
@@ -3400,22 +4038,27 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
 
                         let counterlength = 0;
                         let filtered = "";
-                        let custlength = editcust[21].Comments.length;
+                        //let custlength = editcust[21].Comments.length;
+                        let custlength = editcust[23].Comments.length;
                         let counterdash = 0;
 
                         for (var i = 0; i < custlength; i++) {
-                            filtered = filtered + editcust[21].Comments[i];
+                            //filtered = filtered + editcust[21].Comments[i];
+                            filtered = filtered + editcust[23].Comments[i];
                             counterlength = counterlength + 1;
-                            if (editcust[21].Comments[i] === "-") {
+                            //if (editcust[21].Comments[i] === "-") {
+                            if (editcust[23].Comments[i] === "-") {
                                 counterdash = counterdash + 1;
 
                                 if (counterdash === 5) {
                                     break;
                                 }
+
                             }
                         }
 
-                        let filtered2 = editcust[21].Comments.toString().substring(counterlength).trim();
+                        //let filtered2 = editcust[21].Comments.toString().substring(counterlength).trim();
+                        let filtered2 = editcust[23].Comments.toString().substring(counterlength).trim();
 
                         let comment1 = "";
                         let counter = 0;
@@ -3474,12 +4117,12 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                         for (var j = 0; j < editcust.length; j++) {
                             var opt = document.createElement("option");
                             opt.value = index;
-
-                            if (j === 0) {
+                                                      
+                            if (j === 0) {                                 
                                 opt.innerHTML = editcust[j].ClientID;
                                 opt.style.marginLeft = "20px";
                                 opt.style.resize = "both";
-                                opt.style.position = "inherit";
+                                opt.style.position = "inherit"; 
                                 opt.style.color = "darkslategray";
                                 opt.style.fontWeight = 500;
                                 opt.onmouseover = move;
@@ -3649,15 +4292,32 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                                 opt.style.fontWeight = 500;
                                 opt.onclick = move;
                             } else if (j === 21) {
+                                opt.innerHTML = editcust[j].Emercont1;
+                                opt.style.marginLeft = "550px";
+                                opt.style.resize = "both";
+                                opt.style.position = "inherit";
+                                opt.style.color = "darkslategray";
+                                opt.style.fontWeight = 500;
+                                opt.onclick = move
+                            } else if (j === 22) {
+                                opt.innerHTML = editcust[j].Homephone;
+                                opt.style.marginLeft = "550px";
+                                opt.style.resize = "both";
+                                opt.style.position = "inherit";
+                                opt.style.color = "darkslategray";
+                                opt.style.fontWeight = 500;
+                                opt.onclick = move
+                            } else if (j === 23) {
                                 opt.innerHTML = filtered;
                                 opt.style.marginLeft = "20px";
-                                opt.style.marginTop = "27px";
+                                opt.style.marginTop = "22px";
                                 opt.style.position = "inherit";
-                                opt.style.color = "black";
+                                opt.style.color = "darkslategray";
                                 opt.style.fontSize = "14px";
+                                opt.style.textshadow = "1px 1px 2px #000000";
                                 opt.style.fontWeight = 900;
                                 opt.onclick = move;                            
-                            } else if (j === 22) {
+                            } else if (j === 24) {
                                 opt.innerHTML = editcust[j];
                                 opt.style.marginLeft = "20px";                                
                                 opt.style.position = "inherit";
@@ -3665,45 +4325,29 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                                 opt.style.fontSize = "14px";
                                 opt.style.fontWeight = 500;
                                 opt.onclick = move;                            
-                            } else if (j === 23) {
+                            } else if (j === 25) {
                                 opt.innerHTML = editcust[j];
                                 opt.style.marginLeft = "20px";                                
                                 opt.style.position = "inherit";
                                 opt.style.color = "black";
                                 opt.style.fontSize = "14px";
                                 opt.style.fontWeight = 500;
-                                opt.onclick = move;
-                            } else if (j === 24) {
-                                opt.innerHTML = editcust[j];
-                                opt.style.marginLeft = "20px";
-                                opt.style.position = "inherit";
-                                opt.style.color = "black";
-                                opt.style.fontWeight = 500;
-                                opt.style.fontSize = "14px";
-                                opt.onclick = move;
-                            } else if (j === 25) {
-                                opt.innerHTML = editcust[j];
-                                opt.style.marginLeft = "20px";
-                                opt.style.position = "inherit";
-                                opt.style.color = "black";
-                                opt.style.fontWeight = 500;
-                                opt.style.fontSize = "14px";
                                 opt.onclick = move;
                             } else if (j === 26) {
                                 opt.innerHTML = editcust[j];
                                 opt.style.marginLeft = "20px";
                                 opt.style.position = "inherit";
-                                opt.style.fontSize = "14px";
                                 opt.style.color = "black";
                                 opt.style.fontWeight = 500;
+                                opt.style.fontSize = "14px";
                                 opt.onclick = move;
                             } else if (j === 27) {
                                 opt.innerHTML = editcust[j];
                                 opt.style.marginLeft = "20px";
                                 opt.style.position = "inherit";
-                                opt.style.fontSize = "14px";
                                 opt.style.color = "black";
                                 opt.style.fontWeight = 500;
+                                opt.style.fontSize = "14px";
                                 opt.onclick = move;
                             } else if (j === 28) {
                                 opt.innerHTML = editcust[j];
@@ -3761,7 +4405,23 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                                 opt.style.color = "black";
                                 opt.style.fontWeight = 500;
                                 opt.onclick = move;
-                            } else if (j === 35){
+                            } else if (j === 35) {
+                                opt.innerHTML = editcust[j];
+                                opt.style.marginLeft = "20px";
+                                opt.style.position = "inherit";
+                                opt.style.fontSize = "14px";
+                                opt.style.color = "black";
+                                opt.style.fontWeight = 500;
+                                opt.onclick = move;
+                            } else if (j === 36) {
+                                opt.innerHTML = editcust[j];
+                                opt.style.marginLeft = "20px";
+                                opt.style.position = "inherit";
+                                opt.style.fontSize = "14px";
+                                opt.style.color = "black";
+                                opt.style.fontWeight = 500;
+                                opt.onclick = move;                            
+                            } else if (j === 37) {
                                 opt.innerHTML = editcust[j];
                                 opt.style.marginLeft = "20px";
                                 opt.style.position = "inherit";
@@ -3780,6 +4440,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                             index++;
                         } 
                         document.getElementById("comments3").style.visibility = "visible";
+
                         //document.getElementById("comments3").opt.focus();
                         //document.getElementById("comments3").focus();                        
                     };
@@ -3870,8 +4531,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     
                     $(table.column(i).nodes()).addClass('highlight');
                     
-                    break;
-                    //return tr;
+                    break;                    
                 }                   
             }
         };             

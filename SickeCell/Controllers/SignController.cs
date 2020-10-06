@@ -184,8 +184,8 @@ namespace modularexpress.Controllers
                             //message.From = new MailAddress("voicecontact@yahoo.com");
 
                             message.Subject = "Email Verification";
-                            message.Body = "Thank you for verifying your email address. Please click <a style=\"color:#f37946;font-weight:900;font-size:12px;\" href=\"http://localhost:59784/Home/Login2\">here</a> to login";
-                            //message.Body = "Thank you for verifying your email address. Please click <a style=\"color:darkslategray;font-weight:800;font-size:12px;\" href=\"https://sicklecell.primeshiretechnologies.com/home/login2\">here</a> to login";
+                            //message.Body = "Thank you for verifying your email address. Please click <a style=\"color:#f37946;font-weight:900;font-size:12px;\" href=\"http://localhost:59784/Home/Login2\">here</a> to login";
+                            message.Body = "Thank you for verifying your email address. Please click <a style=\"color:darkslategray;font-weight:800;font-size:12px;\" href=\"https://sicklecell.primeshiretechnologies.com/home/login2\">here</a> to login";
                             message.IsBodyHtml = true;
                             message.To.Add(datasigned.Email);
                             smtp.Send(message);
@@ -277,8 +277,8 @@ namespace modularexpress.Controllers
                             //message.From = new MailAddress("voicecontact@yahoo.com");
 
                             message.Subject = "Email Verification";
-                            message.Body = "Thank you for verifying your email address. Please click <a style=\"color:#f37946;font-weight:900;font-size:12px;\" href=\"http://localhost:59784/Home/Login2\">here</a> to login";
-                            //message.Body = "Thank you for verifying your email address. Please click <a style=\"color:darkslategray;font-weight:800;font-size:12px;\" href=\"https://sicklecell.primeshiretechnologies.com/home/login2\">here</a> to login";
+                            //message.Body = "Thank you for verifying your email address. Please click <a style=\"color:#f37946;font-weight:900;font-size:12px;\" href=\"http://localhost:59784/Home/Login2\">here</a> to login";
+                            message.Body = "Thank you for verifying your email address. Please click <a style=\"color:darkslategray;font-weight:800;font-size:12px;\" href=\"https://sicklecell.primeshiretechnologies.com/home/login2\">here</a> to login";
                             message.IsBodyHtml = true;
                             message.To.Add(datasigned.Email);
                             smtp.Send(message);
