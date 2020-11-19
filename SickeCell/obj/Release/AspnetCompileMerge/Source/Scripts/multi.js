@@ -814,6 +814,55 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
             document.getElementById("pharma2dosage").focus();
         };
         // This is for Pharma 2 //
+
+
+        // This is for Pharma 3 //
+        // Have you ever heard of Pharma 3 //
+        $scope.pharma3everheardyes = function () {
+            document.getElementById("pharma3heardyes").checked = true;
+            document.getElementById("pharma3heardno").checked = false;
+        };
+
+        $scope.pharma3everheardno = function () {
+            document.getElementById("pharma3heardyes").checked = false;
+            document.getElementById("pharma3heardno").checked = true;
+        };
+
+        // Have you ever taken Pharma 3 before //
+        $scope.pharma3evertakenyes = function () {
+            document.getElementById("pharma3takenyes").checked = true;
+            document.getElementById("pharma3takenno").checked = false;
+        };
+
+        $scope.pharma3evertakenno = function () {
+            document.getElementById("pharma3takenyes").checked = false;
+            document.getElementById("pharma3takenno").checked = true;
+        };
+
+        // Do you currently use Pharma 3 //
+        $scope.pharma3curryes = function () {
+            document.getElementById("pharma3currentlyyes").checked = true;
+            document.getElementById("pharma3currentlyno").checked = false;
+        };
+
+        $scope.pharma3currno = function () {
+            document.getElementById("pharma3currentlyyes").checked = false;
+            document.getElementById("pharma3currentlyno").checked = true;
+        };
+
+        // If No: Have you taken it in the past //
+        $scope.pharma3takenpastyes = function () {
+            document.getElementById("pharma3pasttakenyes").checked = true;
+            document.getElementById("pharma3pasttakenno").checked = false;
+            document.getElementById("pharma3dosage").focus();
+        };
+
+        $scope.pharma3takenpastno = function () {
+            document.getElementById("pharma3pasttakenyes").checked = false;
+            document.getElementById("pharma3pasttakenno").checked = true;
+            document.getElementById("pharma3dosage").focus();
+        };
+        // This is for Pharma 3 //
     }        
 
     ////// first load for Registration module//////
@@ -965,11 +1014,11 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 // This is for Pharma 1 //
 
                 // This is for Pharma 2 //
-                // Have you ever heard of Pharma 1 //
+                // Have you ever heard of Pharma 2 //
                 document.getElementById("pharma2heardyes").checked = false;
                 document.getElementById("pharma2heardno").checked = false;
 
-                // Have you ever taken Pharma 1 before //
+                // Have you ever taken Pharma 2 before //
                 document.getElementById("pharma2takenyes").checked = false;
                 document.getElementById("pharma2takenno").checked = false;
 
@@ -987,6 +1036,30 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 document.getElementById('pharma2datelasttaken')['value'] = '';
                 document.getElementById('phrama2datepickedup')['value'] = '';
                 // This is for Pharma 2 //
+
+                // This is for Pharma 3 //
+                // Have you ever heard of Pharma 3 //
+                document.getElementById("pharma3heardyes").checked = false;
+                document.getElementById("pharma3heardno").checked = false;
+
+                // Have you ever taken Pharma 3 before //
+                document.getElementById("pharma3takenyes").checked = false;
+                document.getElementById("pharma3takenno").checked = false;
+
+                // Do you currently use Hydroxyurea //
+                document.getElementById("pharma3currentlyyes").checked = false;
+                document.getElementById("pharma3currentlyno").checked = false;
+
+                // If No: Have you taken it in the past //
+                document.getElementById("pharma3pasttakenyes").checked = false;
+                document.getElementById("pharma3pasttakenno").checked = false;
+
+                document.getElementById('pharma3dosage')['value'] = '';
+                document.getElementById('pharma3dosageunknown')['value'] = '';
+                document.getElementById('pharma3capsulescolor')['value'] = '';
+                document.getElementById('pharma3datelasttaken')['value'] = '';
+                document.getElementById('phrama3datepickedup')['value'] = '';
+                // This is for Pharma 3 //
 
                 //alert("This person is already exist in the Database");
                 swal("Exist!", "This person is already exist in the Database!", {
@@ -1010,6 +1083,11 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 let pharma2takenid;
                 let pharma2currentlyid;
                 let pharma2pasttakenid;
+
+                let pharma3heardid;
+                let pharma3takenid;
+                let pharma3currentlyid;
+                let pharma3pasttakenid;
                 updatecounter = 0;
 
                 // this is for client reside //
@@ -1076,13 +1154,20 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 }
                 // Have you ever heard of Pharma 2 Desktop//
                 if (document.getElementById('pharma2heardyes').checked === true) {
-                    pharma1heardid = "yes";
+                    pharma3heardid = "yes";
                 } else if (document.getElementById('pharma2heardno').checked === true) {
                     pharma2heardid = "no";
                 } else {
                     pharma2heardid = "";
                 }
-
+                // Have you ever heard of Pharma 3 Desktop//
+                if (document.getElementById('pharma3heardyes').checked === true) {
+                    pharma3heardid = "yes";
+                } else if (document.getElementById('pharma2heardno').checked === true) {
+                    pharma3heardid = "no";
+                } else {
+                    pharma3heardid = "";
+                }
 
                 // Have you ever heard of Hydroxyurea Mobile Phone//
                 if (document.getElementById('hydroxyureaheardyes2').checked === true) {
@@ -1136,7 +1221,14 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 } else {
                     pharma2takenid = "";
                 }
-
+                // Have you ever taken Pharma 3 before Desktop//
+                if (document.getElementById('pharma3takenyes').checked === true) {
+                    pharma3takenid = "yes";
+                } else if (document.getElementById('pharma3takenno').checked === true) {
+                    pharma3takenid = "no";
+                } else {
+                    pharma3takenid = "";
+                }
 
                 // Have you ever taken Hydroxyurea before Mobile Phone//
                 if (document.getElementById('hydroxyureatakenyes2').checked === true) {
@@ -1190,6 +1282,14 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 } else {
                     pharma2currentlyid = "";
                 }
+                // Do you currently use Pharma 3 Desktop 
+                if (document.getElementById('pharma3currentlyyes').checked === true) {
+                    pharma3currentlyid = "yes";
+                } else if (document.getElementById('pharma3currentlyno').checked === true) {
+                    pharma3currentlyid = "no";
+                } else {
+                    pharma3currentlyid = "";
+                }
 
                 // Do you currently use Hydroxyurea Mobile Phone
                 if (document.getElementById('hydroxyureacurrentlyyes2').checked === true) {
@@ -1242,6 +1342,14 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     pharma2pasttakenid = "no";
                 } else {
                     pharma2pasttakenid = "";
+                }
+                // If No: Have you taken it in the past Desktop//
+                if (document.getElementById('pharma3pasttakenyes').checked === true) {
+                    pharma3pasttakenid = "yes";
+                } else if (document.getElementById('pharma3pasttakenno').checked === true) {
+                    pharma3pasttakenid = "no";
+                } else {
+                    pharma3pasttakenid = "";
                 }
 
 
@@ -1333,6 +1441,10 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     'Pharma2takenID': pharma2takenid,
                     'Pharma2currentlyID': pharma2currentlyid,
                     'Pharma2pasttakenID': pharma2pasttakenid,
+                    'Pharma3heardID': pharma3heardid,
+                    'Pharma3takenID': pharma3takenid,
+                    'Pharma3currentlyID': pharma3currentlyid,
+                    'Pharma3pasttakenID': pharma3pasttakenid,
                     'Globalid': globalID
                 };
             }
@@ -1478,6 +1590,32 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     document.getElementById('pharma2datepickedup')['value'] = '';
                     // this is for Phrama 2 //
 
+
+                    // this is for Phrama 3 //
+                    // Have you ever heard of Phrama 3 //
+                    document.getElementById("pharma3heardyes").checked = false;
+                    document.getElementById("pharma3heardno").checked = false;
+
+                    // Have you ever taken Phrama 3 before //
+                    document.getElementById("pharma3takenyes").checked = false;
+                    document.getElementById("pharma3takenno").checked = false;
+
+                    // Do you currently use Phrama 3 //
+                    document.getElementById("pharma3currentlyyes").checked = false;
+                    document.getElementById("pharma3currentlyno").checked = false;
+
+                    // If No: Have you taken it in the past //
+                    document.getElementById("pharma3pasttakenyes").checked = false;
+                    document.getElementById("pharma3pasttakenno").checked = false;
+
+                    document.getElementById('pharma3dosage')['value'] = '';
+                    document.getElementById('pharma3dosageunknown')['value'] = '';
+                    document.getElementById('pharma3capsulescolor')['value'] = '';
+                    document.getElementById('pharma3datelasttaken')['value'] = '';
+                    document.getElementById('pharma3datepickedup')['value'] = '';
+                    // this is for Phrama 3 //
+
+
                     document.getElementById('clientid').focus();
 
                     //alert("Successfully Save");
@@ -1568,7 +1706,10 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
         $scope.Clientsearch = function () {
             globalID = localStorage.getItem("vGlobalid");
 
+            let clientnum;
+            //clientnum = JSON.parse(document.getElementById("searchclient")["value"]);
             selected = {
+                'Clientseacrh': document.getElementById("searchclient")["value"],
                 'ClientID': document.getElementById("searchclient")["value"],
                 'FirstName': document.getElementById("firstname")["value"],
                 'LastName': document.getElementById("lastname")["value"],
@@ -1606,19 +1747,33 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     document.getElementById('agegroup')['value'] = response["0"].AgeGroup;
                     document.getElementById('ageat')['value'] = response["0"].Ageat;
                     document.getElementById('gender')['value'] = response["0"].Gender;
-                    document.getElementById('race')['value'] = response["0"].Race;
-                    document.getElementById('ethnicity')['value'] = response["0"].Ethnicity;
+                    document.getElementById('race')['value'] = response["0"].Race;                    
+                       if (response["0"].Ethnicity ==="Not Hispanic") {
+                           document.getElementById('ethnicity')['value'] = "Not Hispanic / Latino Origin";
+                       } else { document.getElementById('ethnicity')['value'] = response["0"].Ethnicity;}
                     document.getElementById('eligibility')['value'] = response["0"].Eligibility;
                     document.getElementById('sssno')['value'] = response["0"].SSSno;
-                    document.getElementById('countrycode')['value'] = response["0"].CountryCode;
+
+                    if (response["0"].CountryCode === "" || response["0"].CountryCode === null) {
+                        document.getElementById('countrycode')['value'] = response["0"].CountryCode2;
+                    } else { document.getElementById('countrycode')['value'] = response["0"].CountryCode;}                              
+
                     document.getElementById('countrycodedes')['value'] = response["0"].CountyCodeDescription;
-                    document.getElementById('cpnumber')['value'] = response["0"].CpNumber;
+
+                    if (response["0"].CpNumber === "" || response["0"].CpNumber === null) {
+                        document.getElementById('cpnumber')['value'] = response["0"].PhoneNumber2;
+                    } else { document.getElementById('cpnumber')['value'] = response["0"].CpNumber; }                                                
+
                     document.getElementById('sickdiag')['value'] = response["0"].SickleCellDiagnosis;
                     document.getElementById('address')['value'] = response["0"].FullStreetAddress;
                     document.getElementById('address2')['value'] = response["0"].FullStreetAddress2;
                     document.getElementById('city')['value'] = response["0"].City;
                     document.getElementById('state')['value'] = response["0"].State;
-                    document.getElementById('zipcode')['value'] = response["0"].ZipCode;
+
+                    if (response["0"].ZipCode === "" || response["0"].ZipCode === null) {
+                        document.getElementById('zipcode')['value'] = response["0"].ZipCode2;
+                    } else { document.getElementById('zipcode')['value'] = response["0"].ZipCode; }                             
+
                     document.getElementById('pmppro')['value'] = response["0"].PMPProviderName;
                     document.getElementById('email')['value'] = response["0"].Email_Address;
                     document.getElementById('speprovider')['value'] = response["0"].Specialist;
@@ -1873,6 +2028,55 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                         document.getElementById('pharma2capsulescolor')['value'] = response["0"].Pharma2capsulescolor;
                     // this is for Pharma 2 //
 
+                    // this is for Pharma 3 //
+                    if (response["0"].Pharma3heardID === "yes") {
+                        document.getElementById("pharma3heardyes").checked = true;
+                        document.getElementById("pharma3heardno").checked = false;
+                    } else if (response["0"].Pharma3heardID === "no") {
+                        document.getElementById("pharma3heardyes").checked = false;
+                        document.getElementById("pharma3heardno").checked = true;
+                    } else {
+                        document.getElementById("pharma3heardyes").checked = false;
+                        document.getElementById("pharma3heardno").checked = false;
+                    }
+
+                    if (response["0"].Pharma3takenID === "yes") {
+                        document.getElementById("pharma3takenyes").checked = true;
+                        document.getElementById("pharma3takenno").checked = false;
+                    } else if (response["0"].Pharma3takenID === "no") {
+                        document.getElementById("pharma3takenyes").checked = false;
+                        document.getElementById("pharma3takenno").checked = true;
+                    } else {
+                        document.getElementById("pharma3takenyes").checked = false;
+                        document.getElementById("pharma3takenno").checked = false;
+                    }
+
+                    if (response["0"].Pharma3currentlyID === "yes") {
+                        document.getElementById("pharma3currentlyyes").checked = true;
+                        document.getElementById("pharma3currentlyno").checked = false;
+                    } else if (response["0"].Pharma3currentlyID === "no") {
+                        document.getElementById("pharma3currentlyyes").checked = false;
+                        document.getElementById("pharma3currentlyno").checked = true;
+                    } else {
+                        document.getElementById("pharma3currentlyyes").checked = false;
+                        document.getElementById("pharma3currentlyno").checked = false;
+                    }
+
+                    if (response["0"].Pharma3pasttakenID === "yes") {
+                        document.getElementById("pharma3pasttakenyes").checked = true;
+                        document.getElementById("pharma3pasttakenno").checked = false;
+                    } else if (response["0"].Pharma3pasttakenID === "no") {
+                        document.getElementById("pharma3pasttakenyes").checked = false;
+                        document.getElementById("pharma3pasttakenno").checked = true;
+                    } else {
+                        document.getElementById("pharma3pasttakenyes").checked = false;
+                        document.getElementById("pharma3pasttakenno").checked = false;
+                    }
+                    document.getElementById('pharma3dosage')['value'] = response["0"].Pharma3dosage;
+                    document.getElementById('pharma3dosageunknown')['value'] = response["0"].Pharma3dosageunknown;
+                    document.getElementById('pharma3capsulescolor')['value'] = response["0"].Pharma3capsulescolor;
+                    // this is for Pharma 3 //
+
                     document.getElementById('lblclientid').innerHTML = response["0"].ClientID;
 
                     let stateofdata = "Edited";
@@ -1881,13 +2085,15 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     $scope.mlistshow = false;
                     $scope.inputboxshow = false;
 
-                    document.getElementById("test").style.width = "240px";
-                    document.getElementById("test").style.marginLeft = "-20px";
+                    //document.getElementById("test").style.width = "240px";
+                    //document.getElementById("test").style.marginLeft = "-20px";
 
                     var isMobile2 = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                     if (isMobile2 === true) {
-                        document.getElementById("searching").style.visibility = "hidden";
-                    } else { document.getElementById("searching").style.visibility = "visible"; }
+                        //document.getElementById("searching").style.visibility = "hidden";
+                    } else {
+                        //document.getElementById("searching").style.visibility = "visible"; 
+                    }
 
                 }, function (failed) {                    
                     swal("Failed!", "Selection failed!", {
@@ -1934,6 +2140,11 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
         let pharma2takenid;
         let pharma2currentlyid;
         let pharma2pasttakenid;
+
+        let pharma3heardid;
+        let pharma3takenid;
+        let pharma3currentlyid;
+        let pharma3pasttakenid;
         updatecounter = 0;
 
         // this is for client reside //
@@ -2080,6 +2291,44 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
          }
          // This is for Pharma 2 //
 
+
+         // This is for Pharma 3 //
+         // Have you ever heard of Pharma 3 //
+         if (document.getElementById('pharma3heardyes').checked === true) {
+             pharma3heardid = "yes";
+         } else if (document.getElementById('pharma3heardno').checked === true) {
+             pharma3heardid = "no";
+         } else {
+             pharma3heardid = "";
+         }
+
+         // Have you ever taken Pharma 2 before //
+         if (document.getElementById('pharma3takenyes').checked === true) {
+             pharma3takenid = "yes";
+         } else if (document.getElementById('pharma3takenno').checked === true) {
+             pharma3takenid = "no";
+         } else {
+             pharma3takenid = "";
+         }
+
+         // Do you currently use Pharma 3
+         if (document.getElementById('pharma3currentlyyes').checked === true) {
+             pharma3currentlyid = "yes";
+         } else if (document.getElementById('pharma3currentlyno').checked === true) {
+             pharma3currentlyid = "no";
+         } else {
+             pharma3currentlyid = "";
+         }
+         // If No: Have you taken it in the past //
+         if (document.getElementById('pharma3pasttakenyes').checked === true) {
+             pharma3pasttakenid = "yes";
+         } else if (document.getElementById('pharma3pasttakenno').checked === true) {
+             pharma3pasttakenid = "no";
+         } else {
+             pharma3pasttakenid = "";
+         }
+         // This is for Pharma 3 //
+
         let datavalue = {
                 'Clientidx'             : lblclient, 
                 'ClientID'              : document.getElementById('clientid')['value'],
@@ -2150,7 +2399,14 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 'Pharma2pasttakenID'    : pharma2pasttakenid,
                 'Pharma2dosage'         : document.getElementById('pharma2dosage')['value'],
                 'Pharma2dosageunknown'  : document.getElementById('pharma2dosageunknown')['value'],
-                'Pharma2capsulescolor'  : document.getElementById('pharma2capsulescolor')['value']
+                'Pharma2capsulescolor': document.getElementById('pharma2capsulescolor')['value'],
+                'Pharma3heardID': pharma3heardid,
+                'Pharma3takenID': pharma3takenid,
+                'Pharma3currentlyID': pharma3currentlyid,
+                'Pharma3pasttakenID': pharma3pasttakenid,
+                'Pharma3dosage': document.getElementById('pharma3dosage')['value'],
+                'Pharma3dosageunknown': document.getElementById('pharma3dosageunknown')['value'],
+                'Pharma3capsulescolor': document.getElementById('pharma3capsulescolor')['value']
          };
             
             $http({ method: "POST", url: "/Home/Update", data: JSON.stringify(datavalue), dataType: 'json', contentType: "application/json" }).success(function (response) {
@@ -2300,6 +2556,33 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     document.getElementById('pharma2dosageunknown')['value'] = "";
                     document.getElementById('pharma2capsulescolor')['value'] = "";
                     // this is for Phrama 2 //
+
+                    // this is for Phrama 3 //
+                    // Have you ever heard of Phrama 3 //
+                    document.getElementById("pharma3heardyes").checked = false;
+                    document.getElementById("pharma3heardno").checked = false;
+
+                    // Have you ever taken Phrama 3 before //
+                    document.getElementById("pharma3takenyes").checked = false;
+                    document.getElementById("pharma3takenno").checked = false;
+
+                    // Do you currently use Phrama 3 //
+                    document.getElementById("pharma3currentlyyes").checked = false;
+                    document.getElementById("pharma3currentlyno").checked = false;
+
+                    // If No: Have you taken it in the past //
+                    document.getElementById("pharma3pasttakenyes").checked = false;
+                    document.getElementById("pharma3pasttakenno").checked = false;
+
+                    document.getElementById('pharma3dosage')['value'] = '';
+                    document.getElementById('pharma3dosageunknown')['value'] = '';
+                    document.getElementById('pharma3capsulescolor')['value'] = '';
+                    document.getElementById('pharma3datelasttaken')['value'] = '';
+                    document.getElementById('pharma3datepickedup')['value'] = '';
+                    document.getElementById('pharma3dosage')['value'] = "";
+                    document.getElementById('pharma3dosageunknown')['value'] = "";
+                    document.getElementById('pharma3capsulescolor')['value'] = "";
+                    // this is for Phrama 3 //                    
 
                     document.getElementById('clientid').focus();
                     updatecounter = 1; 
@@ -3331,11 +3614,18 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
 
             $http({ method: "POST", url: "/Upload/Keep", data: JSON.stringify(keepstr), dataType: 'json', contentType: "application/json" }).success(function (response) {
 
-                alert("succeed and keep it to the database");
+                alert("Succeed and keep it to the database");
+                //swal("Succeed!", "Succeed and keep it to the database!", {
+                //    className: "swal-title"
+                //});
+
                 location.reload();
 
             }, function (failed) {
-                   alert("Keeping to the Database failed");
+                 //alert("Keeping to the Database failed");
+                swal("Failed!", "Keeping to the Database failed!", {
+                      className: "swal-title"
+                 });
             });
         };
 
@@ -3351,10 +3641,17 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
             $http({ method: "POST", url: "/Upload/Remove", data: JSON.stringify(removestr), dataType: 'json', contentType: "application/json" }).success(function (response) {
 
                 alert("Successfully deleted from Database");
+                //swal("Deleted!", "Successfully deleted from Database!", {
+                //    className: "swal-title"
+                //});  
+
                 location.reload();
 
             }, function (failed) {
-                alert("Keeping to the Database failed");
+                //alert("Keeping to the Database failed");
+                swal("Failed!", "Delete from the Database failed!", {
+                    className: "swal-title"
+                });  
             });
         };
 
@@ -3389,81 +3686,99 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
             
             if (loopcounter === 0) {
                 $http({ method: "POST", url: "/Upload/CsvExtraction", data: JSON.stringify(variablePath), dataType: 'json', contentType: "application/json" }).success(function (response) {
-                    variablePath = { 'Path': '', 'Jresult': '' };                    
-                    document.getElementById("fileUpload")["value"] = "";                    
-                    alert("CSV file was successfully uploaded");
-                    loopcounter = loopcounter + 1;
+                    console.log(response + " " + "one");
+                    var vresponse = response.substring(1,10);
+                    if (vresponse === "Violation") {
+                        swal("Duplicate!", "Some of the ClientID in your Excell file has a duplicate ClientID in the system", {
+                            className: "swal-title"
+                        });  
+                    }else {
+                        variablePath = { 'Path': '', 'Jresult': '' };
+                        document.getElementById("fileUpload")["value"] = "";
 
-                    ///////////////////////
-                    var patientdataview = {
-                        'ClientID': '0'
-                    };
-                    $.ajax({
-                        url: '/Upload/PatientView', type: 'POST', data: JSON.stringify(patientdataview), dataType: 'json', contentType: "application/json", success: function (response) {
+                        swal("Uploaded!", "CSV file was successfully uploaded!", {
+                            className: "swal-title"
+                        });
+                        loopcounter = loopcounter + 1;
 
-                            if (response !== "") {
-                                //this is for the HTML table presentation
-                                for (var i = 0; i < response.length; i++) {
+                        ///////////////////////
+                        var patientdataview = {
+                            'ClientID': '0'
+                        };
+                        $.ajax({
+                            url: '/Upload/PatientView', type: 'POST', data: JSON.stringify(patientdataview), dataType: 'json', contentType: "application/json", success: function (response) {
+                                console.log(response);
+                                if (response !== "") {
+                                    //this is for the HTML table presentation
+                                    for (var i = 0; i < response.length; i++) {
 
-                                    table = document.getElementById('myTable').insertRow(i);
-                                    cell1 = table.insertCell(0);
-                                    cell2 = table.insertCell(1);
-                                    cell3 = table.insertCell(2);
-                                    cell4 = table.insertCell(3);
-                                    cell5 = table.insertCell(4);
-                                    cell6 = table.insertCell(5);
-                                    cell7 = table.insertCell(6);
-                                    cell8 = table.insertCell(7);
+                                        table = document.getElementById('myTable').insertRow(i);
+                                        cell1 = table.insertCell(0);
+                                        cell2 = table.insertCell(1);
+                                        cell3 = table.insertCell(2);
+                                        cell4 = table.insertCell(3);
+                                        cell5 = table.insertCell(4);
+                                        cell6 = table.insertCell(5);
+                                        cell7 = table.insertCell(6);
+                                        cell8 = table.insertCell(7);
 
-                                    cell1.innerHTML = '\u00A0' + '\u00A0' + '\u00A0' + '\u00A0' + '\u00A0' + '\u00A0' + response[i].ClientID;
-                                    cell1.style.marginLeft = "5px";
-                                    cell2.innerHTML = '\u00A0' + '\u00A0' + response[i].FirstName + '  ' + response[i].LastName;
+                                        cell1.innerHTML = '\u00A0' + '\u00A0' + '\u00A0' + '\u00A0' + '\u00A0' + '\u00A0' + response[i].ClientID;
+                                        cell1.style.marginLeft = "5px";
+                                        cell2.innerHTML = '\u00A0' + '\u00A0' + response[i].FirstName + '  ' + response[i].LastName;
 
-                                    document.getElementById("col3").style.marginLeft = "-53px";
-                                    cell3.innerHTML = response[i].DOB.substring(0, 9);
+                                        document.getElementById("col3").style.marginLeft = "-53px";
+                                        cell3.innerHTML = response[i].DOB.substring(0, 10);
 
-                                    document.getElementById("col4").style.marginLeft = "-53px";
-                                    cell4.innerHTML = response[i].Gender;
+                                        document.getElementById("col4").style.marginLeft = "-53px";
+                                        cell4.innerHTML = response[i].Gender;
 
-                                    document.getElementById("col5").style.marginLeft = "5px";
+                                        document.getElementById("col5").style.marginLeft = "5px";
 
-                                    document.getElementById("col6").style.marginLeft = "-3px";
-                                    cell5.innerHTML = response[i].FullStreetAddress;
+                                        document.getElementById("col6").style.marginLeft = "-3px";
+                                        cell5.innerHTML = response[i].FullStreetAddress;
 
-                                    document.getElementById("col6").style.marginLeft = "-3px";
-                                    cell6.innerHTML = response[i].City;
+                                        document.getElementById("col6").style.marginLeft = "-3px";
+                                        cell6.innerHTML = response[i].City;
 
-                                    //document.getElementById("col7").style.marginLeft = "-53px";
-                                    cell7.innerHTML = '\u00A0' + '\u00A0' + '\u00A0' + '\u00A0' + response[i].State;
-                                    
-                                    cell8.style.color = "darkslategrey";
-                                    cell8.innerHTML = response[i].Email_Address;                                                                        
+                                        //document.getElementById("col7").style.marginLeft = "-53px";
+                                        cell7.innerHTML = '\u00A0' + '\u00A0' + '\u00A0' + '\u00A0' + response[i].State;
 
-                                    if (i === response.length) {
-                                        break;
+                                        cell8.style.color = "darkslategrey";
+                                        cell8.innerHTML = response[i].Email_Address;
+
+                                        if (i === response.length) {
+                                            break;
+                                        }
                                     }
+
+                                } else {
+                                    alert('empty');
+                                    swal("Empty!", "No records from the Database!", {
+                                        className: "swal-title"
+                                    });
                                 }
 
-                            } else {
-                                alert('empty');
-                            }                                                        
+                                document.getElementById("totnumber")["value"] = response.length;
 
-                            document.getElementById("totnumber")["value"] = response.length;
+                                document.getElementById("saveopt").style.visibility = "visible";
+                                document.getElementById("yeschoice").style.visibility = "visible";
+                                document.getElementById("checkyes").style.visibility = "visible";
+                                document.getElementById("nochoice").style.visibility = "visible";
+                                document.getElementById("checkno").style.visibility = "visible";
 
-                            document.getElementById("saveopt").style.visibility   = "visible";
-                            document.getElementById("yeschoice").style.visibility = "visible";
-                            document.getElementById("checkyes").style.visibility  = "visible";
-                            document.getElementById("nochoice").style.visibility  = "visible";
-                            document.getElementById("checkno").style.visibility   = "visible";                            
-
-                        }, error: function (response) {
-                            alert('Overview Data Posted failed');
-                        }
-                    });        
-                    ///////////////////////
-
+                            }, error: function (response) {
+                                swal("Failed!", "Overview Data Posted failed", {
+                                    className: "swal-title"
+                                });
+                            }
+                        });
+                        ///////////////////////
+                    }                    
                 }, function (failed) {
-                    alert("Access failed");
+                    //alert("Access failed");
+                    swal("Failed!", "Access failed", {
+                        className: "swal-title"
+                    });            
                 });
             }                                     
         };        

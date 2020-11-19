@@ -55,7 +55,8 @@ namespace SickeCell.Controllers
         }
 
         public class SickeCellclass
-        {
+        {            
+            public string Clientseacrh { get; set; }
             public string Clientidx { get; set; }
             public int ClientID { get; set; }
             public string LastName { get; set; }
@@ -126,6 +127,13 @@ namespace SickeCell.Controllers
             public string Pharma2dosage { get; set; }
             public string Pharma2dosageunknown { get; set; }
             public string Pharma2capsulescolor { get; set; }
+            public string Pharma3heardID { get; set; }
+            public string Pharma3takenID { get; set; }
+            public string Pharma3currentlyID { get; set; }
+            public string Pharma3pasttakenID { get; set; }
+            public string Pharma3dosage { get; set; }
+            public string Pharma3dosageunknown { get; set; }
+            public string Pharma3capsulescolor { get; set; }
             public string Globalid { get; set; }
             public string FullName { get; set; }
             public string SelectedSearch { get; set; }
@@ -135,11 +143,16 @@ namespace SickeCell.Controllers
             public string TimeStamp { get; set; }
             public DateTime Datenotescreated { get; set; }
             public int NotesID { get; set; }
-        }
+            public string PhoneNumber { get; set; }
+            public Decimal ZipCode2 { get; set; }
+            public Decimal CountryCode2 { get; set; }
+            public Decimal PhoneNumber2 { get; set; }
+        }               
 
         public class SickleCelloverviewclass
         {            
             public string Clientidx { get; set; }
+            public string Clientseacrh { get; set; }
             public int ClientID { get; set; }
             public string LastName { get; set; }
             public string FirstName { get; set; }
@@ -206,6 +219,12 @@ namespace SickeCell.Controllers
             public string Pharma2dosage { get; set; }
             public string Pharma2dosageunknown { get; set; }
             public string Pharma2capsulescolor { get; set; }
+            public string Pharma3takenID { get; set; }
+            public string Pharma3currentlyID { get; set; }
+            public string Pharma3pasttakenID { get; set; }
+            public string Pharma3dosage { get; set; }
+            public string Pharma3dosageunknown { get; set; }
+            public string Pharma3capsulescolor { get; set; }
             public string Globalid { get; set; }
             public string FullName { get; set; }
             public string SelectedSearch { get; set; }
@@ -215,7 +234,7 @@ namespace SickeCell.Controllers
             public string TimeStamp { get; set; }
             public DateTime Datenotescreated { get; set; }
             public int NotesID { get; set; }
-        }
+        }        
 
         public class Conversion
         {
@@ -689,8 +708,8 @@ namespace SickeCell.Controllers
                 long longdata = 0;
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                //command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone,  @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID";
-                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor";
+                //command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor";
+                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor, @Pharma3heardID, @Pharma3takenID, @Pharma3currentlyID, @Pharma3pasttakenID, @Pharma3dosage, @Pharma3dosageunknown, @Pharma3capsulescolor";
                 SqlCommand command2 = new SqlCommand("select top 1 ClientID from Information order by ClientID DESC", connection);
                 SqlDataReader clientidreader = command2.ExecuteReader();
 
@@ -1323,6 +1342,69 @@ namespace SickeCell.Controllers
                         {
                             command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma2capsulescolor;
                         }
+
+                        if (datavalue.Pharma3heardID == "" || datavalue.Pharma3heardID == null)
+                        {
+                            command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3heardID;
+                        }
+
+                        if (datavalue.Pharma3takenID == "" || datavalue.Pharma3takenID == null)
+                        {
+                            command.Parameters.Add("@Pharma3takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma3takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3takenID;
+                        }
+
+                        if (datavalue.Pharma3currentlyID == "" || datavalue.Pharma3currentlyID == null)
+                        {
+                            command.Parameters.Add("@Pharma3currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma3currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3currentlyID;
+                        }
+
+                        if (datavalue.Pharma3pasttakenID == "" || datavalue.Pharma3pasttakenID == null)
+                        {
+                            command.Parameters.Add("@Pharma3pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma3pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3pasttakenID;
+                        }
+
+                        if (datavalue.Pharma3dosage == "" || datavalue.Pharma3dosage == null)
+                        {
+                            command.Parameters.Add("@Pharma3dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma3dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma3dosage;
+                        }
+
+                        if (datavalue.Pharma3dosageunknown == "" || datavalue.Pharma3dosageunknown == null)
+                        {
+                            command.Parameters.Add("@Pharma3dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma3dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma3dosageunknown;
+                        }
+
+                        if (datavalue.Pharma3capsulescolor == "" || datavalue.Pharma3capsulescolor == null)
+                        {
+                            command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma3capsulescolor;
+                        }
                     }
                     clientidreader.Close();
                 }
@@ -1950,6 +2032,69 @@ namespace SickeCell.Controllers
                     {
                         command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma2capsulescolor;
                     }
+                                                         
+                    if (datavalue.Pharma3heardID == "" || datavalue.Pharma3heardID == null)
+                    {
+                        command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3heardID;
+                    }
+
+                    if (datavalue.Pharma3takenID == "" || datavalue.Pharma3takenID == null)
+                    {
+                        command.Parameters.Add("@Pharma3takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma3takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3takenID;
+                    }
+
+                    if (datavalue.Pharma3currentlyID == "" || datavalue.Pharma3currentlyID == null)
+                    {
+                        command.Parameters.Add("@Pharma3currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma3currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3currentlyID;
+                    }
+
+                    if (datavalue.Pharma3pasttakenID == "" || datavalue.Pharma3pasttakenID == null)
+                    {
+                        command.Parameters.Add("@Pharma3pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma3pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3pasttakenID;
+                    }
+
+                    if (datavalue.Pharma3dosage == "" || datavalue.Pharma3dosage == null)
+                    {
+                        command.Parameters.Add("@Pharma3dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma3dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma3dosage;
+                    }
+
+                    if (datavalue.Pharma3dosageunknown == "" || datavalue.Pharma3dosageunknown == null)
+                    {
+                        command.Parameters.Add("@Pharma3dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma3dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma3dosageunknown;
+                    }
+
+                    if (datavalue.Pharma3capsulescolor == "" || datavalue.Pharma3capsulescolor == null)
+                    {
+                        command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma3capsulescolor;
+                    }
                     clientidreader.Close();
                 }
                 command.ExecuteNonQuery();
@@ -1970,7 +2115,7 @@ namespace SickeCell.Controllers
             connection.Open();
 
             List<SickeCellclass> selecteddata = new List<SickeCellclass>();
-            SickeCellclass selecteddatagroup = new SickeCellclass();
+            SickeCellclass selecteddatagroup = new SickeCellclass();           
 
             try
             {
@@ -2059,6 +2204,13 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Pharma2dosage = searchfullnamereader["Pharma2dosage"].ToString();
                                 selecteddatagroup.Pharma2dosageunknown = searchfullnamereader["Pharma2dosageunknown"].ToString();
                                 selecteddatagroup.Pharma2capsulescolor = searchfullnamereader["Pharma2capsulescolor"].ToString();
+                                selecteddatagroup.Pharma3heardID = searchfullnamereader["Pharma3heardID"].ToString();
+                                selecteddatagroup.Pharma3takenID = searchfullnamereader["Pharma3takenID"].ToString();
+                                selecteddatagroup.Pharma3currentlyID = searchfullnamereader["Pharma3currentlyID"].ToString();
+                                selecteddatagroup.Pharma3pasttakenID = searchfullnamereader["Pharma3pasttakenID"].ToString();
+                                selecteddatagroup.Pharma3dosage = searchfullnamereader["Pharma3dosage"].ToString();
+                                selecteddatagroup.Pharma3dosageunknown = searchfullnamereader["Pharma3dosageunknown"].ToString();
+                                selecteddatagroup.Pharma3capsulescolor = searchfullnamereader["Pharma3capsulescolor"].ToString();
                                 selecteddatagroup.Comments = searchfullnamereader["Comments"].ToString();
 
                                 selecteddata.Add(selecteddatagroup);
@@ -2069,13 +2221,53 @@ namespace SickeCell.Controllers
                             }
                         }
                         else
-                        {
-                            selecteddatagroup.FirstName = "";
-                            selecteddata.Add(selecteddatagroup);
+                        {                            
+                                    searchfullnamereader.Close();                            
+                                    SqlCommand refcmd = new SqlCommand("select ClientID, FirstName, LastName, DOB, Age, AgeGroup, RACE, Gender, Ethnicity, FullStreetAddress, "+
+                                               "City, State, ZipCode, CountyCode, CountyCodeDescription, PhoneNumber, Eligibility, SickleCellDiagnosis, PMPProviderName, "+
+                                               "CCUCase, Email_Address from Reference where ClientID= '" + selected.Clientseacrh + "' ", connection);
+                                    SqlDataReader referencereader = refcmd.ExecuteReader();
+                                    if (referencereader.HasRows == true)
+                                    {
+                                         while (referencereader.Read())
+                                         {
+                                                selecteddatagroup.ClientID = Convert.ToInt32(referencereader["ClientID"].ToString());
+                                                selecteddatagroup.FirstName = referencereader["FirstName"].ToString();
+                                                selecteddatagroup.LastName = referencereader["LastName"].ToString();
+                                                selecteddatagroup.DOB = referencereader["DOB"].ToString();
+                                                selecteddatagroup.Age = referencereader["Age"].ToString();
+                                                selecteddatagroup.AgeGroup = referencereader["AgeGroup"].ToString();
+                                                selecteddatagroup.Race = referencereader["Race"].ToString();
+                                                selecteddatagroup.Gender = referencereader["Gender"].ToString();
+                                                selecteddatagroup.Ethnicity = referencereader["Ethnicity"].ToString();
+                                                selecteddatagroup.FullStreetAddress = referencereader["FullStreetAddress"].ToString();
+                                                selecteddatagroup.City = referencereader["City"].ToString();
+                                                selecteddatagroup.State = referencereader["State"].ToString();
+                                                selecteddatagroup.ZipCode2 = Convert.ToDecimal(referencereader["ZipCode"].ToString());
+                                                selecteddatagroup.CountryCode2 = Convert.ToDecimal(referencereader["CountyCode"].ToString());
+                                                selecteddatagroup.CountyCodeDescription = referencereader["CountyCodeDescription"].ToString();
+                                                selecteddatagroup.PhoneNumber2 = Convert.ToDecimal(referencereader["PhoneNumber"].ToString());
+                                                selecteddatagroup.Eligibility = referencereader["Eligibility"].ToString();
+                                                selecteddatagroup.SickleCellDiagnosis = referencereader["SickleCellDiagnosis"].ToString();
+                                                selecteddatagroup.PMPProviderName = referencereader["PMPProviderName"].ToString();
+                                                selecteddatagroup.CCUCase = referencereader["CCUCase"].ToString();
+                                                selecteddatagroup.Email_Address = referencereader["Email_Address"].ToString();
 
-                            searchfullnamereader.Close();
-                            connection.Close();
-                            return selecteddata;
+                                                selecteddata.Add(selecteddatagroup);
+
+                                                referencereader.Close();
+                                                connection.Close();                                                
+                                                return selecteddata;                                                
+                                         }                                             
+                                    }
+                                    else {
+                                          selecteddatagroup.FirstName = "";
+                                          selecteddata.Add(selecteddatagroup);
+
+                                          searchfullnamereader.Close();
+                                          connection.Close();
+                                          return selecteddata;
+                                    }                                         
                         }
                         return selecteddata;
                     }
@@ -2160,6 +2352,14 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Pharma2dosage = searchfullnamereader["Pharma2dosage"].ToString();
                                 selecteddatagroup.Pharma2dosageunknown = searchfullnamereader["Pharma2dosageunknown"].ToString();
                                 selecteddatagroup.Pharma2capsulescolor = searchfullnamereader["Pharma2capsulescolor"].ToString();
+                                selecteddatagroup.Pharma3heardID = searchfullnamereader["Pharma3heardID"].ToString();
+                                selecteddatagroup.Pharma3takenID = searchfullnamereader["Pharma3takenID"].ToString();
+                                selecteddatagroup.Pharma3currentlyID = searchfullnamereader["Pharma3currentlyID"].ToString();
+                                selecteddatagroup.Pharma3pasttakenID = searchfullnamereader["Pharma3pasttakenID"].ToString();
+                                selecteddatagroup.Pharma3dosage = searchfullnamereader["Pharma3dosage"].ToString();
+                                selecteddatagroup.Pharma3dosageunknown = searchfullnamereader["Pharma3dosageunknown"].ToString();
+                                selecteddatagroup.Pharma3capsulescolor = searchfullnamereader["Pharma3capsulescolor"].ToString();
+
                                 selecteddatagroup.Comments = searchfullnamereader["Comments"].ToString();
 
                                 selecteddata.Add(selecteddatagroup);
@@ -2186,6 +2386,8 @@ namespace SickeCell.Controllers
             catch (Exception ab)
             {
                 ab.Message.ToString();
+                selecteddatagroup.FirstName = ab.Message;
+                selecteddata.Add(selecteddatagroup);
             }
             return Json(selecteddata, JsonRequestBehavior.AllowGet);
         }
@@ -2206,7 +2408,7 @@ namespace SickeCell.Controllers
 
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor";
+                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor, @Pharma3heardID, @Pharma3takenID, @Pharma3currentlyID, @Pharma3pasttakenID, @Pharma3dosage, @Pharma3dosageunknown, @Pharma3capsulescolor";
 
                 SqlCommand searchclientid = new SqlCommand("SickeCell_Stored_Search_idx", connection);
                 searchclientid.CommandType = CommandType.StoredProcedure;
@@ -2216,6 +2418,7 @@ namespace SickeCell.Controllers
 
                 if (clientidreader.HasRows == true)
                 {
+                    ////////////////////////////////////////////////                              
                     while (clientidreader.Read())
                     {
                         strdata = clientidreader[0].ToString();
@@ -2229,7 +2432,6 @@ namespace SickeCell.Controllers
 
                         if (count == 0)
                         {
-
                             longdata = Convert.ToInt64(strdata);
                             //command.Parameters.Add("@ClientID", SqlDbType.BigInt).Value = longdata + 1;
 
@@ -2853,16 +3055,793 @@ namespace SickeCell.Controllers
                             {
                                 command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma2capsulescolor;
                             }
+
+                            if (datavalue.Pharma3heardID == "" || datavalue.Pharma3heardID == null)
+                            {
+                                command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3heardID;
+                            }
+
+                            if (datavalue.Pharma3takenID == "" || datavalue.Pharma3takenID == null)
+                            {
+                                command.Parameters.Add("@Pharma3takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma3takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3takenID;
+                            }
+
+                            if (datavalue.Pharma3currentlyID == "" || datavalue.Pharma3currentlyID == null)
+                            {
+                                command.Parameters.Add("@Pharma3currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma3currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3currentlyID;
+                            }
+
+                            if (datavalue.Pharma3pasttakenID == "" || datavalue.Pharma3pasttakenID == null)
+                            {
+                                command.Parameters.Add("@Pharma3pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma3pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3pasttakenID;
+                            }
+
+                            if (datavalue.Pharma3dosage == "" || datavalue.Pharma3dosage == null)
+                            {
+                                command.Parameters.Add("@Pharma3dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma3dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma3dosage;
+                            }
+
+                            if (datavalue.Pharma3dosageunknown == "" || datavalue.Pharma3dosageunknown == null)
+                            {
+                                command.Parameters.Add("@Pharma3dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma3dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma3dosageunknown;
+                            }
+
+                            if (datavalue.Pharma3capsulescolor == "" || datavalue.Pharma3capsulescolor == null)
+                            {
+                                command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma3capsulescolor;
+                            }
                             count = 1;
                             break;
                         }
                     }
-
+                    ////////////////////////////////////////////////                    
                 }
                 //this is ThemeableAttribute condition for the first entry
                 else
                 {
-                    clientidreader.Close();
+                    String str = "";
+                    str = datavalue.Clientidx.ToString();
+                    if (str.All(char.IsDigit))
+                    {
+                        clientidreader.Close();
+                        //command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor, @Pharma3heardID, @Pharma3takenID, @Pharma3currentlyID, @Pharma3pasttakenID, @Pharma3dosage, @Pharma3dosageunknown, @Pharma3capsulescolor";
+                        SqlCommand command2 = new SqlCommand("select top 1 ClientID from Information order by ClientID DESC", connection);
+                        SqlDataReader clientidreader2 = command2.ExecuteReader();
+                        ////////////////////////////////////////////////////////////////////////////////
+                        while (clientidreader2.Read())
+                        {
+                             strdata = clientidreader2[0].ToString();                        
+
+                            if (count == 0)
+                            {
+
+                                longdata = Convert.ToInt64(strdata);                        
+
+                                if (datavalue.ClientID == 0)
+                                {
+                                    command.Parameters.Add("@ClientID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@ClientID", SqlDbType.Int).Value = datavalue.ClientID;
+                                }
+
+                                if (datavalue.LastName == "" || datavalue.LastName == null)
+                                {
+                                    command.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = datavalue.LastName;
+                                }
+
+                                if (datavalue.FirstName == "" || datavalue.FirstName == null)
+                                {
+                                    command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = datavalue.FirstName;
+                                }
+
+                                if (datavalue.Mi == "" || datavalue.Mi == null)
+                                {
+                                    command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = datavalue.Mi;
+                                }
+
+                                if (datavalue.UniqueID == "" || datavalue.UniqueID == null)
+                                {
+                                    command.Parameters.Add("@UniqueID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@UniqueID", SqlDbType.VarChar, 50).Value = datavalue.UniqueID;
+                                }
+
+                                if (datavalue.DOB == null)
+                                {
+                                    command.Parameters.Add("@DOB", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@DOB", SqlDbType.VarChar, 50).Value = datavalue.DOB;
+                                }
+
+                                if (datavalue.Age == "" || datavalue.Age == null)
+                                {
+                                    command.Parameters.Add("@Age", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Age", SqlDbType.VarChar, 50).Value = datavalue.Age;
+                                }
+
+                                if (datavalue.AgeGroup == "" || datavalue.AgeGroup == null)
+                                {
+                                    command.Parameters.Add("@AgeGroup", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@AgeGroup", SqlDbType.VarChar, 50).Value = datavalue.AgeGroup;
+                                }
+
+                                if (datavalue.Ageat == "" || datavalue.Ageat == null)
+                                {
+                                    command.Parameters.Add("@Ageat", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Ageat", SqlDbType.VarChar, 50).Value = datavalue.Ageat;
+                                }
+
+                                if (datavalue.Gender == "" || datavalue.Gender == null)
+                                {
+                                    command.Parameters.Add("@Gender", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Gender", SqlDbType.VarChar, 50).Value = datavalue.Gender;
+                                }
+
+                                if (datavalue.Race == "" || datavalue.Race == null)
+                                {
+                                    command.Parameters.Add("@Race", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Race", SqlDbType.VarChar, 50).Value = datavalue.Race;
+                                }
+
+                                if (datavalue.Ethnicity == "" || datavalue.Ethnicity == null)
+                                {
+                                    command.Parameters.Add("@Ethnicity", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Ethnicity", SqlDbType.VarChar, 50).Value = datavalue.Ethnicity;
+                                }
+
+                                if (datavalue.SSSno == "" || datavalue.SSSno == null)
+                                {
+                                    command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = datavalue.SSSno;
+                                }
+
+                                if (datavalue.Eligibility == "" || datavalue.Eligibility == null)
+                                {
+                                    command.Parameters.Add("@Eligibility", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Eligibility", SqlDbType.VarChar, 50).Value = datavalue.Eligibility;
+                                }
+
+                                if (datavalue.CountryCode == "" || datavalue.CountryCode == null)
+                                {
+                                    command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = datavalue.CountryCode;
+                                }
+
+                                if (datavalue.CountyCodeDescription == "" || datavalue.CountyCodeDescription == null)
+                                {
+                                    command.Parameters.Add("@CountyCodeDescription", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@CountyCodeDescription", SqlDbType.VarChar, 50).Value = datavalue.CountyCodeDescription;
+                                }
+
+                                if (datavalue.CpNumber == "" || datavalue.CpNumber == null)
+                                {
+                                    command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = datavalue.CpNumber;
+                                }
+
+                                if (datavalue.SickleCellDiagnosis == "" || datavalue.SickleCellDiagnosis == null)
+                                {
+                                    command.Parameters.Add("@SickleCellDiagnosis", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@SickleCellDiagnosis", SqlDbType.VarChar, 50).Value = datavalue.SickleCellDiagnosis;
+                                }
+
+                                if (datavalue.FullStreetAddress == "" || datavalue.FullStreetAddress == null)
+                                {
+                                    command.Parameters.Add("@FullStreetAddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@FullStreetAddress", SqlDbType.VarChar, 50).Value = datavalue.FullStreetAddress;
+                                }
+
+                                if (datavalue.FullStreetAddress2 == "" || datavalue.FullStreetAddress2 == null)
+                                {
+                                    command.Parameters.Add("@FullStreetAddress2", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@FullStreetAddress2", SqlDbType.VarChar, 50).Value = datavalue.FullStreetAddress2;
+                                }
+
+                                if (datavalue.City == "" || datavalue.City == null)
+                                {
+                                    command.Parameters.Add("@City", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@City", SqlDbType.VarChar, 50).Value = datavalue.City;
+                                }
+
+                                if (datavalue.State == "" || datavalue.State == null)
+                                {
+                                    command.Parameters.Add("@State", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@State", SqlDbType.VarChar, 50).Value = datavalue.State;
+                                }
+
+                                if (datavalue.ZipCode == "" || datavalue.ZipCode == null)
+                                {
+                                    command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = datavalue.ZipCode;
+                                }
+
+                                if (datavalue.PMPProviderName == "" || datavalue.PMPProviderName == null)
+                                {
+                                    command.Parameters.Add("@PMPProviderName", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@PMPProviderName", SqlDbType.VarChar, 50).Value = datavalue.PMPProviderName;
+                                }
+
+                                if (datavalue.Specialist == "" || datavalue.Specialist == null)
+                                {
+                                    command.Parameters.Add("@Specialist", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Specialist", SqlDbType.VarChar, 50).Value = datavalue.Specialist;
+                                }
+
+                                if (datavalue.CCUCase == "" || datavalue.CCUCase == null)
+                                {
+                                    command.Parameters.Add("@CCUCase", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@CCUCase", SqlDbType.VarChar, 50).Value = datavalue.CCUCase;
+                                }
+
+                                if (datavalue.Email_Address == "" || datavalue.Email_Address == null)
+                                {
+                                    command.Parameters.Add("@Email_Address", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Email_Address", SqlDbType.VarChar, 50).Value = datavalue.Email_Address;
+                                }
+
+                                if (datavalue.ClientresideinruralID == "" || datavalue.ClientresideinruralID == null)
+                                {
+                                    command.Parameters.Add("@ClientresideinruralID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@ClientresideinruralID", SqlDbType.VarChar, 50).Value = datavalue.ClientresideinruralID;
+                                }
+
+                                if (datavalue.Nameofmother == "" || datavalue.Nameofmother == null)
+                                {
+                                    command.Parameters.Add("@Nameofmother", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Nameofmother", SqlDbType.VarChar, 50).Value = datavalue.Nameofmother;
+                                }
+
+                                if (datavalue.Motheraddress == "" || datavalue.Motheraddress == null)
+                                {
+                                    command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = datavalue.Motheraddress;
+                                }
+
+                                if (datavalue.Mothertel == "" || datavalue.Mothertel == null)
+                                {
+                                    command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = datavalue.Mothertel;
+                                }
+
+                                if (datavalue.Nameoffather == "" || datavalue.Nameoffather == null)
+                                {
+                                    command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = datavalue.Nameoffather;
+                                }
+
+                                if (datavalue.Fatheraddress == "" || datavalue.Fatheraddress == null)
+                                {
+                                    command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = datavalue.Fatheraddress;
+                                }
+
+                                if (datavalue.Fathertel == "" || datavalue.Fathertel == null)
+                                {
+                                    command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = datavalue.Fathertel;
+                                }
+
+                                if (datavalue.Nameofguardian == "" || datavalue.Nameofguardian == null)
+                                {
+                                    command.Parameters.Add("@Nameofguardian", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Nameofguardian", SqlDbType.VarChar, 50).Value = datavalue.Nameofguardian;
+                                }
+
+                                if (datavalue.Guardianaddress == "" || datavalue.Guardianaddress == null)
+                                {
+                                    command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = datavalue.Guardianaddress;
+                                }
+
+                                if (datavalue.Guardiantel == "" || datavalue.Guardiantel == null)
+                                {
+                                    command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = datavalue.Guardiantel;
+                                }
+
+                                if (datavalue.Emercont1 == "" || datavalue.Emercont1 == null)
+                                {
+                                    command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = datavalue.Emercont1;
+                                }
+
+                                if (datavalue.Emercont1homephone == "" || datavalue.Emercont1homephone == null)
+                                {
+                                    command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = datavalue.Emercont1homephone;
+                                }
+
+                                if (datavalue.Emercont1cellphone == "" || datavalue.Emercont1cellphone == null)
+                                {
+                                    command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = datavalue.Emercont1cellphone;
+                                }
+
+                                if (datavalue.Emercont2 == "" || datavalue.Emercont2 == null)
+                                {
+                                    command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = datavalue.Emercont2;
+                                }
+
+                                if (datavalue.Emercont2homephone == "" || datavalue.Emercont2homephone == null)
+                                {
+                                    command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = datavalue.Emercont2homephone;
+                                }
+
+                                if (datavalue.Emercont2cellphone == "" || datavalue.Emercont2cellphone == null)
+                                {
+                                    command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = datavalue.Emercont2cellphone;
+                                }
+
+                                if (datavalue.SicklecelltypeID == "" || datavalue.SicklecelltypeID == null)
+                                {
+                                    command.Parameters.Add("@SicklecelltypeID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@SicklecelltypeID", SqlDbType.VarChar, 50).Value = datavalue.SicklecelltypeID;
+                                }
+
+                                if (datavalue.Medication == "" || datavalue.Medication == null)
+                                {
+                                    command.Parameters.Add("@Medication", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Medication", SqlDbType.VarChar, 50).Value = datavalue.Medication;
+                                }
+
+                                if (datavalue.Medication2 == "" || datavalue.Medication2 == null)
+                                {
+                                    command.Parameters.Add("@Medication2", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Medication2", SqlDbType.VarChar, 50).Value = datavalue.Medication2;
+                                }
+
+                                if (datavalue.Medication3 == "" || datavalue.Medication3 == null)
+                                {
+                                    command.Parameters.Add("@Medication3", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Medication3", SqlDbType.VarChar, 50).Value = datavalue.Medication3;
+                                }
+
+                                if (datavalue.Medication4 == "" || datavalue.Medication4 == null)
+                                {
+                                    command.Parameters.Add("@Medication4", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Medication4", SqlDbType.VarChar, 50).Value = datavalue.Medication4;
+                                }
+
+                                if (datavalue.HydroxyureaheardID == "" || datavalue.HydroxyureaheardID == null)
+                                {
+                                    command.Parameters.Add("@HydroxyureaheardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@HydroxyureaheardID", SqlDbType.VarChar, 50).Value = datavalue.HydroxyureaheardID;
+                                }
+
+                                if (datavalue.HydroxyureatakenID == "" || datavalue.HydroxyureatakenID == null)
+                                {
+                                    command.Parameters.Add("@HydroxyureatakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@HydroxyureatakenID", SqlDbType.VarChar, 50).Value = datavalue.HydroxyureatakenID;
+                                }
+
+                                if (datavalue.HydroxyureacurrentlyID == "" || datavalue.HydroxyureacurrentlyID == null)
+                                {
+                                    command.Parameters.Add("@HydroxyureacurrentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@HydroxyureacurrentlyID", SqlDbType.VarChar, 50).Value = datavalue.HydroxyureacurrentlyID;
+                                }
+
+                                if (datavalue.HydroxyureapasttakenID == "" || datavalue.HydroxyureapasttakenID == null)
+                                {
+                                    command.Parameters.Add("@HydroxyureapasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@HydroxyureapasttakenID", SqlDbType.VarChar, 50).Value = datavalue.HydroxyureapasttakenID;
+                                }
+
+                                if (datavalue.Hydroxyureadosage == "" || datavalue.Hydroxyureadosage == null)
+                                {
+                                    command.Parameters.Add("@Hydroxyureadosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Hydroxyureadosage", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureadosage;
+                                }
+
+                                if (datavalue.Hydroxyureadosageunknown == "" || datavalue.Hydroxyureadosageunknown == null)
+                                {
+                                    command.Parameters.Add("@Hydroxyureadosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Hydroxyureadosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureadosageunknown;
+                                }
+
+                                if (datavalue.Hydroxyureacapsulescolor == "" || datavalue.Hydroxyureacapsulescolor == null)
+                                {
+                                    command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureacapsulescolor;
+                                }
+
+                                if (datavalue.Pharma1heardID == "" || datavalue.Pharma1heardID == null)
+                                {
+                                    command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1heardID;
+                                }
+
+                                if (datavalue.Pharma1takenID == "" || datavalue.Pharma1takenID == null)
+                                {
+                                    command.Parameters.Add("@Pharma1takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma1takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1takenID;
+                                }
+
+                                if (datavalue.Pharma1currentlyID == "" || datavalue.Pharma1currentlyID == null)
+                                {
+                                    command.Parameters.Add("@Pharma1currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma1currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1currentlyID;
+                                }
+
+                                if (datavalue.Pharma1pasttakenID == "" || datavalue.Pharma1pasttakenID == null)
+                                {
+                                    command.Parameters.Add("@Pharma1pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma1pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma1pasttakenID;
+                                }
+
+                                if (datavalue.Pharma1dosage == "" || datavalue.Pharma1dosage == null)
+                                {
+                                    command.Parameters.Add("@Pharma1dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma1dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma1dosage;
+                                }
+
+                                if (datavalue.Pharma1dosageunknown == "" || datavalue.Pharma1dosageunknown == null)
+                                {
+                                    command.Parameters.Add("@Pharma1dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma1dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma1dosageunknown;
+                                }
+
+                                if (datavalue.Pharma1capsulescolor == "" || datavalue.Pharma1capsulescolor == null)
+                                {
+                                    command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma1capsulescolor;
+                                }
+
+                                if (datavalue.Pharma2heardID == "" || datavalue.Pharma2heardID == null)
+                                {
+                                    command.Parameters.Add("@Pharma2heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma2heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2heardID;
+                                }
+
+                                if (datavalue.Pharma2takenID == "" || datavalue.Pharma2takenID == null)
+                                {
+                                    command.Parameters.Add("@Pharma2takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma2takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2takenID;
+                                }
+
+                                if (datavalue.Pharma2currentlyID == "" || datavalue.Pharma2currentlyID == null)
+                                {
+                                    command.Parameters.Add("@Pharma2currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma2currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2currentlyID;
+                                }
+
+                                if (datavalue.Pharma2pasttakenID == "" || datavalue.Pharma2pasttakenID == null)
+                                {
+                                    command.Parameters.Add("@Pharma2pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma2pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma2pasttakenID;
+                                }
+
+                                if (datavalue.Pharma2dosage == "" || datavalue.Pharma2dosage == null)
+                                {
+                                    command.Parameters.Add("@Pharma2dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma2dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma2dosage;
+                                }
+
+                                if (datavalue.Pharma2dosageunknown == "" || datavalue.Pharma2dosageunknown == null)
+                                {
+                                    command.Parameters.Add("@Pharma2dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma2dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma2dosageunknown;
+                                }
+
+                                if (datavalue.Pharma2capsulescolor == "" || datavalue.Pharma2capsulescolor == null)
+                                {
+                                    command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma2capsulescolor;
+                                }
+
+                                if (datavalue.Pharma3heardID == "" || datavalue.Pharma3heardID == null)
+                                {
+                                    command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3heardID;
+                                }
+
+                                if (datavalue.Pharma3takenID == "" || datavalue.Pharma3takenID == null)
+                                {
+                                    command.Parameters.Add("@Pharma3takenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma3takenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3takenID;
+                                }
+
+                                if (datavalue.Pharma3currentlyID == "" || datavalue.Pharma3currentlyID == null)
+                                {
+                                    command.Parameters.Add("@Pharma3currentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma3currentlyID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3currentlyID;
+                                }
+
+                                if (datavalue.Pharma3pasttakenID == "" || datavalue.Pharma3pasttakenID == null)
+                                {
+                                    command.Parameters.Add("@Pharma3pasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma3pasttakenID", SqlDbType.VarChar, 50).Value = datavalue.Pharma3pasttakenID;
+                                }
+
+                                if (datavalue.Pharma3dosage == "" || datavalue.Pharma3dosage == null)
+                                {
+                                    command.Parameters.Add("@Pharma3dosage", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma3dosage", SqlDbType.VarChar, 50).Value = datavalue.Pharma3dosage;
+                                }
+
+                                if (datavalue.Pharma3dosageunknown == "" || datavalue.Pharma3dosageunknown == null)
+                                {
+                                    command.Parameters.Add("@Pharma3dosageunknown", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma3dosageunknown", SqlDbType.VarChar, 50).Value = datavalue.Pharma3dosageunknown;
+                                }
+
+                                if (datavalue.Pharma3capsulescolor == "" || datavalue.Pharma3capsulescolor == null)
+                                {
+                                    command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma3capsulescolor;
+                                }
+
+                                clientidreader2.Close();
+
+                                count = 1;
+                                break;
+                            }
+                        }
+                        ////////////////////////////////////////////////////////////////////////////////
+                    }
+                    else
+                    {
+                        clientidreader.Close();
+                    }
+                    //clientidreader.Close();                    
                 }
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -2870,7 +3849,7 @@ namespace SickeCell.Controllers
             }
             catch (Exception xyz)
             {
-                xyz.ToString();
+                xyz.Message.ToString();
             }
             return Json(x);
         }
@@ -3287,6 +4266,14 @@ namespace SickeCell.Controllers
                     Integrate_Data.Pharma2dosage = clientidreader["Pharma2dosage"].ToString();
                     Integrate_Data.Pharma2dosageunknown = clientidreader["Pharma2dosageunknown"].ToString();
                     Integrate_Data.Pharma2capsulescolor = clientidreader["Pharma2capsulescolor"].ToString();
+                    Integrate_Data.Pharma3heardID = clientidreader["Pharma3heardID"].ToString();
+                    Integrate_Data.Pharma3takenID = clientidreader["Pharma3takenID"].ToString();
+                    Integrate_Data.Pharma3currentlyID = clientidreader["Pharma3currentlyID"].ToString();
+                    Integrate_Data.Pharma3pasttakenID = clientidreader["Pharma3pasttakenID"].ToString();
+                    Integrate_Data.Pharma3dosage = clientidreader["Pharma3dosage"].ToString();
+                    Integrate_Data.Pharma3dosageunknown = clientidreader["Pharma3dosageunknown"].ToString();
+                    Integrate_Data.Pharma3capsulescolor = clientidreader["Pharma3capsulescolor"].ToString();
+
                     Integrate_Data.Comments = clientidreader["Comments"].ToString();
                     listIntegrate.Add(Integrate_Data);
                 }           

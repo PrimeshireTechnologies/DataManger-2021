@@ -263,8 +263,6 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="assets\preloader\pulse.css" />
     <Content Include="assets\preloader\spinners.css" />
-    <Content Include="bin\SickeCell.dll" />
-    <Content Include="bin\SickeCell.pdb" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -285,6 +283,7 @@
     <Content Include="Content\stylingmanagecon.css" />
     <Content Include="Content\stylingpatientoverview.css" />
     <Content Include="Content\stylinguploadcsv.css" />
+    <Content Include="Images\four.png" />
     <Content Include="Images\hamburger.png" />
     <Content Include="Images\Home.png" />
     <Content Include="Images\icon\preloader.gif" />
@@ -517,9 +516,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59788</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59785/</IISUrl>
+          <IISUrl>http://localhost:59786/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:59785/</IISAppRootUrl>
+          <IISAppRootUrl>http://localhost:59786/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

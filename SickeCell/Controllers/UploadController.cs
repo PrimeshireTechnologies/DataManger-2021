@@ -23,6 +23,7 @@ using System.Globalization;
 
 using System.Net;
 using System.Runtime.Serialization;
+using System.Data.OleDb;
 
 namespace SickeCell.Controllers
 {
@@ -202,974 +203,972 @@ namespace SickeCell.Controllers
           if (variablePath.Path != null) {
           int counter = 0;   
           int counter2 = 0;   
+          string strdata = " ";
+          long longdata = 0;
             try
             {
+                connection.Open();
                 vfname = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Content/"), variablePath.Path);
-                string textXML = System.IO.File.ReadAllText(vfname);
-                var x = Json(textXML);
 
-                string[] a = new string[] { textXML };
-                b = a[0].Split(',');
-                
-                int countfilter = 0;
-                string filter = "";
-
-                for (var s = 0; s < b.Length; s++)
-                {
-                    //validate2 = Convert.ToString(b[s].Substring(b[s].Length - 4));                                 
-                    if (b[s].ToString().Length >=4)
-                    {                        
-                        validate = b[s].Substring(b[s].Length - 2);
-                    }
-                    else { validate = b[s].ToString();}
-
-                    if (validate != "\r\n" && counter < 53)
+                    //////////////////////////////////////////////////////////////////////////////////////
+                    var connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + vfname + ";Extended Properties=\"Excel 12.0;IMEX=1;HDR=NO;TypeGuessRows=0;ImportMixedTypes=Text\""; ;
+                    using (var conn = new OleDbConnection(connectionString))
                     {
-                        if (s == 0)
-                        {
-                            combine = combine + b[s].ToString();
-                        }
-                        else
-                        {                            
-                            combine = combine + "  " + b[s].ToString();
-                            listcolllected.Add(b[s].ToString());
-                        }                        
-                    }
-                    else
-                    {
-                        if (validate== "\r\n")
-                        {
-                            if (s <=53)
-                            {
-                                countfilter = b[s].ToString().Length - 2;
-                                filter = b[s].ToString().Substring(0, countfilter);
-                                listcolllected.Add(filter);
-                                listcolllected.Add("break");                                
-                            }
-                            else
-                            {
-                                countfilter = b[s].ToString().Length - 2;
-                                filter = b[s].ToString().Substring(0, countfilter);
-                                listcolllectfilter.Add(filter);
-                                //listcolllectfilter.Add("break");                               
-                            }
-                        }
-                        else
-                        {
-                            listcolllectfilter.Add(b[s]);
-                        }                        
-                    }
-                    counter = counter + 1;
-                }
-                    
-                string combination ="";
+                        conn.Open();
 
-                for (var j = 0; j < listcolllectfilter.Count; j++)
-                {                        
-                        foreach (char d in listcolllectfilter[j])
+                        var sheets = conn.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+                        using (var cmd = conn.CreateCommand())
                         {
 
-                            if (d == '"')
-                            {
-                                concat = listcolllectfilter[j].ToString() + listcolllectfilter[j + 1].ToString();
+                            DataTable dtExcelSchema;
+                            dtExcelSchema = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                            string SheetName = dtExcelSchema.Rows[0]["TABLE_NAME"].ToString();
 
-                                foreach (var l in concat)
+                            cmd.CommandText = "SELECT * From [" + SheetName + "]";
+                            var adapter = new OleDbDataAdapter(cmd);
+                            var ds = new DataSet();
+                            adapter.Fill(ds);
+
+                            int dscounter = ds.Tables[0].Rows.Count;
+                            int cnt = 1;
+
+                            foreach (DataRow dr in ds.Tables[0].Rows)
+                            {                               
+                                SqlCommand commands;
+                                commands = connection.CreateCommand();
+                                commands.CommandText = "Execute Information_Stored_Uploading @ClientID, @FirstName, @LastName, @DOB, @Age, @AgeGroup, @RACE, @Gender, @Ethnicity, " +
+                                         "@FullStreetAddress, @City, @State, @ZipCode, @CountyCode, @CountyCodeDescription, @PhoneNumber, @Eligibility, @SickleCellDiagnosis," +
+                                         "@PMPProviderName, @CCUCase, @Email_Address, @Total_Reimbursement_YTD_2020, @No_of_Paid_Inpatient_Claims, @Total_Reimbursement_for_Inpatient_Claims," +
+                                         "@No_of_Paid_Dental_Claims, @Total_Reimbursement_for_Dental_Claims, @No_of_Paid_Home_Health_Claims, @Total_Reimbursement_for_Home_Health_Claims," +
+                                         "@No_of_Paid_Professional_Claims, @Total_Reimbursement_for_Professional_Claims, @No_of_Paid_Long_term_Care_Claims, @Total_Reimbursement_for_Long_term_Care_Claims," +
+                                         "@No_of_Paid_Outpatient_Claims, @Total_Reimbursement_for_Outpatient_Claims, @No_of_Paid_Pharmacy_Claims, @Total_Reimbursement_for_Pharmacy_Claims, " +
+                                         "@No_of_Paid_Compound_Drug_Claims, @Total_Reimbursement_for_Compound_Drugs_Claims, @No_of_Paid_Crossover_Claims, @Total_Reimbursement_for_Crossover_Claims, " +
+                                         "@Adult_Day_Care, @Advanced_Practice_Nurse, @ADvantage_Home_Delivered_Meals, @Ambulatory_Surgical_Services, @Architectural_Modification, @Audiology_Services," +
+                                         "@Capitated_Services, @Chiropractic_Services, @Clinic, @Clinics_OSA_Services, @Dental, @Direct_Support, @Employee_Training_Specialist, @End_Stage_Renal_Disease," +
+                                         "@Eye_Care_and_Exams, @Eyewear, @Group_Home, @Home_Health, @Homemaker_Services, @Hospice, @ICF_ID_Services, @Inpatient_Services, @Insure_Oklahoma_ESI_Out_of_Pocket," +
+                                         "@Insure_Oklahoma_ESI_Premium, @Laboratory_Services, @Medical_Supplies_DMEPOS, @Medicare_Part_A_and_B_Buy_In_Payments, @Medicare_Part_D_Payments, " +
+                                         "@Mid_Level_Practitioner, @Nursing_Facility, @Nursing_Services, @Nutritionist_Services, @Other_Practitioner, @Outpatient_Hospital, @Personal_Care, @Physician," +
+                                         "@Podiatry, @Prescribed_Drugs, @Psychiatric_Services, @Residential_Behavior_Mgmt, @Respite_Care, @Room_and_Board, @School_Based_Services, @Self_Directed_Care," +
+                                         "@Specialized_Foster_Care_or_ID_Services, @Targeted_Case_Manager, @Therapy_Services, @Transportation_Emergency, @Transportation_Non_Emergency, @X_Ray_Services," +
+                                         "@Behavioral_Health_Services, @Community_Mental_Health, @ESI, @Uncategorized_Services, @Other, @Oxbryta, @Adakvedo, @Dual_or_Non_Dual";
+
+                                if (cnt == 7)
                                 {
-                                    if (l !='"')
-                                    {
-                                        combination = combination + l;
-                                    }
+                                    string u = "";
                                 }
-                                listcolllected2.Add(combination);
-                                j = j + 1;
-                                break;
-                            }                                                                                   
+                                if (cnt > 1 && dr[0].ToString() != "")
+                                {
+                                    if (dr[0].ToString() == "" || dr[0].ToString() == null)
+                                    {
+                                        string firstname = dr[0].ToString();
+                                        commands.Parameters.Add("@ClientID", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        string firstname = dr[0].ToString();
+                                        commands.Parameters.Add("@ClientID", SqlDbType.NVarChar, 255).Value = dr[0].ToString();
+                                    }
+
+                                    if (dr[1].ToString() == "" || dr[1].ToString() == null)
+                                    {
+                                        string firstname = dr[1].ToString();
+                                        commands.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        string firstname = dr[1].ToString();
+                                        commands.Parameters.Add("@FirstName", SqlDbType.NVarChar, 255).Value = dr[1].ToString() + "" + "."; 
+                                    }
+
+                                    if (dr[2].ToString() == "" || dr[2].ToString() == null)
+                                    {
+                                        string lastname = dr[2].ToString();
+                                        commands.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        string lastname = dr[2].ToString();
+                                        commands.Parameters.Add("@LastName", SqlDbType.NVarChar, 255).Value = dr[2].ToString();
+                                    }
+
+                                    if (dr[3].ToString() == "" || dr[3].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@DOB", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@DOB", SqlDbType.NVarChar, 255).Value = dr[3].ToString();
+                                    }
+
+                                    if (dr[4].ToString() == "" || dr[4].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Age", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Age", SqlDbType.VarChar, 50).Value = dr[4].ToString();
+                                    }
+
+                                    if (dr[5].ToString() == "" || dr[5].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@AgeGroup", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@AgeGroup", SqlDbType.NVarChar, 255).Value = dr[5].ToString();
+                                    }
+
+                                    if (dr[6].ToString() == "" || dr[6].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Race", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Race", SqlDbType.NVarChar, 255).Value = dr[6].ToString();
+                                    }
+
+                                    if (dr[7].ToString() == "" || dr[7].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Gender", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Gender", SqlDbType.NVarChar, 255).Value = dr[7].ToString();
+                                    }
+
+                                    if (dr[8].ToString() == "" || dr[8].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Ethnicity", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Ethnicity", SqlDbType.NVarChar, 255).Value = dr[8].ToString();
+                                    }
+
+                                    if (dr[9].ToString() == "" || dr[9].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@FullStreetAddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@FullStreetAddress", SqlDbType.VarChar, 50).Value = dr[9].ToString();
+                                    }
+
+                                    if (dr[10].ToString() == "" || dr[10].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@City", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@City", SqlDbType.NVarChar, 255).Value = dr[10].ToString();
+                                    }
+
+                                    if (dr[11].ToString() == "" || dr[11].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@State", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@State", SqlDbType.NVarChar, 255).Value = dr[11].ToString();
+                                    }
+
+                                    if (dr[12].ToString() == "" || dr[12].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = dr[12].ToString();
+                                    }
+
+                                    if (dr[13].ToString() == "" || dr[13].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@CountyCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@CountyCode", SqlDbType.VarChar, 50).Value = dr[13].ToString();
+                                    }
+
+                                    if (dr[14].ToString() == "" || dr[14].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@CountyCodeDescription", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@CountyCodeDescription", SqlDbType.NVarChar, 255).Value = dr[14].ToString();
+                                    }
+
+                                    if (dr[15].ToString() == "" || dr[15].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, 50).Value = dr[15].ToString();
+                                    }
+
+                                    if (dr[16].ToString() == "" || dr[16].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Eligibility", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Eligibility", SqlDbType.NVarChar, 255).Value = dr[16].ToString();
+                                    }
+
+                                    if (dr[17].ToString() == "" || dr[17].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@SickleCellDiagnosis", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@SickleCellDiagnosis", SqlDbType.NVarChar, 255).Value = dr[17].ToString();
+                                    }
+
+                                    if (dr[18].ToString() == "" || dr[18].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@PMPProviderName", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@PMPProviderName", SqlDbType.NVarChar, 255).Value = dr[18].ToString();
+                                    }
+
+                                    if (dr[19].ToString() == "" || dr[19].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@CCUCase", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@CCUCase", SqlDbType.NVarChar, 255).Value = dr[19].ToString();
+                                    }
+
+                                    if (dr[20].ToString() == "" || dr[20].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Email_Address", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Email_Address", SqlDbType.NVarChar, 255).Value = dr[20].ToString();
+                                    }
+
+                                    if (dr[21].ToString() == "" || dr[21].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_YTD_2020", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_YTD_2020", SqlDbType.VarChar, 50).Value = dr[21].ToString();
+                                    }
+
+                                    if (dr[22].ToString() == "" || dr[22].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Inpatient_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Inpatient_Claims", SqlDbType.VarChar, 50).Value = dr[22].ToString();
+                                    }
+
+                                    if (dr[23].ToString() == "" || dr[23].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Inpatient_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Inpatient_Claims", SqlDbType.VarChar, 50).Value = dr[23].ToString();
+                                    }
+
+                                    if (dr[24].ToString() == "" || dr[24].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Dental_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Dental_Claims", SqlDbType.NVarChar, 255).Value = dr[24].ToString();
+                                    }
+
+                                    if (dr[25].ToString() == "" || dr[25].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Dental_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Dental_Claims", SqlDbType.NVarChar, 255).Value = dr[25].ToString();
+                                    }
+
+                                    if (dr[26].ToString() == "" || dr[26].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Home_Health_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Home_Health_Claims", SqlDbType.VarChar, 50).Value = dr[26].ToString();
+                                    }
+
+                                    if (dr[27].ToString() == "" || dr[27].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Home_Health_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Home_Health_Claims", SqlDbType.NVarChar, 255).Value = dr[27].ToString();
+                                    }
+
+                                    if (dr[28].ToString() == "" || dr[28].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Professional_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Professional_Claims", SqlDbType.VarChar, 50).Value = dr[28].ToString();
+                                    }
+
+                                    if (dr[29].ToString() == "" || dr[29].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Professional_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Professional_Claims", SqlDbType.VarChar, 50).Value = dr[29].ToString();
+                                    }
+
+                                    if (dr[30].ToString() == "" || dr[30].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Long_term_Care_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Long_term_Care_Claims", SqlDbType.VarChar, 50).Value = dr[30].ToString();
+                                    }
+
+                                    if (dr[31].ToString() == "" || dr[31].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Long_term_Care_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Long_term_Care_Claims", SqlDbType.VarChar, 50).Value = dr[31].ToString();
+                                    }
+
+                                    if (dr[32].ToString() == "" || dr[32].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Outpatient_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Outpatient_Claims", SqlDbType.VarChar, 50).Value = dr[32].ToString();
+                                    }
+
+                                    if (dr[33].ToString() == "" || dr[33].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Outpatient_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Outpatient_Claims", SqlDbType.VarChar, 50).Value = dr[33].ToString();
+                                    }
+
+                                    if (dr[34].ToString() == "" || dr[34].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Pharmacy_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Pharmacy_Claims", SqlDbType.VarChar, 50).Value = dr[34].ToString();
+                                    }
+
+                                    if (dr[35].ToString() == "" || dr[35].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Pharmacy_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Pharmacy_Claims", SqlDbType.VarChar, 50).Value = dr[35].ToString();
+                                    }
+                                    
+                                    if (dr[36].ToString() == "" || dr[36].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Compound_Drug_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Compound_Drug_Claims", SqlDbType.NVarChar, 255).Value = dr[36].ToString();
+                                    }
+
+                                    if (dr[37].ToString() == "" || dr[37].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Compound_Drugs_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Compound_Drugs_Claims", SqlDbType.NVarChar, 255).Value = dr[37].ToString();
+                                    }
+
+                                    if (dr[38].ToString() == "" || dr[38].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Crossover_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@No_of_Paid_Crossover_Claims", SqlDbType.NVarChar, 255).Value = dr[38].ToString();
+                                    }
+
+                                    if (dr[39].ToString() == "" || dr[39].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Crossover_Claims", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Total_Reimbursement_for_Crossover_Claims", SqlDbType.NVarChar, 255).Value = dr[39].ToString();
+                                    }
+
+                                    if (dr[40].ToString() == "" || dr[40].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Adult_Day_Care", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Adult_Day_Care", SqlDbType.NVarChar, 255).Value = dr[40].ToString();
+                                    }
+
+                                    if (dr[41].ToString() == "" || dr[41].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Advanced_Practice_Nurse", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Advanced_Practice_Nurse", SqlDbType.NVarChar, 255).Value = dr[41].ToString();
+                                    }
+
+                                    if (dr[42].ToString() == "" || dr[42].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@ADvantage_Home_Delivered_Meals", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@ADvantage_Home_Delivered_Meals", SqlDbType.VarChar, 50).Value = dr[42].ToString();
+                                    }
+
+                                    if (dr[43].ToString() == "" || dr[43].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Ambulatory_Surgical_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Ambulatory_Surgical_Services", SqlDbType.VarChar, 50).Value = dr[43].ToString();
+                                    }
+
+                                    if (dr[44].ToString() == "" || dr[44].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Architectural_Modification", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Architectural_Modification", SqlDbType.NVarChar, 255).Value = dr[44].ToString();
+                                    }
+
+                                    if (dr[45].ToString() == "" || dr[45].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Audiology_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Audiology_Services", SqlDbType.VarChar, 50).Value = dr[45].ToString();
+                                    }
+
+                                    if (dr[46].ToString() == "" || dr[46].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Capitated_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Capitated_Services", SqlDbType.NVarChar, 255).Value = dr[46].ToString();
+                                    }
+
+                                    if (dr[47].ToString() == "" || dr[47].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Chiropractic_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Chiropractic_Services", SqlDbType.VarChar, 50).Value = dr[47].ToString();
+                                    }
+
+                                    if (dr[48].ToString() == "" || dr[48].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Clinic", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Clinic", SqlDbType.VarChar, 50).Value = dr[48].ToString();
+                                    }
+
+                                    if (dr[49].ToString() == "" || dr[49].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Clinics_OSA_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Clinics_OSA_Services", SqlDbType.VarChar, 50).Value = dr[49].ToString();
+                                    }                                    
+
+                                    if (dr[50].ToString() == "" || dr[50].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Dental", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Dental", SqlDbType.VarChar, 50).Value = dr[50].ToString();
+                                    }
+
+                                    if (dr[51].ToString() == "" || dr[51].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Direct_Support", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Direct_Support", SqlDbType.VarChar, 50).Value = dr[51].ToString();
+                                    }
+
+                                    if (dr[52].ToString() == "" || dr[52].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Employee_Training_Specialist", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Employee_Training_Specialist", SqlDbType.VarChar, 50).Value = dr[52].ToString();
+                                    }
+
+                                    if (dr[53].ToString() == "" || dr[53].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@End_Stage_Renal_Disease", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@End_Stage_Renal_Disease", SqlDbType.VarChar, 50).Value = dr[53].ToString();
+                                    }
+
+                                    if (dr[54].ToString() == "" || dr[54].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Eye_Care_and_Exams", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Eye_Care_and_Exams", SqlDbType.NVarChar, 255).Value = dr[54].ToString();
+                                    }
+
+                                    if (dr[55].ToString() == "" || dr[55].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Eyewear", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Eyewear", SqlDbType.VarChar, 50).Value = dr[55].ToString();
+                                    }
+
+                                    if (dr[56].ToString() == "" || dr[56].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Group_Home", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Group_Home", SqlDbType.NVarChar, 255).Value = dr[56].ToString();
+                                    }
+
+                                    if (dr[57].ToString() == "" || dr[57].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Home_Health", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Home_Health", SqlDbType.VarChar, 50).Value = dr[57].ToString();
+                                    }
+
+                                    if (dr[58].ToString() == "" || dr[58].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Homemaker_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Homemaker_Services", SqlDbType.NVarChar, 255).Value = dr[58].ToString();
+                                    }
+
+                                    if (dr[59].ToString() == "" || dr[59].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Hospice", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Hospice", SqlDbType.VarChar, 50).Value = dr[59].ToString();
+                                    }
+
+                                    if (dr[60].ToString() == "" || dr[60].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@ICF_ID_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@ICF_ID_Services", SqlDbType.NVarChar, 255).Value = dr[60].ToString();
+                                    }
+
+                                    if (dr[61].ToString() == "" || dr[61].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Inpatient_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Inpatient_Services", SqlDbType.VarChar, 50).Value = dr[61].ToString();
+                                    }
+
+                                    if (dr[62].ToString() == "" || dr[62].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Insure_Oklahoma_ESI_Out_of_Pocket", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Insure_Oklahoma_ESI_Out_of_Pocket", SqlDbType.VarChar, 50).Value = dr[62].ToString();
+                                    }
+
+                                    if (dr[63].ToString() == "" || dr[63].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Insure_Oklahoma_ESI_Premium", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Insure_Oklahoma_ESI_Premium", SqlDbType.VarChar, 50).Value = dr[63].ToString();
+                                    }
+
+                                    if (dr[64].ToString() == "" || dr[64].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Laboratory_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Laboratory_Services", SqlDbType.VarChar, 50).Value = dr[64].ToString();
+                                    }
+
+                                    if (dr[65].ToString() == "" || dr[65].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Medical_Supplies_DMEPOS", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Medical_Supplies_DMEPOS", SqlDbType.VarChar, 50).Value = dr[65].ToString();
+                                    }
+
+                                    if (dr[66].ToString() == "" || dr[66].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Medicare_Part_A_and_B_Buy_In_Payments", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Medicare_Part_A_and_B_Buy_In_Payments", SqlDbType.VarChar, 50).Value = dr[66].ToString();
+                                    }
+
+                                    if (dr[67].ToString() == "" || dr[67].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Medicare_Part_D_Payments", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Medicare_Part_D_Payments", SqlDbType.VarChar, 50).Value = dr[67].ToString();
+                                    }
+
+                                    if (dr[68].ToString() == "" || dr[68].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Mid_Level_Practitioner", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Mid_Level_Practitioner", SqlDbType.VarChar, 50).Value = dr[68].ToString();
+                                    }
+
+                                    if (dr[69].ToString() == "" || dr[69].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Nursing_Facility", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Nursing_Facility", SqlDbType.VarChar, 50).Value = dr[69].ToString();
+                                    }
+
+                                    if (dr[70].ToString() == "" || dr[70].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Nursing_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Nursing_Services", SqlDbType.VarChar, 50).Value = dr[70].ToString();
+                                    }
+
+                                    if (dr[71].ToString() == "" || dr[71].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Nutritionist_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Nutritionist_Services", SqlDbType.VarChar, 50).Value = dr[71].ToString();
+                                    }
+
+                                    if (dr[72].ToString() == "" || dr[72].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Other_Practitioner", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Other_Practitioner", SqlDbType.VarChar, 50).Value = dr[72].ToString();
+                                    }
+
+                                    if (dr[73].ToString() == "" || dr[73].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Outpatient_Hospital", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Outpatient_Hospital", SqlDbType.VarChar, 50).Value = dr[73].ToString();
+                                    }
+
+                                    if (dr[74].ToString() == "" || dr[74].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Personal_Care", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Personal_Care", SqlDbType.VarChar, 50).Value = dr[74].ToString();
+                                    }
+
+                                    if (dr[75].ToString() == "" || dr[75].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Physician", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Physician", SqlDbType.VarChar, 50).Value = dr[75].ToString();
+                                    }
+
+                                    if (dr[76].ToString() == "" || dr[76].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Podiatry", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Podiatry", SqlDbType.VarChar, 50).Value = dr[76].ToString();
+                                    }
+
+                                    if (dr[77].ToString() == "" || dr[77].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Prescribed_Drugs", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Prescribed_Drugs", SqlDbType.VarChar, 50).Value = dr[77].ToString();
+                                    }
+
+                                    if (dr[78].ToString() == "" || dr[78].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Psychiatric_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Psychiatric_Services", SqlDbType.VarChar, 50).Value = dr[78].ToString();
+                                    }
+
+                                    if (dr[79].ToString() == "" || dr[79].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Residential_Behavior_Mgmt", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Residential_Behavior_Mgmt", SqlDbType.VarChar, 50).Value = dr[79].ToString();
+                                    }
+
+                                    if (dr[80].ToString() == "" || dr[80].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Respite_Care", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Respite_Care", SqlDbType.VarChar, 50).Value = dr[80].ToString();
+                                    }                                    
+
+                                    if (dr[81].ToString() == "" || dr[81].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Room_and_Board", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Room_and_Board", SqlDbType.NVarChar, 255).Value = dr[81].ToString();
+                                    }
+
+                                    if (dr[82].ToString() == "" || dr[82].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@School_Based_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@School_Based_Services", SqlDbType.NVarChar, 255).Value = dr[82].ToString();
+                                    }
+
+                                    if (dr[83].ToString() == "" || dr[83].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Self_Directed_Care", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Self_Directed_Care", SqlDbType.NVarChar, 255).Value = dr[83].ToString();
+                                    }
+
+                                    if (dr[84].ToString() == "" || dr[84].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Specialized_Foster_Care_or_ID_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Specialized_Foster_Care_or_ID_Services", SqlDbType.NVarChar, 255).Value = dr[84].ToString();
+                                    }
+
+                                    if (dr[85].ToString() == "" || dr[85].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Targeted_Case_Manager", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Targeted_Case_Manager", SqlDbType.VarChar, 50).Value = dr[85].ToString();
+                                    }
+
+                                    if (dr[86].ToString() == "" || dr[86].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Therapy_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Therapy_Services", SqlDbType.VarChar, 50).Value = dr[86].ToString();
+                                    }
+
+                                    if (dr[87].ToString() == "" || dr[87].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Transportation_Emergency", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Transportation_Emergency", SqlDbType.VarChar, 50).Value = dr[87].ToString();
+                                    }
+
+                                    if (dr[88].ToString() == "" || dr[88].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Transportation_Non_Emergency", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Transportation_Non_Emergency", SqlDbType.NVarChar, 255).Value = dr[88].ToString();
+                                    }
+
+                                    if (dr[89].ToString() == "" || dr[89].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@X_Ray_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@X_Ray_Services", SqlDbType.VarChar, 50).Value = dr[89].ToString();
+                                    }
+
+                                    if (dr[90].ToString() == "" || dr[90].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Behavioral_Health_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Behavioral_Health_Services", SqlDbType.VarChar, 50).Value = dr[90].ToString();
+                                    }
+
+                                    if (dr[91].ToString() == "" || dr[91].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Community_Mental_Health", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Community_Mental_Health", SqlDbType.NVarChar, 255).Value = dr[91].ToString();
+                                    }
+
+                                    if (dr[92].ToString() == "" || dr[92].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@ESI", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@ESI", SqlDbType.NVarChar, 255).Value = dr[92].ToString();
+                                    }
+
+                                    if (dr[93].ToString() == "" || dr[93].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Uncategorized_Services", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Uncategorized_Services", SqlDbType.NVarChar,255).Value = dr[93].ToString();
+                                    }
+
+                                    if (dr[94].ToString() == "" || dr[94].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Other", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Other", SqlDbType.NVarChar,255).Value = dr[94].ToString();
+                                    }
+
+                                    if (dr[95].ToString() == "" || dr[95].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Oxbryta", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Oxbryta", SqlDbType.NVarChar, 255).Value = dr[95].ToString();
+                                    }
+
+                                    if (dr[96].ToString() == "" || dr[96].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Adakvedo", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Adakvedo", SqlDbType.NVarChar,255).Value = dr[96].ToString();
+                                    }
+
+                                    if (dr[97].ToString() == "" || dr[97].ToString() == null)
+                                    {
+                                        commands.Parameters.Add("@Dual_or_Non_Dual", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    }
+                                    else
+                                    {
+                                        commands.Parameters.Add("@Dual_or_Non_Dual", SqlDbType.NVarChar, 255).Value = dr[97].ToString();
+                                    }                                                                        
+                                }
+                                if (cnt > 1)
+                                {
+                                    commands.ExecuteNonQuery();
+                                }
+                                cnt = cnt + 1;
+                            }
                         }
-
-                        if (combination =="")
-                        {
-                            listcolllected2.Add(listcolllectfilter[j].ToString());
-                        }
-                        else { combination = ""; }
                     }
-
-                Console.WriteLine(listcolllected2);
-                //this is to insert into the Information table
-                string strdata = " ";
-                long longdata = 0;
-                connection.Open();     
-                                
-                for(var k = 0; k < listcolllected2.Count; k = k + 52) {
-                    
-                    SqlCommand command2 = new SqlCommand("select top 1 ClientID from Information order by ClientID DESC", connection);
-                    SqlDataReader clientidreader = command2.ExecuteReader();
-                    SqlCommand command = connection.CreateCommand();
-                    command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone,  @SicklecelltypeID, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID";
-
-                    if (clientidreader.HasRows == true)
-                    {
-                      while (clientidreader.Read())
-                      {
-                          strdata = clientidreader[0].ToString();
-                          longdata = Convert.ToInt64(strdata);
-
-                          command.Parameters.Add("@ClientID", SqlDbType.Int).Value = longdata + 1;                                                   
-
-                          if (listcolllected2[k] == "" || listcolllected2[k] == null)
-                          {
-                                string firstname = listcolllected2[k + 1].ToString();
-                                command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = DBNull.Value;                                
-                          }
-                          else
-                          {
-                                string firstname = listcolllected2[k + 1].ToString();
-                                command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = listcolllected2[k];                                
-                          }
-
-                          if (listcolllected2[k + 1] == "" || listcolllected2[k + 1] == null)
-                          {
-                                string lastname = listcolllected2[k + 2].ToString();
-                                command.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = DBNull.Value;                                
-                          }
-                          else
-                          {
-                                string lastname = listcolllected2[k + 2].ToString();
-                                command.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = listcolllected2[k + 1];                                
-                          }
-
-                          if (listcolllected2[k + 2] == "" || listcolllected2[k + 2] == null)
-                          {
-                                command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = listcolllected2[k + 2];
-                          }
-
-                          if (listcolllected2[k + 3] == "" || listcolllected2[k + 3] == null)
-                          {
-                                command.Parameters.Add("@UniqueID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@UniqueID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 3];
-                          }
-
-                          if (listcolllected2[k + 4] == "" || listcolllected2[k + 4] == null)
-                          {
-                                command.Parameters.Add("@DOB", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@DOB", SqlDbType.VarChar, 50).Value = listcolllected2[k + 4];
-                          }
-
-                          if (listcolllected2[k + 5] == "" || listcolllected2[k + 5] == null)
-                          {
-                                command.Parameters.Add("@Age", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@Age", SqlDbType.VarChar, 50).Value = listcolllected2[k + 5];
-                          }
-
-                          if (listcolllected2[k + 6] == "" || listcolllected2[k + 6] == null)
-                          {
-                                command.Parameters.Add("@AgeGroup", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@AgeGroup", SqlDbType.VarChar, 50).Value = listcolllected2[k + 6];
-                          }
-
-                          if (listcolllected2[k + 7] == "" || listcolllected2[k + 7] == null)
-                          {
-                                command.Parameters.Add("@Ageat", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@Ageat", SqlDbType.VarChar, 50).Value = listcolllected2[k + 7];
-                          }
-
-                          if (listcolllected2[k + 8] == "" || listcolllected2[k + 8] == null)
-                          {
-                                command.Parameters.Add("@Gender", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@Gender", SqlDbType.VarChar, 50).Value = listcolllected2[k + 8];
-                          }
-
-                          if (listcolllected2[k + 9] == "" || listcolllected2[k + 9] == null)
-                          {
-                                command.Parameters.Add("@Race", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@Race", SqlDbType.VarChar, 50).Value = listcolllected2[k + 9];
-                          }
-
-                          if (listcolllected2[k + 10] == "" || listcolllected2[k + 10] == null)
-                          {
-                                command.Parameters.Add("@Ethnicity", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@Ethnicity", SqlDbType.VarChar, 50).Value = listcolllected2[k + 10];
-                          }
-
-                          if (listcolllected2[k + 11] == "" || listcolllected2[k + 11] == null)
-                          {
-                                command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = listcolllected2[k + 11];
-                          }
-
-                          if (listcolllected2[k + 12] == "" || listcolllected2[k + 12] == null)
-                          {
-                                command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = listcolllected2[k + 12];
-                          }
-
-                          if (listcolllected2[k + 13] == "" || listcolllected2[k + 13] == null)
-                          {
-                                command.Parameters.Add("@FullStreetAddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@FullStreetAddress", SqlDbType.VarChar, 50).Value = listcolllected2[k + 13];
-                          }                          
-
-                          if (listcolllected2[k + 14] == "" || listcolllected2[k + 14] == null)
-                          {
-                                command.Parameters.Add("@CountyCodeDescription", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@CountyCodeDescription", SqlDbType.VarChar, 50).Value = listcolllected2[k + 14];
-                          }                          
-
-                          if (listcolllected2[k + 15] == "" || listcolllected2[k + 15] == null)
-                          {
-                                command.Parameters.Add("@City", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@City", SqlDbType.VarChar, 50).Value = listcolllected2[k + 15];
-                          }
-
-                          if (listcolllected2[k + 16] == "" || listcolllected2[k + 16] == null)
-                          {
-                                command.Parameters.Add("@State", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                                command.Parameters.Add("@State", SqlDbType.VarChar, 50).Value = listcolllected2[k + 16];
-                          }
-
-                          if (listcolllected2[k + 17] == "" || listcolllected2[k + 17] == null)
-                          {
-                            command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = listcolllected2[k + 17];
-                          }
-
-                          if (listcolllected2[k + 18] == "" || listcolllected2[k + 18] == null)
-                          {
-                            command.Parameters.Add("@FullStreetAddress2", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@FullStreetAddress2", SqlDbType.VarChar, 50).Value = listcolllected2[k + 18];
-                          }                          
-
-                          if (listcolllected2[k + 19] == "" || listcolllected2[k + 19] == null)
-                          {
-                            command.Parameters.Add("@Eligibility", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Eligibility", SqlDbType.VarChar, 50).Value = listcolllected2[k + 19];
-                          }
-
-                          if (listcolllected2[k + 20] == "" || listcolllected2[k + 20] == null)
-                          {
-                             command.Parameters.Add("@SickleCellDiagnosis", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                             command.Parameters.Add("@SickleCellDiagnosis", SqlDbType.VarChar, 50).Value = listcolllected2[k + 20];
-                          }
-
-                          if (listcolllected2[k + 21] == "" || listcolllected2[k + 21] == null)
-                          {
-                            command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = listcolllected2[k + 21];
-                          }
-
-                          if (listcolllected2[k + 22] == "" || listcolllected2[k + 22] == null)
-                          {
-                            command.Parameters.Add("@PMPProviderName", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@PMPProviderName", SqlDbType.VarChar, 50).Value = listcolllected2[k + 22];
-                          }
-
-                          if (listcolllected2[k + 23] == "" || listcolllected2[k + 23] == null)
-                          {
-                            command.Parameters.Add("@CCUCase", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@CCUCase", SqlDbType.VarChar, 50).Value = listcolllected2[k + 23];
-                          }
-
-                          if (listcolllected2[k + 24] == "" || listcolllected2[k + 24] == null)
-                          {
-                             command.Parameters.Add("@ClientresideinruralID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                             command.Parameters.Add("@ClientresideinruralID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 24];
-                          }
-
-                          if (listcolllected2[k + 25] == "" || listcolllected2[k + 25] == null)
-                          {
-                            command.Parameters.Add("@Email_Address", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Email_Address", SqlDbType.VarChar, 50).Value = listcolllected2[k + 25] + "" + ".";
-                          }                          
-
-                          if (listcolllected2[k + 26] == "" || listcolllected2[k + 26] == null)
-                          {
-                            command.Parameters.Add("@Nameofmother", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Nameofmother", SqlDbType.VarChar, 50).Value = listcolllected2[k + 26];
-                          }
-
-                          if (listcolllected2[k + 27] == "" || listcolllected2[k + 27] == null)
-                          {
-                            command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = listcolllected2[k + 27];
-                          }
-
-                          if (listcolllected2[k + 28] == "" || listcolllected2[k + 28] == null)
-                          {
-                            command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = listcolllected2[k + 28];
-                          }
-
-                          if (listcolllected2[k + 29] == "" || listcolllected2[k + 29] == null)
-                          {
-                            command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = listcolllected2[k + 29];
-                          }
-
-                          if (listcolllected2[k + 30] == "" || listcolllected2[k + 30] == null)
-                          {
-                            command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = listcolllected2[k + 30];
-                          }
-
-                          if (listcolllected2[k + 31] == "" || listcolllected2[k + 31] == null)
-                          {
-                            command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = listcolllected2[k + 31];
-                          }
-
-                          if (listcolllected2[k + 32] == "" || listcolllected2[k + 32] == null)
-                          {
-                            command.Parameters.Add("@Nameofguardian", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Nameofguardian", SqlDbType.VarChar, 50).Value = listcolllected2[k + 32];
-                          }
-
-                          if (listcolllected2[k + 33] == "" || listcolllected2[k + 33] == null)
-                          {
-                            command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = listcolllected2[k + 33];
-                          }
-
-                          if (listcolllected2[k + 34] == "" || listcolllected2[k + 34] == null)
-                          {
-                            command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = listcolllected2[k + 34];
-                          }
-
-                          if (listcolllected2[k + 35] == "" || listcolllected2[k + 35] == null)
-                          {
-                            command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = listcolllected2[k + 35];
-                          }
-
-                          if (listcolllected2[k + 36] == "" || listcolllected2[k + 36] == null)
-                          {
-                            command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = listcolllected2[k + 36];
-                          }
-
-                          if (listcolllected2[k + 37] == "" || listcolllected2[k + 37] == null)
-                          {
-                            command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = listcolllected2[k + 37];
-                          }
-
-                          if (listcolllected2[k + 38] == "" || listcolllected2[k + 38] == null)
-                          {
-                            command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = listcolllected2[k + 38];
-                          }
-
-                          if (listcolllected2[k + 39] == "" || listcolllected2[k + 39] == null)
-                          {
-                            command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = listcolllected2[k + 39];
-                          }
-
-                          if (listcolllected2[k + 40] == "" || listcolllected2[k + 40] == null)
-                          {
-                            command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = listcolllected2[k + 40];
-                          }
-
-                          if (listcolllected2[k + 41] == "" || listcolllected2[k + 41] == null)
-                          {
-                            command.Parameters.Add("@SicklecelltypeID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@SicklecelltypeID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 41];
-                          }
-
-                          if (listcolllected2[k + 42] == "" || listcolllected2[k + 42] == null)
-                          {
-                            command.Parameters.Add("@HydroxyureaheardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@HydroxyureaheardID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 42];
-                          }
-
-                          if (listcolllected2[k + 43] == "" || listcolllected2[k + 43] == null)
-                          {
-                            command.Parameters.Add("@HydroxyureatakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@HydroxyureatakenID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 43];
-                          }
-
-                          if (listcolllected2[k + 44] == "" || listcolllected2[k + 44] == null)
-                          {
-                            command.Parameters.Add("@HydroxyureacurrentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@HydroxyureacurrentlyID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 44];
-                          }
-
-                          if (listcolllected2[k + 45] == "" || listcolllected2[k + 45] == null)
-                          {
-                            command.Parameters.Add("@HydroxyureapasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                          }
-                          else
-                          {
-                            command.Parameters.Add("@HydroxyureapasttakenID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 45];
-                          }
-                      }                      
-                    }
-                    //this is ThemeableAttribute condition for the first entry
-                    else
-                    {
-                            command.Parameters.Add("@ClientID", SqlDbType.Int).Value = longdata + 1;
-
-                            if (listcolllected2[k] == "" || listcolllected2[k] == null)
-                            {
-                                string firstname = listcolllected2[k + 1].ToString();
-                                command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                string firstname = listcolllected2[k + 1].ToString();
-                                command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = listcolllected2[k];
-                            }
-
-                            if (listcolllected2[k + 1] == "" || listcolllected2[k + 1] == null)
-                            {
-                                string lastname = listcolllected2[k + 2].ToString();
-                                command.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                string lastname = listcolllected2[k + 2].ToString();
-                                command.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = listcolllected2[k + 1];
-                            }
-
-                            if (listcolllected2[k + 2] == "" || listcolllected2[k + 2] == null)
-                            {
-                                command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = listcolllected2[k + 2];
-                            }
-
-                            if (listcolllected2[k + 3] == "" || listcolllected2[k + 3] == null)
-                            {
-                                command.Parameters.Add("@UniqueID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@UniqueID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 3];
-                            }
-
-                            if (listcolllected2[k + 4] == "" || listcolllected2[k + 4] == null)
-                            {
-                                command.Parameters.Add("@DOB", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@DOB", SqlDbType.VarChar, 50).Value = listcolllected2[k + 4];
-                            }
-
-                            if (listcolllected2[k + 5] == "" || listcolllected2[k + 5] == null)
-                            {
-                                command.Parameters.Add("@Age", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Age", SqlDbType.VarChar, 50).Value = listcolllected2[k + 5];
-                            }
-
-                            if (listcolllected2[k + 6] == "" || listcolllected2[k + 6] == null)
-                            {
-                                command.Parameters.Add("@AgeGroup", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@AgeGroup", SqlDbType.VarChar, 50).Value = listcolllected2[k + 6];
-                            }
-
-                            if (listcolllected2[k + 7] == "" || listcolllected2[k + 7] == null)
-                            {
-                                command.Parameters.Add("@Ageat", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Ageat", SqlDbType.VarChar, 50).Value = listcolllected2[k + 7];
-                            }
-
-                            if (listcolllected2[k + 8] == "" || listcolllected2[k + 8] == null)
-                            {
-                                command.Parameters.Add("@Gender", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Gender", SqlDbType.VarChar, 50).Value = listcolllected2[k + 8];
-                            }
-
-                            if (listcolllected2[k + 9] == "" || listcolllected2[k + 9] == null)
-                            {
-                                command.Parameters.Add("@Race", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Race", SqlDbType.VarChar, 50).Value = listcolllected2[k + 9];
-                            }
-
-                            if (listcolllected2[k + 10] == "" || listcolllected2[k + 10] == null)
-                            {
-                                command.Parameters.Add("@Ethnicity", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Ethnicity", SqlDbType.VarChar, 50).Value = listcolllected2[k + 10];
-                            }
-
-                            if (listcolllected2[k + 11] == "" || listcolllected2[k + 11] == null)
-                            {
-                                command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = listcolllected2[k + 11];
-                            }
-
-                            if (listcolllected2[k + 12] == "" || listcolllected2[k + 12] == null)
-                            {
-                                command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = listcolllected2[k + 12];
-                            }
-
-                            if (listcolllected2[k + 13] == "" || listcolllected2[k + 13] == null)
-                            {
-                                command.Parameters.Add("@FullStreetAddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@FullStreetAddress", SqlDbType.VarChar, 50).Value = listcolllected2[k + 13];
-                            }
-
-                            if (listcolllected2[k + 14] == "" || listcolllected2[k + 14] == null)
-                            {
-                                command.Parameters.Add("@CountyCodeDescription", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@CountyCodeDescription", SqlDbType.VarChar, 50).Value = listcolllected2[k + 14];
-                            }
-
-                            if (listcolllected2[k + 15] == "" || listcolllected2[k + 15] == null)
-                            {
-                                command.Parameters.Add("@City", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@City", SqlDbType.VarChar, 50).Value = listcolllected2[k + 15];
-                            }
-
-                            if (listcolllected2[k + 16] == "" || listcolllected2[k + 16] == null)
-                            {
-                                command.Parameters.Add("@State", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@State", SqlDbType.VarChar, 50).Value = listcolllected2[k + 16];
-                            }
-
-                            if (listcolllected2[k + 17] == "" || listcolllected2[k + 17] == null)
-                            {
-                                command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = listcolllected2[k + 17];
-                            }
-
-                            if (listcolllected2[k + 18] == "" || listcolllected2[k + 18] == null)
-                            {
-                                command.Parameters.Add("@FullStreetAddress2", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@FullStreetAddress2", SqlDbType.VarChar, 50).Value = listcolllected2[k + 18];
-                            }
-
-                            if (listcolllected2[k + 19] == "" || listcolllected2[k + 19] == null)
-                            {
-                                command.Parameters.Add("@Eligibility", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Eligibility", SqlDbType.VarChar, 50).Value = listcolllected2[k + 19];
-                            }
-
-                            if (listcolllected2[k + 20] == "" || listcolllected2[k + 20] == null)
-                            {
-                                command.Parameters.Add("@SickleCellDiagnosis", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@SickleCellDiagnosis", SqlDbType.VarChar, 50).Value = listcolllected2[k + 20];
-                            }
-
-                            if (listcolllected2[k + 21] == "" || listcolllected2[k + 21] == null)
-                            {
-                                command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = listcolllected2[k + 21];
-                            }
-
-                            if (listcolllected2[k + 22] == "" || listcolllected2[k + 22] == null)
-                            {
-                                command.Parameters.Add("@PMPProviderName", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@PMPProviderName", SqlDbType.VarChar, 50).Value = listcolllected2[k + 22];
-                            }
-
-                            if (listcolllected2[k + 23] == "" || listcolllected2[k + 23] == null)
-                            {
-                                command.Parameters.Add("@CCUCase", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@CCUCase", SqlDbType.VarChar, 50).Value = listcolllected2[k + 23];
-                            }
-
-                            if (listcolllected2[k + 24] == "" || listcolllected2[k + 24] == null)
-                            {
-                                command.Parameters.Add("@ClientresideinruralID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@ClientresideinruralID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 24];
-                            }
-
-                            if (listcolllected2[k + 25] == "" || listcolllected2[k + 25] == null)
-                            {
-                                command.Parameters.Add("@Email_Address", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Email_Address", SqlDbType.VarChar, 50).Value = listcolllected2[k + 25] + "" + ".";
-                            }
-
-                            if (listcolllected2[k + 26] == "" || listcolllected2[k + 26] == null)
-                            {
-                                command.Parameters.Add("@Nameofmother", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Nameofmother", SqlDbType.VarChar, 50).Value = listcolllected2[k + 26];
-                            }
-
-                            if (listcolllected2[k + 27] == "" || listcolllected2[k + 27] == null)
-                            {
-                                command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = listcolllected2[k + 27];
-                            }
-
-                            if (listcolllected2[k + 28] == "" || listcolllected2[k + 28] == null)
-                            {
-                                command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = listcolllected2[k + 28];
-                            }
-
-                            if (listcolllected2[k + 29] == "" || listcolllected2[k + 29] == null)
-                            {
-                                command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = listcolllected2[k + 29];
-                            }
-
-                            if (listcolllected2[k + 30] == "" || listcolllected2[k + 30] == null)
-                            {
-                                command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = listcolllected2[k + 30];
-                            }
-
-                            if (listcolllected2[k + 31] == "" || listcolllected2[k + 31] == null)
-                            {
-                                command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = listcolllected2[k + 31];
-                            }
-
-                            if (listcolllected2[k + 32] == "" || listcolllected2[k + 32] == null)
-                            {
-                                command.Parameters.Add("@Nameofguardian", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Nameofguardian", SqlDbType.VarChar, 50).Value = listcolllected2[k + 32];
-                            }
-
-                            if (listcolllected2[k + 33] == "" || listcolllected2[k + 33] == null)
-                            {
-                                command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = listcolllected2[k + 33];
-                            }
-
-                            if (listcolllected2[k + 34] == "" || listcolllected2[k + 34] == null)
-                            {
-                                command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = listcolllected2[k + 34];
-                            }
-
-                            if (listcolllected2[k + 35] == "" || listcolllected2[k + 35] == null)
-                            {
-                                command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = listcolllected2[k + 35];
-                            }
-
-                            if (listcolllected2[k + 36] == "" || listcolllected2[k + 36] == null)
-                            {
-                                command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = listcolllected2[k + 36];
-                            }
-
-                            if (listcolllected2[k + 37] == "" || listcolllected2[k + 37] == null)
-                            {
-                                command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = listcolllected2[k + 37];
-                            }
-
-                            if (listcolllected2[k + 38] == "" || listcolllected2[k + 38] == null)
-                            {
-                                command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = listcolllected2[k + 38];
-                            }
-
-                            if (listcolllected2[k + 39] == "" || listcolllected2[k + 39] == null)
-                            {
-                                command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = listcolllected2[k + 39];
-                            }
-
-                            if (listcolllected2[k + 40] == "" || listcolllected2[k + 40] == null)
-                            {
-                                command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = listcolllected2[k + 40];
-                            }
-
-                            if (listcolllected2[k + 41] == "" || listcolllected2[k + 41] == null)
-                            {
-                                command.Parameters.Add("@SicklecelltypeID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@SicklecelltypeID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 41];
-                            }
-
-                            if (listcolllected2[k + 42] == "" || listcolllected2[k + 42] == null)
-                            {
-                                command.Parameters.Add("@HydroxyureaheardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@HydroxyureaheardID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 42];
-                            }
-
-                            if (listcolllected2[k + 43] == "" || listcolllected2[k + 43] == null)
-                            {
-                                command.Parameters.Add("@HydroxyureatakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@HydroxyureatakenID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 43];
-                            }
-
-                            if (listcolllected2[k + 44] == "" || listcolllected2[k + 44] == null)
-                            {
-                                command.Parameters.Add("@HydroxyureacurrentlyID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@HydroxyureacurrentlyID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 44];
-                            }
-
-                            if (listcolllected2[k + 45] == "" || listcolllected2[k + 45] == null)
-                            {
-                                command.Parameters.Add("@HydroxyureapasttakenID", SqlDbType.VarChar, 50).Value = DBNull.Value;
-                            }
-                            else
-                            {
-                                command.Parameters.Add("@HydroxyureapasttakenID", SqlDbType.VarChar, 50).Value = listcolllected2[k + 45];
-                            }
-                    }
-
-                    counter = k;
-                    clientidreader.Close();
-                    command.ExecuteNonQuery();                                       
-                }
+                    //////////////////////////////////////////////////////////////////////////////////////                                    
                 variablePath.Path = "";
                 connection.Close();
                 return Json(variablePath.Jresult);
             }
             catch(Exception err)
             {
-                    counter2 = counter;
+                counter2 = counter;
                 err.Message.ToString();
+
+                variablePath.Path = "";
+                variablePath.Path = err.Message.ToString().Substring(0,23);
+                connection.Close();
+                return Json(variablePath.Path);
+
             }            
             //return Json(variablePath.Jresult);
           }
@@ -1209,12 +1208,13 @@ namespace SickeCell.Controllers
                         overviewddatagroup.FullStreetAddress = overviewreader["FullStreetAddress"].ToString();
                         overviewddatagroup.City = overviewreader["City"].ToString();
                         overviewddatagroup.State = overviewreader["State"].ToString();
-                        overviewddatagroup.Email_Address = overviewreader["Email_Address"].ToString();
-                        combine = overviewreader["Email_Address"].ToString();
+                        overviewddatagroup.Email_Address = overviewreader["Email_Address"].ToString();                       
+                        combine = overviewreader["FirstName"].ToString();
                         valcounter = combine.Length - 1;                        
                         if (valcounter >= 1)
-                        {
-                            emailvalidate = overviewreader["Email_Address"].ToString().Substring(valcounter, 1).Trim();
+                        {                          
+                            //emailvalidate = overviewreader["Email_Address"].ToString().Substring(valcounter, 1).Trim();
+                            emailvalidate = overviewreader["FirstName"].ToString().Substring(valcounter, 1).Trim();
 
                             if (emailvalidate != "m")
                             {
@@ -1222,10 +1222,11 @@ namespace SickeCell.Controllers
                             }
                             else{}
                         }
-                        else{Console.WriteLine("");}                        
+                        else{Console.WriteLine("");}
 
-                        if (emailvalidate == ".")
-                        {                            
+                        if (emailvalidate != "")
+                        //if (emailvalidate == ".")
+                        {
                             overviewdata.Add(overviewddatagroup);
                         }
                         else{Console.WriteLine("");}                        
@@ -1255,7 +1256,9 @@ namespace SickeCell.Controllers
             connection.Open();
             try
             {
-                SqlCommand cmdkeep = new SqlCommand("update information set Email_Address = Substring(Email_Address, 1, len(Email_Address)-1) where Comments is null", connection);
+                string period = ".";
+                //SqlCommand cmdkeep = new SqlCommand("update information set Email_Address = Substring(Email_Address, 1, len(Email_Address)-1) where Comments is null", connection);
+                SqlCommand cmdkeep = new SqlCommand("update Reference set FirstName = Substring(FirstName, 1, len(FirstName)-1) where right(FirstName,1) = '" + period + "' ", connection);
                 SqlDataReader keepdreader = cmdkeep.ExecuteReader();
 
                 keepdreader.Close();
@@ -1275,7 +1278,8 @@ namespace SickeCell.Controllers
             connection.Open();
             try
             {
-                SqlCommand cmdremove = new SqlCommand("delete from information where Right(Email_Address,1)='.'", connection);
+                //SqlCommand cmdremove = new SqlCommand("delete from information where Right(Email_Address,1)='.'", connection);
+                SqlCommand cmdremove = new SqlCommand("delete from Reference where Right(FirstName,1)='.'", connection);
                 SqlDataReader removereader = cmdremove.ExecuteReader();
 
                 removereader.Close();

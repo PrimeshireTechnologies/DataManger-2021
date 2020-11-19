@@ -187,8 +187,9 @@
         border-width: 2px;
         border-radius: 12px;
         position: absolute;
-        height: 260%;
-        max-height: 136em;
+        /*height: 289%;*/
+        height: auto;
+        max-height: 173em;
         width: 94em;
         max-width: 100%;
         margin-top: -22em;
@@ -282,13 +283,13 @@
 
     .copyright-area {
         background-color: #F0F2F6;
-        margin-top: 1600px;
+        margin-top: 1850px;
         top: 50%;
         left: 50%;
         margin-left: -47em;
         width: 94em;
         position: absolute;
-        height:50px;
+        height:20px;
     }
 
     .copyright {
