@@ -42,7 +42,7 @@ namespace SickeCell.Controllers
         string vlname = "";
         string vfname2 = "";
         string vgender = "";
-        int vclientid;
+        string vclientid;
         long vdata;
 
         string[] b;
@@ -58,10 +58,10 @@ namespace SickeCell.Controllers
         {            
             public string Clientseacrh { get; set; }
             public string Clientidx { get; set; }
-            public int ClientID { get; set; }
+            public string ClientID { get; set; }
             public string LastName { get; set; }
             public string FirstName { get; set; }
-            public string Mi { get; set; }
+            public string Middle_Initial { get; set; }
             public string UniqueID { get; set; }
             public string DOB { get; set; }
             public string Age { get; set; }
@@ -71,36 +71,37 @@ namespace SickeCell.Controllers
             public string Race { get; set; }
             public string Ethnicity { get; set; }
             public string Eligibility { get; set; }
-            public string SSSno { get; set; }
-            public string CountryCode { get; set; }
+            public string SSN { get; set; }
+            public string CountyCode { get; set; }
             public string CountyCodeDescription { get; set; }
-            public string CpNumber { get; set; }
             public string SickleCellDiagnosis { get; set; }
             public string FullStreetAddress { get; set; }
             public string FullStreetAddress2 { get; set; }
             public string City { get; set; }
             public string State { get; set; }
             public string ZipCode { get; set; }
+            public string HomePhone { get; set; }
+            public string WorkPhone { get; set; }
             public string PMPProviderName { get; set; }
             public string Specialist { get; set; }
             public string CCUCase { get; set; }
             public string Email_Address { get; set; }
             public string ClientresideinruralID { get; set; }
             public string Nameofmother { get; set; }
-            public string Motheraddress { get; set; }
-            public string Mothertel { get; set; }
+            public string Address_Of_Mother { get; set; }
+            public string Telephone_Of_Mother { get; set; }
             public string Nameoffather { get; set; }
-            public string Fatheraddress { get; set; }
-            public string Fathertel { get; set; }
+            public string Address_Of_Father { get; set; }
+            public string Telephone_Of_Father { get; set; }
             public string Nameofguardian { get; set; }
-            public string Guardianaddress { get; set; }
-            public string Guardiantel { get; set; }
-            public string Emercont1 { get; set; }
-            public string Emercont1homephone { get; set; }
-            public string Emercont1cellphone { get; set; }
-            public string Emercont2 { get; set; }
-            public string Emercont2homephone { get; set; }
-            public string Emercont2cellphone { get; set; }
+            public string Address_Of_Guardian { get; set; }
+            public string Guardian_Telephone { get; set; }
+            public string Emergency_Contact1 { get; set; }
+            public string Emergency_Contact1_HomePhone { get; set; }
+            public string Emergency_Contact1_CellPhone { get; set; }
+            public string Emergency_Contact2 { get; set; }
+            public string Emergency_Contact2_HomePhone { get; set; }
+            public string Emergency_Contact2_CellPhone { get; set; }
             public string SicklecelltypeID { get; set; }
             public string Medication { get; set; }
             public string Medication2 { get; set; }
@@ -113,6 +114,8 @@ namespace SickeCell.Controllers
             public string Hydroxyureadosage { get; set; }
             public string Hydroxyureadosageunknown { get; set; }
             public string Hydroxyureacapsulescolor { get; set; }
+            public string Hydroxyureadatelasttaken { get; set; }
+            public string Hydroxyureadatepickedup { get; set; }
             public string Pharma1heardID { get; set; }
             public string Pharma1takenID { get; set; }
             public string Pharma1currentlyID { get; set; }
@@ -120,6 +123,8 @@ namespace SickeCell.Controllers
             public string Pharma1dosage { get; set; }
             public string Pharma1dosageunknown { get; set; }
             public string Pharma1capsulescolor { get; set; }
+            public string Pharma1datelasttaken { get; set; }
+            public string Pharma1datepickedup { get; set; }
             public string Pharma2heardID { get; set; }
             public string Pharma2takenID { get; set; }
             public string Pharma2currentlyID { get; set; }
@@ -127,6 +132,8 @@ namespace SickeCell.Controllers
             public string Pharma2dosage { get; set; }
             public string Pharma2dosageunknown { get; set; }
             public string Pharma2capsulescolor { get; set; }
+            public string Pharma2datelasttaken { get; set; }
+            public string Pharma2datepickedup { get; set; }
             public string Pharma3heardID { get; set; }
             public string Pharma3takenID { get; set; }
             public string Pharma3currentlyID { get; set; }
@@ -134,6 +141,8 @@ namespace SickeCell.Controllers
             public string Pharma3dosage { get; set; }
             public string Pharma3dosageunknown { get; set; }
             public string Pharma3capsulescolor { get; set; }
+            public string Pharma3datelasttaken { get; set; }
+            public string Pharma3datepickedup { get; set; }
             public string Globalid { get; set; }
             public string FullName { get; set; }
             public string SelectedSearch { get; set; }
@@ -147,16 +156,17 @@ namespace SickeCell.Controllers
             public Decimal ZipCode2 { get; set; }
             public Decimal CountryCode2 { get; set; }
             public Decimal PhoneNumber2 { get; set; }
-        }               
+            public string Deceased { get; set; }
+        }
 
         public class SickleCelloverviewclass
         {            
             public string Clientidx { get; set; }
             public string Clientseacrh { get; set; }
-            public int ClientID { get; set; }
+            public string ClientID { get; set; }
             public string LastName { get; set; }
             public string FirstName { get; set; }
-            public string Mi { get; set; }
+            public string Middle_Initial { get; set; }
             public string UniqueID { get; set; }
             public string DOB { get; set; }
             public string Age { get; set; }
@@ -166,36 +176,37 @@ namespace SickeCell.Controllers
             public string Race { get; set; }
             public string Ethnicity { get; set; }
             public string Eligibility { get; set; }
-            public string SSSno { get; set; }
-            public string CountryCode { get; set; }
+            public string SSN { get; set; }
+            public string CountyCode { get; set; }
             public string CountyCodeDescription { get; set; }
-            public string CpNumber { get; set; }
             public string SickleCellDiagnosis { get; set; }
             public string FullStreetAddress { get; set; }
             public string FullStreetAddress2 { get; set; }
             public string City { get; set; }
             public string State { get; set; }
             public string ZipCode { get; set; }
+            public string HomePhone { get; set; }
+            public string WorkPhone { get; set; }
             public string PMPProviderName { get; set; }
             public string Specialist { get; set; }
             public string CCUCase { get; set; }
             public string Email_Address { get; set; }
             public string ClientresideinruralID { get; set; }
             public string Nameofmother { get; set; }
-            public string Motheraddress { get; set; }
-            public string Mothertel { get; set; }
+            public string Address_Of_Mother { get; set; }
+            public string Telephone_Of_Mother { get; set; }
             public string Nameoffather { get; set; }
-            public string Fatheraddress { get; set; }
-            public string Fathertel { get; set; }
+            public string Address_Of_Father { get; set; }
+            public string Telephone_Of_Father { get; set; }
             public string Nameofguardian { get; set; }
-            public string Guardianaddress { get; set; }
-            public string Guardiantel { get; set; }
-            public string Emercont1 { get; set; }
-            public string Emercont1homephone { get; set; }
-            public string Emercont1cellphone { get; set; }
-            public string Emercont2 { get; set; }
-            public string Emercont2homephone { get; set; }
-            public string Emercont2cellphone { get; set; }
+            public string Address_Of_Guardian { get; set; }
+            public string Guardian_Telephone { get; set; }
+            public string Emergency_Contact1 { get; set; }
+            public string Emergency_Contact1_HomePhone { get; set; }
+            public string Emergency_Contact1_CellPhone { get; set; }
+            public string Emergency_Contact2 { get; set; }
+            public string Emergency_Contact2_HomePhone { get; set; }
+            public string Emergency_Contact2_CellPhone { get; set; }
             public string SicklecelltypeID { get; set; }
             public string Medication { get; set; }
             public string HydroxyureaheardID { get; set; }
@@ -205,6 +216,8 @@ namespace SickeCell.Controllers
             public string Hydroxyureadosage { get; set; }
             public string Hydroxyureadosageunknown { get; set; }
             public string Hydroxyureacapsulescolor { get; set; }
+            public string Hydroxyureadatelasttaken { get; set; }
+            public string Hydroxyureadatepickedup { get; set; }
             public string Pharma1heardID { get; set; }
             public string Pharma1takenID { get; set; }
             public string Pharma1currentlyID { get; set; }
@@ -212,6 +225,8 @@ namespace SickeCell.Controllers
             public string Pharma1dosage { get; set; }
             public string Pharma1dosageunknown { get; set; }
             public string Pharma1capsulescolor { get; set; }
+            public string Pharma1datelasttaken { get; set; }
+            public string Pharma1datepickedup { get; set; }
             public string Pharma2heardID { get; set; }
             public string Pharma2takenID { get; set; }
             public string Pharma2currentlyID { get; set; }
@@ -219,12 +234,16 @@ namespace SickeCell.Controllers
             public string Pharma2dosage { get; set; }
             public string Pharma2dosageunknown { get; set; }
             public string Pharma2capsulescolor { get; set; }
+            public string Pharma2datelasttaken { get; set; }
+            public string Pharma2datepickedup { get; set; }
             public string Pharma3takenID { get; set; }
             public string Pharma3currentlyID { get; set; }
             public string Pharma3pasttakenID { get; set; }
             public string Pharma3dosage { get; set; }
             public string Pharma3dosageunknown { get; set; }
             public string Pharma3capsulescolor { get; set; }
+            public string Pharma3datelasttaken { get; set; }
+            public string Pharma3datepickedup { get; set; }
             public string Globalid { get; set; }
             public string FullName { get; set; }
             public string SelectedSearch { get; set; }
@@ -234,6 +253,8 @@ namespace SickeCell.Controllers
             public string TimeStamp { get; set; }
             public DateTime Datenotescreated { get; set; }
             public int NotesID { get; set; }
+            public string PhoneNumber { get; set; }
+            public string Deceased { get; set; }
         }        
 
         public class Conversion
@@ -461,30 +482,33 @@ namespace SickeCell.Controllers
                         while (overviewreader.Read())
                         {
                             SickleCelloverviewclass overviewddatagroup = new SickleCelloverviewclass();
-                            overviewddatagroup.ClientID = Convert.ToInt32(overviewreader["ClientID"].ToString());
+                            overviewddatagroup.ClientID = overviewreader["ClientID"].ToString();
                             overviewddatagroup.LastName = overviewreader["LastName"].ToString();
                             overviewddatagroup.FirstName = overviewreader["FirstName"].ToString();
                             overviewddatagroup.DOB = overviewreader["DOB"].ToString();
                             overviewddatagroup.Gender = overviewreader["Gender"].ToString();
                             overviewddatagroup.FullStreetAddress = overviewreader["FullStreetAddress"].ToString();
                             overviewddatagroup.City = overviewreader["City"].ToString();
+                            overviewddatagroup.UniqueID = overviewreader["UniqueID"].ToString();
                             overviewddatagroup.State = overviewreader["State"].ToString();
                             overviewddatagroup.Email_Address = overviewreader["Email_Address"].ToString();
                             overviewddatagroup.Race = overviewreader["Race"].ToString();
                             overviewddatagroup.Eligibility = overviewreader["Eligibility"].ToString();
                             overviewddatagroup.Ethnicity = overviewreader["Ethnicity"].ToString();
-                            overviewddatagroup.SSSno = overviewreader["SSSno"].ToString();
-                            overviewddatagroup.CpNumber = overviewreader["CpNumber"].ToString();
+                            overviewddatagroup.SSN = overviewreader["SSN"].ToString();
+                            overviewddatagroup.PhoneNumber = overviewreader["PhoneNumber"].ToString();
                             overviewddatagroup.ZipCode = overviewreader["ZipCode"].ToString();
+                            overviewddatagroup.HomePhone = overviewreader["HomePhone"].ToString();
+                            overviewddatagroup.WorkPhone = overviewreader["WorkPhone"].ToString();
                             overviewddatagroup.SicklecelltypeID = overviewreader["SicklecelltypeID"].ToString();
                             overviewddatagroup.SickleCellDiagnosis = overviewreader["SickleCellDiagnosis"].ToString();
                             overviewddatagroup.PMPProviderName = overviewreader["PMPProviderName"].ToString();
                             overviewddatagroup.CCUCase = overviewreader["CCUCase"].ToString();
                             overviewddatagroup.Specialist = overviewreader["Specialist"].ToString();
                             overviewddatagroup.Medication = overviewreader["Medication"].ToString();
-                            overviewddatagroup.Emercont1 = overviewreader["Emercont1"].ToString();
-                            overviewddatagroup.Emercont1homephone = overviewreader["Emercont1homephone"].ToString();
-                            overviewddatagroup.Emercont1cellphone = overviewreader["Emercont1cellphone"].ToString();
+                            overviewddatagroup.Emergency_Contact1 = overviewreader["Emergency_Contact1"].ToString();
+                            overviewddatagroup.Emergency_Contact1_HomePhone = overviewreader["Emergency_Contact1_HomePhone"].ToString();
+                            overviewddatagroup.Emergency_Contact1_CellPhone = overviewreader["Emergency_Contact1_CellPhone"].ToString();
 
                             connect.Open();
                                    SqlCommand RecentCommentcmd = new SqlCommand("select Notesid, ClientID, Comments, TimeStamp from Notes where ClientID= '" + patientdataview.ClientID + "' order by Notesid  DESC", connect);
@@ -508,7 +532,7 @@ namespace SickeCell.Controllers
                             vlname = overviewreader["LastName"].ToString().Trim();
                             vfname2 = overviewreader["FirstName"].ToString().Trim();
                             vgender = overviewreader["Gender"].ToString().Trim();
-                            vclientid = Convert.ToInt32(overviewreader["ClientID"].ToString());
+                            vclientid = overviewreader["ClientID"].ToString();
 
                         }
                     }
@@ -536,7 +560,7 @@ namespace SickeCell.Controllers
                         while (overviewreader2.Read())
                         {
                             SickleCelloverviewclass overviewddatagroup2 = new SickleCelloverviewclass();
-                            overviewddatagroup2.ClientID = Convert.ToInt32(overviewreader2["ClientID"].ToString());
+                            overviewddatagroup2.ClientID = overviewreader2["ClientID"].ToString();
                             overviewddatagroup2.LastName = overviewreader2["LastName"].ToString();
                             overviewddatagroup2.FirstName = overviewreader2["FirstName"].ToString();
                             overviewddatagroup2.DOB = overviewreader2["DOB"].ToString();
@@ -557,7 +581,7 @@ namespace SickeCell.Controllers
                             vlname = overviewreader2["LastName"].ToString().Trim();
                             vfname2 = overviewreader2["FirstName"].ToString().Trim();
                             vgender = overviewreader2["Gender"].ToString().Trim();
-                            vclientid = Convert.ToInt32(overviewreader2["ClientID"].ToString());
+                            vclientid = overviewreader2["ClientID"].ToString();
 
                         }
                     }
@@ -604,7 +628,7 @@ namespace SickeCell.Controllers
                     while (breakdownreader.Read())
                     {
                         SickleCelloverviewclass breakdowndatagroup = new SickleCelloverviewclass();
-                        breakdowndatagroup.ClientID = Convert.ToInt32(breakdownreader["ClientID"].ToString());
+                        breakdowndatagroup.ClientID = breakdownreader["ClientID"].ToString();
                         breakdowndatagroup.LastName = breakdownreader["LastName"].ToString();
                         breakdowndatagroup.FirstName = breakdownreader["FirstName"].ToString();
                         breakdowndatagroup.DOB = breakdownreader["DOB"].ToString();
@@ -707,9 +731,8 @@ namespace SickeCell.Controllers
                 string strdata = " ";
                 long longdata = 0;
                 connection.Open();
-                SqlCommand command = connection.CreateCommand();
-                //command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor";
-                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor, @Pharma3heardID, @Pharma3takenID, @Pharma3currentlyID, @Pharma3pasttakenID, @Pharma3dosage, @Pharma3dosageunknown, @Pharma3capsulescolor";
+                SqlCommand command = connection.CreateCommand();                
+                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Middle_Initial, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSN, @CountyCode, @CountyCodeDescription, @PhoneNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @HomePhone, @WorkPhone ,@PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Address_Of_Mother, @Telephone_Of_Mother, @Nameoffather, @Address_Of_Father, @Telephone_Of_Father, @Nameofguardian, @Address_Of_Guardian, @Guardian_Telephone, @Emergency_Contact1, @Emergency_Contact1_HomePhone , @Emergency_Contact1_CellPhone, @Emergency_Contact2, @Emergency_Contact2_HomePhone, @Emergency_Contact2_CellPhone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Hydroxyureadatelasttaken, @Hydroxyureadatepickedup, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma1datelasttaken, @Pharma1datepickedup, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor, @Pharma2datelasttaken, @Pharma2datepickedup, @Pharma3heardID, @Pharma3takenID, @Pharma3currentlyID, @Pharma3pasttakenID, @Pharma3dosage, @Pharma3dosageunknown, @Pharma3capsulescolor, @Pharma3datelasttaken, @Pharma3datepickedup, @Deceased";
                 SqlCommand command2 = new SqlCommand("select top 1 ClientID from Information order by ClientID DESC", connection);
                 SqlDataReader clientidreader = command2.ExecuteReader();
 
@@ -721,13 +744,13 @@ namespace SickeCell.Controllers
                         longdata = Convert.ToInt64(strdata);
                         //command.Parameters.Add("@ClientID", SqlDbType.BigInt).Value = longdata + 1;
 
-                        if (datavalue.ClientID == 0)
+                        if (datavalue.ClientID == "" || datavalue.ClientID == null)
                         {
                             command.Parameters.Add("@ClientID", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@ClientID", SqlDbType.Int).Value = datavalue.ClientID;
+                            command.Parameters.Add("@ClientID", SqlDbType.VarChar, 25).Value = datavalue.ClientID;
                         }
 
                         if (datavalue.LastName == "" || datavalue.LastName == null)
@@ -748,13 +771,13 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = datavalue.FirstName;
                         }
 
-                        if (datavalue.Mi == "" || datavalue.Mi == null)
+                        if (datavalue.Middle_Initial == "" || datavalue.Middle_Initial == null)
                         {
-                            command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Middle_Initial", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = datavalue.Mi;
+                            command.Parameters.Add("@Middle_Initial", SqlDbType.VarChar, 50).Value = datavalue.Middle_Initial;
                         }
 
                         if (datavalue.UniqueID == "" || datavalue.UniqueID == null)
@@ -829,13 +852,13 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@Ethnicity", SqlDbType.VarChar, 50).Value = datavalue.Ethnicity;
                         }
 
-                        if (datavalue.SSSno == "" || datavalue.SSSno == null)
+                        if (datavalue.SSN == "" || datavalue.SSN == null)
                         {
-                            command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = datavalue.SSSno;
+                            command.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = datavalue.SSN;
                         }
 
                         if (datavalue.Eligibility == "" || datavalue.Eligibility == null)
@@ -847,13 +870,13 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@Eligibility", SqlDbType.VarChar, 50).Value = datavalue.Eligibility;
                         }
 
-                        if (datavalue.CountryCode == "" || datavalue.CountryCode == null)
+                        if (datavalue.CountyCode == "" || datavalue.CountyCode == null)
                         {
-                            command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@CountyCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = datavalue.CountryCode;
+                            command.Parameters.Add("@CountyCode", SqlDbType.VarChar, 50).Value = datavalue.CountyCode;
                         }
 
                         if (datavalue.CountyCodeDescription == "" || datavalue.CountyCodeDescription == null)
@@ -865,13 +888,13 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@CountyCodeDescription", SqlDbType.VarChar, 50).Value = datavalue.CountyCodeDescription;
                         }
 
-                        if (datavalue.CpNumber == "" || datavalue.CpNumber == null)
+                        if (datavalue.PhoneNumber == "" || datavalue.PhoneNumber == null)
                         {
-                            command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = datavalue.CpNumber;
+                            command.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, 50).Value = datavalue.PhoneNumber;
                         }
 
                         if (datavalue.SickleCellDiagnosis == "" || datavalue.SickleCellDiagnosis == null)
@@ -928,6 +951,24 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = datavalue.ZipCode;
                         }
 
+                        if (datavalue.HomePhone == "" || datavalue.HomePhone == null)
+                        {
+                            command.Parameters.Add("@HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@HomePhone", SqlDbType.VarChar, 50).Value = datavalue.HomePhone;
+                        }
+
+                        if (datavalue.WorkPhone == "" || datavalue.WorkPhone == null)
+                        {
+                            command.Parameters.Add("@WorkPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@WorkPhone", SqlDbType.VarChar, 50).Value = datavalue.WorkPhone;
+                        }
+
                         if (datavalue.PMPProviderName == "" || datavalue.PMPProviderName == null)
                         {
                             command.Parameters.Add("@PMPProviderName", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -982,22 +1023,22 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@Nameofmother", SqlDbType.VarChar, 50).Value = datavalue.Nameofmother;
                         }
 
-                        if (datavalue.Motheraddress == "" || datavalue.Motheraddress == null)
+                        if (datavalue.Address_Of_Mother == "" || datavalue.Address_Of_Mother == null)
                         {
-                            command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Address_Of_Mother", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = datavalue.Motheraddress;
+                            command.Parameters.Add("@Address_Of_Mother", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Mother;
                         }
 
-                        if (datavalue.Mothertel == "" || datavalue.Mothertel == null)
+                        if (datavalue.Telephone_Of_Mother == "" || datavalue.Telephone_Of_Mother == null)
                         {
-                            command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Telephone_Of_Mother", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = datavalue.Mothertel;
+                            command.Parameters.Add("@Telephone_Of_Mother", SqlDbType.VarChar, 50).Value = datavalue.Telephone_Of_Mother;
                         }
 
 
@@ -1010,22 +1051,22 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = datavalue.Nameoffather;
                         }
 
-                        if (datavalue.Fatheraddress == "" || datavalue.Fatheraddress == null)
+                        if (datavalue.Address_Of_Father == "" || datavalue.Address_Of_Father == null)
                         {
-                            command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Address_Of_Father", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = datavalue.Fatheraddress;
+                            command.Parameters.Add("@Address_Of_Father", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Father;
                         }
 
-                        if (datavalue.Fathertel == "" || datavalue.Fathertel == null)
+                        if (datavalue.Telephone_Of_Father == "" || datavalue.Telephone_Of_Father == null)
                         {
-                            command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Telephone_Of_Father", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = datavalue.Fathertel;
+                            command.Parameters.Add("@Telephone_Of_Father", SqlDbType.VarChar, 50).Value = datavalue.Telephone_Of_Father;
                         }
 
                         if (datavalue.Nameofguardian == "" || datavalue.Nameofguardian == null)
@@ -1037,76 +1078,76 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@Nameofguardian", SqlDbType.VarChar, 50).Value = datavalue.Nameofguardian;
                         }
 
-                        if (datavalue.Guardianaddress == "" || datavalue.Guardianaddress == null)
+                        if (datavalue.Address_Of_Guardian == "" || datavalue.Address_Of_Guardian == null)
                         {
-                            command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Address_Of_Guardian", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = datavalue.Guardianaddress;
+                            command.Parameters.Add("@Address_Of_Guardian", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Guardian;
                         }
 
-                        if (datavalue.Guardiantel == "" || datavalue.Guardiantel == null)
+                        if (datavalue.Guardian_Telephone == "" || datavalue.Guardian_Telephone == null)
                         {
-                            command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Guardian_Telephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = datavalue.Guardiantel;
+                            command.Parameters.Add("@Guardian_Telephone", SqlDbType.VarChar, 50).Value = datavalue.Guardian_Telephone;
                         }
 
-                        if (datavalue.Emercont1 == "" || datavalue.Emercont1 == null)
+                        if (datavalue.Emergency_Contact1 == "" || datavalue.Emergency_Contact1 == null)
                         {
-                            command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Emergency_Contact1", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = datavalue.Emercont1;
+                            command.Parameters.Add("@Emergency_Contact1", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1;
                         }
 
-                        if (datavalue.Emercont1homephone == "" || datavalue.Emercont1homephone == null)
+                        if (datavalue.Emergency_Contact1_HomePhone == "" || datavalue.Emergency_Contact1_HomePhone == null)
                         {
-                            command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Emergency_Contact1_HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = datavalue.Emercont1homephone;
+                            command.Parameters.Add("@Emergency_Contact1_HomePhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1_HomePhone;
                         }
 
-                        if (datavalue.Emercont1cellphone == "" || datavalue.Emercont1cellphone == null)
+                        if (datavalue.Emergency_Contact1_CellPhone == "" || datavalue.Emergency_Contact1_CellPhone == null)
                         {
-                            command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Emergency_Contact1_CellPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = datavalue.Emercont1cellphone;
+                            command.Parameters.Add("@Emergency_Contact1_CellPhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1_CellPhone;
                         }
 
-                        if (datavalue.Emercont2 == "" || datavalue.Emercont2 == null)
+                        if (datavalue.Emergency_Contact2 == "" || datavalue.Emergency_Contact2 == null)
                         {
-                            command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Emergency_Contact2", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = datavalue.Emercont2;
+                            command.Parameters.Add("@Emergency_Contact2", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2;
                         }
 
-                        if (datavalue.Emercont2homephone == "" || datavalue.Emercont2homephone == null)
+                        if (datavalue.Emergency_Contact2_HomePhone == "" || datavalue.Emergency_Contact2_HomePhone == null)
                         {
-                            command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Emergency_Contact2_HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = datavalue.Emercont2homephone;
+                            command.Parameters.Add("@Emergency_Contact2_HomePhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2_HomePhone;
                         }
 
-                        if (datavalue.Emercont2cellphone == "" || datavalue.Emercont2cellphone == null)
+                        if (datavalue.Emergency_Contact2_CellPhone == "" || datavalue.Emergency_Contact2_CellPhone == null)
                         {
-                            command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            command.Parameters.Add("@Emergency_Contact2_CellPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = datavalue.Emercont2cellphone;
+                            command.Parameters.Add("@Emergency_Contact2_CellPhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2_CellPhone;
                         }
 
                         if (datavalue.SicklecelltypeID == "" || datavalue.SicklecelltypeID == null)
@@ -1217,6 +1258,24 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureacapsulescolor;
                         }
 
+                        if (datavalue.Hydroxyureadatelasttaken == "" || datavalue.Hydroxyureadatelasttaken == null)
+                        {
+                            command.Parameters.Add("@Hydroxyureadatelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Hydroxyureadatelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Hydroxyureadatelasttaken;
+                        }
+
+                        if (datavalue.Hydroxyureadatepickedup == "" || datavalue.Hydroxyureadatepickedup == null)
+                        {
+                            command.Parameters.Add("@Hydroxyureadatepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Hydroxyureadatepickedup", SqlDbType.VarChar, 10).Value = datavalue.Hydroxyureadatepickedup;
+                        }
+
                         if (datavalue.Pharma1heardID == "" || datavalue.Pharma1heardID == null)
                         {
                             command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -1278,6 +1337,24 @@ namespace SickeCell.Controllers
                         else
                         {
                             command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma1capsulescolor;
+                        }
+
+                        if (datavalue.Pharma1datelasttaken == "" || datavalue.Pharma1datelasttaken == null)
+                        {
+                            command.Parameters.Add("@Pharma1datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma1datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma1datelasttaken;
+                        }
+
+                        if (datavalue.Pharma1datepickedup == "" || datavalue.Pharma1datepickedup == null)
+                        {
+                            command.Parameters.Add("@Pharma1datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma1datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma1datepickedup;
                         }
 
                         if (datavalue.Pharma2heardID == "" || datavalue.Pharma2heardID == null)
@@ -1343,6 +1420,24 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma2capsulescolor;
                         }
 
+                        if (datavalue.Pharma2datelasttaken == "" || datavalue.Pharma2datelasttaken == null)
+                        {
+                            command.Parameters.Add("@Pharma2datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma2datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma2datelasttaken;
+                        }
+
+                        if (datavalue.Pharma2datepickedup == "" || datavalue.Pharma2datepickedup == null)
+                        {
+                            command.Parameters.Add("@Pharma2datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma2datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma2datepickedup;
+                        }
+
                         if (datavalue.Pharma3heardID == "" || datavalue.Pharma3heardID == null)
                         {
                             command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -1405,6 +1500,33 @@ namespace SickeCell.Controllers
                         {
                             command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma3capsulescolor;
                         }
+
+                        if (datavalue.Pharma3datelasttaken == "" || datavalue.Pharma3datelasttaken == null)
+                        {
+                            command.Parameters.Add("@Pharma3datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma3datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma3datelasttaken;
+                        }
+
+                        if (datavalue.Pharma3datepickedup == "" || datavalue.Pharma3datepickedup == null)
+                        {
+                            command.Parameters.Add("@Pharma3datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Pharma3datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma3datepickedup;
+                        }
+
+                        if (datavalue.Deceased == "" || datavalue.Deceased == null)
+                        {
+                            command.Parameters.Add("@Deceased", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            command.Parameters.Add("@Deceased", SqlDbType.VarChar, 50).Value = datavalue.Deceased;
+                        }
                     }
                     clientidreader.Close();
                 }
@@ -1412,13 +1534,13 @@ namespace SickeCell.Controllers
                 else
                 {
                     //command.Parameters.Add("@ClientID", SqlDbType.BigInt).Value = longdata + 1;
-                    if (datavalue.ClientID == 0)
+                    if (datavalue.ClientID =="" || datavalue.ClientID == null)
                     {
                         command.Parameters.Add("@ClientID", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@ClientID", SqlDbType.Int).Value = datavalue.ClientID;
+                        command.Parameters.Add("@ClientID", SqlDbType.VarChar, 25).Value = datavalue.ClientID;
                     }
 
                     if (datavalue.LastName == "" || datavalue.LastName == null)
@@ -1439,13 +1561,13 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = datavalue.FirstName;
                     }
 
-                    if (datavalue.Mi == "" || datavalue.Mi == null)
+                    if (datavalue.Middle_Initial == "" || datavalue.Middle_Initial == null)
                     {
-                        command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Middle_Initial", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = datavalue.Mi;
+                        command.Parameters.Add("@Middle_Initial", SqlDbType.VarChar, 50).Value = datavalue.Middle_Initial;
                     }
 
                     if (datavalue.UniqueID == "" || datavalue.UniqueID == null)
@@ -1520,13 +1642,13 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@Ethnicity", SqlDbType.VarChar, 50).Value = datavalue.Ethnicity;
                     }
 
-                    if (datavalue.SSSno == "" || datavalue.SSSno == null)
+                    if (datavalue.SSN == "" || datavalue.SSN == null)
                     {
-                        command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = datavalue.SSSno;
+                        command.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = datavalue.SSN;
                     }
 
                     if (datavalue.Eligibility == "" || datavalue.Eligibility == null)
@@ -1538,13 +1660,13 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@Eligibility", SqlDbType.VarChar, 50).Value = datavalue.Eligibility;
                     }
 
-                    if (datavalue.CountryCode == "" || datavalue.CountryCode == null)
+                    if (datavalue.CountyCode == "" || datavalue.CountyCode == null)
                     {
-                        command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@CountyCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = datavalue.CountryCode;
+                        command.Parameters.Add("@CountyCode", SqlDbType.VarChar, 50).Value = datavalue.CountyCode;
                     }
 
                     if (datavalue.CountyCodeDescription == "" || datavalue.CountyCodeDescription == null)
@@ -1556,13 +1678,13 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@CountyCodeDescription", SqlDbType.VarChar, 50).Value = datavalue.CountyCodeDescription;
                     }
 
-                    if (datavalue.CpNumber == "" || datavalue.CpNumber == null)
+                    if (datavalue.PhoneNumber == "" || datavalue.PhoneNumber == null)
                     {
-                        command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = datavalue.CpNumber;
+                        command.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, 50).Value = datavalue.PhoneNumber;
                     }
 
                     if (datavalue.SickleCellDiagnosis == "" || datavalue.SickleCellDiagnosis == null)
@@ -1619,6 +1741,24 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = datavalue.ZipCode;
                     }
 
+                    if (datavalue.HomePhone == "" || datavalue.HomePhone == null)
+                    {
+                        command.Parameters.Add("@HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@HomePhone", SqlDbType.VarChar, 50).Value = datavalue.HomePhone;
+                    }
+
+                    if (datavalue.WorkPhone == "" || datavalue.WorkPhone == null)
+                    {
+                        command.Parameters.Add("@WorkPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@WorkPhone", SqlDbType.VarChar, 50).Value = datavalue.WorkPhone;
+                    }
+
                     if (datavalue.PMPProviderName == "" || datavalue.PMPProviderName == null)
                     {
                         command.Parameters.Add("@PMPProviderName", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -1673,22 +1813,22 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@Nameofmother", SqlDbType.VarChar, 50).Value = datavalue.Nameofmother;
                     }
 
-                    if (datavalue.Motheraddress == "" || datavalue.Motheraddress == null)
+                    if (datavalue.Address_Of_Mother == "" || datavalue.Address_Of_Mother == null)
                     {
-                        command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Address_Of_Mother", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = datavalue.Motheraddress;
+                        command.Parameters.Add("@Address_Of_Mother", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Mother;
                     }
 
-                    if (datavalue.Mothertel == "" || datavalue.Mothertel == null)
+                    if (datavalue.Telephone_Of_Mother == "" || datavalue.Telephone_Of_Mother == null)
                     {
-                        command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Telephone_Of_Mother", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = datavalue.Mothertel;
+                        command.Parameters.Add("@Telephone_Of_Mother", SqlDbType.VarChar, 50).Value = datavalue.Telephone_Of_Mother;
                     }
 
                     if (datavalue.Nameoffather == "" || datavalue.Nameoffather == null)
@@ -1700,22 +1840,22 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = datavalue.Nameoffather;
                     }
 
-                    if (datavalue.Fatheraddress == "" || datavalue.Fatheraddress == null)
+                    if (datavalue.Address_Of_Father == "" || datavalue.Address_Of_Father == null)
                     {
-                        command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Address_Of_Father", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = datavalue.Fatheraddress;
+                        command.Parameters.Add("@Address_Of_Father", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Father;
                     }
 
-                    if (datavalue.Fathertel == "" || datavalue.Fathertel == null)
+                    if (datavalue.Telephone_Of_Father == "" || datavalue.Telephone_Of_Father == null)
                     {
-                        command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Telephone_Of_Father", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = datavalue.Fathertel;
+                        command.Parameters.Add("@Telephone_Of_Father", SqlDbType.VarChar, 50).Value = datavalue.Telephone_Of_Father;
                     }
 
                     if (datavalue.Nameofguardian == "" || datavalue.Nameofguardian == null)
@@ -1727,76 +1867,76 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@Nameofguardian", SqlDbType.VarChar, 50).Value = datavalue.Nameofguardian;
                     }
 
-                    if (datavalue.Guardianaddress == "" || datavalue.Guardianaddress == null)
+                    if (datavalue.Address_Of_Guardian == "" || datavalue.Address_Of_Guardian == null)
                     {
-                        command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Address_Of_Guardian", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = datavalue.Guardianaddress;
+                        command.Parameters.Add("@Address_Of_Guardian", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Guardian;
                     }
 
-                    if (datavalue.Guardiantel == "" || datavalue.Guardiantel == null)
+                    if (datavalue.Guardian_Telephone == "" || datavalue.Guardian_Telephone == null)
                     {
-                        command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Guardian_Telephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = datavalue.Guardiantel;
+                        command.Parameters.Add("@Guardian_Telephone", SqlDbType.VarChar, 50).Value = datavalue.Guardian_Telephone;
                     }
 
-                    if (datavalue.Emercont1 == "" || datavalue.Emercont1 == null)
+                    if (datavalue.Emergency_Contact1 == "" || datavalue.Emergency_Contact1 == null)
                     {
-                        command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Emergency_Contact1", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = datavalue.Emercont1;
+                        command.Parameters.Add("@Emergency_Contact1", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1;
                     }
 
-                    if (datavalue.Emercont1homephone == "" || datavalue.Emercont1homephone == null)
+                    if (datavalue.Emergency_Contact1_HomePhone == "" || datavalue.Emergency_Contact1_HomePhone == null)
                     {
-                        command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Emergency_Contact1_HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = datavalue.Emercont1homephone;
+                        command.Parameters.Add("@Emergency_Contact1_HomePhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1_HomePhone;
                     }
 
-                    if (datavalue.Emercont1cellphone == "" || datavalue.Emercont1cellphone == null)
+                    if (datavalue.Emergency_Contact1_CellPhone == "" || datavalue.Emergency_Contact1_CellPhone == null)
                     {
-                        command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Emergency_Contact1_CellPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = datavalue.Emercont1cellphone;
+                        command.Parameters.Add("@Emergency_Contact1_CellPhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1_CellPhone;
                     }
 
-                    if (datavalue.Emercont2 == "" || datavalue.Emercont2 == null)
+                    if (datavalue.Emergency_Contact2 == "" || datavalue.Emergency_Contact2 == null)
                     {
-                        command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Emergency_Contact2", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = datavalue.Emercont2;
+                        command.Parameters.Add("@Emergency_Contact2", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2;
                     }
 
-                    if (datavalue.Emercont2homephone == "" || datavalue.Emercont2homephone == null)
+                    if (datavalue.Emergency_Contact2_HomePhone == "" || datavalue.Emergency_Contact2_HomePhone == null)
                     {
-                        command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Emergency_Contact2_HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = datavalue.Emercont2homephone;
+                        command.Parameters.Add("@Emergency_Contact2_HomePhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2_HomePhone;
                     }
 
-                    if (datavalue.Emercont2cellphone == "" || datavalue.Emercont2cellphone == null)
+                    if (datavalue.Emergency_Contact2_CellPhone == "" || datavalue.Emergency_Contact2_CellPhone == null)
                     {
-                        command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                        command.Parameters.Add("@Emergency_Contact2_CellPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = datavalue.Emercont2cellphone;
+                        command.Parameters.Add("@Emergency_Contact2_CellPhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2_CellPhone;
                     }
 
                     if (datavalue.SicklecelltypeID == "" || datavalue.SicklecelltypeID == null)
@@ -1907,6 +2047,24 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureacapsulescolor;
                     }
 
+                    if (datavalue.Hydroxyureadatelasttaken == "" || datavalue.Hydroxyureadatelasttaken == null)
+                    {
+                        command.Parameters.Add("@Hydroxyureadatelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Hydroxyureadatelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Hydroxyureadatelasttaken;
+                    }
+
+                    if (datavalue.Hydroxyureadatepickedup == "" || datavalue.Hydroxyureadatepickedup == null)
+                    {
+                        command.Parameters.Add("@Hydroxyureadatepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Hydroxyureadatepickedup", SqlDbType.VarChar, 10).Value = datavalue.Hydroxyureadatepickedup;
+                    }
+
                     if (datavalue.Pharma1heardID == "" || datavalue.Pharma1heardID == null)
                     {
                         command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -1968,6 +2126,24 @@ namespace SickeCell.Controllers
                     else
                     {
                         command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma1capsulescolor;
+                    }
+
+                    if (datavalue.Pharma1datelasttaken == "" || datavalue.Pharma1datelasttaken == null)
+                    {
+                        command.Parameters.Add("@Pharma1datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma1datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma1datelasttaken;
+                    }
+
+                    if (datavalue.Pharma1datepickedup == "" || datavalue.Pharma1datepickedup == null)
+                    {
+                        command.Parameters.Add("@Pharma1datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma1datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma1datepickedup;
                     }
 
                     if (datavalue.Pharma2heardID == "" || datavalue.Pharma2heardID == null)
@@ -2032,7 +2208,25 @@ namespace SickeCell.Controllers
                     {
                         command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma2capsulescolor;
                     }
-                                                         
+
+                    if (datavalue.Pharma2datelasttaken == "" || datavalue.Pharma2datelasttaken == null)
+                    {
+                        command.Parameters.Add("@Pharma2datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma2datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma2datelasttaken;
+                    }
+
+                    if (datavalue.Pharma2datepickedup == "" || datavalue.Pharma2datepickedup == null)
+                    {
+                        command.Parameters.Add("@Pharma2datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma2datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma2datepickedup;
+                    }
+
                     if (datavalue.Pharma3heardID == "" || datavalue.Pharma3heardID == null)
                     {
                         command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -2095,6 +2289,33 @@ namespace SickeCell.Controllers
                     {
                         command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma3capsulescolor;
                     }
+
+                    if (datavalue.Pharma3datelasttaken == "" || datavalue.Pharma3datelasttaken == null)
+                    {
+                        command.Parameters.Add("@Pharma3datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma3datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma3datelasttaken;
+                    }
+
+                    if (datavalue.Pharma3datepickedup == "" || datavalue.Pharma3datepickedup == null)
+                    {
+                        command.Parameters.Add("@Pharma3datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Pharma3datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma3datepickedup;
+                    }
+
+                    if (datavalue.Deceased == "" || datavalue.Deceased == null)
+                    {
+                        command.Parameters.Add("@Deceased", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@Deceased", SqlDbType.VarChar, 50).Value = datavalue.Deceased;
+                    }
                     clientidreader.Close();
                 }
                 command.ExecuteNonQuery();
@@ -2133,12 +2354,11 @@ namespace SickeCell.Controllers
                         if (searchfullnamereader.HasRows == true)
                         {
                             while (searchfullnamereader.Read())
-                            {
-                                //var vdate = searchfullnamereader["DateOfBirth"].ToString();                            
-                                selecteddatagroup.ClientID = Convert.ToInt32(searchfullnamereader["ClientID"].ToString());
+                            {                                
+                                selecteddatagroup.ClientID = searchfullnamereader["ClientID"].ToString();
                                 selecteddatagroup.LastName = searchfullnamereader["LastName"].ToString();
                                 selecteddatagroup.FirstName = searchfullnamereader["FirstName"].ToString();
-                                selecteddatagroup.Mi = searchfullnamereader["Mi"].ToString();
+                                selecteddatagroup.Middle_Initial = searchfullnamereader["Middle_Initial"].ToString();
                                 selecteddatagroup.UniqueID = searchfullnamereader["UniqueID"].ToString();
                                 selecteddatagroup.DOB = searchfullnamereader["DOB"].ToString();
                                 selecteddatagroup.Age = searchfullnamereader["Age"].ToString();
@@ -2148,36 +2368,38 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Race = searchfullnamereader["Race"].ToString();
                                 selecteddatagroup.Ethnicity = searchfullnamereader["Ethnicity"].ToString();
                                 selecteddatagroup.Eligibility = searchfullnamereader["Eligibility"].ToString();
-                                selecteddatagroup.SSSno = searchfullnamereader["SSSno"].ToString();
-                                selecteddatagroup.CountryCode = searchfullnamereader["CountryCode"].ToString();
+                                selecteddatagroup.SSN = searchfullnamereader["SSN"].ToString();
+                                selecteddatagroup.CountyCode = searchfullnamereader["CountyCode"].ToString();
                                 selecteddatagroup.CountyCodeDescription = searchfullnamereader["CountyCodeDescription"].ToString();
-                                selecteddatagroup.CpNumber = searchfullnamereader["CpNumber"].ToString();
+                                selecteddatagroup.PhoneNumber = searchfullnamereader["PhoneNumber"].ToString();
                                 selecteddatagroup.SickleCellDiagnosis = searchfullnamereader["SickleCellDiagnosis"].ToString();
                                 selecteddatagroup.FullStreetAddress = searchfullnamereader["FullStreetAddress"].ToString();
                                 selecteddatagroup.FullStreetAddress2 = searchfullnamereader["FullStreetAddress2"].ToString();
                                 selecteddatagroup.City = searchfullnamereader["City"].ToString();
                                 selecteddatagroup.State = searchfullnamereader["State"].ToString();
                                 selecteddatagroup.ZipCode = searchfullnamereader["ZipCode"].ToString();
+                                selecteddatagroup.HomePhone = searchfullnamereader["HomePhone"].ToString();
+                                selecteddatagroup.WorkPhone = searchfullnamereader["WorkPhone"].ToString();
                                 selecteddatagroup.PMPProviderName = searchfullnamereader["PMPProviderName"].ToString();
                                 selecteddatagroup.Specialist = searchfullnamereader["Specialist"].ToString();
                                 selecteddatagroup.CCUCase = searchfullnamereader["CCUCase"].ToString();
                                 selecteddatagroup.Email_Address = searchfullnamereader["Email_Address"].ToString();
                                 selecteddatagroup.ClientresideinruralID = searchfullnamereader["ClientresideinruralID"].ToString();
                                 selecteddatagroup.Nameofmother = searchfullnamereader["Nameofmother"].ToString();
-                                selecteddatagroup.Motheraddress = searchfullnamereader["Motheraddress"].ToString();
-                                selecteddatagroup.Mothertel = searchfullnamereader["Mothertel"].ToString();
+                                selecteddatagroup.Address_Of_Mother = searchfullnamereader["Address_Of_Mother"].ToString();
+                                selecteddatagroup.Telephone_Of_Mother = searchfullnamereader["Telephone_Of_Mother"].ToString();
                                 selecteddatagroup.Nameoffather = searchfullnamereader["Nameoffather"].ToString();
-                                selecteddatagroup.Fatheraddress = searchfullnamereader["Fatheraddress"].ToString();
-                                selecteddatagroup.Fathertel = searchfullnamereader["Fathertel"].ToString();
+                                selecteddatagroup.Address_Of_Father = searchfullnamereader["Address_Of_Father"].ToString();
+                                selecteddatagroup.Telephone_Of_Father = searchfullnamereader["Telephone_Of_Father"].ToString();
                                 selecteddatagroup.Nameofguardian = searchfullnamereader["Nameofguardian"].ToString();
-                                selecteddatagroup.Guardianaddress = searchfullnamereader["Guardianaddress"].ToString();
-                                selecteddatagroup.Guardiantel = searchfullnamereader["Guardiantel"].ToString();
-                                selecteddatagroup.Emercont1 = searchfullnamereader["Emercont1"].ToString();
-                                selecteddatagroup.Emercont1homephone = searchfullnamereader["Emercont1homephone"].ToString();
-                                selecteddatagroup.Emercont1cellphone = searchfullnamereader["Emercont1cellphone"].ToString();
-                                selecteddatagroup.Emercont2 = searchfullnamereader["Emercont2"].ToString();
-                                selecteddatagroup.Emercont2homephone = searchfullnamereader["Emercont2homephone"].ToString();
-                                selecteddatagroup.Emercont2cellphone = searchfullnamereader["Emercont2cellphone"].ToString();
+                                selecteddatagroup.Address_Of_Guardian = searchfullnamereader["Address_Of_Guardian"].ToString();
+                                selecteddatagroup.Guardian_Telephone = searchfullnamereader["Guardian_Telephone"].ToString();
+                                selecteddatagroup.Emergency_Contact1 = searchfullnamereader["Emergency_Contact1"].ToString();
+                                selecteddatagroup.Emergency_Contact1_HomePhone = searchfullnamereader["Emergency_Contact1_HomePhone"].ToString();
+                                selecteddatagroup.Emergency_Contact1_CellPhone = searchfullnamereader["Emergency_Contact1_CellPhone"].ToString();
+                                selecteddatagroup.Emergency_Contact2 = searchfullnamereader["Emergency_Contact2"].ToString();
+                                selecteddatagroup.Emergency_Contact2_HomePhone = searchfullnamereader["Emergency_Contact2_HomePhone"].ToString();
+                                selecteddatagroup.Emergency_Contact2_CellPhone = searchfullnamereader["Emergency_Contact2_CellPhone"].ToString();
                                 selecteddatagroup.SicklecelltypeID = searchfullnamereader["SicklecelltypeID"].ToString();
                                 selecteddatagroup.Medication = searchfullnamereader["Medication"].ToString();
                                 selecteddatagroup.Medication2 = searchfullnamereader["Medication2"].ToString();
@@ -2190,6 +2412,8 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Hydroxyureadosage = searchfullnamereader["Hydroxyureadosage"].ToString();
                                 selecteddatagroup.Hydroxyureadosageunknown = searchfullnamereader["Hydroxyureadosageunknown"].ToString();
                                 selecteddatagroup.Hydroxyureacapsulescolor = searchfullnamereader["Hydroxyureacapsulescolor"].ToString();
+                                selecteddatagroup.Hydroxyureadatelasttaken = searchfullnamereader["Hydroxyureadatelasttaken"].ToString();
+                                selecteddatagroup.Hydroxyureadatepickedup  = searchfullnamereader["Hydroxyureadatepickedup"].ToString();
                                 selecteddatagroup.Pharma1heardID = searchfullnamereader["Pharma1heardID"].ToString();
                                 selecteddatagroup.Pharma1takenID = searchfullnamereader["Pharma1takenID"].ToString();
                                 selecteddatagroup.Pharma1currentlyID = searchfullnamereader["Pharma1currentlyID"].ToString();
@@ -2197,6 +2421,8 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Pharma1dosage = searchfullnamereader["Pharma1dosage"].ToString();
                                 selecteddatagroup.Pharma1dosageunknown = searchfullnamereader["Pharma1dosageunknown"].ToString();
                                 selecteddatagroup.Pharma1capsulescolor = searchfullnamereader["Pharma1capsulescolor"].ToString();
+                                selecteddatagroup.Pharma1datelasttaken = searchfullnamereader["Pharma1datelasttaken"].ToString();
+                                selecteddatagroup.Pharma1datepickedup = searchfullnamereader["Pharma1datepickedup"].ToString();
                                 selecteddatagroup.Pharma2heardID = searchfullnamereader["Pharma2heardID"].ToString();
                                 selecteddatagroup.Pharma2takenID = searchfullnamereader["Pharma2takenID"].ToString();
                                 selecteddatagroup.Pharma2currentlyID = searchfullnamereader["Pharma2currentlyID"].ToString();
@@ -2204,6 +2430,8 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Pharma2dosage = searchfullnamereader["Pharma2dosage"].ToString();
                                 selecteddatagroup.Pharma2dosageunknown = searchfullnamereader["Pharma2dosageunknown"].ToString();
                                 selecteddatagroup.Pharma2capsulescolor = searchfullnamereader["Pharma2capsulescolor"].ToString();
+                                selecteddatagroup.Pharma2datelasttaken = searchfullnamereader["Pharma2datelasttaken"].ToString();
+                                selecteddatagroup.Pharma2datepickedup = searchfullnamereader["Pharma2datepickedup"].ToString();
                                 selecteddatagroup.Pharma3heardID = searchfullnamereader["Pharma3heardID"].ToString();
                                 selecteddatagroup.Pharma3takenID = searchfullnamereader["Pharma3takenID"].ToString();
                                 selecteddatagroup.Pharma3currentlyID = searchfullnamereader["Pharma3currentlyID"].ToString();
@@ -2211,7 +2439,11 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Pharma3dosage = searchfullnamereader["Pharma3dosage"].ToString();
                                 selecteddatagroup.Pharma3dosageunknown = searchfullnamereader["Pharma3dosageunknown"].ToString();
                                 selecteddatagroup.Pharma3capsulescolor = searchfullnamereader["Pharma3capsulescolor"].ToString();
+                                selecteddatagroup.Pharma3datelasttaken = searchfullnamereader["Pharma3datelasttaken"].ToString();
+                                selecteddatagroup.Pharma3datepickedup = searchfullnamereader["Pharma3datepickedup"].ToString();
+                                selecteddatagroup.PhoneNumber = searchfullnamereader["PhoneNumber"].ToString().Trim();
                                 selecteddatagroup.Comments = searchfullnamereader["Comments"].ToString();
+                                selecteddatagroup.Deceased = searchfullnamereader["Deceased"].ToString();
 
                                 selecteddata.Add(selecteddatagroup);
 
@@ -2223,15 +2455,15 @@ namespace SickeCell.Controllers
                         else
                         {                            
                                     searchfullnamereader.Close();                            
-                                    SqlCommand refcmd = new SqlCommand("select ClientID, FirstName, LastName, DOB, Age, AgeGroup, RACE, Gender, Ethnicity, FullStreetAddress, "+
-                                               "City, State, ZipCode, CountyCode, CountyCodeDescription, PhoneNumber, Eligibility, SickleCellDiagnosis, PMPProviderName, "+
-                                               "CCUCase, Email_Address from Reference where ClientID= '" + selected.Clientseacrh + "' ", connection);
+                                    SqlCommand refcmd = new SqlCommand("select ClientID, FirstName, LastName, DOB, Age, AgeGroup, Race, Gender, Ethnicity, FullStreetAddress, "+
+                                               "City, State, ZipCode, HomePhone, WorkPhone, CountyCode, CountyCodeDescription, PhoneNumber, Eligibility, SickleCellDiagnosis, PMPProviderName, " +
+                                               "CCUCase, Email_Address from Information where ClientID= '" + selected.Clientseacrh + "' ", connection);
                                     SqlDataReader referencereader = refcmd.ExecuteReader();
                                     if (referencereader.HasRows == true)
                                     {
                                          while (referencereader.Read())
                                          {
-                                                selecteddatagroup.ClientID = Convert.ToInt32(referencereader["ClientID"].ToString());
+                                                selecteddatagroup.ClientID = referencereader["ClientID"].ToString();
                                                 selecteddatagroup.FirstName = referencereader["FirstName"].ToString();
                                                 selecteddatagroup.LastName = referencereader["LastName"].ToString();
                                                 selecteddatagroup.DOB = referencereader["DOB"].ToString();
@@ -2244,6 +2476,8 @@ namespace SickeCell.Controllers
                                                 selecteddatagroup.City = referencereader["City"].ToString();
                                                 selecteddatagroup.State = referencereader["State"].ToString();
                                                 selecteddatagroup.ZipCode2 = Convert.ToDecimal(referencereader["ZipCode"].ToString());
+                                                selecteddatagroup.HomePhone = referencereader["HomePhone"].ToString();
+                                                selecteddatagroup.WorkPhone = referencereader["WorkPhone"].ToString();
                                                 selecteddatagroup.CountryCode2 = Convert.ToDecimal(referencereader["CountyCode"].ToString());
                                                 selecteddatagroup.CountyCodeDescription = referencereader["CountyCodeDescription"].ToString();
                                                 selecteddatagroup.PhoneNumber2 = Convert.ToDecimal(referencereader["PhoneNumber"].ToString());
@@ -2274,7 +2508,8 @@ namespace SickeCell.Controllers
                     else
                     {
                         connect.Open();
-                        DateTime vdob3 = Convert.ToDateTime(selected.DOB);
+                        //DateTime vdob3 = Convert.ToDateTime(selected.DOB);
+                        String vdob3 = selected.DOB.ToString().Trim();
                         SqlCommand searchoverview3 = new SqlCommand("select * from information where FirstName = '" + selected.FirstName + "' and LastName = '" + selected.LastName + "' and DOB = '" + vdob3 + "' ", connect);
                         SqlDataReader searchfullnamereader = searchoverview3.ExecuteReader();
 
@@ -2282,11 +2517,10 @@ namespace SickeCell.Controllers
                         {
                             while (searchfullnamereader.Read())
                             {
-                                //var vdate = searchfullnamereader["DateOfBirth"].ToString();                            
-                                selecteddatagroup.ClientID = Convert.ToInt32(searchfullnamereader["ClientID"].ToString());
+                                selecteddatagroup.ClientID = searchfullnamereader["ClientID"].ToString();
                                 selecteddatagroup.LastName = searchfullnamereader["LastName"].ToString();
                                 selecteddatagroup.FirstName = searchfullnamereader["FirstName"].ToString();
-                                selecteddatagroup.Mi = searchfullnamereader["Mi"].ToString();
+                                selecteddatagroup.Middle_Initial = searchfullnamereader["Middle_Initial"].ToString();
                                 selecteddatagroup.UniqueID = searchfullnamereader["UniqueID"].ToString();
                                 selecteddatagroup.DOB = searchfullnamereader["DOB"].ToString();
                                 selecteddatagroup.Age = searchfullnamereader["Age"].ToString();
@@ -2296,36 +2530,38 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Race = searchfullnamereader["Race"].ToString();
                                 selecteddatagroup.Ethnicity = searchfullnamereader["Ethnicity"].ToString();
                                 selecteddatagroup.Eligibility = searchfullnamereader["Eligibility"].ToString();
-                                selecteddatagroup.SSSno = searchfullnamereader["SSSno"].ToString();
-                                selecteddatagroup.CountryCode = searchfullnamereader["CountryCode"].ToString();
+                                selecteddatagroup.SSN = searchfullnamereader["SSN"].ToString();
+                                selecteddatagroup.CountyCode = searchfullnamereader["CountyCode"].ToString();
                                 selecteddatagroup.CountyCodeDescription = searchfullnamereader["CountyCodeDescription"].ToString();
-                                selecteddatagroup.CpNumber = searchfullnamereader["CpNumber"].ToString();
+                                selecteddatagroup.PhoneNumber = searchfullnamereader["PhoneNumber"].ToString();
                                 selecteddatagroup.SickleCellDiagnosis = searchfullnamereader["SickleCellDiagnosis"].ToString();
                                 selecteddatagroup.FullStreetAddress = searchfullnamereader["FullStreetAddress"].ToString();
                                 selecteddatagroup.FullStreetAddress2 = searchfullnamereader["FullStreetAddress2"].ToString();
                                 selecteddatagroup.City = searchfullnamereader["City"].ToString();
                                 selecteddatagroup.State = searchfullnamereader["State"].ToString();
                                 selecteddatagroup.ZipCode = searchfullnamereader["ZipCode"].ToString();
+                                selecteddatagroup.HomePhone = searchfullnamereader["HomePhone"].ToString();
+                                selecteddatagroup.WorkPhone = searchfullnamereader["WorkPhone"].ToString();                                
                                 selecteddatagroup.PMPProviderName = searchfullnamereader["PMPProviderName"].ToString();
                                 selecteddatagroup.Specialist = searchfullnamereader["Specialist"].ToString();
                                 selecteddatagroup.CCUCase = searchfullnamereader["CCUCase"].ToString();
                                 selecteddatagroup.Email_Address = searchfullnamereader["Email_Address"].ToString();
                                 selecteddatagroup.ClientresideinruralID = searchfullnamereader["ClientresideinruralID"].ToString();
                                 selecteddatagroup.Nameofmother = searchfullnamereader["Nameofmother"].ToString();
-                                selecteddatagroup.Motheraddress = searchfullnamereader["Motheraddress"].ToString();
-                                selecteddatagroup.Mothertel = searchfullnamereader["Mothertel"].ToString();
+                                selecteddatagroup.Address_Of_Mother = searchfullnamereader["Address_Of_Mother"].ToString();
+                                selecteddatagroup.Telephone_Of_Mother = searchfullnamereader["Telephone_Of_Mother"].ToString();
                                 selecteddatagroup.Nameoffather = searchfullnamereader["Nameoffather"].ToString();
-                                selecteddatagroup.Fatheraddress = searchfullnamereader["Fatheraddress"].ToString();
-                                selecteddatagroup.Fathertel = searchfullnamereader["Fathertel"].ToString();
+                                selecteddatagroup.Address_Of_Father = searchfullnamereader["Address_Of_Father"].ToString();
+                                selecteddatagroup.Telephone_Of_Father = searchfullnamereader["Telephone_Of_Father"].ToString();
                                 selecteddatagroup.Nameofguardian = searchfullnamereader["Nameofguardian"].ToString();
-                                selecteddatagroup.Guardianaddress = searchfullnamereader["Guardianaddress"].ToString();
-                                selecteddatagroup.Guardiantel = searchfullnamereader["Guardiantel"].ToString();
-                                selecteddatagroup.Emercont1 = searchfullnamereader["Emercont1"].ToString();
-                                selecteddatagroup.Emercont1homephone = searchfullnamereader["Emercont1homephone"].ToString();
-                                selecteddatagroup.Emercont1cellphone = searchfullnamereader["Emercont1cellphone"].ToString();
-                                selecteddatagroup.Emercont2 = searchfullnamereader["Emercont2"].ToString();
-                                selecteddatagroup.Emercont2homephone = searchfullnamereader["Emercont2homephone"].ToString();
-                                selecteddatagroup.Emercont2cellphone = searchfullnamereader["Emercont2cellphone"].ToString();
+                                selecteddatagroup.Address_Of_Guardian = searchfullnamereader["Address_Of_Guardian"].ToString();
+                                selecteddatagroup.Guardian_Telephone = searchfullnamereader["Guardian_Telephone"].ToString();
+                                selecteddatagroup.Emergency_Contact1 = searchfullnamereader["Emergency_Contact1"].ToString();
+                                selecteddatagroup.Emergency_Contact1_HomePhone = searchfullnamereader["Emergency_Contact1_HomePhone"].ToString();
+                                selecteddatagroup.Emergency_Contact1_CellPhone = searchfullnamereader["Emergency_Contact1_CellPhone"].ToString();
+                                selecteddatagroup.Emergency_Contact2 = searchfullnamereader["Emergency_Contact2"].ToString();
+                                selecteddatagroup.Emergency_Contact2_HomePhone = searchfullnamereader["Emergency_Contact2_HomePhone"].ToString();
+                                selecteddatagroup.Emergency_Contact2_CellPhone = searchfullnamereader["Emergency_Contact2_CellPhone"].ToString();
                                 selecteddatagroup.SicklecelltypeID = searchfullnamereader["SicklecelltypeID"].ToString();
                                 selecteddatagroup.Medication = searchfullnamereader["Medication"].ToString();
                                 selecteddatagroup.Medication2 = searchfullnamereader["Medication2"].ToString();
@@ -2338,6 +2574,8 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Hydroxyureadosage = searchfullnamereader["Hydroxyureadosage"].ToString();
                                 selecteddatagroup.Hydroxyureadosageunknown = searchfullnamereader["Hydroxyureadosageunknown"].ToString();
                                 selecteddatagroup.Hydroxyureacapsulescolor = searchfullnamereader["Hydroxyureacapsulescolor"].ToString();
+                                selecteddatagroup.Hydroxyureadatelasttaken = searchfullnamereader["Hydroxyureadatelasttaken"].ToString();
+                                selecteddatagroup.Hydroxyureadatepickedup = searchfullnamereader["Hydroxyureadatepickedup"].ToString();
                                 selecteddatagroup.Pharma1heardID = searchfullnamereader["Pharma1heardID"].ToString();
                                 selecteddatagroup.Pharma1takenID = searchfullnamereader["Pharma1takenID"].ToString();
                                 selecteddatagroup.Pharma1currentlyID = searchfullnamereader["Pharma1currentlyID"].ToString();
@@ -2345,6 +2583,8 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Pharma1dosage = searchfullnamereader["Pharma1dosage"].ToString();
                                 selecteddatagroup.Pharma1dosageunknown = searchfullnamereader["Pharma1dosageunknown"].ToString();
                                 selecteddatagroup.Pharma1capsulescolor = searchfullnamereader["Pharma1capsulescolor"].ToString();
+                                selecteddatagroup.Pharma1datelasttaken = searchfullnamereader["Pharma1datelasttaken"].ToString();
+                                selecteddatagroup.Pharma1datepickedup = searchfullnamereader["Pharma1datepickedup"].ToString();
                                 selecteddatagroup.Pharma2heardID = searchfullnamereader["Pharma2heardID"].ToString();
                                 selecteddatagroup.Pharma2takenID = searchfullnamereader["Pharma2takenID"].ToString();
                                 selecteddatagroup.Pharma2currentlyID = searchfullnamereader["Pharma2currentlyID"].ToString();
@@ -2352,6 +2592,8 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Pharma2dosage = searchfullnamereader["Pharma2dosage"].ToString();
                                 selecteddatagroup.Pharma2dosageunknown = searchfullnamereader["Pharma2dosageunknown"].ToString();
                                 selecteddatagroup.Pharma2capsulescolor = searchfullnamereader["Pharma2capsulescolor"].ToString();
+                                selecteddatagroup.Pharma2datelasttaken = searchfullnamereader["Pharma2datelasttaken"].ToString();
+                                selecteddatagroup.Pharma2datepickedup = searchfullnamereader["Pharma2datepickedup"].ToString();
                                 selecteddatagroup.Pharma3heardID = searchfullnamereader["Pharma3heardID"].ToString();
                                 selecteddatagroup.Pharma3takenID = searchfullnamereader["Pharma3takenID"].ToString();
                                 selecteddatagroup.Pharma3currentlyID = searchfullnamereader["Pharma3currentlyID"].ToString();
@@ -2359,8 +2601,10 @@ namespace SickeCell.Controllers
                                 selecteddatagroup.Pharma3dosage = searchfullnamereader["Pharma3dosage"].ToString();
                                 selecteddatagroup.Pharma3dosageunknown = searchfullnamereader["Pharma3dosageunknown"].ToString();
                                 selecteddatagroup.Pharma3capsulescolor = searchfullnamereader["Pharma3capsulescolor"].ToString();
-
+                                selecteddatagroup.Pharma3datelasttaken = searchfullnamereader["Pharma3datelasttaken"].ToString();
+                                selecteddatagroup.Pharma3datepickedup = searchfullnamereader["Pharma3datepickedup"].ToString();
                                 selecteddatagroup.Comments = searchfullnamereader["Comments"].ToString();
+                                selecteddatagroup.Deceased = searchfullnamereader["Deceased"].ToString();
 
                                 selecteddata.Add(selecteddatagroup);
 
@@ -2408,7 +2652,7 @@ namespace SickeCell.Controllers
 
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor, @Pharma3heardID, @Pharma3takenID, @Pharma3currentlyID, @Pharma3pasttakenID, @Pharma3dosage, @Pharma3dosageunknown, @Pharma3capsulescolor";
+                command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Middle_Initial, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSN, @CountyCode, @CountyCodeDescription, @PhoneNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @HomePhone, @WorkPhone, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Address_Of_Mother, @Telephone_Of_Mother, @Nameoffather, @Address_Of_Father, @Telephone_Of_Father, @Nameofguardian, @Address_Of_Guardian, @Guardian_Telephone, @Emergency_Contact1, @Emergency_Contact1_HomePhone , @Emergency_Contact1_CellPhone, @Emergency_Contact2, @Emergency_Contact2_HomePhone, @Emergency_Contact2_CellPhone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Hydroxyureadatelasttaken, @Hydroxyureadatepickedup, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma1datelasttaken, @Pharma1datepickedup, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor, @Pharma2datelasttaken, @Pharma2datepickedup, @Pharma3heardID, @Pharma3takenID, @Pharma3currentlyID, @Pharma3pasttakenID, @Pharma3dosage, @Pharma3dosageunknown, @Pharma3capsulescolor, @Pharma3datelasttaken, @Pharma3datepickedup, @Deceased";
 
                 SqlCommand searchclientid = new SqlCommand("SickeCell_Stored_Search_idx", connection);
                 searchclientid.CommandType = CommandType.StoredProcedure;
@@ -2435,13 +2679,13 @@ namespace SickeCell.Controllers
                             longdata = Convert.ToInt64(strdata);
                             //command.Parameters.Add("@ClientID", SqlDbType.BigInt).Value = longdata + 1;
 
-                            if (datavalue.ClientID == 0)
+                            if (datavalue.ClientID == "" || datavalue.ClientID == null)
                             {
                                 command.Parameters.Add("@ClientID", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@ClientID", SqlDbType.Int).Value = datavalue.ClientID;
+                                command.Parameters.Add("@ClientID", SqlDbType.VarChar, 25).Value = datavalue.ClientID;
                             }
 
                             if (datavalue.LastName == "" || datavalue.LastName == null)
@@ -2462,13 +2706,13 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = datavalue.FirstName;
                             }
 
-                            if (datavalue.Mi == "" || datavalue.Mi == null)
+                            if (datavalue.Middle_Initial == "" || datavalue.Middle_Initial == null)
                             {
-                                command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Middle_Initial", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = datavalue.Mi;
+                                command.Parameters.Add("@Middle_Initial", SqlDbType.VarChar, 50).Value = datavalue.Middle_Initial;
                             }
 
                             if (datavalue.UniqueID == "" || datavalue.UniqueID == null)
@@ -2480,7 +2724,7 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@UniqueID", SqlDbType.VarChar, 50).Value = datavalue.UniqueID;
                             }
 
-                            if (datavalue.DOB == null)
+                            if (datavalue.DOB == ""  || datavalue.DOB == null)
                             {
                                 command.Parameters.Add("@DOB", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
@@ -2543,13 +2787,13 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@Ethnicity", SqlDbType.VarChar, 50).Value = datavalue.Ethnicity;
                             }
 
-                            if (datavalue.SSSno == "" || datavalue.SSSno == null)
+                            if (datavalue.SSN == "" || datavalue.SSN == null)
                             {
-                                command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = datavalue.SSSno;
+                                command.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = datavalue.SSN;
                             }
 
                             if (datavalue.Eligibility == "" || datavalue.Eligibility == null)
@@ -2561,13 +2805,13 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@Eligibility", SqlDbType.VarChar, 50).Value = datavalue.Eligibility;
                             }
 
-                            if (datavalue.CountryCode == "" || datavalue.CountryCode == null)
+                            if (datavalue.CountyCode == "" || datavalue.CountyCode == null)
                             {
-                                command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@CountyCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = datavalue.CountryCode;
+                                command.Parameters.Add("@CountyCode", SqlDbType.VarChar, 50).Value = datavalue.CountyCode;
                             }
 
                             if (datavalue.CountyCodeDescription == "" || datavalue.CountyCodeDescription == null)
@@ -2579,13 +2823,13 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@CountyCodeDescription", SqlDbType.VarChar, 50).Value = datavalue.CountyCodeDescription;
                             }
 
-                            if (datavalue.CpNumber == "" || datavalue.CpNumber == null)
+                            if (datavalue.PhoneNumber == "" || datavalue.PhoneNumber == null)
                             {
-                                command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = datavalue.CpNumber;
+                                command.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, 50).Value = datavalue.PhoneNumber;
                             }
 
                             if (datavalue.SickleCellDiagnosis == "" || datavalue.SickleCellDiagnosis == null)
@@ -2642,6 +2886,24 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = datavalue.ZipCode;
                             }
 
+                            if (datavalue.HomePhone == "" || datavalue.HomePhone == null)
+                            {
+                                command.Parameters.Add("@HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@HomePhone", SqlDbType.VarChar, 50).Value = datavalue.HomePhone;
+                            }
+
+                            if (datavalue.WorkPhone == "" || datavalue.WorkPhone == null)
+                            {
+                                command.Parameters.Add("@WorkPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@WorkPhone", SqlDbType.VarChar, 50).Value = datavalue.WorkPhone;
+                            }
+
                             if (datavalue.PMPProviderName == "" || datavalue.PMPProviderName == null)
                             {
                                 command.Parameters.Add("@PMPProviderName", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -2696,22 +2958,22 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@Nameofmother", SqlDbType.VarChar, 50).Value = datavalue.Nameofmother;
                             }
 
-                            if (datavalue.Motheraddress == "" || datavalue.Motheraddress == null)
+                            if (datavalue.Address_Of_Mother == "" || datavalue.Address_Of_Mother == null)
                             {
-                                command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Address_Of_Mother", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = datavalue.Motheraddress;
+                                command.Parameters.Add("@Address_Of_Mother", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Mother;
                             }
 
-                            if (datavalue.Mothertel == "" || datavalue.Mothertel == null)
+                            if (datavalue.Telephone_Of_Mother == "" || datavalue.Telephone_Of_Mother == null)
                             {
-                                command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Telephone_Of_Mother", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = datavalue.Mothertel;
+                                command.Parameters.Add("@Telephone_Of_Mother", SqlDbType.VarChar, 50).Value = datavalue.Telephone_Of_Mother;
                             }
 
                             if (datavalue.Nameoffather == "" || datavalue.Nameoffather == null)
@@ -2723,22 +2985,22 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = datavalue.Nameoffather;
                             }
 
-                            if (datavalue.Fatheraddress == "" || datavalue.Fatheraddress == null)
+                            if (datavalue.Address_Of_Father == "" || datavalue.Address_Of_Father == null)
                             {
-                                command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Address_Of_Father", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = datavalue.Fatheraddress;
+                                command.Parameters.Add("@Address_Of_Father", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Father;
                             }
 
-                            if (datavalue.Fathertel == "" || datavalue.Fathertel == null)
+                            if (datavalue.Telephone_Of_Father == "" || datavalue.Telephone_Of_Father == null)
                             {
-                                command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Telephone_Of_Father", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = datavalue.Fathertel;
+                                command.Parameters.Add("@Telephone_Of_Father", SqlDbType.VarChar, 50).Value = datavalue.Telephone_Of_Father;
                             }
 
                             if (datavalue.Nameofguardian == "" || datavalue.Nameofguardian == null)
@@ -2750,76 +3012,76 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@Nameofguardian", SqlDbType.VarChar, 50).Value = datavalue.Nameofguardian;
                             }
 
-                            if (datavalue.Guardianaddress == "" || datavalue.Guardianaddress == null)
+                            if (datavalue.Address_Of_Guardian == "" || datavalue.Address_Of_Guardian == null)
                             {
-                                command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Address_Of_Guardian", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = datavalue.Guardianaddress;
+                                command.Parameters.Add("@Address_Of_Guardian", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Guardian;
                             }
 
-                            if (datavalue.Guardiantel == "" || datavalue.Guardiantel == null)
+                            if (datavalue.Guardian_Telephone == "" || datavalue.Guardian_Telephone == null)
                             {
-                                command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Guardian_Telephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = datavalue.Guardiantel;
+                                command.Parameters.Add("@Guardian_Telephone", SqlDbType.VarChar, 50).Value = datavalue.Guardian_Telephone;
                             }
 
-                            if (datavalue.Emercont1 == "" || datavalue.Emercont1 == null)
+                            if (datavalue.Emergency_Contact1 == "" || datavalue.Emergency_Contact1 == null)
                             {
-                                command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Emergency_Contact1", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = datavalue.Emercont1;
+                                command.Parameters.Add("@Emergency_Contact1", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1;
                             }
 
-                            if (datavalue.Emercont1homephone == "" || datavalue.Emercont1homephone == null)
+                            if (datavalue.Emergency_Contact1_HomePhone == "" || datavalue.Emergency_Contact1_HomePhone == null)
                             {
-                                command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Emergency_Contact1_HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = datavalue.Emercont1homephone;
+                                command.Parameters.Add("@Emergency_Contact1_HomePhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1_HomePhone;
                             }
 
-                            if (datavalue.Emercont1cellphone == "" || datavalue.Emercont1cellphone == null)
+                            if (datavalue.Emergency_Contact1_CellPhone == "" || datavalue.Emergency_Contact1_CellPhone == null)
                             {
-                                command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Emergency_Contact1_CellPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = datavalue.Emercont1cellphone;
+                                command.Parameters.Add("@Emergency_Contact1_CellPhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1_CellPhone;
                             }
 
-                            if (datavalue.Emercont2 == "" || datavalue.Emercont2 == null)
+                            if (datavalue.Emergency_Contact2 == "" || datavalue.Emergency_Contact2 == null)
                             {
-                                command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Emergency_Contact2", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = datavalue.Emercont2;
+                                command.Parameters.Add("@Emergency_Contact2", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2;
                             }
 
-                            if (datavalue.Emercont2homephone == "" || datavalue.Emercont2homephone == null)
+                            if (datavalue.Emergency_Contact2_HomePhone == "" || datavalue.Emergency_Contact2_HomePhone == null)
                             {
-                                command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Emergency_Contact2_HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = datavalue.Emercont2homephone;
+                                command.Parameters.Add("@Emergency_Contact2_HomePhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2_HomePhone;
                             }
 
-                            if (datavalue.Emercont2cellphone == "" || datavalue.Emercont2cellphone == null)
+                            if (datavalue.Emergency_Contact2_CellPhone == "" || datavalue.Emergency_Contact2_CellPhone == null)
                             {
-                                command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                command.Parameters.Add("@Emergency_Contact2_CellPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                             }
                             else
                             {
-                                command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = datavalue.Emercont2cellphone;
+                                command.Parameters.Add("@Emergency_Contact2_CellPhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2_CellPhone;
                             }
 
                             if (datavalue.SicklecelltypeID == "" || datavalue.SicklecelltypeID == null)
@@ -2930,6 +3192,23 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureacapsulescolor;
                             }
 
+                            if (datavalue.Hydroxyureadatelasttaken == "" || datavalue.Hydroxyureadatelasttaken == null)
+                            {
+                                command.Parameters.Add("@Hydroxyureadatelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Hydroxyureadatelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Hydroxyureadatelasttaken;
+                            }
+                            if (datavalue.Hydroxyureadatepickedup == "" || datavalue.Hydroxyureadatepickedup == null)
+                            {
+                                command.Parameters.Add("@Hydroxyureadatepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Hydroxyureadatepickedup", SqlDbType.VarChar, 10).Value = datavalue.Hydroxyureadatepickedup;
+                            }
+
                             if (datavalue.Pharma1heardID == "" || datavalue.Pharma1heardID == null)
                             {
                                 command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -2991,6 +3270,24 @@ namespace SickeCell.Controllers
                             else
                             {
                                 command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma1capsulescolor;
+                            }
+
+                            if (datavalue.Pharma1datelasttaken == "" || datavalue.Pharma1datelasttaken == null)
+                            {
+                                command.Parameters.Add("@Pharma1datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma1datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma1datelasttaken;
+                            }
+
+                            if (datavalue.Pharma1datepickedup == "" || datavalue.Pharma1datepickedup == null)
+                            {
+                                command.Parameters.Add("@Pharma1datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma1datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma1datepickedup;
                             }
 
                             if (datavalue.Pharma2heardID == "" || datavalue.Pharma2heardID == null)
@@ -3056,6 +3353,24 @@ namespace SickeCell.Controllers
                                 command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma2capsulescolor;
                             }
 
+                            if (datavalue.Pharma2datelasttaken == "" || datavalue.Pharma2datelasttaken == null)
+                            {
+                                command.Parameters.Add("@Pharma2datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma2datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma2datelasttaken;
+                            }
+
+                            if (datavalue.Pharma2datepickedup == "" || datavalue.Pharma2datepickedup == null)
+                            {
+                                command.Parameters.Add("@Pharma2datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma2datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma2datepickedup;
+                            }
+
                             if (datavalue.Pharma3heardID == "" || datavalue.Pharma3heardID == null)
                             {
                                 command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -3118,6 +3433,33 @@ namespace SickeCell.Controllers
                             {
                                 command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma3capsulescolor;
                             }
+
+                            if (datavalue.Pharma3datelasttaken == "" || datavalue.Pharma3datelasttaken == null)
+                            {
+                                command.Parameters.Add("@Pharma3datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma3datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma3datelasttaken;
+                            }
+
+                            if (datavalue.Pharma3datepickedup == "" || datavalue.Pharma3datepickedup == null)
+                            {
+                                command.Parameters.Add("@Pharma3datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Pharma3datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma3datepickedup;
+                            }
+
+                            if (datavalue.Deceased == "" || datavalue.Deceased == null)
+                            {
+                                command.Parameters.Add("@Deceased", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                            }
+                            else
+                            {
+                                command.Parameters.Add("@Deceased", SqlDbType.VarChar, 50).Value = datavalue.Deceased;
+                            }
                             count = 1;
                             break;
                         }
@@ -3132,7 +3474,7 @@ namespace SickeCell.Controllers
                     if (str.All(char.IsDigit))
                     {
                         clientidreader.Close();
-                        //command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Mi, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSSno, @CountryCode, @CountyCodeDescription, @CpNumber, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Motheraddress, @Mothertel, @Nameoffather, @Fatheraddress, @Fathertel, @Nameofguardian, @Guardianaddress, @Guardiantel, @Emercont1, @Emercont1homephone , @Emercont1cellphone, @Emercont2, @Emercont2homephone, @Emercont2cellphone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor, @Pharma3heardID, @Pharma3takenID, @Pharma3currentlyID, @Pharma3pasttakenID, @Pharma3dosage, @Pharma3dosageunknown, @Pharma3capsulescolor";
+                        //command.CommandText = "Execute Information_Stored_Save @ClientID,@LastName, @FirstName, @Middle_Initial, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender,@Race, @Ethnicity, @Eligibility, @SSN, @CountyCode, @CountyCodeDescription, @Mobile_Number, @SickleCellDiagnosis, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @PMPProviderName, @Specialist, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, @Address_Of_Mother, @Telephone_Of_Mother, @Nameoffather, @Address_Of_Father, @Telephone_Of_Father, @Nameofguardian, @Address_Of_Guardian, @Guardian_Telephone, @Emergency_Contact1, @Emergency_Contact1_HomePhone , @Emergency_Contact1_CellPhone, @Emergency_Contact2, @Emergency_Contact2_HomePhone, @Emergency_Contact2_CellPhone, @SicklecelltypeID, @Medication, @Medication2, @Medication3, @Medication4, @HydroxyureaheardID, @HydroxyureatakenID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Hydroxyureadosage, @Hydroxyureadosageunknown,@Hydroxyureacapsulescolor, @Pharma1heardID, @Pharma1takenID, @Pharma1currentlyID, @Pharma1pasttakenID, @Pharma1dosage, @Pharma1dosageunknown, @Pharma1capsulescolor, @Pharma2heardID, @Pharma2takenID, @Pharma2currentlyID, @Pharma2pasttakenID, @Pharma2dosage, @Pharma2dosageunknown, @Pharma2capsulescolor, @Pharma3heardID, @Pharma3takenID, @Pharma3currentlyID, @Pharma3pasttakenID, @Pharma3dosage, @Pharma3dosageunknown, @Pharma3capsulescolor";
                         SqlCommand command2 = new SqlCommand("select top 1 ClientID from Information order by ClientID DESC", connection);
                         SqlDataReader clientidreader2 = command2.ExecuteReader();
                         ////////////////////////////////////////////////////////////////////////////////
@@ -3145,13 +3487,13 @@ namespace SickeCell.Controllers
 
                                 longdata = Convert.ToInt64(strdata);                        
 
-                                if (datavalue.ClientID == 0)
+                                if (datavalue.ClientID == "" || datavalue.ClientID == null)
                                 {
                                     command.Parameters.Add("@ClientID", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@ClientID", SqlDbType.Int).Value = datavalue.ClientID;
+                                    command.Parameters.Add("@ClientID", SqlDbType.VarChar, 25).Value = datavalue.ClientID;
                                 }
 
                                 if (datavalue.LastName == "" || datavalue.LastName == null)
@@ -3172,13 +3514,13 @@ namespace SickeCell.Controllers
                                     command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = datavalue.FirstName;
                                 }
 
-                                if (datavalue.Mi == "" || datavalue.Mi == null)
+                                if (datavalue.Middle_Initial == "" || datavalue.Middle_Initial == null)
                                 {
-                                    command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Middle_Initial", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Mi", SqlDbType.VarChar, 50).Value = datavalue.Mi;
+                                    command.Parameters.Add("@Middle_Initial", SqlDbType.VarChar, 50).Value = datavalue.Middle_Initial;
                                 }
 
                                 if (datavalue.UniqueID == "" || datavalue.UniqueID == null)
@@ -3253,13 +3595,13 @@ namespace SickeCell.Controllers
                                     command.Parameters.Add("@Ethnicity", SqlDbType.VarChar, 50).Value = datavalue.Ethnicity;
                                 }
 
-                                if (datavalue.SSSno == "" || datavalue.SSSno == null)
+                                if (datavalue.SSN == "" || datavalue.SSN == null)
                                 {
-                                    command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@SSSno", SqlDbType.VarChar, 50).Value = datavalue.SSSno;
+                                    command.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = datavalue.SSN;
                                 }
 
                                 if (datavalue.Eligibility == "" || datavalue.Eligibility == null)
@@ -3271,13 +3613,13 @@ namespace SickeCell.Controllers
                                     command.Parameters.Add("@Eligibility", SqlDbType.VarChar, 50).Value = datavalue.Eligibility;
                                 }
 
-                                if (datavalue.CountryCode == "" || datavalue.CountryCode == null)
+                                if (datavalue.CountyCode == "" || datavalue.CountyCode == null)
                                 {
-                                    command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@CountyCode", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 50).Value = datavalue.CountryCode;
+                                    command.Parameters.Add("@CountyCode", SqlDbType.VarChar, 50).Value = datavalue.CountyCode;
                                 }
 
                                 if (datavalue.CountyCodeDescription == "" || datavalue.CountyCodeDescription == null)
@@ -3289,13 +3631,13 @@ namespace SickeCell.Controllers
                                     command.Parameters.Add("@CountyCodeDescription", SqlDbType.VarChar, 50).Value = datavalue.CountyCodeDescription;
                                 }
 
-                                if (datavalue.CpNumber == "" || datavalue.CpNumber == null)
+                                if (datavalue.PhoneNumber == "" || datavalue.PhoneNumber == null)
                                 {
-                                    command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@CpNumber", SqlDbType.VarChar, 50).Value = datavalue.CpNumber;
+                                    command.Parameters.Add("@MPhoneNumber", SqlDbType.VarChar, 50).Value = datavalue.PhoneNumber;
                                 }
 
                                 if (datavalue.SickleCellDiagnosis == "" || datavalue.SickleCellDiagnosis == null)
@@ -3352,6 +3694,24 @@ namespace SickeCell.Controllers
                                     command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = datavalue.ZipCode;
                                 }
 
+                                if (datavalue.HomePhone == "" || datavalue.HomePhone == null)
+                                {
+                                    command.Parameters.Add("@HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@HomePhone", SqlDbType.VarChar, 50).Value = datavalue.HomePhone;
+                                }
+
+                                if (datavalue.WorkPhone == "" || datavalue.WorkPhone == null)
+                                {
+                                    command.Parameters.Add("@WorkPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@WorkPhone", SqlDbType.VarChar, 50).Value = datavalue.WorkPhone;
+                                }
+
                                 if (datavalue.PMPProviderName == "" || datavalue.PMPProviderName == null)
                                 {
                                     command.Parameters.Add("@PMPProviderName", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -3406,22 +3766,22 @@ namespace SickeCell.Controllers
                                     command.Parameters.Add("@Nameofmother", SqlDbType.VarChar, 50).Value = datavalue.Nameofmother;
                                 }
 
-                                if (datavalue.Motheraddress == "" || datavalue.Motheraddress == null)
+                                if (datavalue.Address_Of_Mother == "" || datavalue.Address_Of_Mother == null)
                                 {
-                                    command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Address_Of_Mother", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Motheraddress", SqlDbType.VarChar, 50).Value = datavalue.Motheraddress;
+                                    command.Parameters.Add("@Address_Of_Mother", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Mother;
                                 }
 
-                                if (datavalue.Mothertel == "" || datavalue.Mothertel == null)
+                                if (datavalue.Telephone_Of_Mother == "" || datavalue.Telephone_Of_Mother == null)
                                 {
-                                    command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Telephone_Of_Mother", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Mothertel", SqlDbType.VarChar, 50).Value = datavalue.Mothertel;
+                                    command.Parameters.Add("@Telephone_Of_Mother", SqlDbType.VarChar, 50).Value = datavalue.Telephone_Of_Mother;
                                 }
 
                                 if (datavalue.Nameoffather == "" || datavalue.Nameoffather == null)
@@ -3433,22 +3793,22 @@ namespace SickeCell.Controllers
                                     command.Parameters.Add("@Nameoffather", SqlDbType.VarChar, 50).Value = datavalue.Nameoffather;
                                 }
 
-                                if (datavalue.Fatheraddress == "" || datavalue.Fatheraddress == null)
+                                if (datavalue.Address_Of_Father == "" || datavalue.Address_Of_Father == null)
                                 {
-                                    command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Address_Of_Father", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Fatheraddress", SqlDbType.VarChar, 50).Value = datavalue.Fatheraddress;
+                                    command.Parameters.Add("@Address_Of_Father", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Father;
                                 }
 
-                                if (datavalue.Fathertel == "" || datavalue.Fathertel == null)
+                                if (datavalue.Telephone_Of_Father == "" || datavalue.Telephone_Of_Father == null)
                                 {
-                                    command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Telephone_Of_Father", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Fathertel", SqlDbType.VarChar, 50).Value = datavalue.Fathertel;
+                                    command.Parameters.Add("@Telephone_Of_Father", SqlDbType.VarChar, 50).Value = datavalue.Telephone_Of_Father;
                                 }
 
                                 if (datavalue.Nameofguardian == "" || datavalue.Nameofguardian == null)
@@ -3460,76 +3820,76 @@ namespace SickeCell.Controllers
                                     command.Parameters.Add("@Nameofguardian", SqlDbType.VarChar, 50).Value = datavalue.Nameofguardian;
                                 }
 
-                                if (datavalue.Guardianaddress == "" || datavalue.Guardianaddress == null)
+                                if (datavalue.Address_Of_Guardian == "" || datavalue.Address_Of_Guardian == null)
                                 {
-                                    command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Address_Of_Guardian", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Guardianaddress", SqlDbType.VarChar, 50).Value = datavalue.Guardianaddress;
+                                    command.Parameters.Add("@Address_Of_Guardian", SqlDbType.VarChar, 50).Value = datavalue.Address_Of_Guardian;
                                 }
 
-                                if (datavalue.Guardiantel == "" || datavalue.Guardiantel == null)
+                                if (datavalue.Guardian_Telephone == "" || datavalue.Guardian_Telephone == null)
                                 {
-                                    command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Guardian_Telephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Guardiantel", SqlDbType.VarChar, 50).Value = datavalue.Guardiantel;
+                                    command.Parameters.Add("@Guardian_Telephone", SqlDbType.VarChar, 50).Value = datavalue.Guardian_Telephone;
                                 }
 
-                                if (datavalue.Emercont1 == "" || datavalue.Emercont1 == null)
+                                if (datavalue.Emergency_Contact1 == "" || datavalue.Emergency_Contact1 == null)
                                 {
-                                    command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Emergency_Contact1", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Emercont1", SqlDbType.VarChar, 50).Value = datavalue.Emercont1;
+                                    command.Parameters.Add("@Emergency_Contact1", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1;
                                 }
 
-                                if (datavalue.Emercont1homephone == "" || datavalue.Emercont1homephone == null)
+                                if (datavalue.Emergency_Contact1_HomePhone == "" || datavalue.Emergency_Contact1_HomePhone == null)
                                 {
-                                    command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Emergency_Contact1_HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Emercont1homephone", SqlDbType.VarChar, 50).Value = datavalue.Emercont1homephone;
+                                    command.Parameters.Add("@Emergency_Contact1_HomePhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1_HomePhone;
                                 }
 
-                                if (datavalue.Emercont1cellphone == "" || datavalue.Emercont1cellphone == null)
+                                if (datavalue.Emergency_Contact1_CellPhone == "" || datavalue.Emergency_Contact1_CellPhone == null)
                                 {
-                                    command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Emergency_Contact1_CellPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Emercont1cellphone", SqlDbType.VarChar, 50).Value = datavalue.Emercont1cellphone;
+                                    command.Parameters.Add("@Emergency_Contact1_CellPhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact1_CellPhone;
                                 }
 
-                                if (datavalue.Emercont2 == "" || datavalue.Emercont2 == null)
+                                if (datavalue.Emergency_Contact2 == "" || datavalue.Emergency_Contact2 == null)
                                 {
-                                    command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Emergency_Contact2", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Emercont2", SqlDbType.VarChar, 50).Value = datavalue.Emercont2;
+                                    command.Parameters.Add("@Emergency_Contact2", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2;
                                 }
 
-                                if (datavalue.Emercont2homephone == "" || datavalue.Emercont2homephone == null)
+                                if (datavalue.Emergency_Contact2_HomePhone == "" || datavalue.Emergency_Contact2_HomePhone == null)
                                 {
-                                    command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Emergency_Contact2_HomePhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Emercont2homephone", SqlDbType.VarChar, 50).Value = datavalue.Emercont2homephone;
+                                    command.Parameters.Add("@Emergency_Contact2_HomePhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2_HomePhone;
                                 }
 
-                                if (datavalue.Emercont2cellphone == "" || datavalue.Emercont2cellphone == null)
+                                if (datavalue.Emergency_Contact2_CellPhone == "" || datavalue.Emergency_Contact2_CellPhone == null)
                                 {
-                                    command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                    command.Parameters.Add("@Emergency_Contact2_CellPhone", SqlDbType.VarChar, 50).Value = DBNull.Value;
                                 }
                                 else
                                 {
-                                    command.Parameters.Add("@Emercont2cellphone", SqlDbType.VarChar, 50).Value = datavalue.Emercont2cellphone;
+                                    command.Parameters.Add("@Emergency_Contact2_CellPhone", SqlDbType.VarChar, 50).Value = datavalue.Emergency_Contact2_CellPhone;
                                 }
 
                                 if (datavalue.SicklecelltypeID == "" || datavalue.SicklecelltypeID == null)
@@ -3640,6 +4000,23 @@ namespace SickeCell.Controllers
                                     command.Parameters.Add("@Hydroxyureacapsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Hydroxyureacapsulescolor;
                                 }
 
+                                if (datavalue.Hydroxyureadatelasttaken == "" || datavalue.Hydroxyureadatelasttaken == null)
+                                {
+                                    command.Parameters.Add("@Hydroxyureadatelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Hydroxyureadatelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Hydroxyureadatelasttaken;
+                                }
+                                if (datavalue.Hydroxyureadatepickedup == "" || datavalue.Hydroxyureadatepickedup == null)
+                                {
+                                    command.Parameters.Add("@Hydroxyureadatepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Hydroxyureadatepickedup", SqlDbType.VarChar, 10).Value = datavalue.Hydroxyureadatepickedup;
+                                }
+
                                 if (datavalue.Pharma1heardID == "" || datavalue.Pharma1heardID == null)
                                 {
                                     command.Parameters.Add("@Pharma1heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -3701,6 +4078,24 @@ namespace SickeCell.Controllers
                                 else
                                 {
                                     command.Parameters.Add("@Pharma1capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma1capsulescolor;
+                                }
+
+                                if (datavalue.Pharma1datelasttaken == "" || datavalue.Pharma1datelasttaken == null)
+                                {
+                                    command.Parameters.Add("@Pharma1datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma1datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma1datelasttaken;
+                                }
+
+                                if (datavalue.Pharma1datepickedup == "" || datavalue.Pharma1datepickedup == null)
+                                {
+                                    command.Parameters.Add("@Pharma1datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma1datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma1datepickedup;
                                 }
 
                                 if (datavalue.Pharma2heardID == "" || datavalue.Pharma2heardID == null)
@@ -3766,6 +4161,24 @@ namespace SickeCell.Controllers
                                     command.Parameters.Add("@Pharma2capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma2capsulescolor;
                                 }
 
+                                if (datavalue.Pharma2datelasttaken == "" || datavalue.Pharma2datelasttaken == null)
+                                {
+                                    command.Parameters.Add("@Pharma2datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma2datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma2datelasttaken;
+                                }
+
+                                if (datavalue.Pharma2datepickedup == "" || datavalue.Pharma2datepickedup == null)
+                                {
+                                    command.Parameters.Add("@Pharma2datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma2datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma2datepickedup;
+                                }
+
                                 if (datavalue.Pharma3heardID == "" || datavalue.Pharma3heardID == null)
                                 {
                                     command.Parameters.Add("@Pharma3heardID", SqlDbType.VarChar, 50).Value = DBNull.Value;
@@ -3829,6 +4242,32 @@ namespace SickeCell.Controllers
                                     command.Parameters.Add("@Pharma3capsulescolor", SqlDbType.VarChar, 50).Value = datavalue.Pharma3capsulescolor;
                                 }
 
+                                if (datavalue.Pharma3datelasttaken == "" || datavalue.Pharma3datelasttaken == null)
+                                {
+                                    command.Parameters.Add("@Pharma3datelasttaken", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma3datelasttaken", SqlDbType.VarChar, 10).Value = datavalue.Pharma3datelasttaken;
+                                }
+
+                                if (datavalue.Pharma3datepickedup == "" || datavalue.Pharma3datepickedup == null)
+                                {
+                                    command.Parameters.Add("@Pharma3datepickedup", SqlDbType.VarChar, 10).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Pharma3datepickedup", SqlDbType.VarChar, 10).Value = datavalue.Pharma3datepickedup;
+                                }
+
+                                if (datavalue.Deceased == "" || datavalue.Deceased == null)
+                                {
+                                    command.Parameters.Add("@Deceased", SqlDbType.VarChar, 50).Value = DBNull.Value;
+                                }
+                                else
+                                {
+                                    command.Parameters.Add("@Deceased", SqlDbType.VarChar, 50).Value = datavalue.Deceased;
+                                }
                                 clientidreader2.Close();
 
                                 count = 1;
@@ -3974,13 +4413,13 @@ namespace SickeCell.Controllers
                         longdata = Convert.ToInt64(strdata);
                         command.Parameters.Add("@NotesID", SqlDbType.BigInt).Value = longdata + 1;
 
-                        if (savingnotes.ClientID == 0)
+                        if (savingnotes.ClientID == "" || savingnotes.ClientID == null)
                         {
                             command.Parameters.Add("@ClientID", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
                         else
                         {
-                            command.Parameters.Add("@ClientID", SqlDbType.Int).Value = savingnotes.ClientID;
+                            command.Parameters.Add("@ClientID", SqlDbType.VarChar, 25).Value = savingnotes.ClientID;
                         }
 
                         if (savingnotes.FirstName == "" || savingnotes.FirstName == null)
@@ -4001,7 +4440,7 @@ namespace SickeCell.Controllers
                             command.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = savingnotes.LastName;
                         }
 
-                        if (savingnotes.DOB == null)
+                        if (savingnotes.DOB == ""  || savingnotes.DOB == null)
                         {
                             command.Parameters.Add("@DOB", SqlDbType.VarChar, 50).Value = DBNull.Value;
                         }
@@ -4052,7 +4491,7 @@ namespace SickeCell.Controllers
                         }
                         else
                         {
-                            command.Parameters.Add("@Datenotescreated", SqlDbType.VarChar, 50).Value = savingnotes.Datenotescreated;
+                            command.Parameters.Add("@Datenotescreated", SqlDbType.Date).Value = savingnotes.Datenotescreated;
                         }
                     }
                     noteidreader.Close();
@@ -4063,13 +4502,13 @@ namespace SickeCell.Controllers
                     //command.Parameters.Add("@ClientID", SqlDbType.BigInt).Value = longdata + 1;
                     command.Parameters.Add("@NotesID", SqlDbType.BigInt).Value = longdata + 1;
 
-                    if (savingnotes.ClientID == 0)
+                    if (savingnotes.ClientID == "" || savingnotes.ClientID == null)
                     {
                         command.Parameters.Add("@ClientID", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
                     else
                     {
-                        command.Parameters.Add("@ClientID", SqlDbType.Int).Value = savingnotes.ClientID;
+                        command.Parameters.Add("@ClientID", SqlDbType.VarChar, 25).Value = savingnotes.ClientID;
                     }
 
                     if (savingnotes.FirstName == "" || savingnotes.FirstName == null)
@@ -4090,7 +4529,7 @@ namespace SickeCell.Controllers
                         command.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = savingnotes.LastName;
                     }
 
-                    if (savingnotes.DOB == null)
+                    if (savingnotes.DOB == "" ||  savingnotes.DOB == null)
                     {
                         command.Parameters.Add("@DOB", SqlDbType.VarChar, 50).Value = DBNull.Value;
                     }
@@ -4202,10 +4641,10 @@ namespace SickeCell.Controllers
                 while (clientidreader.Read())
                 {
                     SickeCellclass Integrate_Data = new SickeCellclass();
-                    Integrate_Data.ClientID = Convert.ToInt32(clientidreader["ClientID"].ToString());
+                    Integrate_Data.ClientID = clientidreader["ClientID"].ToString();
                     Integrate_Data.LastName = clientidreader["LastName"].ToString();
                     Integrate_Data.FirstName = clientidreader["FirstName"].ToString();
-                    Integrate_Data.Mi = clientidreader["Mi"].ToString();
+                    Integrate_Data.Middle_Initial = clientidreader["Middle_Initial"].ToString();
                     Integrate_Data.UniqueID = clientidreader["UniqueID"].ToString();
                     Integrate_Data.DOB = clientidreader["DOB"].ToString();
                     Integrate_Data.Age = clientidreader["Age"].ToString();
@@ -4215,10 +4654,10 @@ namespace SickeCell.Controllers
                     Integrate_Data.Race = clientidreader["Race"].ToString();
                     Integrate_Data.Ethnicity = clientidreader["Ethnicity"].ToString();
                     Integrate_Data.Eligibility = clientidreader["Eligibility"].ToString();
-                    Integrate_Data.SSSno = clientidreader["SSSno"].ToString();
-                    Integrate_Data.CountryCode = clientidreader["CountryCode"].ToString();
+                    Integrate_Data.SSN = clientidreader["SSN"].ToString();
+                    Integrate_Data.CountyCode = clientidreader["CountyCode"].ToString();
                     Integrate_Data.CountyCodeDescription = clientidreader["CountyCodeDescription"].ToString();
-                    Integrate_Data.CpNumber = clientidreader["CpNumber"].ToString();
+                    Integrate_Data.PhoneNumber = clientidreader["PhoneNumber"].ToString();
                     Integrate_Data.SickleCellDiagnosis = clientidreader["SickleCellDiagnosis"].ToString();
                     Integrate_Data.FullStreetAddress = clientidreader["FullStreetAddress"].ToString();
                     Integrate_Data.FullStreetAddress2 = clientidreader["FullStreetAddress2"].ToString();
@@ -4230,20 +4669,20 @@ namespace SickeCell.Controllers
                     Integrate_Data.Email_Address = clientidreader["Email_Address"].ToString();
                     Integrate_Data.ClientresideinruralID = clientidreader["ClientresideinruralID"].ToString();
                     Integrate_Data.Nameofmother = clientidreader["Nameofmother"].ToString();
-                    Integrate_Data.Motheraddress = clientidreader["Motheraddress"].ToString();
-                    Integrate_Data.Mothertel = clientidreader["Mothertel"].ToString();
+                    Integrate_Data.Address_Of_Mother = clientidreader["Address_Of_Mother"].ToString();
+                    Integrate_Data.Telephone_Of_Mother = clientidreader["Telephone_Of_Mother"].ToString();
                     Integrate_Data.Nameoffather = clientidreader["Nameoffather"].ToString();
-                    Integrate_Data.Fatheraddress = clientidreader["Fatheraddress"].ToString();
-                    Integrate_Data.Fathertel = clientidreader["Fathertel"].ToString();
+                    Integrate_Data.Address_Of_Father = clientidreader["Address_Of_Father"].ToString();
+                    Integrate_Data.Telephone_Of_Father = clientidreader["Telephone_Of_Father"].ToString();
                     Integrate_Data.Nameofguardian = clientidreader["Nameofguardian"].ToString();
-                    Integrate_Data.Guardianaddress = clientidreader["Guardianaddress"].ToString();
-                    Integrate_Data.Guardiantel = clientidreader["Guardiantel"].ToString();
-                    Integrate_Data.Emercont1 = clientidreader["Emercont1"].ToString();
-                    Integrate_Data.Emercont1homephone = clientidreader["Emercont1homephone"].ToString();
-                    Integrate_Data.Emercont1cellphone = clientidreader["Emercont1cellphone"].ToString();
-                    Integrate_Data.Emercont2 = clientidreader["Emercont2"].ToString();
-                    Integrate_Data.Emercont2homephone = clientidreader["Emercont2homephone"].ToString();
-                    Integrate_Data.Emercont2cellphone = clientidreader["Emercont2cellphone"].ToString();
+                    Integrate_Data.Address_Of_Guardian = clientidreader["Address_Of_Guardian"].ToString();
+                    Integrate_Data.Guardian_Telephone = clientidreader["Guardian_Telephone"].ToString();
+                    Integrate_Data.Emergency_Contact1 = clientidreader["Emergency_Contact1"].ToString();
+                    Integrate_Data.Emergency_Contact1_HomePhone = clientidreader["Emergency_Contact1_HomePhone"].ToString();
+                    Integrate_Data.Emergency_Contact1_CellPhone = clientidreader["Emergency_Contact1_CellPhone"].ToString();
+                    Integrate_Data.Emergency_Contact2 = clientidreader["Emergency_Contact2"].ToString();
+                    Integrate_Data.Emergency_Contact2_HomePhone = clientidreader["Emergency_Contact2_HomePhone"].ToString();
+                    Integrate_Data.Emergency_Contact2_CellPhone = clientidreader["Emergency_Contact2_CellPhone"].ToString();
                     Integrate_Data.SicklecelltypeID = clientidreader["SicklecelltypeID"].ToString();
                     Integrate_Data.HydroxyureaheardID = clientidreader["HydroxyureaheardID"].ToString();
                     Integrate_Data.HydroxyureatakenID = clientidreader["HydroxyureatakenID"].ToString();

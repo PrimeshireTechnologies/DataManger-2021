@@ -7,7 +7,7 @@
     <Property Name="ClientID" Type="Int64" Nullable="false" />
     <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Mi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Middle_Initial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="UniqueID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="DOB" Type="DateTime" Precision="0" />
     <Property Name="Age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -16,14 +16,14 @@
     <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Race" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Ethnicity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="SSSno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="CpNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SSN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="FullStreetAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="FullStreetAddress2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="CountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="CountyCodeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Eligibility" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -33,20 +33,20 @@
     <Property Name="Email_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ClientresideinruralID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Nameofmother" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Motheraddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Mothertel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address_Of_Mother" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone_Of_Mother" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Nameoffather" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Fatheraddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Fathertel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address_Of_Father" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone_Of_Father" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Nameofguardian" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Guardianaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Guardiantel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Emercont1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Emercont1homephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Emercont1cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Emercont2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Emercont2homephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Emercont2cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address_Of_Guardian" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Guardian_Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_Contact1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_Contact1_HomePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_Contact1_CellPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_Contact2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_Contact2_HomePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_Contact2_CellPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="SicklecelltypeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="HydroxyureaheardID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="HydroxyureatakenID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />

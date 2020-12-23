@@ -3269,10 +3269,13 @@ input[type="button"].btn-block {
   display: block;
   padding: 3px 20px;
   clear: both;
-  font-weight: normal;
+  /*font-weight: normal;*/
+  font-weight: 900;
   line-height: 1.428571429;
-  color: #333333;
+  /*color: #333333;*/
+  color:#FDFD96;
   white-space: nowrap;
+  background-color:#f37946;
 }
 
 .dropdown-menu > li > a:hover,

@@ -44,7 +44,7 @@ namespace SickeCell.Controllers
             public int ClientID { get; set; }
             public string LastName { get; set; }
             public string FirstName { get; set; }
-            public string Mi { get; set; }
+            public string Middle_Initial { get; set; }
             public string UniqueID { get; set; }
             public string DOB { get; set; }
             public string Age { get; set; }
@@ -54,10 +54,10 @@ namespace SickeCell.Controllers
             public string Race { get; set; }
             public string Ethnicity { get; set; }
             public string Eligibility { get; set; }
-            public string SSSno { get; set; }
-            public string CountryCode { get; set; }
+            public string SSN { get; set; }
+            public string CountyCode { get; set; }
             public string CountyCodeDescription { get; set; }
-            public string CpNumber { get; set; }
+            public string Mobile_Number { get; set; }
             public string SickleCellDiagnosis { get; set; }
             public string FullStreetAddress { get; set; }
             public string FullStreetAddress2 { get; set; }
@@ -70,20 +70,20 @@ namespace SickeCell.Controllers
             public string Email_Address { get; set; }
             public string ClientresideinruralID { get; set; }
             public string Nameofmother { get; set; }
-            public string Motheraddress { get; set; }
-            public string Mothertel { get; set; }
+            public string Address_Of_Mother { get; set; }
+            public string Telephone_Of_Mother { get; set; }
             public string Nameoffather { get; set; }
-            public string Fatheraddress { get; set; }
-            public string Fathertel { get; set; }
+            public string Address_Of_Father { get; set; }
+            public string Telephone_Of_Father { get; set; }
             public string Nameofguardian { get; set; }
-            public string Guardianaddress { get; set; }
-            public string Guardiantel { get; set; }
-            public string Emercont1 { get; set; }
-            public string Emercont1homephone { get; set; }
-            public string Emercont1cellphone { get; set; }
-            public string Emercont2 { get; set; }
-            public string Emercont2homephone { get; set; }
-            public string Emercont2cellphone { get; set; }
+            public string Address_Of_Guardian { get; set; }
+            public string Guardian_Telephone { get; set; }
+            public string Emergency_Contact1 { get; set; }
+            public string Emergency_Contact1_HomePhone { get; set; }
+            public string Emergency_Contact1_CellPhone { get; set; }
+            public string Emergency_Contact2 { get; set; }
+            public string Emergency_Contact2_HomePhone { get; set; }
+            public string Emergency_Contact2_CellPhone { get; set; }
             public string SicklecelltypeID { get; set; }
             public string Medication { get; set; }
             public string HydroxyureaheardID { get; set; }

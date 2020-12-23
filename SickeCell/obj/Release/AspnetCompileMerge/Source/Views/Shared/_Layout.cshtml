@@ -51,12 +51,12 @@
                                     @*<a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><img src="~/Images/hamburger.png" style="margin-top:-17px; margin-left:-5px; height:46px;width:50px;"/> </a>*@
                                     <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><img src="~/Images/hamburger.png" style="margin-top:-4px; margin-left:-5px; height:35px;width:40px;" /></a>
                                     <ul class="dropdown-menu" role="menu" id="dropdmenu1">
-                                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                                        <li>@Html.ActionLink("Patient Entry Form", "Entry", "Home", null, new { id = "Patient_Entry_Form" })</li>
-                                        <li>@Html.ActionLink("Case Notes", "Casenotes", "Home", null, new { id = "Case_Notes" })</li>
-                                        <li>@Html.ActionLink("Patient Overview", "PatientOverview", "Home", null, new { id = "Patient_Overview" })</li>
-                                        <li>@Html.ActionLink("Upload CSV File", "Uploadcsv", "Home", null, new { id = "Uploadcsv" })</li>
-                                        <li>@Html.ActionLink("Management Console", "Manageconsoleoption", "Home", null, new { id = "Manageconsole" })</li>
+                                        <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                                        <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Client Entry Form", "Entry", "Home", null, new { id = "Patient_Entry_Form" })</li>
+                                        <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Case Notes", "Casenotes", "Home", null, new { id = "Case_Notes" })</li>
+                                        <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Client Overview", "PatientOverview", "Home", null, new { id = "Patient_Overview" })</li>
+                                        <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Client Upload", "Uploadcsv", "Home", null, new { id = "Uploadcsv" })</li>
+                                        <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Management Console", "Manageconsoleoption", "Home", null, new { id = "Manageconsole" })</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -108,11 +108,12 @@
                                                   @*<a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><img src="~/Images/hamburger.png" style="margin-top:-17px; margin-left:-5px; height:46px;width:50px;" /></a>*@
                                                   <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><img src="~/Images/hamburger.png" style="margin-top:-4px; margin-left:-5px; height:35px;width:40px;" /></a>
                                                   <ul class="dropdown-menu" role="menu" id="dropdmenu2">
-                                                      <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                                                      <li>@Html.ActionLink("Patient Entry Form", "Entry", "Home", null, new { id = "Patient_Entry_Form" })</li>
-                                                      <li>@Html.ActionLink("Case Notes", "Casenotes", "Home", null, new { id = "Case_Notes" })</li>
-                                                      <li>@Html.ActionLink("Upload CSV File", "Uploadcsv", "Home", null, new { id = "Uploadcsv" })</li>
-                                                      <li>@Html.ActionLink("Management Console", "Manageconsole", "Home", null, new { id = "Manageconsole" })</li>
+                                                      <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>                                                      
+                                                      <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Client Entry Form", "Entry", "Home", null, new { id = "Patient_Entry_Form" })</li>
+                                                      <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Case Notes", "Casenotes", "Home", null, new { id = "Case_Notes" })</li>
+                                                      <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Client Overview", "PatientOverview", "Home", null, new { id = "Patient_Overview" })</li>
+                                                      <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Client Upload", "Uploadcsv", "Home", null, new { id = "Uploadcsv" })</li>
+                                                      <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Management Console", "Manageconsole", "Home", null, new { id = "Manageconsole" })</li>
                                                   </ul>
                                               </li>
                                           </ul>
@@ -278,7 +279,11 @@
              } else {
                 document.getElementById("option1").innerHTML = "User :         " + globalRoleName;
                 document.getElementById("username").innerHTML = globalusrfname + " " + globalusrlname;
-             }
+            }
+
+            localStorage.setItem("filename", "");
+            localStorage.setItem("Refreshed", "0");
+
         });
 
         window.addEventListener("resize", function (event) {

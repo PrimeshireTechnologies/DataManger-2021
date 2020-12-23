@@ -844,8 +844,8 @@
           <DataField>LastName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Mi">
-          <DataField>Mi</DataField>
+        <Field Name="Middle_Initial">
+          <DataField>Middle_Initial</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="UniqueID">
@@ -880,12 +880,12 @@
           <DataField>Ethnicity</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="SSSno">
-          <DataField>SSSno</DataField>
+        <Field Name="SSN">
+          <DataField>SSN</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CpNumber">
-          <DataField>CpNumber</DataField>
+        <Field Name="Mobile_Number">
+          <DataField>Mobile_Number</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="FullStreetAddress">
@@ -908,8 +908,8 @@
           <DataField>ZipCode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CountryCode">
-          <DataField>CountryCode</DataField>
+        <Field Name="CountyCode">
+          <DataField>CountyCode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="CountyCodeDescription">
@@ -948,60 +948,60 @@
           <DataField>Nameofmother</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Motheraddress">
-          <DataField>Motheraddress</DataField>
+        <Field Name="Address_Of_Mother">
+          <DataField>Address_Of_Mother</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Mothertel">
-          <DataField>Mothertel</DataField>
+        <Field Name="Telephone_Of_Mother">
+          <DataField>Telephone_Of_Mother</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Nameoffather">
           <DataField>Nameoffather</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Fatheraddress">
-          <DataField>Fatheraddress</DataField>
+        <Field Name="Address_Of_Father">
+          <DataField>Address_Of_Father</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Fathertel">
-          <DataField>Fathertel</DataField>
+        <Field Name="Telephone_Of_Father">
+          <DataField>Telephone_Of_Father</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Nameofguardian">
           <DataField>Nameofguardian</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Guardianaddress">
-          <DataField>Guardianaddress</DataField>
+        <Field Name="Address_Of_Guardian">
+          <DataField>Address_Of_Guardian</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Guardiantel">
-          <DataField>Guardiantel</DataField>
+        <Field Name="Guardian_Telephone">
+          <DataField>Guardian_Telephone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Emercont1">
-          <DataField>Emercont1</DataField>
+        <Field Name="Emergency_Contact1">
+          <DataField>Emergency_Contact1</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Emercont1homephone">
-          <DataField>Emercont1homephone</DataField>
+        <Field Name="Emergency_Contact1_HomePhone">
+          <DataField>Emergency_Contact1_HomePhone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Emercont1cellphone">
-          <DataField>Emercont1cellphone</DataField>
+        <Field Name="Emergency_Contact1_CellPhone">
+          <DataField>Emergency_Contact1_CellPhone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Emercont2">
-          <DataField>Emercont2</DataField>
+        <Field Name="Emergency_Contact2">
+          <DataField>Emergency_Contact2</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Emercont2homephone">
-          <DataField>Emercont2homephone</DataField>
+        <Field Name="Emergency_Contact2_HomePhone">
+          <DataField>Emergency_Contact2_HomePhone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Emercont2cellphone">
-          <DataField>Emercont2cellphone</DataField>
+        <Field Name="Emergency_Contact2_CellPhone">
+          <DataField>Emergency_Contact2_CellPhone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="SicklecelltypeID">

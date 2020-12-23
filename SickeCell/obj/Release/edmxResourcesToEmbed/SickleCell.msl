@@ -7,7 +7,7 @@
           <ScalarProperty Name="ClientID" ColumnName="ClientID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="Mi" ColumnName="Mi" />
+          <ScalarProperty Name="Middle_Initial" ColumnName="Middle_Initial" />
           <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
           <ScalarProperty Name="DOB" ColumnName="DOB" />
           <ScalarProperty Name="Age" ColumnName="Age" />
@@ -16,14 +16,14 @@
           <ScalarProperty Name="Gender" ColumnName="Gender" />
           <ScalarProperty Name="Race" ColumnName="Race" />
           <ScalarProperty Name="Ethnicity" ColumnName="Ethnicity" />
-          <ScalarProperty Name="SSSno" ColumnName="SSSno" />
-          <ScalarProperty Name="CpNumber" ColumnName="CpNumber" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
           <ScalarProperty Name="FullStreetAddress" ColumnName="FullStreetAddress" />
           <ScalarProperty Name="FullStreetAddress2" ColumnName="FullStreetAddress2" />
           <ScalarProperty Name="City" ColumnName="City" />
           <ScalarProperty Name="State" ColumnName="State" />
           <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountyCode" ColumnName="CountyCode" />
           <ScalarProperty Name="CountyCodeDescription" ColumnName="CountyCodeDescription" />
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="Eligibility" ColumnName="Eligibility" />
@@ -33,20 +33,20 @@
           <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
           <ScalarProperty Name="ClientresideinruralID" ColumnName="ClientresideinruralID" />
           <ScalarProperty Name="Nameofmother" ColumnName="Nameofmother" />
-          <ScalarProperty Name="Motheraddress" ColumnName="Motheraddress" />
-          <ScalarProperty Name="Mothertel" ColumnName="Mothertel" />
+          <ScalarProperty Name="Address_Of_Mother" ColumnName="Address_Of_Mother" />
+          <ScalarProperty Name="Telephone_Of_Mother" ColumnName="Telephone_Of_Mother" />
           <ScalarProperty Name="Nameoffather" ColumnName="Nameoffather" />
-          <ScalarProperty Name="Fatheraddress" ColumnName="Fatheraddress" />
-          <ScalarProperty Name="Fathertel" ColumnName="Fathertel" />
+          <ScalarProperty Name="Address_Of_Father" ColumnName="Address_Of_Father" />
+          <ScalarProperty Name="Telephone_Of_Father" ColumnName="Telephone_Of_Father" />
           <ScalarProperty Name="Nameofguardian" ColumnName="Nameofguardian" />
-          <ScalarProperty Name="Guardianaddress" ColumnName="Guardianaddress" />
-          <ScalarProperty Name="Guardiantel" ColumnName="Guardiantel" />
-          <ScalarProperty Name="Emercont1" ColumnName="Emercont1" />
-          <ScalarProperty Name="Emercont1homephone" ColumnName="Emercont1homephone" />
-          <ScalarProperty Name="Emercont1cellphone" ColumnName="Emercont1cellphone" />
-          <ScalarProperty Name="Emercont2" ColumnName="Emercont2" />
-          <ScalarProperty Name="Emercont2homephone" ColumnName="Emercont2homephone" />
-          <ScalarProperty Name="Emercont2cellphone" ColumnName="Emercont2cellphone" />
+          <ScalarProperty Name="Address_Of_Guardian" ColumnName="Address_Of_Guardian" />
+          <ScalarProperty Name="Guardian_Telephone" ColumnName="Guardian_Telephone" />
+          <ScalarProperty Name="Emergency_Contact1" ColumnName="Emergency_Contact1" />
+          <ScalarProperty Name="Emergency_Contact1_HomePhone" ColumnName="Emergency_Contact1_HomePhone" />
+          <ScalarProperty Name="Emergency_Contact1_CellPhone" ColumnName="Emergency_Contact1_CellPhone" />
+          <ScalarProperty Name="Emergency_Contact2" ColumnName="Emergency_Contact2" />
+          <ScalarProperty Name="Emergency_Contact2_HomePhone" ColumnName="Emergency_Contact2_HomePhone" />
+          <ScalarProperty Name="Emergency_Contact2_CellPhone" ColumnName="Emergency_Contact2_CellPhone" />
           <ScalarProperty Name="SicklecelltypeID" ColumnName="SicklecelltypeID" />
           <ScalarProperty Name="HydroxyureaheardID" ColumnName="HydroxyureaheardID" />
           <ScalarProperty Name="HydroxyureatakenID" ColumnName="HydroxyureatakenID" />

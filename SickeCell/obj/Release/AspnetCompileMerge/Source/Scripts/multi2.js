@@ -889,7 +889,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     'ClientID'             : document.getElementById('clientid')['value'],
                     'LastName'             : document.getElementById('lname')['value'],
                     'FirstName'            : document.getElementById('fname')['value'],         
-                    'Mi'                   : document.getElementById('mi')['value'],         
+                    'Middle_Initial'                   : document.getElementById('mi')['value'],         
                     'UniqueID'             : document.getElementById('uniqueid')['value'],
                     'DOB'                  : document.getElementById('dob')['value'],
                     'Age'                  : document.getElementById('age')['value'],
@@ -899,10 +899,10 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     'Race'                 : document.getElementById('race')['value'],                                                                                                          
                     'Ethnicity'            : document.getElementById('ethnicity')['value'],
                     'Eligibility'          : document.getElementById('eligibility')['value'],
-                    'SSSno'                : document.getElementById('sssno')['value'],
-                    'CountryCode'          : document.getElementById('countrycode')['value'],
+                    'SSN'                : document.getElementById('sssno')['value'],
+                    'CountyCode'          : document.getElementById('countrycode')['value'],
                     'CountyCodeDescription': document.getElementById('countrycodedes')['value'],
-                    'CpNumber'             : document.getElementById('cpnumber')['value'],                    
+                    'Mobile_Number'             : document.getElementById('cpnumber')['value'],                    
                     'SickleCellDiagnosis'  : document.getElementById('sickdiag')['value'],
                     'FullStreetAddress'    : document.getElementById('address')['value'],
                     'FullStreetAddress2'   : document.getElementById('address2')['value'],
@@ -914,20 +914,20 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     'Email_Address'        : document.getElementById('email')['value'],
                     'ClientresideinruralID': clientresideinruralid,                                                             
                     'Nameofmother'         : document.getElementById('nameofmother')['value'],
-                    'Motheraddress'        : document.getElementById('motheraddress')['value'],
-                    'Mothertel'            : document.getElementById('mothertel')['value'],
+                    'Address_Of_Mother'        : document.getElementById('motheraddress')['value'],
+                    'Telephone_Of_Mother'            : document.getElementById('mothertel')['value'],
                     'Nameoffather'         : document.getElementById('nameoffather')['value'],
-                    'Fatheraddress'        : document.getElementById('fatheraddress')['value'],
-                    'Fathertel'            : document.getElementById('fathertel')['value'],
+                    'Address_Of_Father'        : document.getElementById('fatheraddress')['value'],
+                    'Telephone_Of_Father'            : document.getElementById('fathertel')['value'],
                     'Nameofguardian'       : document.getElementById('nameofguardian')['value'],
-                    'Guardianaddress'      : document.getElementById('guardianaddress')['value'],
-                    'Guardiantel'          : document.getElementById('guardiantel')['value'],
-                    'Emercont1'            : document.getElementById('emercont1')['value'],
-                    'Emercont1homephone'   : document.getElementById('emercont1homephone')['value'],
-                    'Emercont1cellphone'   : document.getElementById('emercont1cellphone')['value'],
-                    'Emercont2'            : document.getElementById('emercont2')['value'],
-                    'Emercont2homephone'   : document.getElementById('emercont2homephone')['value'],
-                    'Emercont2cellphone'   : document.getElementById('emercont2cellphone')['value'],
+                    'Address_Of_Guardian'      : document.getElementById('guardianaddress')['value'],
+                    'Guardian_Telephone'          : document.getElementById('guardiantel')['value'],
+                    'Emergency_Contact1'            : document.getElementById('emercont1')['value'],
+                    'Emergency_Contact1_HomePhone'   : document.getElementById('emercont1homephone')['value'],
+                    'Emergency_Contact1_CellPhone'   : document.getElementById('emercont1cellphone')['value'],
+                    'Emergency_Contact2'            : document.getElementById('emercont2')['value'],
+                    'Emergency_Contact2_HomePhone'   : document.getElementById('emercont2homephone')['value'],
+                    'Emergency_Contact2_CellPhone'   : document.getElementById('emercont2cellphone')['value'],
                     'SicklecelltypeID'     : sicklecelltypeid,
                     'HydroxyureaheardID'   : hydroxyureaheardid,
                     'HydroxyureatakenID'   : hydroxyureatakenid,
@@ -1091,7 +1091,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 document.getElementById('clientid')['value'] = response["0"].ClientID;
                 document.getElementById('lname')['value'] = response["0"].LastName;
                 document.getElementById('fname')['value'] = response["0"].FirstName;
-                document.getElementById('mi')['value'] = response["0"].Mi;
+                document.getElementById('mi')['value'] = response["0"].Middle_Initial;
                 document.getElementById('uniqueid')['value'] = response["0"].UniqueID;
                 document.getElementById('dob')['value'] = formatDate(response["0"].DOB);
                 document.getElementById('age')['value'] = response["0"].Age;
@@ -1101,10 +1101,10 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 document.getElementById('race')['value'] = response["0"].Race;
                 document.getElementById('ethnicity')['value'] = response["0"].Ethnicity;
                 document.getElementById('eligibility')['value'] = response["0"].Eligibility;
-                document.getElementById('sssno')['value'] = response["0"].SSSno;
-                document.getElementById('countrycode')['value'] = response["0"].CountryCode;
+                document.getElementById('sssno')['value'] = response["0"].SSN;
+                document.getElementById('countrycode')['value'] = response["0"].CountyCode;
                 document.getElementById('countrycodedes')['value'] = response["0"].CountyCodeDescription;
-                document.getElementById('cpnumber')['value'] = response["0"].CpNumber;
+                document.getElementById('cpnumber')['value'] = response["0"].Mobile_Number;
                 document.getElementById('sickdiag')['value'] = response["0"].SickleCellDiagnosis;
                 document.getElementById('address')['value'] = response["0"].FullStreetAddress;
                 document.getElementById('address2')['value'] = response["0"].FullStreetAddress2;
@@ -1126,20 +1126,20 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                     document.getElementById("clientresideno").checked = false;
                 }
                 document.getElementById('nameofmother')['value'] = response["0"].Nameofmother;
-                document.getElementById('motheraddress')['value'] = response["0"].Motheraddress;
-                document.getElementById('mothertel')['value'] = response["0"].Mothertel;
+                document.getElementById('motheraddress')['value'] = response["0"].Address_Of_Mother;
+                document.getElementById('mothertel')['value'] = response["0"].Telephone_Of_Mother;
                 document.getElementById('nameoffather')['value'] = response["0"].Nameoffather;
-                document.getElementById('fatheraddress')['value'] = response["0"].Fatheraddress;
-                document.getElementById('fathertel')['value'] = response["0"].Fathertel;
+                document.getElementById('fatheraddress')['value'] = response["0"].Address_Of_Father;
+                document.getElementById('fathertel')['value'] = response["0"].Telephone_Of_Father;
                 document.getElementById('nameofguardian')['value'] = response["0"].Nameofguardian;
-                document.getElementById('guardianaddress')['value'] = response["0"].Guardianaddress;
-                document.getElementById('guardiantel')['value'] = response["0"].Guardiantel;
-                document.getElementById('emercont1')['value'] = response["0"].Emercont1;
-                document.getElementById('emercont1homephone')['value'] = response["0"].Emercont1homephone;
-                document.getElementById('emercont1cellphone')['value'] = response["0"].Emercont1cellphone;
-                document.getElementById('emercont2')['value'] = response["0"].Emercont2;
-                document.getElementById('emercont2homephone')['value'] = response["0"].Emercont2homephone;
-                document.getElementById('emercont2cellphone')['value'] = response["0"].Emercont2cellphone;
+                document.getElementById('guardianaddress')['value'] = response["0"].Address_Of_Guardian;
+                document.getElementById('guardiantel')['value'] = response["0"].Guardian_Telephone;
+                document.getElementById('emercont1')['value'] = response["0"].Emergency_Contact1;
+                document.getElementById('emercont1homephone')['value'] = response["0"].Emergency_Contact1_HomePhone;
+                document.getElementById('emercont1cellphone')['value'] = response["0"].Emergency_Contact1_CellPhone;
+                document.getElementById('emercont2')['value'] = response["0"].Emergency_Contact2;
+                document.getElementById('emercont2homephone')['value'] = response["0"].Emergency_Contact2_HomePhone;
+                document.getElementById('emercont2cellphone')['value'] = response["0"].Emergency_Contact2_CellPhone;
 
                 if (response["0"].SicklecelltypeID === "SS") {
                     document.getElementById('sicklecellss').checked = true;
@@ -1279,7 +1279,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
     //        document.getElementById('clientid')['value']       = response["0"].ClientID;
     //        document.getElementById('lname')['value']          = response["0"].LastName;
     //        document.getElementById('fname')['value']          = response["0"].FirstName;
-    //        document.getElementById('mi')['value']             = response["0"].Mi;            
+    //        document.getElementById('mi')['value']             = response["0"].Middle_Initial;            
     //        document.getElementById('uniqueid')['value']       = response["0"].UniqueID;
     //        document.getElementById('dob')['value']            = formatDate(response["0"].DOB);
     //        document.getElementById('age')['value']            = response["0"].Age;
@@ -1289,10 +1289,10 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
     //        document.getElementById('race')['value']           = response["0"].Race;
     //        document.getElementById('ethnicity')['value']      = response["0"].Ethnicity;
     //        document.getElementById('eligibility')['value']    = response["0"].Eligibility;
-    //        document.getElementById('sssno')['value']          = response["0"].SSSno;
-    //        document.getElementById('countrycode')['value']    = response["0"].CountryCode;
+    //        document.getElementById('sssno')['value']          = response["0"].SSN;
+    //        document.getElementById('countrycode')['value']    = response["0"].CountyCode;
     //        document.getElementById('countrycodedes')['value'] = response["0"].CountyCodeDescription;
-    //        document.getElementById('cpnumber')['value']       = response["0"].CpNumber;            
+    //        document.getElementById('cpnumber')['value']       = response["0"].Mobile_Number;            
     //        document.getElementById('sickdiag')['value']       = response["0"].SickleCellDiagnosis;            
     //        document.getElementById('address')['value']        = response["0"].FullStreetAddress;
     //        document.getElementById('address2')['value']       = response["0"].FullStreetAddress2;
@@ -1314,20 +1314,20 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
     //            document.getElementById("clientresideno").checked  = false;
     //        }
     //        document.getElementById('nameofmother')['value']  = response["0"].Nameofmother;
-    //        document.getElementById('motheraddress')['value'] = response["0"].Motheraddress;
-    //        document.getElementById('mothertel')['value']     = response["0"].Mothertel;
+    //        document.getElementById('motheraddress')['value'] = response["0"].Address_Of_Mother;
+    //        document.getElementById('mothertel')['value']     = response["0"].Telephone_Of_Mother;
     //        document.getElementById('nameoffather')['value']  = response["0"].Nameoffather;
-    //        document.getElementById('fatheraddress')['value'] = response["0"].Fatheraddress;
-    //        document.getElementById('fathertel')['value'] = response["0"].Fathertel;
+    //        document.getElementById('fatheraddress')['value'] = response["0"].Address_Of_Father;
+    //        document.getElementById('fathertel')['value'] = response["0"].Telephone_Of_Father;
     //        document.getElementById('nameofguardian')['value'] = response["0"].Nameofguardian;
-    //        document.getElementById('guardianaddress')['value'] = response["0"].Guardianaddress;
-    //        document.getElementById('guardiantel')['value'] = response["0"].Guardiantel;
-    //        document.getElementById('emercont1')['value'] = response["0"].Emercont1;
-    //        document.getElementById('emercont1homephone')['value'] = response["0"].Emercont1homephone;
-    //        document.getElementById('emercont1cellphone')['value'] = response["0"].Emercont1cellphone;
-    //        document.getElementById('emercont2')['value'] = response["0"].Emercont2;
-    //        document.getElementById('emercont2homephone')['value'] = response["0"].Emercont2homephone;
-    //        document.getElementById('emercont2cellphone')['value'] = response["0"].Emercont2cellphone;           
+    //        document.getElementById('guardianaddress')['value'] = response["0"].Address_Of_Guardian;
+    //        document.getElementById('guardiantel')['value'] = response["0"].Guardian_Telephone;
+    //        document.getElementById('emercont1')['value'] = response["0"].Emergency_Contact1;
+    //        document.getElementById('emercont1homephone')['value'] = response["0"].Emergency_Contact1_HomePhone;
+    //        document.getElementById('emercont1cellphone')['value'] = response["0"].Emergency_Contact1_CellPhone;
+    //        document.getElementById('emercont2')['value'] = response["0"].Emergency_Contact2;
+    //        document.getElementById('emercont2homephone')['value'] = response["0"].Emergency_Contact2_HomePhone;
+    //        document.getElementById('emercont2cellphone')['value'] = response["0"].Emergency_Contact2_CellPhone;           
 
     //        if (response["0"].SicklecelltypeID === "SS") {                
     //            document.getElementById('sicklecellss').checked = true;
@@ -1522,7 +1522,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 'ClientID'              : document.getElementById('clientid')['value'],
                 'LastName'              : document.getElementById('lname')['value'],
                 'FirstName'             : document.getElementById('fname')['value'],
-                'Mi'                    : document.getElementById('mi')['value'],
+                'Middle_Initial'                    : document.getElementById('mi')['value'],
                 'UniqueID'              : document.getElementById('uniqueid')['value'],
                 'DOB'                   : document.getElementById('dob')['value'],
                 'Age'                   : document.getElementById('age')['value'],
@@ -1532,10 +1532,10 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 'Race'                  : document.getElementById('race')['value'],
                 'Ethnicity'             : document.getElementById('ethnicity')['value'],
                 'Eligibility'           : document.getElementById('eligibility')['value'],
-                'SSSno'                 : document.getElementById('sssno')['value'],
-                'CountryCode'           : document.getElementById('countrycode')['value'],
+                'SSN'                 : document.getElementById('sssno')['value'],
+                'CountyCode'           : document.getElementById('countrycode')['value'],
                 'CountyCodeDescription' : document.getElementById('countrycodedes')['value'],
-                'CpNumber'              : document.getElementById('cpnumber')['value'],
+                'Mobile_Number'              : document.getElementById('cpnumber')['value'],
                 'SickleCellDiagnosis'   : document.getElementById('sickdiag')['value'],
                 'FullStreetAddress'     : document.getElementById('address')['value'],
                 'FullStreetAddress2'    : document.getElementById('address2')['value'],
@@ -1547,20 +1547,20 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 'Email_Address'         : document.getElementById('email')['value'],
                 'ClientresideinruralID' : clientresideinruralid,            
                 'Nameofmother'          : document.getElementById('nameofmother')['value'],
-                'Motheraddress'         : document.getElementById('motheraddress')['value'],
-                'Mothertel'             : document.getElementById('mothertel')['value'],
+                'Address_Of_Mother'         : document.getElementById('motheraddress')['value'],
+                'Telephone_Of_Mother'             : document.getElementById('mothertel')['value'],
                 'Nameoffather'          : document.getElementById('nameoffather')['value'],
-                'Fatheraddress'         : document.getElementById('fatheraddress')['value'],
-                'Fathertel'             : document.getElementById('fathertel')['value'],
+                'Address_Of_Father'         : document.getElementById('fatheraddress')['value'],
+                'Telephone_Of_Father'             : document.getElementById('fathertel')['value'],
                 'Nameofguardian'        : document.getElementById('nameofguardian')['value'],
-                'Guardianaddress'       : document.getElementById('guardianaddress')['value'],
-                'Guardiantel'           : document.getElementById('guardiantel')['value'],
-                'Emercont1'             : document.getElementById('emercont1')['value'],
+                'Address_Of_Guardian'       : document.getElementById('guardianaddress')['value'],
+                'Guardian_Telephone'           : document.getElementById('guardiantel')['value'],
+                'Emergency_Contact1'             : document.getElementById('emercont1')['value'],
                 'Emercont1homephon'     : document.getElementById('emercont1homephone')['value'],
-                'Emercont1cellphone'    : document.getElementById('emercont1cellphone')['value'],
-                'Emercont2'             : document.getElementById('emercont2')['value'],
-                'Emercont2homephone'    : document.getElementById('emercont2homephone')['value'],
-                'Emercont2cellphone'    : document.getElementById('emercont2cellphone')['value'],
+                'Emergency_Contact1_CellPhone'    : document.getElementById('emercont1cellphone')['value'],
+                'Emergency_Contact2'             : document.getElementById('emercont2')['value'],
+                'Emergency_Contact2_HomePhone'    : document.getElementById('emercont2homephone')['value'],
+                'Emergency_Contact2_CellPhone'    : document.getElementById('emercont2cellphone')['value'],
                 'SicklecelltypeID'      : sicklecelltypeid,
                 'HydroxyureaheardID'    : hydroxyureaheardid,
                 'HydroxyureatakenID'    : hydroxyureatakenid,

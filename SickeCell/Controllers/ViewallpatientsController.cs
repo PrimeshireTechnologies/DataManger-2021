@@ -29,20 +29,21 @@ namespace SickeCell.Controllers
         public static string con = ConfigurationManager.ConnectionStrings["SickeCellConnection"].ConnectionString;
         SqlConnection connection = new SqlConnection(con);
         SqlConnection connection3 = new SqlConnection(con);
+        SqlConnection connect = new SqlConnection(con);
 
         string vlname = "";
         string vfname2 = "";
         string vgender = "";
-        int vclientid;
+        string vclientid;
         long vdata;
 
         public class SickleCelloverviewclass
         {
             public string Clientidx { get; set; }
-            public int ClientID { get; set; }
+            public string ClientID { get; set; }
             public string LastName { get; set; }
             public string FirstName { get; set; }
-            public string Mi { get; set; }
+            public string Middle_Initial { get; set; }
             public string UniqueID { get; set; }
             public string DOB { get; set; }
             public string Age { get; set; }
@@ -52,36 +53,37 @@ namespace SickeCell.Controllers
             public string Race { get; set; }
             public string Ethnicity { get; set; }
             public string Eligibility { get; set; }
-            public string SSSno { get; set; }
-            public string CountryCode { get; set; }
+            public string SSN { get; set; }
+            public string CountyCode { get; set; }
             public string CountyCodeDescription { get; set; }
-            public string CpNumber { get; set; }
             public string SickleCellDiagnosis { get; set; }
             public string FullStreetAddress { get; set; }
             public string FullStreetAddress2 { get; set; }
             public string City { get; set; }
             public string State { get; set; }
             public string ZipCode { get; set; }
+            public string HomePhone { get; set; }
+            public string WorkPhone { get; set; }
             public string PMPProviderName { get; set; }
             public string Specialist { get; set; }
             public string CCUCase { get; set; }
             public string Email_Address { get; set; }
             public string ClientresideinruralID { get; set; }
             public string Nameofmother { get; set; }
-            public string Motheraddress { get; set; }
-            public string Mothertel { get; set; }
+            public string Address_Of_Mother { get; set; }
+            public string Telephone_Of_Mother { get; set; }
             public string Nameoffather { get; set; }
-            public string Fatheraddress { get; set; }
-            public string Fathertel { get; set; }
+            public string Address_Of_Father { get; set; }
+            public string Telephone_Of_Father { get; set; }
             public string Nameofguardian { get; set; }
-            public string Guardianaddress { get; set; }
-            public string Guardiantel { get; set; }
-            public string Emercont1 { get; set; }
-            public string Emercont1homephone { get; set; }
-            public string Emercont1cellphone { get; set; }
-            public string Emercont2 { get; set; }
-            public string Emercont2homephone { get; set; }
-            public string Emercont2cellphone { get; set; }
+            public string Address_Of_Guardian { get; set; }
+            public string Guardian_Telephone { get; set; }
+            public string Emergency_Contact1 { get; set; }
+            public string Emergency_Contact1_HomePhone { get; set; }
+            public string Emergency_Contact1_CellPhone { get; set; }
+            public string Emergency_Contact2 { get; set; }
+            public string Emergency_Contact2_HomePhone { get; set; }
+            public string Emergency_Contact2_CellPhone { get; set; }
             public string SicklecelltypeID { get; set; }
             public string Medication { get; set; }
             public string HydroxyureaheardID { get; set; }
@@ -97,6 +99,7 @@ namespace SickeCell.Controllers
             public string TimeStamp { get; set; }
             public DateTime Datenotescreated { get; set; }
             public int NotesID { get; set; }
+            public string PhoneNumber { get; set; }
         }
 
         // GET: api/Viewallpatients
@@ -118,18 +121,7 @@ namespace SickeCell.Controllers
             int rows = 0;
 
             try
-            {
-                //connection3.Open();
-                //SqlCommand command3 = new SqlCommand("select count(*) as TotRec from information", connection3);
-                //SqlDataReader locatelogsaveReader = command3.ExecuteReader();
-                //if (locatelogsaveReader.HasRows == true)
-                //{
-                //    while (locatelogsaveReader.Read())
-                //    {
-                //        rows = Convert.ToInt32(locatelogsaveReader["TotRec"]);
-                //    }
-                //}
-
+            {               
                 connection.Open();
                 SqlCommand searchoverview = new SqlCommand("Information_Stored_Overview", connection);
                 searchoverview.CommandType = CommandType.StoredProcedure;
@@ -142,30 +134,49 @@ namespace SickeCell.Controllers
                     {
                         counter = counter + 1;
                         SickleCelloverviewclass overviewddatagroup = new SickleCelloverviewclass();
-                        overviewddatagroup.ClientID = Convert.ToInt32(overviewreader["ClientID"].ToString());
+                        overviewddatagroup.ClientID = overviewreader["ClientID"].ToString();
                         overviewddatagroup.LastName = overviewreader["LastName"].ToString();
                         overviewddatagroup.FirstName = overviewreader["FirstName"].ToString();
                         overviewddatagroup.DOB = overviewreader["DOB"].ToString();
                         overviewddatagroup.Gender = overviewreader["Gender"].ToString();
                         overviewddatagroup.FullStreetAddress = overviewreader["FullStreetAddress"].ToString();
                         overviewddatagroup.City = overviewreader["City"].ToString();
+                        overviewddatagroup.UniqueID = overviewreader["UniqueID"].ToString();
                         overviewddatagroup.State = overviewreader["State"].ToString();
                         overviewddatagroup.Email_Address = overviewreader["Email_Address"].ToString();
+                        overviewddatagroup.Race = overviewreader["Race"].ToString();
+                        overviewddatagroup.Ethnicity = overviewreader["Ethnicity"].ToString();
+                        overviewddatagroup.ZipCode = overviewreader["ZipCode"].ToString();
+                        overviewddatagroup.HomePhone = overviewreader["HomePhone"].ToString();
+                        overviewddatagroup.WorkPhone = overviewreader["WorkPhone"].ToString();
+                        overviewddatagroup.SicklecelltypeID = overviewreader["SicklecelltypeID"].ToString();
+                        overviewddatagroup.Eligibility = overviewreader["Eligibility"].ToString();
+                        overviewddatagroup.SickleCellDiagnosis = overviewreader["SickleCellDiagnosis"].ToString();
+                        overviewddatagroup.PMPProviderName = overviewreader["PMPProviderName"].ToString();
+                        overviewddatagroup.CCUCase = overviewreader["CCUCase"].ToString();
+                        overviewddatagroup.PhoneNumber = overviewreader["PhoneNumber"].ToString();
+                        //overviewddatagroup.Comments = overviewreader["Comments"].ToString();
+
+                        connect.Open();
+                        SqlCommand RecentCommentcmd = new SqlCommand("select Notesid, ClientID, Comments, TimeStamp from Notes where ClientID= '" + overviewreader["ClientID"].ToString() + "' order by Notesid  DESC", connect);
+                        SqlDataReader recentcommentreader = RecentCommentcmd.ExecuteReader();
+                        while (recentcommentreader.Read())
+                        {
+                            overviewddatagroup.Comments = recentcommentreader["Comments"].ToString();
+                            break;
+                        }
+                        recentcommentreader.Close();
+                        connect.Close();
 
                         if (vlname != overviewreader["LastName"].ToString().Trim() && vfname2 != overviewreader["FirstName"].ToString().Trim())
                         {
                             overviewdata.Add(overviewddatagroup);
-                        }
-
-                        //if (counter == rows)
-                        //{
-                        //    break;
-                        //}
+                        }                      
 
                         vlname = overviewreader["LastName"].ToString().Trim();
                         vfname2 = overviewreader["FirstName"].ToString().Trim();
                         vgender = overviewreader["Gender"].ToString().Trim();
-                        vclientid = Convert.ToInt32(overviewreader["ClientID"].ToString());
+                        vclientid = overviewreader["ClientID"].ToString();
                     }
                 }
                 else
@@ -180,7 +191,7 @@ namespace SickeCell.Controllers
             }
             catch (Exception ab)
             {
-                ab.ToString();
+                ab.Message.ToString();
             }
             return overviewdata;
         }
