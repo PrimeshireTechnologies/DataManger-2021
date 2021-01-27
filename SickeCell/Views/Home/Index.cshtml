@@ -71,32 +71,26 @@
                                 <br />
                                 <br />
                                 <ul class="list-inline" ng-mouseleave="leave()">
-                                    <li style="margin-left:35px; height:35px;width:345px; margin-top:-35px;" ng-mouseenter="mouseover1()" id="entry"><a href="@Url.Action("Entry", "Home")" class="glyphicon glyphicon-baby-formula" style="position:absolute;margin-top:35px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CLIENT ENTRY FORM</span></a></li>
-                                    <li style="margin-left:35px; height:35px;width:345px; margin-top:-13px;" ng-mouseenter="mouseover2()" id="case_notes"><a href="@Url.Action("Casenotes", "Home")" class="glyphicon glyphicon-education" style="position:absolute;margin-top:64px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CASE NOTES</span></a></li>
-                                    <li style="margin-left:35px; height:35px;width:345px; margin-top:-10px;" ng-mouseenter="mouseover3()" id="patient_overview"><a href="@Url.Action("PatientOverview", "Home")" class="glyphicon glyphicon-home" style="position:absolute;margin-top:94px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CLIENT OVERVIEW</span></a></li>
-                                    <li style="margin-left:35px; height:35px;width:345px; margin-top:-13px;" ng-mouseenter="mouseover4()" id="upload_csv"><a href="@Url.Action("Uploadcsv", "Home")" class="glyphicon glyphicon-sort-by-alphabet" style="position:absolute;margin-top:124px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CLIENT UPLOAD</span></a></li>
-                                    <li style="margin-left:35px; height:35px;width:345px; margin-top:-15px;" ng-mouseenter="mouseover5()" id="manageconsole"><a href="@Url.Action("Manageconsoleoption", "Home")" class="glyphicon glyphicon-th" style="position:absolute;margin-top:154px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">MANAGEMENT CONSOLE</span></a></li>
+                                    <li style="margin-left:35px; height:35px;width:345px; margin-top:-35px;" ng-mouseenter="mouseover1()" onclick="menu()" id="entry"><a href="@Url.Action("Entry", "Home")" class="glyphicon glyphicon-baby-formula" style="position:absolute;margin-top:35px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CLIENT ENTRY FORM</span></a></li>
+                                    <li style="margin-left:35px; height:35px;width:345px; margin-top:-13px;" ng-mouseenter="mouseover2()" onclick="menu()" id="case_notes"><a href="@Url.Action("Casenotes", "Home")" class="glyphicon glyphicon-education" style="position:absolute;margin-top:64px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CASE NOTES</span></a></li>
+                                    <li style="margin-left:35px; height:35px;width:345px; margin-top:-10px;" ng-mouseenter="mouseover3()" onclick="menu()" id="patient_overview"><a href="@Url.Action("PatientOverview", "Home")" class="glyphicon glyphicon-home" style="position:absolute;margin-top:94px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CLIENT OVERVIEW</span></a></li>
+                                    <li style="margin-left:35px; height:35px;width:345px; margin-top:-13px;" ng-mouseenter="mouseover4()" onclick="menu()" id="upload_csv"><a href="@Url.Action("Uploadcsv", "Home")" class="glyphicon glyphicon-sort-by-alphabet" style="position:absolute;margin-top:124px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CLIENT UPLOAD</span></a></li>
+                                    <li style="margin-left:35px; height:35px;width:345px; margin-top:-15px;" ng-mouseenter="mouseover5()" onclick="menu()" id="manageconsole"><a href="@Url.Action("Manageconsoleoption", "Home")" class="glyphicon glyphicon-th" style="position:absolute;margin-top:154px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">MANAGEMENT CONSOLE</span></a></li>
                                 </ul>
                             </div>
                         </div>
                         @*</div>*@
 
                         <script>
+                            let vskip;
                             $('.nav-stacked li').click(function () {
                                 $('.nav-stacked li').removeClass('active');
                                 $(this).addClass('active');
-                            });
+                            });                           
 
-                            //function consoleoption() {
-                            //   globalRole = localStorage.getItem("variableRole");
-                            //   if (globalRole !== "Super Admin") {
-                            //      if (globalRole !== "Admin User") {
-                            //          alert("You are not authorize to access this module");
-                            //          window.location.href = "/Home/Index";
-                            //      }
-                            //   }
-                            //}
-
+                            function menu() {
+                                vskip = 1;
+                            }
                         </script>
                         <div style="position:fixed;top:50%;left:50%;width:38em;height:18em;margin-top:28em;margin-left:-14em; color:#f37946;font-weight:900; font-size:12px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
                             @*<p>&copy; @DateTime.Now.Year Primeshire Technologies All Rights Reserved<span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.5</span></p>*@

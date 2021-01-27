@@ -72,6 +72,7 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
     let responseemail;
     let vresult;
     let vrefresh;
+    let vlog;
 
     if (sPage === "Register" || sPage === "Register_Staff") {
         document.getElementById("checkboxlist").style.display = "inherit";
@@ -118,7 +119,6 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
     };
 
     /// this is for the keyup and the keypress //
-
     $scope.clientidkeyup = function () {
         if (event.keyCode === 13 ) {
             document.getElementById('lname').focus();
@@ -1683,6 +1683,11 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
 
     if (sPage.trim() === "Entry" || sPage.trim() === "entry") {        
 
+        vlog = localStorage.getItem("variableRole");
+        if (vlog === "") {
+            window.location.href = "/Home/Login";
+        }
+
         var isMobile2 = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (isMobile2===true) {
             document.getElementById("searching").style.visibility = "hidden";
@@ -2211,6 +2216,30 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 document.getElementById("deceasedyes").checked = false;
             }
         };
+
+        window.onbeforeunload = function () {
+            if ((window.event.clientX < 0) || (window.event.clientY < 0)) // close button
+            {
+                //do something on closing event
+            }
+            else if (window.event.altKey === true) // ALT + F4
+            {
+                //do something on closing event
+            }
+            else if ((window.event.clientX === undefined) || (window.event.clientY === undefined)) // ALT + F4
+            {
+                if (vskip !== 1) {
+                    localStorage.setItem("variableName", "");
+                    localStorage.setItem("variableEmail", "");
+                    localStorage.setItem("variableEmail2", "");
+                    localStorage.setItem("variableRole", "");
+                }
+            }
+            else // for all other unload events
+            {
+                //do something on closing event
+            }
+        };    
 
     }    
 
@@ -3038,7 +3067,12 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
     }    
 
     if (sPage.trim() === "Manageconsoleoption" || sPage.trim() === "manageconsoleoption") {       
-        
+
+        vlog = localStorage.getItem("variableRole");
+        if (vlog === "") {
+            window.location.href = "/Home/Login";
+        }
+
         $scope.mouseover1 = function () {
             document.getElementById("userhistory").style.backgroundColor = "white";
             document.getElementById("newuser").style.backgroundColor = "#28c4f4";
@@ -3051,7 +3085,31 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
         $scope.leave = function () {
             document.getElementById("newuser").style.backgroundColor = "white";
             document.getElementById("userhistory").style.backgroundColor = "white";
-        };            
+        };
+
+        window.onbeforeunload = function () {
+            if ((window.event.clientX < 0) || (window.event.clientY < 0)) // close button
+            {
+                //do something on closing event
+            }
+            else if (window.event.altKey === true) // ALT + F4
+            {
+                //do something on closing event
+            }
+            else if ((window.event.clientX === undefined) || (window.event.clientY === undefined)) // ALT + F4
+            {
+                if (vskip !== 1) {
+                    localStorage.setItem("variableName", "");
+                    localStorage.setItem("variableEmail", "");
+                    localStorage.setItem("variableEmail2", "");
+                    localStorage.setItem("variableRole", "");
+                }
+            }
+            else // for all other unload events
+            {
+                //do something on closing event
+            }
+        };    
     }
 
     ////// this is to load school //////
@@ -3230,7 +3288,12 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
         }        
     }    
 
-    if (sPage.trim() === "Manageconsole" || sPage.trim() === "manageconsole") {                               
+    if (sPage.trim() === "Manageconsole" || sPage.trim() === "manageconsole") {  
+
+        vlog = localStorage.getItem("variableRole");
+        if (vlog === "") {
+            window.location.href = "/Home/Login";
+        }
 
                   function formatDate(date) {
                       var d = new Date(date),
@@ -3341,9 +3404,38 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                               className: "swal-title"
                           }); 
                       });                        
+
+        window.onbeforeunload = function () {
+            if ((window.event.clientX < 0) || (window.event.clientY < 0)) // close button
+            {
+                //do something on closing event
+            }
+            else if (window.event.altKey === true) // ALT + F4
+            {
+                //do something on closing event
+            }
+            else if ((window.event.clientX === undefined) || (window.event.clientY === undefined)) // ALT + F4
+            {
+                if (vskip !== 1) {
+                    localStorage.setItem("variableName", "");
+                    localStorage.setItem("variableEmail", "");
+                    localStorage.setItem("variableEmail2", "");
+                    localStorage.setItem("variableRole", "");
+                }
+            }
+            else // for all other unload events
+            {
+                //do something on closing event
+            }
+        };    
     }
 
     if (sPage.trim() === "Casenotes" || sPage.trim() === "casenotes") {             
+
+        vlog = localStorage.getItem("variableRole");
+        if (vlog === "") {
+            window.location.href = "/Home/Login";
+        }
 
         isMobile2 = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (isMobile2 === true) {                    
@@ -3650,6 +3742,31 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                });        
         }            
       };                               
+
+        window.onbeforeunload = function () {
+            if ((window.event.clientX < 0) || (window.event.clientY < 0)) // close button
+            {
+                //do something on closing event
+            }
+            else if (window.event.altKey === true) // ALT + F4
+            {
+                //do something on closing event
+            }
+            else if ((window.event.clientX === undefined) || (window.event.clientY === undefined)) // ALT + F4
+            {
+                if (vskip !== 1) {
+                    localStorage.setItem("variableName", "");
+                    localStorage.setItem("variableEmail", "");
+                    localStorage.setItem("variableEmail2", "");
+                    localStorage.setItem("variableRole", "");
+                }
+            }
+            else // for all other unload events
+            {
+                //do something on closing event
+            }
+        };            
+
     }   
 
     ////////////////////////////////
@@ -3752,11 +3869,15 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
 
     if (sPage.trim() === "Uploadcsv" || sPage.trim() === "uploadcsv") {       
 
+        vlog = localStorage.getItem("variableRole");
+        if (vlog === "") {
+            window.location.href = "/Home/Login";
+        }
+
         vresult  = localStorage.getItem("filename");
         vrefresh = localStorage.getItem("Refreshed");
         document.getElementById("fileUpload").style.fontWeight = "400";
         document.getElementById("fileUpload").style.width = "500px";
-
 
         if (vrefresh === "1") {
             document.getElementById("fileUpload").style.color = "transparent";
@@ -3976,6 +4097,30 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
                 });
             }                        
         };               
+
+        window.onbeforeunload = function () {
+            if ((window.event.clientX < 0) || (window.event.clientY < 0)) // close button
+            {
+                //do something on closing event
+            }
+            else if (window.event.altKey === true) // ALT + F4
+            {
+                //do something on closing event
+            }
+            else if ((window.event.clientX === undefined) || (window.event.clientY === undefined)) // ALT + F4
+            {
+                if (vskip !== 1) {
+                    localStorage.setItem("variableName", "");
+                    localStorage.setItem("variableEmail", "");
+                    localStorage.setItem("variableEmail2", "");
+                    localStorage.setItem("variableRole", "");
+                }
+            }
+            else // for all other unload events
+            {
+                //do something on closing event
+            }
+        };    
     }
 
     if (sPage.trim() === "Login" || sPage.trim() === "login" || sPage.trim() === "Login2" || sPage.trim() === "login2") {                    
@@ -4017,13 +4162,70 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
     }
 
     if (sPage.trim() === "Consolesignup" || sPage.trim() === "consolesignup") {
-       
+
+        vlog = localStorage.getItem("variableRole");
+        if (vlog==="") {
+            window.location.href = "/Home/Login";
+        }
+
+        window.onbeforeunload = function () {
+            if ((window.event.clientX < 0) || (window.event.clientY < 0)) // close button
+            {
+                //do something on closing event
+            }
+            else if (window.event.altKey === true) // ALT + F4
+            {
+                //do something on closing event
+            }
+            else if ((window.event.clientX === undefined) || (window.event.clientY === undefined)) // ALT + F4
+            {
+                if (vskip !== 1) {
+                    localStorage.setItem("variableName", "");
+                    localStorage.setItem("variableEmail", "");
+                    localStorage.setItem("variableEmail2", "");
+                    localStorage.setItem("variableRole", "");
+                }
+            }
+            else // for all other unload events
+            {
+                //do something on closing event
+            }
+        };    
     }
 
     if (sPage === "Index" || sPage === "index") {
-       
+
+        vlog = localStorage.getItem("variableRole");
+        if (vlog === "") {
+            window.location.href = "/Home/Login";
+        }
+
         localStorage.setItem("variableEmail", "");   
         localStorage.setItem("overviewfetch", 0); 
+
+        window.onbeforeunload = function () {
+            if ((window.event.clientX < 0) || (window.event.clientY < 0)) // close button
+            {
+                //do something on closing event
+            }
+            else if (window.event.altKey === true) // ALT + F4
+            {
+                //do something on closing event
+            }
+            else if ((window.event.clientX === undefined) || (window.event.clientY === undefined)) // ALT + F4
+            {
+                if (vskip !== 1) {
+                    localStorage.setItem("variableName", "");
+                    localStorage.setItem("variableEmail", "");
+                    localStorage.setItem("variableEmail2", "");
+                    localStorage.setItem("variableRole", "");
+                }
+            }
+            else // for all other unload events
+            {
+                //do something on closing event
+            }
+        };    
     }
    
     $scope.namechange = function () {
@@ -4069,6 +4271,11 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
     }
             
     if (sPage.trim() === "PatientOverview" || sPage.trim() === "patientoverview") {                     
+
+        vlog = localStorage.getItem("variableRole");
+        if (vlog === "") {
+            window.location.href = "/Home/Login";
+        }
 
         $scope.buttonone = function () {
             searchoption = 3;
@@ -5442,6 +5649,31 @@ myapp.controller("viewController", ["$scope", "$http", "$rootScope", "$window", 
             if (dragged === 1) {               
             }            
         }        
+
+        window.onbeforeunload = function () {
+            if ((window.event.clientX < 0) || (window.event.clientY < 0)) // close button
+            {
+                //do something on closing event
+            }
+            else if (window.event.altKey === true) // ALT + F4
+            {
+                //do something on closing event
+            }
+            else if ((window.event.clientX === undefined) || (window.event.clientY === undefined)) // ALT + F4
+            {
+                if (vskip !== 1) {
+                    localStorage.setItem("variableName", "");
+                    localStorage.setItem("variableEmail", "");
+                    localStorage.setItem("variableEmail2", "");
+                    localStorage.setItem("variableRole", "");
+                }
+            }
+            else // for all other unload events
+            {
+                //do something on closing event
+            }
+        };    
+
     }        
     //return;
 }]);

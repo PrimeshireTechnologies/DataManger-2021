@@ -122,8 +122,8 @@
 
                     </div>
                     <div class="casenotesfooter">
-                        @*<p>&copy; @DateTime.Now.Year Primeshire Technologies All Rights Reserved<span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.4</span></p>*@
-                        <p>&copy; @DateTime.Now.Year <a href="https://www.primeshire.tech/" onmouseover="mouseover()" onmouseout="mouseout()" rel="noopener noreferrer" target="_blank" style="text-shadow: 0px 1px 0px #000000; color:#FF0000;font-weight:bolder;">Primeshire Technologies. </a> <span style="margin-left:1px;"><span style="margin-left:1px;">All Rights Reserved</span></span> <span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.4</span></p>
+                        @*<p>&copy; @DateTime.Now.Year Primeshire Technologies All Rights Reserved<span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.5</span></p>*@
+                        <p>&copy; @DateTime.Now.Year <a href="https://www.primeshire.tech/" onmouseover="mouseover()" onmouseout="mouseout()" rel="noopener noreferrer" target="_blank" style="text-shadow: 0px 1px 0px #000000; color:#FF0000;font-weight:bolder;">Primeshire Technologies. </a> <span style="margin-left:1px;"><span style="margin-left:1px;">All Rights Reserved</span></span> <span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.5</span></p>
                     </div>
                     <script>
                         function mouseover() {
@@ -139,7 +139,7 @@
 
                 </div>                     -->
                 <script>
-
+                    let vskip;
                     function focusemail() {
                         document.getElementById("email").focus();
                     }
@@ -172,6 +172,7 @@
                     });
 
                     function homepage() {
+                        vskip = 1;
                         var varRole = localStorage.getItem("vRole");
                         if (varRole === "Super Admin") {
                             //window.location.href = "/Home/index_Admin";

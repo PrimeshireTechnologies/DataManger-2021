@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d8eb326d21fe48fbb6d55510b82c01bb" Name="Diagram1">
+      <Diagram DiagramId="d8eb326d21fe48fbb6d55510b82c01bb" Name="Diagram1" ZoomLevel="59">
         <EntityTypeShape EntityType="SickeCellModel.Information" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>

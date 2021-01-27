@@ -78,10 +78,11 @@
                     <!--<span style="margin-left:5px;font-size:18px;" onclick="homepage()"><a href ="#" style="color:slategray;">SICKLECELL PATIENT OVERVIEW</a></span>-->
                 </div>
                 <script>
-                    globalSchool = localStorage.getItem("globalschool");
-                    //document.getElementById("golbalschoolname").innerHTML = globalSchool.toUpperCase();
+                    let vskip;
+                    globalSchool = localStorage.getItem("globalschool");                    
 
                     function homepage() {
+                        vskip = 1;
                         var varRole = localStorage.getItem("vRole");
                         if (varRole === "Super Admin") {
                             window.location.href = "/Home/index";

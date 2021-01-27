@@ -90,9 +90,11 @@
                         <div style="height:1px; margin-top:-3px;"></div>
                     </div>
                     <script>
+                        let vskip;
                         globalSchool = localStorage.getItem("globalschool");
 
                         function homepage() {
+                            vskip = 1;
                             var varRole = localStorage.getItem("vRole");
                             if (varRole === "Super Admin") {
                                 window.location.href = "/Home/index";

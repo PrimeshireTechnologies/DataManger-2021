@@ -139,7 +139,7 @@
 
                 </div>                     -->
                 <script>
-
+                    let vskip;
                     function focusemail() {
                         document.getElementById("email").focus();
                     }
@@ -172,6 +172,7 @@
                     });
 
                     function homepage() {
+                        vskip = 1;
                         var varRole = localStorage.getItem("vRole");
                         if (varRole === "Super Admin") {
                             //window.location.href = "/Home/index_Admin";

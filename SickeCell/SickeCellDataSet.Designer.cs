@@ -1075,6 +1075,9 @@ namespace SickeCell {
                 this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLastName);
                 this.columnMi = new global::System.Data.DataColumn("Middle_Initial", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnMi.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "MiColumn");
+                this.columnMi.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnMi");
+                this.columnMi.ExtendedProperties.Add("Generator_UserColumnName", "Middle_Initial");
                 base.Columns.Add(this.columnMi);
                 this.columnUniqueID = new global::System.Data.DataColumn("UniqueID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUniqueID);
@@ -1093,8 +1096,14 @@ namespace SickeCell {
                 this.columnEthnicity = new global::System.Data.DataColumn("Ethnicity", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEthnicity);
                 this.columnSSSno = new global::System.Data.DataColumn("SSN", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSSSno.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "SSSnoColumn");
+                this.columnSSSno.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnSSSno");
+                this.columnSSSno.ExtendedProperties.Add("Generator_UserColumnName", "SSN");
                 base.Columns.Add(this.columnSSSno);
                 this.columnCpNumber = new global::System.Data.DataColumn("Mobile_Number", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCpNumber.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "CpNumberColumn");
+                this.columnCpNumber.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnCpNumber");
+                this.columnCpNumber.ExtendedProperties.Add("Generator_UserColumnName", "Mobile_Number");
                 base.Columns.Add(this.columnCpNumber);
                 this.columnFullStreetAddress = new global::System.Data.DataColumn("FullStreetAddress", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFullStreetAddress);
@@ -1107,6 +1116,9 @@ namespace SickeCell {
                 this.columnZipCode = new global::System.Data.DataColumn("ZipCode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnZipCode);
                 this.columnCountryCode = new global::System.Data.DataColumn("CountyCode", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCountryCode.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "CountryCodeColumn");
+                this.columnCountryCode.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnCountryCode");
+                this.columnCountryCode.ExtendedProperties.Add("Generator_UserColumnName", "CountyCode");
                 base.Columns.Add(this.columnCountryCode);
                 this.columnCountyCodeDescription = new global::System.Data.DataColumn("CountyCodeDescription", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCountyCodeDescription);
@@ -1127,32 +1139,68 @@ namespace SickeCell {
                 this.columnNameofmother = new global::System.Data.DataColumn("Nameofmother", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNameofmother);
                 this.columnMotheraddress = new global::System.Data.DataColumn("Address_Of_Mother", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnMotheraddress.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "MotheraddressColumn");
+                this.columnMotheraddress.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnMotheraddress");
+                this.columnMotheraddress.ExtendedProperties.Add("Generator_UserColumnName", "Address_Of_Mother");
                 base.Columns.Add(this.columnMotheraddress);
                 this.columnMothertel = new global::System.Data.DataColumn("Telephone_Of_Mother", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnMothertel.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "MothertelColumn");
+                this.columnMothertel.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnMothertel");
+                this.columnMothertel.ExtendedProperties.Add("Generator_UserColumnName", "Telephone_Of_Mother");
                 base.Columns.Add(this.columnMothertel);
                 this.columnNameoffather = new global::System.Data.DataColumn("Nameoffather", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNameoffather);
                 this.columnFatheraddress = new global::System.Data.DataColumn("Address_Of_Father", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnFatheraddress.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "FatheraddressColumn");
+                this.columnFatheraddress.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnFatheraddress");
+                this.columnFatheraddress.ExtendedProperties.Add("Generator_UserColumnName", "Address_Of_Father");
                 base.Columns.Add(this.columnFatheraddress);
                 this.columnFathertel = new global::System.Data.DataColumn("Telephone_Of_Father", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnFathertel.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "FathertelColumn");
+                this.columnFathertel.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnFathertel");
+                this.columnFathertel.ExtendedProperties.Add("Generator_UserColumnName", "Telephone_Of_Father");
                 base.Columns.Add(this.columnFathertel);
                 this.columnNameofguardian = new global::System.Data.DataColumn("Nameofguardian", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNameofguardian);
                 this.columnGuardianaddress = new global::System.Data.DataColumn("Address_Of_Guardian", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnGuardianaddress.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "GuardianaddressColumn");
+                this.columnGuardianaddress.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnGuardianaddress");
+                this.columnGuardianaddress.ExtendedProperties.Add("Generator_UserColumnName", "Address_Of_Guardian");
                 base.Columns.Add(this.columnGuardianaddress);
                 this.columnGuardiantel = new global::System.Data.DataColumn("Guardian_Telephone", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnGuardiantel.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "GuardiantelColumn");
+                this.columnGuardiantel.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnGuardiantel");
+                this.columnGuardiantel.ExtendedProperties.Add("Generator_UserColumnName", "Guardian_Telephone");
                 base.Columns.Add(this.columnGuardiantel);
                 this.columnEmercont1 = new global::System.Data.DataColumn("Emergency_Contact1", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnEmercont1.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Emercont1Column");
+                this.columnEmercont1.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnEmercont1");
+                this.columnEmercont1.ExtendedProperties.Add("Generator_UserColumnName", "Emergency_Contact1");
                 base.Columns.Add(this.columnEmercont1);
                 this.columnEmercont1homephone = new global::System.Data.DataColumn("Emergency_Contact1_HomePhone", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnEmercont1homephone.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Emercont1homephoneColumn");
+                this.columnEmercont1homephone.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnEmercont1homephone");
+                this.columnEmercont1homephone.ExtendedProperties.Add("Generator_UserColumnName", "Emergency_Contact1_HomePhone");
                 base.Columns.Add(this.columnEmercont1homephone);
                 this.columnEmercont1cellphone = new global::System.Data.DataColumn("Emergency_Contact1_CellPhone", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnEmercont1cellphone.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Emercont1cellphoneColumn");
+                this.columnEmercont1cellphone.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnEmercont1cellphone");
+                this.columnEmercont1cellphone.ExtendedProperties.Add("Generator_UserColumnName", "Emergency_Contact1_CellPhone");
                 base.Columns.Add(this.columnEmercont1cellphone);
                 this.columnEmercont2 = new global::System.Data.DataColumn("Emergency_Contact2", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnEmercont2.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Emercont2Column");
+                this.columnEmercont2.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnEmercont2");
+                this.columnEmercont2.ExtendedProperties.Add("Generator_UserColumnName", "Emergency_Contact2");
                 base.Columns.Add(this.columnEmercont2);
                 this.columnEmercont2homephone = new global::System.Data.DataColumn("Emergency_Contact2_HomePhone", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnEmercont2homephone.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Emercont2homephoneColumn");
+                this.columnEmercont2homephone.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnEmercont2homephone");
+                this.columnEmercont2homephone.ExtendedProperties.Add("Generator_UserColumnName", "Emergency_Contact2_HomePhone");
                 base.Columns.Add(this.columnEmercont2homephone);
                 this.columnEmercont2cellphone = new global::System.Data.DataColumn("Emergency_Contact2_CellPhone", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnEmercont2cellphone.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Emercont2cellphoneColumn");
+                this.columnEmercont2cellphone.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnEmercont2cellphone");
+                this.columnEmercont2cellphone.ExtendedProperties.Add("Generator_UserColumnName", "Emergency_Contact2_CellPhone");
                 base.Columns.Add(this.columnEmercont2cellphone);
                 this.columnSicklecelltypeID = new global::System.Data.DataColumn("SicklecelltypeID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSicklecelltypeID);
@@ -1977,7 +2025,8 @@ namespace SickeCell {
                         return ((string)(this[this.tableInformation.Emercont1homephoneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Emergency_Contact1_HomePhone\' in table \'Information\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Emergency_Contact1_HomePhone\' in table \'Information\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
@@ -1993,7 +2042,8 @@ namespace SickeCell {
                         return ((string)(this[this.tableInformation.Emercont1cellphoneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Emergency_Contact1_CellPhone\' in table \'Information\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Emergency_Contact1_CellPhone\' in table \'Information\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
@@ -2025,7 +2075,8 @@ namespace SickeCell {
                         return ((string)(this[this.tableInformation.Emercont2homephoneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Emergency_Contact2_HomePhone\' in table \'Information\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Emergency_Contact2_HomePhone\' in table \'Information\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
@@ -2041,7 +2092,8 @@ namespace SickeCell {
                         return ((string)(this[this.tableInformation.Emercont2cellphoneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Emergency_Contact2_CellPhone\' in table \'Information\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Emergency_Contact2_CellPhone\' in table \'Information\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
@@ -2235,13 +2287,13 @@ namespace SickeCell {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsMiNull() {
+            public bool IsMiddle_InitialNull() {
                 return this.IsNull(this.tableInformation.MiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetMiNull() {
+            public void SetMiddle_InitialNull() {
                 this[this.tableInformation.MiColumn] = global::System.Convert.DBNull;
             }
             
@@ -2343,25 +2395,25 @@ namespace SickeCell {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSSSnoNull() {
+            public bool IsSSNNull() {
                 return this.IsNull(this.tableInformation.SSSnoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSSSnoNull() {
+            public void SetSSNNull() {
                 this[this.tableInformation.SSSnoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCpNumberNull() {
+            public bool IsMobile_NumberNull() {
                 return this.IsNull(this.tableInformation.CpNumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCpNumberNull() {
+            public void SetMobile_NumberNull() {
                 this[this.tableInformation.CpNumberColumn] = global::System.Convert.DBNull;
             }
             
@@ -2427,13 +2479,13 @@ namespace SickeCell {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCountryCodeNull() {
+            public bool IsCountyCodeNull() {
                 return this.IsNull(this.tableInformation.CountryCodeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCountryCodeNull() {
+            public void SetCountyCodeNull() {
                 this[this.tableInformation.CountryCodeColumn] = global::System.Convert.DBNull;
             }
             
@@ -2547,25 +2599,25 @@ namespace SickeCell {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsMotheraddressNull() {
+            public bool IsAddress_Of_MotherNull() {
                 return this.IsNull(this.tableInformation.MotheraddressColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetMotheraddressNull() {
+            public void SetAddress_Of_MotherNull() {
                 this[this.tableInformation.MotheraddressColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsMothertelNull() {
+            public bool IsTelephone_Of_MotherNull() {
                 return this.IsNull(this.tableInformation.MothertelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetMothertelNull() {
+            public void SetTelephone_Of_MotherNull() {
                 this[this.tableInformation.MothertelColumn] = global::System.Convert.DBNull;
             }
             
@@ -2583,25 +2635,25 @@ namespace SickeCell {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsFatheraddressNull() {
+            public bool IsAddress_Of_FatherNull() {
                 return this.IsNull(this.tableInformation.FatheraddressColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetFatheraddressNull() {
+            public void SetAddress_Of_FatherNull() {
                 this[this.tableInformation.FatheraddressColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsFathertelNull() {
+            public bool IsTelephone_Of_FatherNull() {
                 return this.IsNull(this.tableInformation.FathertelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetFathertelNull() {
+            public void SetTelephone_Of_FatherNull() {
                 this[this.tableInformation.FathertelColumn] = global::System.Convert.DBNull;
             }
             
@@ -2619,97 +2671,97 @@ namespace SickeCell {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsGuardianaddressNull() {
+            public bool IsAddress_Of_GuardianNull() {
                 return this.IsNull(this.tableInformation.GuardianaddressColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetGuardianaddressNull() {
+            public void SetAddress_Of_GuardianNull() {
                 this[this.tableInformation.GuardianaddressColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsGuardiantelNull() {
+            public bool IsGuardian_TelephoneNull() {
                 return this.IsNull(this.tableInformation.GuardiantelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetGuardiantelNull() {
+            public void SetGuardian_TelephoneNull() {
                 this[this.tableInformation.GuardiantelColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsEmercont1Null() {
+            public bool IsEmergency_Contact1Null() {
                 return this.IsNull(this.tableInformation.Emercont1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetEmercont1Null() {
+            public void SetEmergency_Contact1Null() {
                 this[this.tableInformation.Emercont1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsEmercont1homephoneNull() {
+            public bool IsEmergency_Contact1_HomePhoneNull() {
                 return this.IsNull(this.tableInformation.Emercont1homephoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetEmercont1homephoneNull() {
+            public void SetEmergency_Contact1_HomePhoneNull() {
                 this[this.tableInformation.Emercont1homephoneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsEmercont1cellphoneNull() {
+            public bool IsEmergency_Contact1_CellPhoneNull() {
                 return this.IsNull(this.tableInformation.Emercont1cellphoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetEmercont1cellphoneNull() {
+            public void SetEmergency_Contact1_CellPhoneNull() {
                 this[this.tableInformation.Emercont1cellphoneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsEmercont2Null() {
+            public bool IsEmergency_Contact2Null() {
                 return this.IsNull(this.tableInformation.Emercont2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetEmercont2Null() {
+            public void SetEmergency_Contact2Null() {
                 this[this.tableInformation.Emercont2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsEmercont2homephoneNull() {
+            public bool IsEmergency_Contact2_HomePhoneNull() {
                 return this.IsNull(this.tableInformation.Emercont2homephoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetEmercont2homephoneNull() {
+            public void SetEmergency_Contact2_HomePhoneNull() {
                 this[this.tableInformation.Emercont2homephoneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsEmercont2cellphoneNull() {
+            public bool IsEmergency_Contact2_CellPhoneNull() {
                 return this.IsNull(this.tableInformation.Emercont2cellphoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetEmercont2cellphoneNull() {
+            public void SetEmergency_Contact2_CellPhoneNull() {
                 this[this.tableInformation.Emercont2cellphoneColumn] = global::System.Convert.DBNull;
             }
             
@@ -3049,27 +3101,30 @@ namespace SickeCell.SickeCellDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Information] ([ClientID], [FirstName], [LastName], [Middle_Initial], [Uniq" +
-                "ueID], [DOB], [Age], [AgeGroup], [Ageat], [Gender], [Race], [Ethnicity], [SSN]" +
-                ", [Mobile_Number], [FullStreetAddress], [FullStreetAddress2], [City], [State], [ZipCo" +
-                "de], [CountyCode], [CountyCodeDescription], [PhoneNumber], [Eligibility], [Sick" +
-                "leCellDiagnosis], [PMPProviderName], [CCUCase], [Email_Address], [Clientresidein" +
-                "ruralID], [Nameofmother], [Address_Of_Mother], [Telephone_Of_Mother], [Nameoffather], [Fathera" +
-                "ddress], [Telephone_Of_Father], [Nameofguardian], [Address_Of_Guardian], [Guardian_Telephone], [Emerc" +
-                "ont1], [Emergency_Contact1_HomePhone], [Emergency_Contact1_CellPhone], [Emergency_Contact2], [Emercont2homeph" +
-                "one], [Emergency_Contact2_CellPhone], [SicklecelltypeID], [HydroxyureaheardID], [Hydroxyur" +
-                "eatakenID], [HydroxyureacurrentlyID], [HydroxyureapasttakenID], [Comments], [Use" +
-                "rFirstName], [UserLastName], [TimeStamp], [Datenotescreated]) VALUES (@ClientID," +
-                " @FirstName, @LastName, @Middle_Initial, @UniqueID, @DOB, @Age, @AgeGroup, @Ageat, @Gender, " +
-                "@Race, @Ethnicity, @SSN, @Mobile_Number, @FullStreetAddress, @FullStreetAddress2, @" +
-                "City, @State, @ZipCode, @CountyCode, @CountyCodeDescription, @PhoneNumber, @Eli" +
-                "gibility, @SickleCellDiagnosis, @PMPProviderName, @CCUCase, @Email_Address, @Cli" +
-                "entresideinruralID, @Nameofmother, @Address_Of_Mother, @Telephone_Of_Mother, @Nameoffather, @F" +
-                "atheraddress, @Telephone_Of_Father, @Nameofguardian, @Address_Of_Guardian, @Guardian_Telephone, @Emer" +
-                "cont1, @Emergency_Contact1_HomePhone, @Emergency_Contact1_CellPhone, @Emergency_Contact2, @Emergency_Contact2_HomePhone" +
-                ", @Emergency_Contact2_CellPhone, @SicklecelltypeID, @HydroxyureaheardID, @Hydroxyureataken" +
-                "ID, @HydroxyureacurrentlyID, @HydroxyureapasttakenID, @Comments, @UserFirstName," +
-                " @UserLastName, @TimeStamp, @Datenotescreated)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Information] ([ClientID], [FirstName], [LastName], [Middle_Ini" +
+                "tial], [UniqueID], [DOB], [Age], [AgeGroup], [Ageat], [Gender], [Race], [Ethnici" +
+                "ty], [SSN], [Mobile_Number], [FullStreetAddress], [FullStreetAddress2], [City], " +
+                "[State], [ZipCode], [CountyCode], [CountyCodeDescription], [PhoneNumber], [Eligi" +
+                "bility], [SickleCellDiagnosis], [PMPProviderName], [CCUCase], [Email_Address], [" +
+                "ClientresideinruralID], [Nameofmother], [Address_Of_Mother], [Telephone_Of_Mothe" +
+                "r], [Nameoffather], [Address_Of_Father], [Telephone_Of_Father], [Nameofguardian]" +
+                ", [Address_Of_Guardian], [Guardian_Telephone], [Emergency_Contact1], [Emergency_" +
+                "Contact1_HomePhone], [Emergency_Contact1_CellPhone], [Emergency_Contact2], [Emer" +
+                "gency_Contact2_HomePhone], [Emergency_Contact2_CellPhone], [SicklecelltypeID], [" +
+                "HydroxyureaheardID], [HydroxyureatakenID], [HydroxyureacurrentlyID], [Hydroxyure" +
+                "apasttakenID], [Comments], [UserFirstName], [UserLastName], [TimeStamp], [Dateno" +
+                "tescreated]) VALUES (@ClientID, @FirstName, @LastName, @Middle_Initial, @UniqueI" +
+                "D, @DOB, @Age, @AgeGroup, @Ageat, @Gender, @Race, @Ethnicity, @SSN, @Mobile_Numb" +
+                "er, @FullStreetAddress, @FullStreetAddress2, @City, @State, @ZipCode, @CountyCod" +
+                "e, @CountyCodeDescription, @PhoneNumber, @Eligibility, @SickleCellDiagnosis, @PM" +
+                "PProviderName, @CCUCase, @Email_Address, @ClientresideinruralID, @Nameofmother, " +
+                "@Address_Of_Mother, @Telephone_Of_Mother, @Nameoffather, @Address_Of_Father, @Te" +
+                "lephone_Of_Father, @Nameofguardian, @Address_Of_Guardian, @Guardian_Telephone, @" +
+                "Emergency_Contact1, @Emergency_Contact1_HomePhone, @Emergency_Contact1_CellPhone" +
+                ", @Emergency_Contact2, @Emergency_Contact2_HomePhone, @Emergency_Contact2_CellPh" +
+                "one, @SicklecelltypeID, @HydroxyureaheardID, @HydroxyureatakenID, @Hydroxyureacu" +
+                "rrentlyID, @HydroxyureapasttakenID, @Comments, @UserFirstName, @UserLastName, @T" +
+                "imeStamp, @Datenotescreated)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

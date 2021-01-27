@@ -69,6 +69,7 @@
 
                 </div>
                 <script>
+                    let vskip;
                     function focusemail() {
                         document.getElementById("email").focus();
                     }
@@ -111,7 +112,13 @@
                         document.getElementById("tips").style.visibility = "hidden";
                     }
 
+                    function menu() {
+                        vskip = 1;
+                        window.location.href = "/Home/Manageconsoleoption"
+                    }
+
                     function back() {
+                        vskip = 1;
                         window.location.href = "/Home/Manageconsoleoption"
                     }
 

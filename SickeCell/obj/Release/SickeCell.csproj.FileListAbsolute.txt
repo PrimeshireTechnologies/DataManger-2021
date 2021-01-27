@@ -794,7 +794,6 @@ C:\net_projects\SickleCell_test\SickeCell\bin\Antlr3.Runtime.pdb
 C:\net_projects\SickleCell_test\SickeCell\bin\System.Diagnostics.DiagnosticSource.xml
 C:\net_projects\SickleCell_test\SickeCell\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\net_projects\SickleCell_test\SickeCell\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\net_projects\SickleCell_test\SickeCell\obj\Release\SickeCell.csprojAssemblyReference.cache
 C:\net_projects\SickleCell_test\SickeCell\obj\Release\Interop.Office.dll
 C:\net_projects\SickleCell_test\SickeCell\obj\Release\Interop.Microsoft.Office.Core.dll
 C:\net_projects\SickleCell_test\SickeCell\obj\Release\SickeCell.csproj.ResolveComReference.cache
@@ -804,3 +803,4 @@ C:\net_projects\SickleCell_test\SickeCell\obj\Release\SickeCell.csproj.CoreCompi
 C:\net_projects\SickleCell_test\SickeCell\obj\Release\SickeCell.csproj.CopyComplete
 C:\net_projects\SickleCell_test\SickeCell\obj\Release\SickeCell.dll
 C:\net_projects\SickleCell_test\SickeCell\obj\Release\SickeCell.pdb
+C:\net_projects\SickleCell_test\SickeCell\obj\Release\SickeCell.csprojAssemblyReference.cache
