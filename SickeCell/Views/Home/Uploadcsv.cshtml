@@ -1,0 +1,239 @@
+﻿
+<link rel="stylesheet" href="../../Content/styling-2.css">
+<!-- Responsive stylesheet -->
+<link rel="stylesheet" href="../../Content/responsive.css">
+
+<link href="../../Content/stylinguploadcsv.css" rel="stylesheet" />
+
+<link href="../../Content/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="../../Content/jquery.bxslider.css" rel="stylesheet" />
+<link href="../../Content/imp.css" rel="stylesheet" />
+
+<link href="../../Content/bootstrap.css" rel="stylesheet" />
+<link href="../../Content/multiview.css" rel="stylesheet" />
+<script src="../../Scripts/jquery-3.3.1.js"></script>
+<script src="../../Library/angular.min.js"></script>
+
+<link href="~/Content/style.css" rel="stylesheet"/>
+
+<div style="height:5px;"></div>
+<!--<span style="margin-left:550px;margin-top:20px; font-size:18px;" onclick="homepage()"><a href ="#" style="color:#f37946; font-weight:600;margin-left:-50px;">SICKLECELL UPLOAD CSV FILE</a></span>-->
+<!--<span class="lbltitle" onclick="homepage()"><a href ="#" style="color:#f37946; font-weight:600;margin-left:-50px;">DOCUMENT UPLOAD</a></span>-->
+<span class="lbltitle" onclick="homepage()"><a href="#" style="color:#f37946; font-weight:600;margin-left:-5px;">CLIENT UPLOAD</a></span>
+<div style="height:12px;"></div>
+
+    <form id='importPfForm' class="choose">
+        @*<input type='file' name='datafile' ng-model="fileUpload" id="fileUpload" size='20'; ng-change="changefile(fileUpload)">*@
+
+        <div class="col-md-8" style="margin-left:-15px; margin-top:-7px;">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="file" id="fileUpload" name="fileUpload" size='100' onchange="openfile()" />
+                </div>
+                <div class="col-md-4">
+                    <input id="replace" style="font-weight:400;margin-left:-15px; width:200px; border-color:transparent;" />
+                </div>
+            </div>
+
+            <input type='button' id="upload" value='Upload' ng-click="upload()" style="width:92px;background-color:darkslategray;color:white;margin-left:-1px;" />
+        </div>
+    </form>
+
+   <div id="divprogress1" class="w3-light-grey" style="width:400px;margin-left:-565px; height:23px; margin-top:-193px;">
+           <div id="divprogress2" class="w3-grey" style="height:23px;width:0%"><span id="spanid"></span></div>
+   </div><br>
+
+    <br />
+    <br />
+    <div style="height:10px;"></div>
+
+    <div class="totalupload">
+        <span style="color:#f37946; font-weight:600; font-size:15px;">Total Number of records Uploaded :</span>
+        <input type="number" id="totnumber" style="width:100px; border:none; color:darkslateblue; font-weight:900;" disabled="disabled" />
+        @*<input type="number" id="totnumber" style="width:100px; border:none; color:darkslateblue; font-weight:900;" disabled="disabled" />*@
+    </div>
+
+    <!--<input type='button' value='Upload' onclick='importPortfolioFunction()'/>-->
+    <!--<input type="file" id="fileUpload" style="margin-top:7px;margin-left:18px;">-->
+
+    <br />
+    <!--<input type="file" id="FileUpload1" name="FileUpload1" ng-change="openfile(FileUpload1)" ng-model="FileUpload1" value="Upload CSV File" style="margin-left:18px; font-weight:600; background-color:slategray; color:white; margin-top:-10px;"/>-->
+    <div class="desktopclass" ng-controller="viewController" style="border-style:solid;border-color:transparent;border-width:2px; border-radius:1px;position:fixed;top:50%;left:50%;width:95em;max-width:93em;height:2em;margin-top:-17em;margin-left:-47em;">
+        <!--<input type="button" id="FileUpload1" name="FileUpload1" onclick="Openfile2()" onchange="Openfile(FileUpload1)" ng-model="FileUpload1" value="Upload CSV File" style="margin-left:-4px; font-weight:600; background-color:slategray; color:white; margin-top:-3px;"/>-->
+        <!--<span style="margin-left:550px;margin-top:15px; font-size:18px;" onclick="homepage()"><a href ="#" style="color:#f37946; font-weight:600;margin-left:-50px;">SICKLECELL UPLOAD CSV FILE</a></span>
+        <input ng-click="exportoverview()" type="submit" value="Export into Excel" style="margin-left:340px; font-weight:600; background-color:slategray; color:white; margin-top:-3px;"/>-->
+    </div>
+
+    <div class="mobileclass" ng-controller="viewController" style="border-style:solid;border-color:white;border-width:2px; border-radius:1px;position:absolute;top:55%;left:1%;width:95em;max-width:93em;height:2em;margin-top:-18em;margin-left:-42em; font-size:13px;">
+        <span style="margin-left:550px;margin-top:15px;" onclick="homepage()"><a href="#" style="color:#f37946; font-weight:800">CLIENT UPLOAD</a></span>
+        <input ng-click="exportoverview()" type="submit" value="Export into Excel" style="margin-left:45px; font-weight:700; background-color:slategray; color:white; margin-top:-3px;" />
+    </div>
+
+    <!--Start Preloader -->
+    <div class="preloader"></div>
+
+    <p id="footertips" class="Tipfooter" style="margin-top:307px; font-size:12px; margin-left:-135px;">www.primeshire.tech</p>
+    <section ng-app="app">
+        <div class="container" ng-controller="viewController">
+
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!--    <br /> -->
+                    </div>
+
+                    <div class="col-md-4" style="position:fixed;top:50%;left:50%;margin-top:-15em;margin-left:-7em; font-size:18px;font-weight:600;">
+                        <div style="height:3px;"></div>
+                        <span onclick="homepage()"><a href="#" style="color:slategray;" id="golbalschoolname"></a></span><br />
+                        <div style="height:1px; margin-top:-3px;"></div>
+                    </div>
+                    <script>
+                        let vskip;
+                        globalSchool = localStorage.getItem("globalschool");
+
+                        function homepage() {
+                            vskip = 1;
+                            var varRole = localStorage.getItem("vRole");
+                            if (varRole === "Super Admin") {
+                                window.location.href = "/Home/index";
+                            } else { window.location.href = "/Home/index"; }
+
+                            localStorage.setItem("filename", "");
+                            localStorage.setItem("Refreshed", "0");
+                        }
+
+                        let idleTime = 0;
+                        $(document).ready(function () {
+                            //Increment the idle time counter every minute.
+                            idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+
+                            //Zero the idle timer on mouse movement.
+                            $('body').mousemove(function (e) {
+                                idleTime = 0;
+                            });
+
+                            $('body').keypress(function (e) {
+                                idleTime = 0;
+                            });
+
+                            $('body').click(function () {
+                                idleTime = 0;
+                            });
+
+                            function timerIncrement() {
+                                idleTime = idleTime + 1;
+                                if (idleTime > 6) {
+                                    window.location.href = "/Home/Login";
+                                }
+                            }
+                        });
+
+                        function openfile() {
+                            let link = document.getElementById("fileUpload").files[0].name;
+
+                            var fileUpload = $("#fileUpload").get(0);
+                            var files = fileUpload.files;
+
+                            let variablePath = { 'Path': link, 'Jresult': '' };
+
+                            var fileData = new FormData();
+
+                            // Looping over all files and add it to FormData object
+                            for (var i = 0; i < files.length; i++) {
+                                fileData.append(files[i].name, files[i]);
+                            }
+                            try {
+                                $.ajax({
+                                    url: '/Upload/Open',
+                                    type: "POST",
+                                    contentType: false, // Not to set any content header
+                                    processData: false, // Not to process data
+                                    data: fileData,
+                                    success: function (result) {
+                                        localStorage.setItem("filename", result);
+                                        localStorage.setItem("Refreshed", "1");
+
+                                        //window.location.reload();
+                                    }
+                                });
+                            } catch (err) {
+                                alert(err.message);
+                            }
+                        };
+
+                    </script>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+        <!--<input ng-click="uploadcsv()" type="file" id="FileUpload1" value="Upload CSV File" style="margin-left:-4px; font-weight:600; background-color:slategray; color:white; margin-top:30px;"/>-->
+        <div class="lbloverview">
+            <input id="assignments" class="assign0" type="text" ng-keyup="assignkeyup()" value="Client ID" disabled="disabled" />
+            <input id="assignment1" class="assign1" onkeyup="assignment1keyup()" type="text" value="Name" disabled="disabled" />
+            <input id="assignment2" class="assign2" onkeyup="assignment2keyup()" type="text" value="Date of Birth" disabled="disabled" />
+            <input id="assignment3" class="assign3" onkeyup="assignment3keyup()" type="text" value="Gender" disabled="disabled" />
+            <input id="assignment4" class="assign4" onkeyup="assignment4keyup()" type="text" value="Address" disabled="disabled" />
+            <input id="assignment5" class="assign5" onkeyup="assignment5keyup()" type="text" value="City" disabled="disabled" />
+            <input id="assignment6" class="assign6" onkeyup="assignment6keyup()" type="text" value="State" disabled="disabled" />
+            <input id="assignment7" class="assign7" onkeyup="assignment7keyup()" type="text" value="Email Address" disabled="disabled" />
+        </div>
+
+        <div ng-controller="viewController" class="boxed_wrapper">
+
+            <form role="form" onSubmit="return false;">
+
+                <div class="col-md-12" style="width:120%; margin-left:-10px;">
+                    <div class="row">
+
+                        <div class="col-md-12" style="margin-left:-20px; width:100%;">
+
+                            <div style="padding:0; width:1350px; max-width:1280px; margin-left:4px;" ng-controller="viewController">
+
+                                <div class="col-md-12" style="width:100%;"></div>
+                                <div class="row">
+                                    <table id="myTable" class="mtable">
+                                        <tr>
+                                            <td id="col1" class="col1class"></td>
+                                            <td id="col2" class="col2class"></td>
+                                            <td id="col3" class="col3class"></td>
+                                            <td id="col4" class="col4class"></td>
+                                            <td id="col5" class="col5class"></td>
+                                            <td id="col6" class="col6class"></td>
+                                            <td id="col7" class="col7class"></td>
+                                            <td id="col8" class="col8class"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+            <div style="position:fixed;top:50%;left:50%;width:38em;height:18em;margin-top:26em;margin-left:-15em; color:#f37946;font-weight:900; font-size:12px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                <!--<p>&copy; @DateTime.Now.Year Primeshire Technologies All Rights Reserved V 1 0 1</p>-->
+                <span style="font-size:17px;margin-left:-28em;margin-top:-32em;" id="saveopt">Retain in Database?</span>
+                <span style="color:darkslategray; font-size:17px; margin-left:10px;" id="yeschoice"> <input type="button" id="checkyes" value="Yes" ng-click="yes()" style="background-color:forestgreen; color:white; border-radius:5px; font-weight:600;border-color:transparent;font-size:15px;" /></span>
+                <span style="color:darkslategray; font-size:17px; margin-left:10px;" id="nochoice"> <input type="button" id="checkno" value="No" ng-click="no()" style="background-color:red; color:white; border-radius:5px; font-weight:600;border-color:transparent; font-size:15px;" /></span>
+                @*<p>&copy; @DateTime.Now.Year Primeshire Technologies All Rights Reserved<span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.5</span></p>*@
+                <p>&copy; @DateTime.Now.Year <a href="https://www.primeshire.tech/" onmouseover="mouseover()" onmouseout="mouseout()" rel="noopener noreferrer" target="_blank" style="text-shadow: 0px 1px 0px #000000; color:#FF0000;font-weight:bolder;">Primeshire Technologies. </a> <span style="margin-left:1px;"><span style="margin-left:1px;">All Rights Reserved</span></span> <span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.5</span></p>
+            </div>
+            <script>
+                function mouseover() {
+                    document.getElementById("footertips").style.visibility = "visible";
+                }
+
+                function mouseout() {
+                    document.getElementById("footertips").style.visibility = "hidden";
+                }
+            </script>
+
+        </div>
+
+        <script src="../../Scripts/multi.js"></script>        
+    </section>
+

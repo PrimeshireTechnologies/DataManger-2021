@@ -1,0 +1,673 @@
+﻿
+/*this datalist form the universal selectror ( for the Mobile Phone )*/
+/*#myTable tr:hover {
+    background-color:ghostwhite ;
+}*/
+
+@import url('../assets/preloader/spinners.css');
+@import url('../assets/preloader/pulse.css');
+
+/* Mobile Phone Styles */
+@media only screen and (min-width: 1px) and (max-width: 400px) {
+    .box {
+        margin-top: 1%;
+        display: flex;
+        flex-wrap: wrap;
+        width: 320px;
+        height:270px;
+       
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 8px;        
+        margin-left: -50px;
+    }
+
+    .signupbox {
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 8px;
+                
+        width: 360px;
+        height: 27em;
+        margin-top: -60px;
+        margin-left: -55px;
+    }
+
+    .already {
+        margin-top: 90px;
+    }
+
+    .formclass {
+        margin-left:-40px;      
+    }
+
+    .modulename {
+        color: #f37946;
+        font-size: 17px;
+        font-weight: 700;
+        margin-left: -50px;
+    }
+
+    .indexbox {
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 15px;
+                
+        width: 25em;
+        height: 40em;
+        margin-top: 20px;
+        margin-left: -20px;
+        background-color:white;
+    }
+
+    .consoleoptionbox {
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 9px;
+        width: 25em;
+        height: 30em;
+        margin-top: 20px;
+        margin-left: -20px;
+    }
+
+    .account3 {
+        background-color: #f37946;
+        color: white;
+        margin-top: -150px;
+        margin-left: 175px;
+        width: 100px;
+        border-color: ghostwhite;
+        border-width: 1px;
+        font-weight: 600;
+        font-size: 11px;
+        visibility: hidden;
+    }
+    .username3 {
+        font-size: 11px;
+        color: white;
+        font-weight: 500;
+        visibility: hidden;
+    }
+
+    .account4 {
+        width: auto;
+        background-color: #f37946;
+        color: white;
+        margin-top: -150px;
+        margin-left: 175px;
+        width: 100px;
+        border-color: ghostwhite;
+        border-width: 1px;
+        font-weight: 600;
+        font-size: 9px;
+        visibility: hidden
+    }    
+    .username4 {
+        width:auto;
+        font-size: 9px;
+        color: white;
+        font-weight: 500;
+        visibility: hidden;
+    }
+
+    .navbar-brand{
+        margin-left:25px;
+        width:auto;
+    }
+    .dropdown {
+        margin-left: 40px;
+    }
+
+    .swal-title {
+        margin: 0px;
+        font-size: 16px;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+        margin-bottom: 28px;
+    }
+
+    .lblcompnme {
+        position: fixed;
+        margin-top: 1em;
+        margin-left: 9em;
+    }   
+}
+
+/* Tablet Styles1 */
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+    .box {
+        margin-top: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        width: 420px;
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 8px;
+        margin-left: -20px;
+        height:300px;
+    }
+    .signupbox {
+        border-style: solid;
+        border-color: slategray;
+        border-width: 3px;
+        border-radius: 8px;
+        width: 400px;
+        height: 27em;
+        margin-top: -60px;
+        margin-left: -55px;
+    }
+    .already {
+        margin-top: 120px;
+    }
+
+    .formclass {
+        margin-left: -20px;
+    }
+    .modulename {
+        color: slategray;
+        font-size: 17px;
+        font-weight: 700;
+        margin-left: -20px;
+    }
+    .indexbox {
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 9px;
+        width: 25em;
+        height: 20em;
+        margin-top: 50px;
+        margin-left: -20px;
+    }
+
+    .consoleoptionbox {
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 9px;
+        width: 25em;
+        height: 15em;
+        margin-top: 50px;
+        margin-left: -20px;
+    }
+
+    .swal-title {
+        margin: 0px;
+        font-size: 16px;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+        margin-bottom: 28px;
+    }
+
+    .lblcompnme {
+        position: fixed;
+        margin-top: 1em;
+        margin-left: 8em;
+    } 
+}
+
+/*this datalist for tablet*/
+/* Tablet Styles2 */
+@media only screen and (min-width: 601px) and (max-width: 960px) {
+    .box {
+        margin-top: 15%;
+        display: flex;
+        flex-wrap: wrap;
+        width: 470px;
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 8px;
+        margin-left: 5px;
+        height:300px;
+    }
+
+    .signupbox {
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 8px;
+        width: 500px;
+        height: 27em;
+        margin-top: -60px;
+        margin-left: -55px;
+    }
+
+    .already {
+        margin-top: 120px;
+    }
+
+    .formclass {
+        margin-top:10px;
+        margin-left: 70px;
+    }
+
+    .modulename {
+        color: slategray;
+        font-size: 17px;
+        font-weight: 700;
+        margin-left: -10px;
+    }
+
+    .indexbox {
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 9px;
+        width: 40em;
+        height: 20em;
+        margin-top: 70px;
+        margin-left: -10px;
+    }
+
+    .consoleoptionbox {
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 9px;
+        width: 40em;
+        height: 15em;
+        margin-top: 70px;
+        margin-left: -10px;
+    }
+
+    .swal-title {
+        margin: 0px;
+        font-size: 16px;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+        margin-bottom: 28px;
+    }
+
+    .lblcompnme {
+        position: fixed;
+        margin-top: 1em;
+        margin-left: 11em;
+    } 
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    .box {
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 8px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 30em;
+        height: 18em;
+        margin-top: -9em;        
+        margin-left: -15em;
+    }
+
+    .signupbox {
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 8px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 30em;
+        height: 27em;
+        margin-top: -13em;
+        margin-left: -15em;
+    }
+
+    .already {
+        margin-top: 90px;
+        margin-left:-2px;
+    }    
+
+    .formclass {
+        margin-left: 0px;
+    }
+    .modulename {
+        color: #f37946;
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .indexbox {
+        /*border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;*/
+        border-radius: 15px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 30em;
+        height: 218px;
+        margin-top: -6em;
+        margin-left: -15em;
+        border: 2px solid #28c4f4;
+        background-color:white;
+    }
+
+    .consoleoptionbox {
+        border-style: solid;
+        border-color: #28c4f4;
+        border-width: 3px;
+        border-radius: 9px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 30em;
+        /*height: 14em;*/
+        height: 11.8em;
+        margin-top: -4em;
+        margin-left: -15em;
+    }
+
+    .account1 {
+        background-color: #f37946;
+        color: white;
+        margin-top: 0px;
+        margin-left: 845px;
+        width: 180px;
+        border-color: ghostwhite;
+        border-width: 1px;
+        font-weight: 600;
+        visibility: hidden;
+    }
+
+    .account2 {
+        background-color: #f37946;
+        color: white;
+        margin-top: 0px;
+        margin-left: 845px;
+        width: 180px;
+        border-color: ghostwhite;
+        border-width: 1px;
+        font-weight: 600;
+        visibility: hidden;
+    }
+
+    .username1 {
+        font-size: 14px;
+        color: white;
+        font-weight: 500;
+        visibility: hidden;
+    }
+    .username2 {
+        font-size: 14px;
+        color: white;
+        font-weight: 500;
+        visibility: hidden;
+    }
+
+    .mobileclass{
+        display:none;
+    }
+
+    .swal-title {
+        margin: 0px;
+        font-size: 16px;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+        margin-bottom: 28px;
+    }
+
+    .lblcompnme {
+        top: 50%;
+        left: 50%;
+        position: fixed;
+        margin-top: -9em;
+        margin-left: -3em;
+    }
+
+    .Tooltip {
+        top: 50%;
+        left: 50%;
+        margin-top: -8em;
+        margin-left: 2em;
+        font-size: 12px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: silver;
+        width: 100px;
+        text-align: center;
+        background-color: ghostwhite;
+        visibility: hidden;
+        border-radius: 3px;
+        height: 24px;
+        position: fixed;
+    }
+
+    .lblcompnme2 {
+        top: 50%;
+        left: 50%;
+        position: fixed;
+        margin-top: -17em;
+        margin-left: -3em;
+    }
+
+    .Tooltip2 {
+        top: 50%;
+        left: 50%;
+        margin-top: -18em;
+        margin-left: 2em;
+        font-size: 12px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: silver;
+        width: 160px;
+        text-align: center;
+        background-color: ghostwhite;
+        visibility: hidden;
+        border-radius: 3px;
+        height: 24px;
+        position: fixed;
+    }
+
+    /*________________Preloader_______________ */
+    .
+    
+    /*#image {
+        height: 100%;  
+        width: 100%;
+        margin-top:-50px;
+        background-image: url('../Images/watermark1.jpg');
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        margin-left: -15em;
+        position: fixed;
+    }*/    
+
+    #image2 {
+        height: 3200px; /* or whatever, equal to the image you want 'watermarked' */
+        width: auto; /* as above*/
+        max-height:2999px;
+        margin-top: 10px;
+        background-image: url('../Images/watermark4.png');
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        margin-left: 0em;
+    }
+
+    .Tipfooter {
+        top: 50%;
+        left: 50%;
+        margin-top: -13em;
+        margin-left: 2em;
+        font-size: 12px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: silver;
+        width: 128px;
+        text-align: center;
+        background-color: ghostwhite;
+        visibility: hidden;
+        border-radius: 3px;
+        height: 21px;
+        position: fixed;
+        text-shadow: 0px 0px 0px #000000;
+    }
+}
+
+@media only screen and (min-width: 2054px) and (max-width: 2310px ) {
+    .preloader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 999999999999;
+        background-color: rgba(255,255,255,1);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url('../Images/icon/preloader.gif');
+    }
+
+        .preloader:after {
+            content: "Loading    .     .     .   ";
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inconsolata',;
+            font-size: 14px;
+            margin-top: 18px;
+            color: darkslategray;
+            position: absolute;
+            width: 400px;
+            padding-left: 45px;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+            margin-top: 44em;
+            margin-left: 70em;
+        }
+}
+
+@media only screen and (min-width: 2051px) and (max-width: 2054px ){
+    .preloader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 999999999999;
+        background-color: rgba(255,255,255,1);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url('../Images/icon/preloader.gif');
+    }
+
+        .preloader:after {
+            content: "Loading  .    .    .   ";
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inconsolata',;
+            font-size: 14px;
+            margin-top: 18px;
+            color: darkslategray;
+            position: absolute;
+            width: 400px;
+            padding-left: 45px;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+            margin-top: 40em;
+            margin-left: 61em;
+        }
+}
+
+@media only screen and (min-width: 1712px) and (max-width: 2051px) {
+    .preloader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 999999999999;
+        background-color: rgba(255,255,255,1);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url('../Images/icon/preloader.gif');
+    }
+
+        .preloader:after {
+            content: "Loading   .   .   .  ";
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inconsolata',;
+            font-size: 14px;
+            margin-top: 18px;
+            color: darkslategray;
+            position: absolute;
+            width: 400px;
+            padding-left: 45px;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+            margin-top: 38em;
+            margin-left: 56em;
+        }
+}
+
+@media only screen and (min-width: 1541px) and (max-width: 1712px) {
+    .preloader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 999999999999;
+        background-color: rgba(255,255,255,1);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url('../Images/icon/preloader.gif');
+    }
+
+        .preloader:after {
+            content: "Loading   .   .   . ";
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inconsolata',;
+            font-size: 14px;
+            margin-top: 18px;
+            color: darkslategray;
+            position: absolute;
+            width: 400px;
+            padding-left: 45px;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+            margin-top: 34em;
+            margin-left: 48em;
+        }
+}
+
+@media only screen and (max-width: 1540px) {
+    .preloader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 999999999999;
+        background-color: rgba(255,255,255,1);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url('../Images/icon/preloader.gif');
+    }
+
+        .preloader:after {
+            content: "Loading .  .  . ";
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inconsolata',;
+            font-size: 14px;
+            margin-top: 18px;
+            color: darkslategray;
+            position: absolute;
+            width: 400px;
+            padding-left: 45px;
+            letter-spacing: 0.8px;
+            font-weight: 500;
+            margin-top: 31em;
+            margin-left: 43em;
+        }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+﻿
+<link href="../../Content/bootstrap.css" rel="stylesheet"/>
+<link href="../../Content/multi.css" rel="stylesheet"/>
+<script src="../../Scripts/jquery-3.3.1.js"></script>
+<script src="../../Library/angular.min.js"></script>
+
+<section ng-app="app" class="col-md-12">     
+    <br />
+    <!--<br />-->
+    <br />
+    <br />           
+    
+    <div ng-controller="viewController" class="container">
+           <div class="col-md-12">
+                <div class="col-md-4 col-md-offset-4">
+                     <!--<div class="box" style="border-style:solid;border-color:#f37946;border-width:5px;height:300px;width:350px;border-radius:6px;">-->
+                     <div class="box" style="border-style:solid;border-color:#28c4f4;border-width:3px;border-radius:8px;position:fixed;top:50%;left:50%;width:70em;height:33em;margin-top:-14em;margin-left:-35em;">                                           
+
+			               <div class="content-wrap" style="margin-left:30px;margin-top:20px;">
+			                     <!--<h6 style="color:#f37946;font-size:18px;font-weight:700;">List of Registered Schools</h6>-->
+                                 <span style="color:#f37946;font-size:18px;font-weight:800; font-family:'Arial Narrow', Arial, sans-serif">Additional Information</span>
+                                 <!-- <span style="margin-left:10px; color:#f37946;font-size:15px;font-weight:800; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">School Name</span>
+			                	 <span style="margin-left:318px; color:#f37946;font-size:15px;font-weight:800; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Date Register</span> <span style="margin-left:45px; color:#f37946;font-size:15px;font-weight:800; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">School Type</span>		                                                                                                  -->
+                                  <form action="" method="post" id="login">
+	                                <div>
+                                       <!--<select id="school_name" ng-model="school_name" ng-change="namechange(school_name)" name="school_name" style="position:absolute;height:500px; max-height:360px; width:1100px; max-width:740px;" multiple="multiple">-->
+                                       <select id="school_name" ng-model="school_name" ng-change="namechange(school_name)" name="school_name" style="position:absolute; font-weight:700; width:927px; max-width:910px;height:375px; max-height:370px;font-family:Courier New, Courier, monospace;font-size:16px;border-width:2px; border-color:#28c4f4;" multiple="multiple">                                                                                           
+                                               <option style="height:5px;"></option>
+                                               <option ng-repeat="v in val | orderBy:v.ClientID track by $index" style="margin-left:10px; margin-top:2px; font-size:15px;font-family:Arial, Helvetica, sans-serif"> {{ v.ClientID }}
+                                                    {{ v.FirstName}}
+                                                    {{ v.LastName }}     
+                                                    {{ v.DOB }}    
+                                                    {{ v.Gender }}                                                   
+                                                    {{ v.Race}}
+                                                    {{ v.Ethnicity }}     
+                                                    {{ v.SSN }}    
+                                                    {{ v.Mobile_Number }}  
+                                                    {{ v.FullStreetAddress }}                                                   
+                                                    {{ v.City}}
+                                                    {{ v.State }}     
+                                                    {{ v.ZipCode }}    
+                                                    {{ v.SicklecelltypeID }}
+                                                    {{ v.Email_Address }}    
+                                                    {{ v.Eligibility }}
+                                               </option>                                                   
+                                       </select>
+                                       
+                                       <div style="height:2px;"></div>			                         
+			                          <!-- <div class="action" ng-click="back()" style="margin-top:55px;margin-left:110px;">
+                                            <a class="btn btn-primary signup" style="width:120px;">Back</a>
+			                           </div>-->
+	                                </div>
+                                  </form>
+                                  <!--<input type="submit" ng-click="back()" value="Back" />-->                                  
+			               </div>                          
+                           
+                           <div style="position:fixed;top:50%;left:50%;width:38em;height:18em;margin-top:25em;margin-left:-17em; color:#f37946;font-weight:800; font-size:12px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                <p>&copy; @DateTime.Now.Year Primeshire Technologies All Rights Reserved<span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.5</span></p>
+                           </div>
+
+                           <script>                                                               
+                              let idleTime = 0;
+                              $(document).ready(function () {
+                                   //Increment the idle time counter every minute.
+                                   idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+
+                                   //Zero the idle timer on mouse movement.
+                                   $('body').mousemove(function (e) {                              
+                                      idleTime = 0;
+                                   });
+
+                                   $('body').keypress(function (e) {                              
+                                      idleTime = 0;
+                                   });
+
+                                   $('body').click(function() {                              
+                                      idleTime = 0;
+                                   });
+
+                                   function timerIncrement() {
+                                      idleTime = idleTime + 1;
+                                      if (idleTime > 6) { 
+                                          window.location.href = "/Home/Index";
+                                      }
+                                   }
+                              });
+                           </script>                           
+			         </div>         
+                     <input type="submit" ng-click="back()" value="Back" style="margin-top:230px; top:50%;left:50%; position:fixed; margin-left:-55px; width:100px; background-color:#337ab7; color:white; font-weight:600;"/>
+                </div>                                           			                      
+           </div>
+      </div>               
+      <br />      
+      <script src="../../Scripts/login.js"></script>    
+      <script src="../../Scripts/multi.js"></script>
+</section>
+
