@@ -1,0 +1,51 @@
+﻿
+<script src="../../Library/angular.js"></script>
+<script src="../../Scripts/jquery-1.6.4.js"></script>
+
+<div>
+
+  <div id="control" style="margin-top:50px;">
+      line <input type="text" size="5" id="line" /> <button> Go </button>
+  </div>
+  <table>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+  </table>
+
+  <style>
+        table{margin-top:20px;}
+        td{padding:3px;}
+        td:nth-child(1){color:red;}
+        tr.active{background-color:yellow;}
+
+        #control{line-height:20px;padding:3px;position:fixed;top:0;left:0;right:0;background-color:#999955}
+  </style>  
+
+  <script>
+    var row = $('tr');
+    var table = $('table');
+    for (var i = 1; i < 100; i++) {
+        row.clone().appendTo(table);
+    }
+    table.find('tr').each(function(idx, elem) {
+       $(this).find('td:first').text(idx).end().find('td:last').text('This is the line ' + (idx) + ' of the table');
+    });
+
+    // code to scroll
+    $('#control button').click(function () {
+        document.getElementById("line")["value"] = 98;
+        var w = $(window);
+        var row = table.find('tr')
+          .removeClass('active')
+          .eq(+$('#line').val())
+          .addClass('active');
+
+            if (row.length) {
+                w.scrollTop(row.offset().top - (w.height() / 2));
+            }
+     });
+  </script>
+
+</div>
