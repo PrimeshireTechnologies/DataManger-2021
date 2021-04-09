@@ -1,0 +1,140 @@
+﻿
+<link href="../../Content/styling.css" rel="stylesheet" />
+
+<link href="../../Content/bootstrap.css" rel="stylesheet" />
+<link href="../../Content/multi.css" rel="stylesheet" />
+<script src="../../Scripts/jquery-3.3.1.js"></script>
+<script src="../../Library/angular.min.js"></script>
+
+<!-- There's nothing here! -->
+<span class="lblcompnme2"><a href="#" style="color:#f37946; font-weight:700; font-family:Arial ( sans-serif );font-size:20px;" onclick="menu()"><img src="~/Images/submenu.png" width="59" height="57" onmouseover="mouseover()" onmouseout="mouseout()" onclick="back()" /></a></span>
+<p id="tips" class="Tooltip2">Management option Page</p>
+
+<p id="footertips" class="Tipfooter" style="margin-top:315px; font-size:12px; margin-left:-125px;">www.primeshire.tech</p>
+<section ng-app="app" class="col-md-12">
+    @*<br />
+    <br />*@
+    <br />
+    <br />
+    <div ng-controller="viewController" class="container">
+
+        <!--Start Preloader -->
+        <div class="preloader"></div>
+
+        <div class="col-md-12">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="signupbox">
+                    <div class="content-wrap" style="margin-left:55px;margin-top:40px;">
+                        <h6 class="modulename"><a href="#" style="color:#f37946;" onclick="useroption()">Management Sign Up</a></h6>
+                        <form action="" method="post" id="login">
+                            <div class="formclass">
+                                <input class="form-control" type="text" placeholder="FirstName" id="fname" tabindex="1">
+                                <input class="form-control" type="text" placeholder="LastName" id="lname" tabindex="2">
+                                <span style="color:#f37946;font-size:17px;font-weight:700;">Please select Role Type</span>
+                                <select class="form-control" id="role" onchange="focusemail()" tabindex="3">
+                                        <option value=""></option>
+                                        <option value="Super Admin">Super Admin</option>
+                                        <option value="Admin User">Admin</option>
+                                </select>
+                                <input class="form-control" type="email" placeholder="E-mail address" id="email" tabindex="4" multiple>
+                                <input class="form-control" type="password" placeholder="Password" id="pwd" name="pwd" tabindex="5">
+                                <input class="form-control" type="password" placeholder="Confirm Password" id="confirmpass" tabindex="6">
+                                <p id="demo"></p>
+                                <div style="margin-top:-63px;margin-left:282px;">
+                                    <input type="checkbox" id="show-hide" name="show-hide" value="" />
+                                    <label for="show-hide" style="font-size:12px;color:#f37946;font-weight:700;">Show</label>
+                                </div>
+
+                                <div style="margin-top:10px;margin-left:282px;">
+                                    <input type="checkbox" id="show-hide2" name="show-hide2" value="" />
+                                    <label for="show-hide2" style="font-size:12px;color:#f37946;font-weight:700;">Show</label>
+                                </div>
+
+                                <div class="action" ng-click="signup()" style="margin-top:15px;margin-left:80px;">
+                                     <a class="btn btn-primary signup" style="width:120px; background-color:#436280; color:white;">Sign Up</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="already" style="margin-top:20px;">
+                         <span style="font-size:16px;">Have an account already?</span>
+                         <a href="/Home/Login" style="font-size:15px;font-weight:700;" id="already">Login</a>
+                    </div>
+                    <div style="position:fixed;top:50%;left:50%;width:38em;height:18em;margin-top:25em;margin-left:-16em; color:black;font-weight:900; font-size:12px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        <p>&copy; @DateTime.Now.Year <a href="https://www.primeshire.tech/" onmouseover="mouseover()" onmouseout="mouseout()" rel="noopener noreferrer" target="_blank" style="text-shadow: 2px 1px 0px #000000; color:cornflowerblue;font-weight:bolder; font-size:15px;">Primeshire Technologies. </a> <span style="margin-left:1px;"><span style="margin-left:1px;">All Rights Reserved</span></span> <span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.5</span></p>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                <script>
+                    let vskip;
+                    function focusemail() {
+                        document.getElementById("email").focus();
+                    }
+
+                    let idleTime = 0;
+                    $(document).ready(function () {
+                        //Increment the idle time counter every minute.
+                        idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+
+                        //Zero the idle timer on mouse movement.
+                        $('body').mousemove(function (e) {
+                            idleTime = 0;
+                        });
+
+                        $('body').keypress(function (e) {
+                            idleTime = 0;
+                        });
+
+                        $('body').click(function () {
+                            idleTime = 0;
+                        });
+
+                        function timerIncrement() {
+                            idleTime = idleTime + 1;
+                            if (idleTime > 6) {
+                                window.location.href = "/Home/Login";
+                            }
+                        }
+                    });
+
+                    function useroption() {
+                        window.location.href = "/Home/Manageconsoleoption";
+                    }
+
+                    function mouseover() {
+                        document.getElementById("tips").style.visibility = "visible";
+                    }
+
+                    function mouseout() {
+                        document.getElementById("tips").style.visibility = "hidden";
+                    }
+
+                    function menu() {
+                        vskip = 1;
+                        window.location.href = "/Home/Manageconsoleoption"
+                    }
+
+                    function back() {
+                        vskip = 1;
+                        window.location.href = "/Home/Manageconsoleoption"
+                    }
+
+                    function mouseover2() {
+                        document.getElementById("footertips").style.visibility = "visible";
+                    }
+
+                    function mouseou2t() {
+                        document.getElementById("footertips").style.visibility = "hidden";
+                    }
+
+                </script>
+            </div>
+        </div>
+    </div>
+    <br />
+    <script src="../../Scripts/login.js"></script>
+    <script src="../../Scripts/multi.js"></script>
+</section>
+
