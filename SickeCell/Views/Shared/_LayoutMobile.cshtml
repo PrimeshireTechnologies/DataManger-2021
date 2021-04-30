@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="../../Content/styling.css" rel="stylesheet" />
+
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../../Content/multi.css" rel="stylesheet" />
+    <link rel="icon" href="../../Images/SickeCell.png" style="width:50px;height:50px;" />
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<!--Start Preloader -->
+<div class="preloader"></div>
+
+<body style="background-color:white; height:100%; max-height:100%; width:100%;" ng-controller="viewController">
+
+    <div id="nav1" class="navbar navbar-inverse navbar-fixed-top" style="background-color:#f37946;font-weight:500; height:58px; margin-left:-100px;">
+
+        <!--This is for Container 1-->
+        <div class="container" id="cnt1" style="visibility:hidden;">
+            <div class="row">
+                <div class="navbar-header" id="navigation" style="visibility:hidden;">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Data Prairie", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                    <div id="mobile1">
+                        <img src="../../Images/Primeshire.png" style="margin-top:6px;margin-left:240px;" class="icon2" />
+                        <select id='my_account3' name='account' onchange="validateacct()" class="account3">
+                            <option value='0' id="option3">User</option>
+                            <option value='1'>Log Out</option>
+                        </select>
+                        <span id="username3" class="username3"></span>
+                    </div>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" id="ul" style="visibility:hidden; width:auto;">
+                        <li class="dropdown" onclick="dropdmenu1()">
+                            <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><img src="~/Images/hamburger.png" style="margin-top:-4px; margin-left:-5px; height:35px;width:40px;" /></a>
+                            <ul class="dropdown-menu" role="menu" id="dropdmenu1">
+                                <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                                <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Client Entry Form", "Entry", "Home", null, new { id = "Patient_Entry_Form" })</li>
+                                <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Case Notes", "Casenotes", "Home", null, new { id = "Case_Notes" })</li>
+                                <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Client Overview", "PatientOverview", "Home", null, new { id = "Patient_Overview" })</li>
+                                <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Client Upload", "Uploadcsv", "Home", null, new { id = "Uploadcsv" })</li>
+                                <li style="font-family:Jokerman;text-shadow: 1px 1px 2px #000000; font-size:16px; font-weight:900;">@Html.ActionLink("Management Console", "Manageconsoleoption", "Home", null, new { id = "Manageconsole" })</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <img src="../../Images/Primeshire.png" style="margin-top:6px;margin-left:-280px;" class="icon1" />
+                    <select id='my_account' name='account' onchange="validateacct()" class="account1">
+                        <option value='0' id="option1">User</option>
+                        <option value='1'>Log Out</option>
+                    </select>
+                    <span id="username" class="username1"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--This is for Container 2-->
+    <div id="nav2" class="navbar navbar-inverse navbar-fixed-top" style="background-color:#f37946;">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container" id="cnt2" style="visibility:hidden; width:auto;">
+                        <div class="row">
+                            <div class="navbar-header" id="navigation2">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                @Html.ActionLink("Data Prairie", "MobileIndex", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                                <div id="mobile2">
+                                    <img src="../../Images/Primeshire.png" style="margin-top:7.20px;margin-left:-131px;" class="icon2" width="50" height="37" />
+                                    <select id='my_account4' name='account' onchange="validateacct()" class="account4">
+                                        <option value='0' id="option4" class="ter">User</option>
+                                        <option value='1'>Log Out</option>
+                                    </select>
+                                    <span id="username4" class="username4"></span>
+                                </div>
+
+                            </div>
+                            <div class="navbar-collapse collapse" id="naveleft" style="width:350px; max-width:349px; margin-left:-9px;">
+                                 <ul class="nav navbar-nav" id="ul2" style="visibility:hidden; width:auto;">
+                                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                                    <li>@Html.ActionLink("Client Entry Form", "MobileEntry", "Home", null, new { id = "Patient_Entry_Form" })</li>
+                                    <li>@Html.ActionLink("Case Notes", "MobileCasenotes", "Home", null, new { id = "Case_Notes" })</li>
+                                    <li>@Html.ActionLink("Client Overview", "MobilePatientOverview", "Home", null, new { id = "Patient_Overview" })</li>
+                                    <li>@Html.ActionLink("Client Upload", "Uploadcsv", "Home", null, new { id = "Uploadcsv" })</li>
+                                    <li>@Html.ActionLink("Management Console", "Manageconsole", "Home", null, new { id = "Manageconsole" })</li>
+                                 </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        let historylog;
+        let sPath = window.location.pathname;
+        let sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+        let vstatus = "";
+
+        if (sPage.trim() !== "Entry" || sPage.trim() === "") {
+            if (sPage.trim() !== "entry") {
+                var vheight = $(window).height();
+                var vwidth = $(window).width();
+
+                if (vwidth > 2054) {
+                    document.body.style.backgroundImage = "url('../Images/watermark6.png')";
+                }
+                if (vwidth >= 1924 && vwidth <= 2053) {
+                    document.body.style.backgroundImage = "url('../Images/watermark5.png')";
+                }
+                if (vwidth >= 1710 && vwidth <= 1923) {
+                    document.body.style.backgroundImage = "url('../Images/watermark3.png')";
+                }
+                if (vwidth >= 1538 && vwidth <= 1709) {
+                    document.body.style.backgroundImage = "url('../Images/watermark2.png')";
+                }
+
+                if (vwidth < 1538) {
+                    document.body.style.backgroundImage = "url('../Images/watermark2.png')";
+                }
+
+            }
+        } else {
+            document.body.style.backgroundImage = "url('../Images/watermark4.png')";
+        }        
+
+        function Viewlogs() {
+            globalRole = localStorage.getItem("variableRole");
+            if (globalRole.trim() === "Admin/Super User" || globalRole === "Head Teacher" || globalRole === "Super Admin" || globalRole === "Teacher") {
+                document.location = '@Url.Action("Viewlogs","Home")';
+            } else {
+                //alert("You Don't' have access in this View Logs module");
+                swal("Not authorize!", "You Don't' have access in this View Logs module!", {
+                    className: "swal-title"
+                });
+                document.location = '@Url.Action("Mobileindex", "Home")';
+            }
+        }        
+
+        function validateacct() {
+
+            historylog = localStorage.getItem("historyloginID");
+       
+            if (document.getElementById("my_account4")["value"] == 1 || document.getElementById("my_account4")["value"] == 1) {
+                localStorage.setItem("variableName", "");
+                localStorage.setItem("variableEmail", "");
+                localStorage.setItem("variableEmail2", "");
+                localStorage.setItem("variableRole", "");
+
+                localStorage.setItem("userglobalfirstname", "");
+                localStorage.setItem("usergloballastname", "");
+
+                localStorage.setItem("vEmail", "");
+                localStorage.setItem("vEmail2", "");
+
+                localStorage.setItem("vRole", "");
+
+                window.location.href = "/home/MobileLogin";
+            }
+        }
+
+        $(function () {
+            //Set the value of your TypeId <select> list to the element with value '0'
+            //$('#my_account').val('0');
+            var globalName = localStorage.getItem("variableName");
+            var globalEmail = localStorage.getItem("variableEmail2");
+            var globalRoleName = localStorage.getItem("variableRole");
+
+            var globalusrfname = localStorage.getItem("userglobalfirstname");
+            var globalusrlname = localStorage.getItem("usergloballastname");
+
+            if (globalRoleName === "Super Admin" || globalRoleName === "Admin User") {
+                if (globalRoleName === "Admin User") {
+                    globalRoleName = globalRoleName.slice(0, 5).trim();
+                    document.getElementById("option1").innerHTML = "User :         " + globalRoleName;
+                    document.getElementById("username").innerHTML = globalusrfname + " " + globalusrlname;
+
+                    document.getElementById("option4").innerHTML = "User :         " + globalRoleName;
+                    document.getElementById("username4").innerHTML = " " + globalusrfname + " " + globalusrlname;
+                } else {
+                    document.getElementById("option4").innerHTML = "User :         " + globalRoleName;
+                    document.getElementById("username4").innerHTML = " " + globalusrfname + " " + globalusrlname;
+                }
+            } else {
+                document.getElementById("option1").innerHTML = "User :         " + globalRoleName;
+                document.getElementById("username").innerHTML = globalusrfname + " " + globalusrlname;
+            }
+            localStorage.setItem("filename", "");
+            localStorage.setItem("Refreshed", "0");
+        });       
+
+        globalRoleName = localStorage.getItem("variableRole");
+        if (globalRoleName === "Case Manager") {
+            if (sPage === "PatientOverview" || sPage === "patientoverview" || sPage === "Uploadcsv" || sPage === "uploadcsv") {
+                //alert("You Don't' have access to this module");
+                swal("Not authorize!", "You Don't' have access to this module!", {
+                    className: "swal-title"
+                });
+                window.location.href = "/home/Mobileindex";
+            }
+            localStorage.setItem("overviewfetch", "0");
+        } else if (globalRoleName === "Support Staff") {
+            if (sPage === "Uploadcsv" || sPage === "uploadcsv" || sPage === "Entry" || sPage === "entry" || sPage === "Casenotes" || sPage === "casenotes") {
+                //alert("You Don't' have access to this module");
+                swal("Not authorize!", "You Don't' have access to this module!", {
+                    className: "swal-title"
+                });
+                window.location.href = "/home/Mobileindex";
+            }
+            localStorage.setItem("overviewfetch", "0");
+        } else if (globalRoleName === "Admin User") {
+            localStorage.setItem("overviewfetch", "0");
+        } else if (globalRoleName === "Super Admin") {
+            localStorage.setItem("overviewfetch", "0");
+        } else {
+            localStorage.setItem("overviewfetch", "0");
+        }
+
+        if (sPage.trim() === "Manageconsoleoption") {
+            globalRole = localStorage.getItem("variableRole");
+            var validate = 0;
+            if (globalRole !== "Super Admin") {
+                if (globalRole !== "Admin User") {
+                    //alert("You Don't' have access to this module");
+                    swal("Not authorize!", "You Don't' have access to this module!", {
+                        className: "swal-title"
+                    });
+                    validate = 1;
+                }
+            }
+            if (validate === 1) {
+                if (validate === 1) {
+                    window.location.href = "/Home/MobileIndex";
+                    //event.preventDefault()
+                }
+            }
+        }
+
+        if (sPage === "Index" || sPage === "index" || sPage === "Entry" || sPage === "entry" || sPage === "Casenotes" || sPage === "casenotes") {
+            //localStorage.setItem("variableEmail", "");
+            let validdropdown = 0;
+            function dropdmenu1() {
+                vstatus = localStorage.getItem("layout");
+                if (validdropdown === 1) {
+                    validdropdown = 0;
+                    if (vstatus === "Mobile Phone") {
+                        document.getElementById("clmenu").style.visibility = "visible";
+                    }
+                } else {
+                    if (document.getElementById("dropdmenu1").style.visibility = "visible") {
+                        validdropdown = 1;
+
+                        if (vstatus === "Mobile Phone") {
+                            document.getElementById("clmenu").style.visibility = "hidden";
+                        }
+                    }
+                }
+            }
+
+            function dropdmenu2() {
+                vstatus = localStorage.getItem("layout");
+                if (validdropdown === 1) {
+                    validdropdown = 0;
+                    if (vstatus === "Mobile Phone") {
+                        document.getElementById("clmenu").style.visibility = "visible";
+                    }
+                } else {
+                    if (document.getElementById("dropdmenu1").style.visibility = "visible") {
+                        validdropdown = 1;
+
+                        if (vstatus === "Mobile Phone") {
+                            document.getElementById("clmenu").style.visibility = "hidden";
+                        }
+                    }
+                }
+            }
+            localStorage.setItem("overviewfetch", "0");
+        }
+
+        var elements = document.getElementsByClassName("navbar-brand");
+        var myFunction = function () {
+            //$(window).off('beforeunload');
+            window.onbeforeunload = false;
+        };
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('click', myFunction, false);
+        }
+
+        var elements2 = document.getElementsByClassName("dropdown-menu");
+        var myFunction2 = function () {
+            vskip = 1;
+        };
+        for (var i = 0; i < elements2.length; i++) {
+            elements2[i].addEventListener('click', myFunction2, false);
+        }
+    </script>
+
+    <script src="../../Scripts/globalvariable.js"></script>
+    <script src="../../Scripts/multi.js"></script>
+
+    <script src="~/Scripts/stoppreloader.js"></script>
+</body>
+
+</html>

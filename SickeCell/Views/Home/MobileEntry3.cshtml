@@ -1,0 +1,1069 @@
+﻿<!DOCTYPE html>
+<html ng-app="myapp"> 
+     <head>     
+	    <meta charset="UTF-8">
+	     <title ng-name="titles" ng-model="titles" id="titles">Main || Tempo Housing Modular Express</title>
+
+	     <!-- responsive meta -->
+	     <meta name="viewport" content="width=device-width, initial-scale=1">
+     	 <!-- For IE -->
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     	 <!-- master stylesheet -->         
+         <link href="../../Content/styling.css" rel="stylesheet"/>
+         <link rel="stylesheet" href="../../Content/styling-2.css">  
+     	 <!-- Responsive stylesheet -->
+         
+         <link href="../../Content/stylingentry.css" rel="stylesheet" />
+       	 <link rel="stylesheet" href="../../Content/responsive.css">
+
+         <link href="../../Content/font-awesome.min.css" rel="stylesheet" />
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+         <link href="../../Content/jquery.bxslider.css" rel="stylesheet" />
+         <link href="../../Content/imp.css" rel="stylesheet" />
+        
+         <link href="../../Content/bootstrap.css" rel="stylesheet"/>
+         <link href="../../Content/multi.css" rel="stylesheet"/>
+         <script src="../../Scripts/jquery-3.3.1.js"></script>
+         <script src="../../Library/angular.min.js"></script>    
+
+         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     </head>
+  
+     <body id="clmenu">
+         <input type="hidden" id="counttrack" value="" />
+         <!--Start Preloader -->
+         <div class="preloader"></div>
+
+         <p id="footertips" class="Tipfooter" style="margin-top:320px; font-size:12px; margin-left:-125px;">www.primeshire.tech</p>
+         <p id="tips" class="Tooltip">Enter Medicaid / Medicare ID</p>
+
+         <div id="image2">
+             
+             <div>
+
+                 <div class="boxed_wrapper">
+
+                     <div class="entrybox">
+
+                         <form role="form" onSubmit="return false;">
+                             <div style="height:5px;"></div>
+                             <span class="moduletitle" onclick="homepage()"><a href="#" class="lbltitle">SICKLE CELL CLIENT ENTRY FORM</a></span>
+                             <div style="height:10px;"></div>                             
+                             <div>
+
+                                 <div class="col-md-12">
+                                     <!--Start top bar area-->
+
+                                     <script>
+                                         let vskip;
+                                         function homepage() {
+                                             vskip = 1;
+                                             var varRole = localStorage.getItem("vRole");
+                                             if (varRole === "Super Admin") {
+                                                 window.location.href = "/Home/index";
+                                             } else { window.location.href = "/Home/index"; }
+                                         }
+
+                                         let idleTime = 0;
+                                         $(document).ready(function () {
+                                             //Increment the idle time counter every minute.
+                                             idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+
+                                             //Zero the idle timer on mouse movement.
+                                             $('body').mousemove(function (e) {
+                                                 idleTime = 0;
+                                             });
+
+                                             $('body').keypress(function (e) {
+                                                 idleTime = 0;
+                                             });
+
+                                             $('body').click(function () {
+                                                 idleTime = 0;
+                                             });
+
+                                             function timerIncrement() {
+                                                 idleTime = idleTime + 1;
+                                                 if (idleTime > 6) {
+                                                     var urllnk = window.location.href;
+                                                     window.location.href = "/Home/Login";
+                                                 }
+                                             }
+                                         });
+
+                                         function mouseover() {
+                                             document.getElementById("tips").style.visibility = "visible";
+                                         }
+                                         function mouseout() {
+                                             document.getElementById("tips").style.visibility = "hidden";
+                                         }
+
+                                     </script>
+
+                                     <!--this is for the new search-->
+                                     <span style="font-family:Tahoma;color:darkslategrey; font-weight:600;">ClientID :</span><input style="margin-top:0px; margin-left:5px; height:28px; border-radius:5px; width:200px; max-width:150px; font-size:13px;" ng-click="empname()" type="text" id="searchclient" placeholder="Medicaid / Medicare ID" autocomplete="off">
+                                     <a href="#"><img src="../../Images/search3.png" width="30" height="28" style="margin-left:-2px; margin-top:-4px;" ng-click="Clientsearch()" ng-mouseover="buttonone()" /></a>
+                                     @*<input type="submit" value="List all Patients" id="listmembers" style="visibility:hidden;background-color:slategray;color:white; font-weight:600; margin-left:10px; border-radius:4px;" ng-click="listall()" /><br />*@
+                                     <div style="height:3px;"></div>
+                                     <span style="font-family:Tahoma;color:darkslategrey; font-weight:600;">Name :</span> <input style="margin-top:0px; margin-left:19px; height:28px; border-radius:5px; width:200px; max-width:150px; font-size:13px;" type="text" ng-click="empclientid()" id="firstname" placeholder="FirstName.." autocomplete="off">
+                                     <input style="margin-top:0px; margin-left:0px; height:28px; border-radius:5px; width:200px; max-width:150px; font-size:13px;" type="text" ng-click="empclientid()" id="lastname" placeholder="LastName.." autocomplete="off">
+                                     <input type="date" style="margin-top:0px; margin-left:0px; height:28px; border-radius:5px; width:200px; max-width:150px; font-size:13px;" id="dob1" placeholder="Date Of Birth..">
+                                     <a href="#"><img src="../../Images/search3.png" width="30" height="28" style="margin-left:1px; margin-top:-4px;" ng-click="Clientsearch()" ng-mouseover="buttontwo()" /></a>
+                                     <!--this is for the new search-->
+
+                                     <div style="height:10px;"></div>
+                                     <section style="background-color:#F0F2F6;height:30px; border-style:none; width:auto;">
+                                         <!--<section class="patientinfo">-->
+                                         <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12" style="margin-top:5px;">
+                                             <span class="lbltitlesection">PATIENT INFORMATION</span>
+                                         </div>
+                                     </section>
+                                     <div style="height:5px;"></div>
+                                     <section style="margin-left:-10px;">
+                                         <div class="container" style="margin-left:-5px;">
+                                             <div class="row">
+
+                                                 <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+
+                                                     <div class="row" style="width:1310px;">
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Client ID:</span><br />
+                                                             <!--<input id="clientid" ng-model="clientid" name="clientid" onKeyPress="if(this.value.length==5) return false;" type="number" tabindex="1" class="form-control" ng-keyup="clientidkeyup(event.keyCode)" style="max-width:366px;height:28px; font-size:14px;" onmouseover="mouseover()" onmouseout="mouseout()"/> -->
+                                                             <input id="clientid" ng-model="clientid" name="clientid" type="text" tabindex="1" class="form-control" placeholder="Medicaid / Medicare ID" ng-keyup="clientidkeyup(event.keyCode)" style="max-width:366px;height:28px; font-size:14px;" onmouseover="mouseover()" onmouseout="mouseout()" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Last Name:</span><br />
+                                                             <input id="lname" ng-model="lname" type="text" tabindex="2" class="form-control" placeholder="Last Name" ng-keyup="lnamekeyup(event.keyCode)" style="max-width:366px;height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">First Name:</span><br />
+                                                             <input id="fname" ng-model="fname" name="fname" type="text" tabindex="3" class="form-control" placeholder="First Name" ng-keyup="fnamekeyup(event.keyCode)" style="max-width:366px;height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Middle Initial:</span><br />
+                                                             <input id="mi" ng-model="mi" type="text" tabindex="4" class="form-control" placeholder="Middle Initial" ng-keyup="mikeyup(event.keyCode)" style="max-width:366px;height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Unique ID:</span><br />
+                                                             <input id="uniqueid" ng-model="uniqueid" type="text" tabindex="5" class="form-control" placeholder="Unique ID" ng-keyup="uniqueidkeyup(event.keyCode)" style="max-width:366px;height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <span id="lblclientid" style="visibility:hidden;position:fixed;font-size:1px"></span>
+                                                     </div>
+
+                                                     <div class="row" style="width:1310px;">
+                                                         <div style="height:15px;"></div>
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Date Of Birth:</span><br />
+                                                             <input id="dob" ng-model="dob" type="date" tabindex="6" class="form-control" ng-keyup="dobkeyup(event.keyCode)" style="max-width:271px; height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-2" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Age:</span><br />
+                                                             <input id="age" ng-model="age" type="number" tabindex="7" class="form-control" ng-keyup="agekeyup(event.keyCode)" style="max-width:271px; height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Age Group:</span><br />
+                                                             <input id="agegroup" ng-model="agegroup" tabindex="8" class="form-control" ng-keyup="agegroupkeyup(event.keyCode)" style="max-width:271px; height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Age at Recruitment:</span><br />
+                                                             <input id="ageat" ng-model="ageat" type="number" tabindex="9" class="form-control" ng-keyup="ageatkeyup(event.keyCode)" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Gender:</span><br />
+                                                             <select id="gender" ng-model="gender" tabindex="10" class="form-control" ng-keyup="genderkeyup(event.keyCode)" ng-change="genderchange(gender)">
+                                                                 <option value="Male">Male</option>
+                                                                 <option value="Female">Female</option>
+                                                                 <option value="Not sure">Not sure</option>
+                                                                 <option value="Prefer not to answer">Prefer not to answer</option>
+                                                             </select>
+                                                         </div>
+                                                     </div>
+
+                                                     <div class="row" style="width:1310px;">
+                                                         <div style="height:15px;"></div>
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Race:</span><br />
+                                                             <select id="race" ng-model="race" tabindex="11" class="form-control" ng-keyup="racekeyup(event.keyCode)" ng-change="racechange(race)">
+                                                                 <option value="American Indian / Alaska Native">American Indian / Alaska Native</option>
+                                                                 <option value="Asian">Asian</option>
+                                                                 <option value="Black African American">Black African American</option>
+                                                                 <option value="Caucasian">Caucasian</option>
+                                                                 <option value="Hispanic / Latino">Hispanic / Latino</option>
+                                                                 <option value="Native Hawaiian / Other Pacific Islander">Native Hawaiian / Other Pacific Islander</option>
+                                                                 <option value="White">White</option>
+                                                             </select>
+                                                         </div>
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Ethnicity:</span><br />
+                                                             <select id="ethnicity" ng-model="ethnicity" tabindex="12" class="form-control" ng-keyup="ethnicitykeyup(event.keyCode)" ng-change="ethnicitychange(ethnicity)">
+                                                                 <option value="Hispanic / Latino Origin">Hispanic / Latino Origin</option>
+                                                                 <option value="Not Hispanic / Latino Origin">Not Hispanic / Latino Origin</option>
+                                                                 <option value="I don't know">I don't know</option>
+                                                                 <option value="I prefer not to answer">I prefer not to answer</option>
+                                                             </select>
+                                                         </div>
+                                                         <!--<div class="col-md-3"style="width:368px;">-->
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Eligibility:</span><br />
+                                                             <input id="eligibility" ng-model="eligibility" type="text" tabindex="13" class="form-control" ng-keyup="eligibilitykeyup(event.keyCode)" placeholder="Eligibility" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-3" style="width:262px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Social Security No:</span><br />
+                                                             <input id="sssno" ng-model="sssno" type="text" tabindex="14" class="form-control" ng-keyup="sssnokeyup(event.keyCode)" placeholder="SSS No." autocomplete="off" />
+
+                                                         </div>
+                                                         <span style="color:darkslategrey;font-weight:600;margin-left:18px; font-weight:900;">Deceased:</span><br />
+                                                         <div class="col-md-4" style="width:300px;">
+                                                             <div class="row">
+                                                                 <div class="col-md-2" style="width:100px;">
+                                                                         <input id="deceasedyes" ng-model="deceasedyes" type="checkbox" tabindex="14" class="form-control" ng-keyup="deceasedyeskeyup(event.keyCode)" ng-click="deceasedopt1()" style="width:20px; height:20px;"/>
+                                                                         <div style="height:5px;"></div>
+                                                                         <span style="color:darkslategrey;font-weight:600;margin-left:0px; margin-top:103px;font-weight:600; text-shadow: 0px 0px 0px #000000;">Yes</span>                                                                     
+                                                                 </div>
+                                                                 <div class="col-md-2" style="width:100px">
+                                                                         <input id="deceasedno" ng-model="deceasedno" type="checkbox" tabindex="14" class="form-control" ng-keyup="deceasednokeyup(event.keyCode)" ng-click="deceasedopt2()" style="width:20px; height:20px;" />
+                                                                         <div style="height:5px;"></div>
+                                                                         <span style="color:darkslategrey;font-weight:600;margin-left:0px; margin-top:103px; font-weight:600; text-shadow: 0px 0px 0px #000000;">No</span>
+                                                                 </div>
+                                                             </div>
+                                                         </div>                                                                                                                                                                        
+                                                     </div>
+
+                                                     <div class="row" style="width:1105px;">
+                                                         <div class="ageracegovinfo">
+                                                             <div style="height:15px;"></div>
+                                                             <!--<div class="col-md-3"style="width:368px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Social Security No:</span><br/>
+                                                                   <input id="sssno2" ng-model="sssno" type="text" tabindex="14" class="form-control" ng-keyup="sssnokeyup(event.keyCode)" placeholder="SSS No."/>
+                                                             </div>-->
+                                                         </div>
+                                                     </div>
+
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </section>
+                                     <div style="height:3px;"></div>
+                                     <section style="background-color:#F0F2F6;height:30px; border-style:none; width:auto;">
+                                         <!-- <section class="addrtel">-->
+                                         <div style="height:7px;"></div>
+                                         <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12" style="margin-top:1px; width:auto;">
+                                             <span class="lbltitlesection">ADDRESS AND TELEPHONE NUMBERS</span>
+                                         </div>
+                                     </section>
+                                     <div style="height:5px;"></div>
+                                     <section style="margin-left:-10px;">
+                                         <div class="container" style="margin-left:-5px;">
+                                             <div class="row">
+
+                                                 <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+
+                                                     <div class="row" style="width:1310px;">
+                                                         <div class="col-md-2" style="width:325px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">County Code:</span><br />
+                                                             <input id="countrycode" ng-model="countrycode" min="0" type="text" tabindex="15" class="form-control" ng-keyup="countrycodekeyup(event.keyCode)" style="width:305px; max-width:305px;height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-3" style="width:325px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Country Code Description:</span><br />
+                                                             <input id="countrycodedes" ng-model="countrycodedes" return false;" type="text" tabindex="16" class="form-control" ng-keyup="countrycodedeskeyup(event.keyCode)" style="width:305px; max-width:305px;height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-2" style="width:325px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Phone Number:</span><br />
+                                                             <input id="cpnumber" ng-model="cpnumber" type="tel" tabindex="17" maxlength="12" placeholder="555-555-5555" class="form-control" ng-keyup="cpnumberkeyup(event.keyCode)" style="width:305px; max-width:305px;height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-3" style="width:325px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">SickleECell Diagnosis</span><br />
+                                                             <input id="sickdiag" ng-model="sickdiag" type="text" tabindex="18" class="form-control" ng-keyup="sickdiagkeyup(event.keyCode)" placeholder="" style="width:305px; max-width:305px;height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                     </div>
+
+                                                     <div class="row" style="width:1310px;">
+                                                         <div style="height:15px;"></div>
+                                                         <div class="col-md-12">
+                                                             <div class="addressstyle">
+                                                                 <span style="color:darkslategrey;font-weight:600;">CLIENT STREET ADDRESS:</span><br />
+                                                                 <input id="address" ng-model="address" type="text" tabindex="19" class="form-control" ng-keyup="address1keyup(event.keyCode)" placeholder="Address1" style="max-width:100%; height:30px;" autocomplete="off" />
+                                                                 <div style="height:5px;"></div>
+                                                                 <input id="address2" ng-model="address2" type="text" tabindex="20" class="form-control" ng-keyup="address2keyup(event.keyCode)" placeholder="Address2" style="max-width:100%; height:30px;" autocomplete="off" />
+                                                             </div>
+                                                         </div>
+                                                     </div>
+
+                                                     <div class="row" style="width:1310px;">
+                                                         <div style="height:15px;"></div>
+                                                         <div class="col-md-2" style="width:257px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">City:</span><br />
+                                                             <input id="city" ng-model="city" type="text" tabindex="21" class="form-control" ng-keyup="citykeyup(event.keyCode)" placeholder="City" style="width:250px; max-width:250px;height:30px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-2" style="width:257px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">State:</span><br />
+                                                             <input id="state" ng-model="state" type="text" tabindex="22" class="form-control" ng-keyup="statekeyup(event.keyCode)" placeholder="TX" style="width:250px; max-width:250px;height:30px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-2" style="width:257px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Zip Code:</span><br />
+                                                             <input id="zipcode" ng-model="zipcode" onKeyPress="if(this.value.length==5) return false;" min="0" type="number" tabindex="23" class="form-control" ng-keyup="zipcodekeyup(event.keyCode)" value="11111" style="width:250px; max-width:250px;height:30px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-2" style="width:257px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Home Phone:</span><br />
+                                                             <input id="hphone" ng-model="hphone" min="0" type="tel" placeholder="555-555-5555" tabindex="24" class="form-control" ng-keyup="hphonekeyup(event.keyCode)" style="width:250px; max-width:250px;height:30px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-2" style="width:257px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Work Phone</span><br />
+                                                             <input id="wphone" ng-model="wphone" type="tel" placeholder="555-555-5555" tabindex="25" class="form-control" ng-keyup="wphonekeyup(event.keyCode)" style="width:250px; max-width:250px;height:30px;" autocomplete="off" />
+                                                         </div>
+                                                     </div>
+
+                                                     <div class="row" style="width:1300px;">
+                                                         <div style="height:15px;"></div>
+                                                         <div class="col-md-2" style="width:205px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">PMP Provider Name:</span><br />
+                                                             <input id="pmppro" ng-model="pmppro" onclick="onclickzipcode()" min="0" type="text" tabindex="26" class="form-control" ng-keyup="pmpprokeyup(event.keyCode)" style="max-width:366px;height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-2" style="width:205px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Specialist Provider:</span><br />
+                                                             <input id="speprovider" ng-model="nameofspecialist" min="0" type="text" tabindex="27" class="form-control" ng-keyup="nameofspecialistkeyup(event.keyCode)" style="max-width:366px;height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-2" style="width:205px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">CCU Case:</span><br />
+                                                             <input id="ccucase" ng-model="ccucase" type="text" tabindex="28" class="form-control" ng-keyup="ccucasekeyup(event.keyCode)" style="max-width:366px;height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-2" style="width:205px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Email Address:</span><br />
+                                                             <input id="email" ng-model="email" type="email" tabindex="29" class="form-control" ng-keyup="emailkeyup(event.keyCode)" placeholder="Email" style="max-width:366px;height:28px; font-size:12px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-2" style="width:480px;">
+                                                             <div class="reside1">
+                                                                 <span style="color:darkslategrey;font-weight:600;">Client Resides in Rural or Underserved Area</span>
+                                                                 <div style="height:5px;"></div>
+                                                                 <input type="radio" value="Yes" tabindex="30" id="clientresideyes" ng-click="clientresyes()" /> Yes
+                                                                 <input type="radio" value="No" tabindex="31" id="clientresideno" ng-click="clientresno()" style="margin-left:15px;" /> No    <span style="color:darkslategrey; font-weight:600; font-size:13px;">( To be completed in the office using the HRSA link )</span>
+                                                             </div>
+                                                             <div class="reside2">
+                                                                 <span style="color:darkslategrey;font-weight:600; font-size:13px;">Client Resides in Rural or Underserved Area</span>
+                                                                 <div style="height:5px;"></div>
+                                                                 <input type="radio" value="Yes" tabindex="30" id="clientresideyes2" ng-click="clientresyes()" /> Yes <br />
+                                                                 <input type="radio" value="No" tabindex="31" id="clientresideno2" ng-click="clientresno()" style="margin-left:0px;" /> No  <span style="color:darkslategrey; font-weight:600; font-size:10px;">( To be completed in the office using the HRSA link )</span>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+
+                                                 </div>
+
+                                             </div>
+                                         </div>
+                                     </section>
+
+                                     <div style="height:8px;"></div>
+                                     <section style="background-color:#F0F2F6;height:30px; border-style:none; width:auto;">
+                                         <div style="height:7px;"></div>
+                                         <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12" style="margin-top:1px; width:auto;">
+                                             <span class="lbltitlesection2">COMPLETE IF UNDER 18 AT LIVE OF ENROLLMENT</span>
+                                         </div>
+                                     </section>
+                                     <div style="height:5px;"></div>
+                                     <section style="margin-left:-10px;">
+                                         <div class="container" style="margin-left:-5px;">
+                                             <div class="row">
+                                                 <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+
+                                                     <div class="row" style="width:1310px;">
+                                                         <div class="col-md-3" style="width:298px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Name Of Mother:</span><br />
+                                                             <input id="nameofmother" ng-model="nameofmother" type="text" tabindex="32" class="form-control" ng-keyup="nameofmotherkeyup(event.keyCode)" style="max-width:485px; height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-4" style="width:588px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Address:</span><br />
+
+                                                             <input id="motheraddress" ng-model="motheraddress" type="search" tabindex="33" class="form-control" ng-keyup="motheraddresskeyup(event.keyCode)" autocomplete="off" />
+
+                                                         </div>
+                                                         <div class="col-md-3" style="width:298px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Telephone:</span><br />
+
+                                                             <input id="mothertel" ng-model="mothertel" tabindex="34" type="tel" class="form-control" ng-keyup="mothertelkeyup(event.keyCode)" placeholder="555-555-5555" style="width:485px; max-width:330px; height:28px; font-size:14px;" autocomplete="off"/>
+
+                                                         </div>
+
+                                                     </div>
+
+                                                     <div class="row" style="width:1310px;">
+                                                         <div style="height:15px;"></div>
+                                                         <div class="col-md-3" style="width:298px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Name Of Father:</span><br />
+                                                             <input id="nameoffather" ng-model="nameoffather" type="text" tabindex="35" class="form-control" ng-keyup="nameoffatherkeyup(event.keyCode)" style="max-width:485px; height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-4" style="width:588px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Address:</span><br />
+
+                                                             <input id="fatheraddress" ng-model="fatheraddress" type="search" tabindex="36" class="form-control" ng-keyup="fatheraddresskeyup(event.keyCode)" autocomplete="off" />
+
+                                                         </div>
+                                                         <div class="col-md-3" style="width:218px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Telephone:</span><br />
+
+                                                             <input id="fathertel" ng-model="fathertel" tabindex="37" type="tel" class="form-control" ng-keyup="fathertelkeyup(event.keyCode)" placeholder="555-555-5555" style="width:485px; max-width:330px; height:28px; font-size:14px;" autocomplete="off" />
+
+                                                         </div>
+                                                     </div>
+
+                                                     <div class="row" style="width:1310px;">
+                                                         <div style="height:15px;"></div>
+                                                         <div class="col-md-3" style="width:298px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Name Of Guardian:</span><br />
+                                                             <input id="nameofguardian" ng-model="nameofguardian" type="text" tabindex="38" class="form-control" ng-keyup="nameofguardiankeyup(event.keyCode)" style="max-width:485px; height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-4" style="width:588px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Address:</span><br />
+
+                                                             <input id="guardianaddress" ng-model="guardianaddress" tabindex="39" type="search" class="form-control" ng-keyup="guardianaddresskeyup(event.keyCode)" style="max-width:585px; height:28px; font-size:14px;" autocomplete="off" />
+
+                                                         </div>
+                                                         <div class="col-md-3" style="width:218px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Telephone:</span><br />
+
+                                                             <input id="guardiantel" ng-model="guardiantel" tabindex="40" type="tel" class="form-control" ng-keyup="guardiantelkeyup(event.keyCode)" placeholder="555-555-5555" style="width:485px; max-width:330px; height:28px; font-size:14px;" autocomplete="off" />
+
+                                                         </div>
+                                                     </div>
+
+                                                     <div class="row" style="width:1310px;">
+                                                         <div style="height:15px;"></div>
+                                                         <div class="col-md-3" style="width:298px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Emergency Contact 1:</span><br />
+                                                             <input id="emercont1" ng-model="emercont1" type="text" tabindex="41" class="form-control" ng-keyup="emercont1keyup(event.keyCode)" style="max-width:485px; height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-4" style="width:588px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Home Phone:</span><br />
+
+                                                             <input id="emercont1homephone" ng-model="emercont1homephone" tabindex="42" type="tel" class="form-control" ng-keyup="emercont1homephonekeyup(event.keyCode)" placeholder="555-555-5555" style="max-width:585px; height:28px; font-size:14px;" autocomplete="off" />
+
+                                                         </div>
+                                                         <div class="col-md-3" style="width:218px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Cell Phone:</span><br />
+
+                                                             <input id="emercont1cellphone" ng-model="emercont1cellphone" tabindex="43" type="tel" class="form-control" ng-keyup="emercont1cellphonekeyup(event.keyCode)" placeholder="555-555-5555" style="width:485px; max-width:330px; height:28px; font-size:14px;" autocomplete="off" />
+
+                                                         </div>
+                                                     </div>
+
+                                                     <div class="row" style="width:1310px;">
+                                                         <div style="height:15px;"></div>
+                                                         <div class="col-md-3" style="width:298px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Emergency Contact 2:</span><br />
+                                                             <input id="emercont2" ng-model="emercont2" type="text" tabindex="44" class="form-control" ng-keyup="emercont2keyup(event.keyCode)" style="max-width:485px; height:28px; font-size:14px;" autocomplete="off" />
+                                                         </div>
+                                                         <div class="col-md-4" style="width:588px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Home Phone:</span><br />
+
+                                                             <input id="emercont2homephone" ng-model="emercont2homephone" tabindex="45" type="tel" class="form-control" ng-keyup="emercont2homephonekeyup(event.keyCode)" placeholder="555-555-5555" style="max-width:585px; height:28px; font-size:14px;" autocomplete="off" />
+
+                                                         </div>
+                                                         <div class="col-md-3" style="width:218px;">
+                                                             <span style="color:darkslategrey;font-weight:600;">Cell Phone:</span><br />
+
+                                                             <input id="emercont2cellphone" ng-model="emercont2cellphone" tabindex="46" type="tel" class="form-control" ng-keyup="emercont2cellphonekeyup(event.keyCode)" placeholder="555-555-5555" style="width:485px; max-width:330px; height:28px; font-size:14px;" autocomplete="off" />
+
+                                                         </div>
+                                                     </div>
+
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </section>
+                                     <div style="height:8px;"></div>
+                                     <section style="background-color:#F0F2F6;height:30px; border-style:none; width:auto;">
+                                         <div style="height:7px;"></div>
+                                         <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12" style="margin-top:1px;">
+                                             <span class="lbltitlesection">HEALTH INFORMATION</span>
+                                         </div>
+                                     </section>
+                                     <div style="height:5px;"></div>
+                                     <section style="margin-left:-10px;">
+                                         <div class="container" style="margin-left:-5px;">
+                                             <div class="row">
+                                                 <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                                                     <div class="row" style="width:auto;">
+
+                                                         <div class="col-md-10" style="width:1105px;">
+                                                             <div id="celltype" class="cell1">
+                                                                 <span style="color:darkslategrey;font-weight:600;">Sickle Cell Type: ( Please mark )</span>
+                                                                 <div style="height:5px;"></div>
+                                                                 @*<input type="radio" value="SS" tabindex="47" id="sicklecellss" ng-click="ss()" /> SS
+
+                                                                 <input type="radio" value="SC" tabindex="48" id="sicklecellsc" ng-click="sc()" style="margin-left:52px;" /> SC
+                                                                 <input type="radio" value="SBThal+" tabindex="49" id="sicklecellThal" ng-click="sbthal()" style="margin-left:5px;" /> SBThal+
+                                                                 <input type="radio" value="SBThal0" tabindex="50" id="sicklecellThal0" ng-click="sbthal0()" style="margin-left:5px;" /> SBThal0
+
+                                                                 <input type="radio" value="Traits" tabindex="51" id="sicklecellTraits" ng-click="traits()" style="margin-left:5px;" /> Traits
+
+                                                                 <input type="radio" value="Not Sure What Type" id="sicklecellnotsure" ng-click="notsure()" tabindex="52" style="margin-left:51px;" /> Not Sure What Type
+                                                                 <input type="radio" value="Other" tabindex="53" ng-click="other()" style="margin-left:51px;" id="sicklecellother" /> Other
+                                                                 <span>Please Specify   <input id="sicklecellspecify" ng-model="sicklecellspecify" ng-keyup="sicklecellspecifykeyup(sicklecellspecify)" tabindex="54" type="text" style="width:180px; height:28px; font-size:14px;margin-left:2px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" /></span> <br />*@
+
+                                                                 @*<div class="col-md-12">
+                                                                     <div class="col-md-3">
+                                                                         <span style="margin-left:-30px;">Medication1 <input class="form-control" id="medication" ng-model="nameofmedication" type="text" tabindex="55" ng-keyup="nameofmedicationkeyup(event.keyCode)" style="max-width:263px; margin-left:-30px; height:28px; font-size:14px;" autocomplete="off" />  </span>
+                                                                     </div>
+                                                                     <div class="col-md-3">
+                                                                         <span style="margin-left:-30px;">Medication2 <input class="form-control" id="medication3" ng-model="nameofmedication3" type="text" tabindex="56" ng-keyup="nameofmedication3keyup(event.keyCode)" style="max-width:263px; margin-left:-30px; height:28px; font-size:14px;" autocomplete="off" />  </span>
+                                                                     </div>
+                                                                     <div class="col-md-3">
+                                                                         <span style="margin-left:-30px;">Medication3 <input class="form-control" id="medication4" ng-model="nameofmedication4" type="text" tabindex="57" ng-keyup="nameofmedication4keyup(event.keyCode)" style="max-width:263px; margin-left:-30px; height:28px; font-size:14px;" autocomplete="off" />  </span>
+                                                                     </div>
+                                                                     <div class="col-md-3">
+                                                                         <span style="margin-left:-30px;">Medication4 <input class="form-control" id="medication5" ng-model="nameofmedication5" type="text" tabindex="58" ng-keyup="nameofmedication5keyup(event.keyCode)" style="max-width:263px; margin-left:-30px; height:28px; font-size:14px;" autocomplete="off" />  </span>
+                                                                     </div>
+                                                                 </div>*@
+                                                             </div>
+
+                                                         </div>
+
+                                                         <div class="col-md-10" style="width:1105px;">
+                                                             <div style="height:7px;"></div>
+                                                             <div class="hydroxyurea">
+                                                                 @*<span style="color:darkslateblue;font-weight:700">1</span>*@
+                                                                 <span style="color:darkslateblue;font-weight:700"><img src="~/Images/one.png" height="31" width="31" /></span>
+                                                                 <div style="height:3px;"></div>
+                                                                 <span style="color:darkslategrey;font-weight:600;">Have you ever heard of <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea?</span> </span>
+                                                                 <span style="color:darkslategrey;font-weight:600; margin-left:190px;">Have you ever taken <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea</span> before?</span>
+                                                                 <div style="height:5px;"></div>
+
+                                                                 <input type="radio" value="Yes" tabindex="59" id="hydroxyureaheardyes" ng-click="hydroxyureaeverheardyes()" /> Yes
+                                                                 <input type="radio" value="No" tabindex="60" id="hydroxyureaheardno" ng-click="hydroxyureaeverheardno()" style="margin-left:15px;" /> No
+                                                                 <span style="color:darkslategrey;font-weight:600; margin-left:260px;" tabindex="61"></span>
+
+                                                                 <input type="radio" value="Yes" style="margin-left:92px;" tabindex="62" id="hydroxyureatakenyes" ng-click="hydroxyureaevertakenyes()" /> Yes
+                                                                 <input type="radio" value="No" style="margin-left:15px;" tabindex="63" id="hydroxyureatakenno" ng-click="hydroxyureaevertakenno()" /> No
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="col-md-10" style="width:1105px;">
+                                                             <div class="curruse">
+                                                                 <div style="height:20px;"></div>
+                                                                 <span style="color:darkslategrey;font-weight:600;">Do you currently use <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea?</span> </span>
+                                                                 <span style="color:darkslategrey;font-weight:600; margin-left:300px;">What is the dosage of your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea</span> prescription?</span>
+                                                                 <div style="height:5px;"></div>
+
+                                                                 <input type="radio" value="Yes" tabindex="64" id="hydroxyureacurrentlyyes" ng-click="hydroxyureacurryes()" />   Yes
+                                                                 <input type="radio" value="No" tabindex="65" id="hydroxyureacurrentlyno" ng-click="hydroxyureacurrno()" style="margin-left:15px;" /> No
+
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:20px;"> If No: Have you taken it in the past?</span>
+                                                                 <input type="radio" value="Yes" style="margin-left:3px;" tabindex="66" id="hydroxyureapasttakenyes" ng-click="hydroxyureatakenpastyes()" /> Yes
+                                                                 <input type="radio" value="No" style="margin-left:4px;" tabindex="67" id="hydroxyureapasttakenno" ng-click="hydroxyureatakenpastno()" /> No
+
+
+                                                                 <input id="hydroxyureadosage" ng-keyup="hydroxyureadosagekeyup()" tabindex="68" type="text" style="margin-left:93px; width:225px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" />,
+                                                                 <span>Unknown<input id="hydroxyureadosageunknown" ng-keyup="hydroxyureadosageunknownkeyup()" tabindex="69" type="text" style="margin-left:5px; width:222px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+
+                                                                 <div style="height:15px;"></div>
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If unknown, what are the colors of your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea</span> capsules?</span>
+                                                                 <input id="hydroxyureacapsulescolor" ng-keyup="hydroxyureacapsulescolorkeyup()" tabindex="70" type="text" style="margin-left:3px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" />
+                                                                 <span style="color:darkslategrey;">Date last taken?<input type="date" id="hydroxyureadatelasttaken" ng-keyup="hydroxyureadatelasttakenkeyuo()" tabindex="71" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+
+                                                                 <div style="height:15px;"></div>
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> What was the last date you picked up / received your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea</span> prescription from the pharmacy? <input id="hydroxyureadatepickedup" tabindex="72" ng-keyup="hydroxyureadatepickedupkeyup()" type="date" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" /></span>
+                                                             </div>
+                                                         </div>
+
+                                                         @*-----------------------------------------------------------------------------------------------------------------------------------*@
+                                                         <div class="col-md-10" style="width:1105px; margin-top:3px;">
+                                                             <div class="hydroxyurea">
+                                                                 @*<span style="color:darkslateblue;font-weight:700">2</span>*@
+                                                                 <span style="color:darkslateblue;font-weight:700"><img src="~/Images/two.png" height="31" width="31" /></span>
+                                                                 <div style="height:3px;"></div>
+                                                                 <span style="color:darkslategrey;font-weight:600;">Have you ever heard of <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta?</span></span>
+                                                                 <span style="color:darkslategrey;font-weight:600; margin-left:190px;"><span style="margin-left:24px;"></span>Have you ever taken <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta</span> before?</span>
+                                                                 <div style="height:5px;"></div>
+
+                                                                 <input type="radio" value="Yes" tabindex="73" id="pharma1heardyes" ng-click="pharma1everheardyes()" /> Yes
+                                                                 <input type="radio" value="No" tabindex="74" id="pharma1heardno" ng-click="pharma1everheardno()" style="margin-left:15px;" /> No
+                                                                 <span style="color:darkslategrey;font-weight:600;margin-left:260px;" tabindex="75"></span>
+
+                                                                 <input type="radio" value="Yes" style="margin-left:92px;" tabindex="76" id="pharma1takenyes" ng-click="pharma1evertakenyes()" /> Yes
+                                                                 <input type="radio" value="No" style="margin-left:15px;" tabindex="77" id="pharma1takenno" ng-click="pharma1evertakenno()" /> No
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="col-md-10" style="width:1105px;">
+                                                             <div class="curruse">
+                                                                 <div style="height:20px;"></div>
+                                                                 <span style="color:darkslategrey;font-weight:600;">Do you currently use <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta?</span></span>
+                                                                 <span style="color:darkslategrey;font-weight:600; margin-left:300px;">What is the dosage of your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta</span> prescription?</span>
+                                                                 <div style="height:5px;"></div>
+
+                                                                 <input type="radio" value="Yes" tabindex="78" id="pharma1currentlyyes" ng-click="pharma1curryes()" />   Yes
+                                                                 <input type="radio" value="No" tabindex="79" id="pharma1currentlyno" ng-click="pharma1currno()" style="margin-left:15px;" /> No
+
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:20px;"> If No: Have you taken it in the past?</span>
+                                                                 <input type="radio" value="Yes" style="margin-left:3px;" tabindex="80" id="pharma1pasttakenyes" ng-click="pharma1takenpastyes()" /> Yes
+                                                                 <input type="radio" value="No" style="margin-left:4px;" tabindex="81" id="pharma1pasttakenno" ng-click="pharma1takenpastno()" /> No
+
+
+                                                                 <input id="pharma1dosage" ng-keyup="pharma1dosagekeyup()" tabindex="82" type="text" style="margin-left:93px; width:225px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" />,
+                                                                 <span>Unknown<input id="pharma1dosageunknown" ng-keyup="pharma1dosageunknownkeyup()" tabindex="83" type="text" style="margin-left:5px; width:222px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+
+                                                                 <div style="height:15px;"></div>
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If unknown, what are the colors of your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta</span> capsules?</span>
+                                                                 <input id="pharma1capsulescolor" ng-keyup="pharma1capsulescolorkeyup()" tabindex="84" type="text" style="margin-left:3px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" />
+                                                                 <span style="color:darkslategrey;">Date last taken?<input type="date" id="pharma1datelasttaken" ng-keyup="pharma1datelasttakenkeyuo()" tabindex="85" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+
+                                                                 <div style="height:15px;"></div>
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> What was the last date you picked up / received your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta</span> prescription from the pharmacy? <input id="pharma1datepickedup" tabindex="86" ng-keyup="pharma1datepickedupkeyup()" type="date" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+                                                             </div>
+                                                         </div>
+                                                         @*-----------------------------------------------------------------------------------------------------------------------------------*@
+
+                                                         @*-----------------------------------------------------------------------------------------------------------------------------------*@
+                                                         <div class="col-md-10" style="width:1105px; margin-top:3px;">
+                                                             <div class="hydroxyurea">
+                                                                 <span style="color:darkslateblue;font-weight:700"><img src="~/Images/three.png" height="31" width="31" /></span>
+                                                                 <div style="height:3px;"></div>
+                                                                 <span style="color:darkslategrey;font-weight:600;">Have you ever heard of <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Adakveo?</span></span>
+                                                                 <span style="color:darkslategrey;font-weight:600; margin-left:190px;"><span style="margin-left:24px;"></span>Have you ever taken <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Adakveo</span> before?</span>
+                                                                 <div style="height:5px;"></div>
+
+                                                                 <input type="radio" value="Yes" tabindex="87" id="pharma2heardyes" ng-click="pharma2everheardyes()" /> Yes
+                                                                 <input type="radio" value="No" tabindex="88" id="pharma2heardno" ng-click="pharma2everheardno()" style="margin-left:15px;" /> No
+                                                                 <span style="color:darkslategrey;font-weight:600;margin-left:260px;" tabindex="89"></span>
+
+                                                                 <input type="radio" value="Yes" style="margin-left:92px;" tabindex="90" id="pharma2takenyes" ng-click="pharma2evertakenyes()" /> Yes
+                                                                 <input type="radio" value="No" style="margin-left:15px;" tabindex="91" id="pharma2takenno" ng-click="pharma2evertakenno()" /> No
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="col-md-10" style="width:1105px;">
+                                                             <div class="curruse">
+                                                                 <div style="height:20px;"></div>
+                                                                 <span style="color:darkslategrey;font-weight:600;">Do you currently use <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Adakveo?</span></span>
+                                                                 <span style="color:darkslategrey;font-weight:600; margin-left:300px;">What is the dosage of your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Adakveo</span> prescription?</span>
+                                                                 <div style="height:5px;"></div>
+
+                                                                 <input type="radio" value="Yes" tabindex="92" id="pharma2currentlyyes" ng-click="pharma2curryes()" />   Yes
+                                                                 <input type="radio" value="No" tabindex="93" id="pharma2currentlyno" ng-click="pharma2currno()" style="margin-left:15px;" /> No
+
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:20px;"> If No: Have you taken it in the past?</span>
+                                                                 <input type="radio" value="Yes" style="margin-left:3px;" tabindex="94" id="pharma2pasttakenyes" ng-click="pharma2takenpastyes()" /> Yes
+                                                                 <input type="radio" value="No" style="margin-left:4px;" tabindex="95" id="pharma2pasttakenno" ng-click="pharma2takenpastno()" /> No
+
+
+                                                                 <input id="pharma2dosage" ng-keyup="pharma2dosagekeyup()" tabindex="96" type="text" style="margin-left:93px; width:225px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" />,
+                                                                 <span>Unknown<input id="pharma2dosageunknown" ng-keyup="pharma2dosageunknownkeyup()" tabindex="97" type="text" style="margin-left:5px; width:222px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+
+                                                                 <div style="height:15px;"></div>
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If unknown, what are the colors of your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Adakveo</span> capsules?</span>
+                                                                 <input id="pharma2capsulescolor" ng-keyup="pharma2capsulescolorkeyup()" tabindex="98" type="text" style="margin-left:3px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" />
+                                                                 <span style="color:darkslategrey;">Date last taken?<input type="date" id="pharma2datelasttaken" ng-keyup="pharma2datelasttakenkeyuo()" tabindex="99" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+
+                                                                 <div style="height:15px;"></div>
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> What was the last date you picked up / received your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Adakveo</span> prescription from the pharmacy? <input id="pharma2datepickedup" tabindex="100" ng-keyup="pharma2datepickedupkeyup()" type="date" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="col-md-10" style="width:1105px; margin-top:3px;">
+                                                             <div class="hydroxyurea">
+                                                                 <span style="color:darkslateblue;font-weight:700"><img src="~/Images/four.png" height="31" width="31" /></span>
+                                                                 <div style="height:3px;"></div>
+                                                                 <span style="color:darkslategrey;font-weight:600;">Have you ever heard of <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Endari?</span></span>
+                                                                 <span style="color:darkslategrey;font-weight:600; margin-left:190px;"><span style="margin-left:24px;"></span>Have you ever taken <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Endari</span> before?</span>
+                                                                 <div style="height:5px;"></div>
+
+                                                                 <input type="radio" value="Yes" tabindex="101" id="pharma3heardyes" ng-click="pharma3everheardyes()" /> Yes
+                                                                 <input type="radio" value="No" tabindex="102" id="pharma3heardno" ng-click="pharma3everheardno()" style="margin-left:15px;" /> No
+                                                                 <span style="color:darkslategrey;font-weight:600;margin-left:260px;" tabindex="89"></span>
+
+                                                                 <input type="radio" value="Yes" style="margin-left:92px;" tabindex="103" id="pharma3takenyes" ng-click="pharma3evertakenyes()" /> Yes
+                                                                 <input type="radio" value="No" style="margin-left:15px;" tabindex="104" id="pharma3takenno" ng-click="pharma3evertakenno()" /> No
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="col-md-10" style="width:1105px;">
+                                                             <div class="curruse">
+                                                                 <div style="height:20px;"></div>
+                                                                 <span style="color:darkslategrey;font-weight:600;">Do you currently use <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Endari?</span></span>
+                                                                 <span style="color:darkslategrey;font-weight:600; margin-left:300px;">What is the dosage of your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Endari</span> prescription?</span>
+                                                                 <div style="height:5px;"></div>
+
+                                                                 <input type="radio" value="Yes" tabindex="105" id="pharma3currentlyyes" ng-click="pharma3curryes()" />   Yes
+                                                                 <input type="radio" value="No" tabindex="106" id="pharma3currentlyno" ng-click="pharma3currno()" style="margin-left:15px;" /> No
+
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:20px;"> If No: Have you taken it in the past?</span>
+                                                                 <input type="radio" value="Yes" style="margin-left:3px;" tabindex="107" id="pharma3pasttakenyes" ng-click="pharma3takenpastyes()" /> Yes
+                                                                 <input type="radio" value="No" style="margin-left:4px;" tabindex="108" id="pharma3pasttakenno" ng-click="pharma3takenpastno()" /> No
+
+
+                                                                 <input id="pharma3dosage" ng-keyup="pharma2dosagekeyup()" tabindex="109" type="text" style="margin-left:93px; width:225px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" />,
+                                                                 <span>Unknown<input id="pharma3dosageunknown" ng-keyup="pharma3dosageunknownkeyup()" tabindex="110" type="text" style="margin-left:5px; width:222px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+
+                                                                 <div style="height:15px;"></div>
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If unknown, what are the colors of your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Endari</span> capsules?</span>
+                                                                 <input id="pharma3capsulescolor" ng-keyup="pharma3capsulescolorkeyup()" tabindex="111" type="text" style="margin-left:3px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" />
+                                                                 <span style="color:darkslategrey;">Date last taken?<input type="date" id="pharma3datelasttaken" ng-keyup="pharma3datelasttakenkeyuo()" tabindex="112" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" /></span>
+
+                                                                 <div style="height:15px;"></div>
+                                                                 <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> What was the last date you picked up / received your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Endari</span> prescription from the pharmacy? <input id="pharma3datepickedup" tabindex="113" ng-keyup="pharma3datepickedupkeyup()" type="date" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" /></span>
+                                                             </div>
+                                                         </div>
+                                                         @*-----------------------------------------------------------------------------------------------------------------------------------*@
+
+                                                         @*---------------------------------This is for Mobile Application-------------------------------------------------------------*@
+                                                         <div id="celltype2" class="cell2">
+                                                             <span style="color:darkslategrey;font-weight:600; margin-left:10px;">Sickle Cell Type: ( Please mark )</span>
+                                                             <div style="height:5px;"></div>
+                                                             <input type="radio" value="SS" tabindex="47" id="sicklecellss" ng-click="ss()" style="margin-left:10px;" />   SS
+                                                             <input type="radio" value="SC" tabindex="48" id="sicklecellsc" ng-click="sc()" style="margin-left:102px;" /> SC  <br />
+                                                             <input type="radio" value="SBThal+" tabindex="49" id="sicklecellThal" ng-click="sbthal()" style="margin-left:10px;" /> SBThal+
+                                                             <input type="radio" value="SBThal0" tabindex="50" id="sicklecellThal0" ng-click="sbthal0()" style="margin-left:66px;" /> SBThal0  <br />
+
+                                                             <input type="radio" value="Traits" tabindex="51" id="sicklecellTraits" ng-click="traits()" style="margin-left:10px;" /> Traits
+
+                                                             <input type="radio" value="Not Sure What Type" id="sicklecellnotsure" ng-click="notsure()" tabindex="52" style="margin-left:86px;" /> Not Sure What Type <br />
+                                                             <input type="radio" value="Other" tabindex="53" ng-click="other()" style="margin-left:10px;" id="sicklecellother" /> Other
+                                                             <span>Please Specify   <input id="sicklecellspecify" ng-model="sicklecellspecify" ng-keyup="sicklecellspecifykeyup(sicklecellspecify)" tabindex="54" type="text" style="width:170px; height:28px; font-size:14px;margin-left:2px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+
+                                                             <div class="col-md-12">
+                                                                 <div class="col-md-3">
+                                                                     <span style="margin-left:-20px;">Medication1 <input class="form-control" id="medication" ng-model="nameofmedication2" type="text" tabindex="55" ng-keyup="nameofmedicationkeyup(event.keyCode)" style="max-width:263px; margin-left:-20px; height:28px; font-size:14px;" autocomplete="off" />  </span>
+                                                                 </div>
+                                                                 <div class="col-md-3">
+                                                                     <span style="margin-left:-20px;">Medication2 <input class="form-control" id="medication3" ng-model="nameofmedication3" type="text" tabindex="56" ng-keyup="nameofmedication3keyup(event.keyCode)" style="max-width:263px; margin-left:-20px; height:28px; font-size:14px;" autocomplete="off" />  </span>
+                                                                 </div>
+                                                                 <div class="col-md-3">
+                                                                     <span style="margin-left:-20px;">Medication3 <input class="form-control" id="medication4" ng-model="nameofmedication4" type="text" tabindex="57" ng-keyup="nameofmedication4keyup(event.keyCode)" style="max-width:263px; margin-left:-20px; height:28px; font-size:14px;" autocomplete="off" />  </span>
+                                                                 </div>
+                                                                 <div class="col-md-3">
+                                                                     <span style="margin-left:-20px;">Medication4 <input class="form-control" id="medication5" ng-model="nameofmedication5" type="text" tabindex="58" ng-keyup="nameofmedication5keyup(event.keyCode)" style="max-width:263px; margin-left:-20px; height:28px; font-size:14px;" autocomplete="off" />  </span>
+                                                                 </div>
+                                                             </div>
+
+                                                             <div class="col-md-10" style="width:1105px;">
+                                                                 <div style="height:7px;"></div>
+                                                                 <div class="hydroxyurea2">
+                                                                     <span style="color:darkslateblue;font-weight:700"><img src="~/Images/one.png" height="31" width="31" /></span>
+                                                                     <div style="height:3px;"></div>
+                                                                     <span style="color:darkslategrey;font-weight:600;">Have you ever heard of <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea?</span> </span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" tabindex="59" id="hydroxyureaheardyes" ng-click="hydroxyureaeverheardyes()" /> Yes
+                                                                     <input type="radio" value="No" tabindex="60" id="hydroxyureaheardno" ng-click="hydroxyureaeverheardno()" style="margin-left:15px;" /> No
+                                                                     <span style="color:darkslategrey;font-weight:600; margin-left:0px;" tabindex="61"></span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <span style="color:darkslategrey;font-weight:600; margin-left:0px;">Have you ever taken <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea</span> before?</span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" style="margin-left:2px;" tabindex="62" id="hydroxyureatakenyes" ng-click="hydroxyureaevertakenyes()" /> Yes
+                                                                     <input type="radio" value="No" style="margin-left:15px;" tabindex="63" id="hydroxyureatakenno" ng-click="hydroxyureaevertakenno()" /> No
+                                                                 </div>
+                                                             </div>
+
+                                                             <div class="col-md-10" style="width:1105px;">
+                                                                 <div class="curruse2">
+                                                                     <div style="height:20px;"></div>
+                                                                     <span style="color:darkslategrey;font-weight:600;">Do you currently use <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea?</span> </span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" tabindex="64" id="hydroxyureacurrentlyyes" ng-click="hydroxyureacurryes()" />   Yes
+                                                                     <input type="radio" value="No" tabindex="65" id="hydroxyureacurrentlyno" ng-click="hydroxyureacurrno()" style="margin-left:15px;" /> No
+                                                                     <br />
+                                                                     <div style="height:10px;"></div>
+
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If No: Have you taken it in the past?</span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+                                                                     <input type="radio" value="Yes" style="margin-left:3px;" tabindex="66" id="hydroxyureapasttakenyes" ng-click="hydroxyureatakenpastyes()" /> Yes
+                                                                     <input type="radio" value="No" style="margin-left:4px;" tabindex="67" id="hydroxyureapasttakenno" ng-click="hydroxyureatakenpastno()" /> No
+                                                                     <br />
+                                                                     <br />
+
+                                                                     <span style="color:darkslategrey;font-weight:600; margin-left:0px;">What is the dosage of your</span> <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea</span> <br />
+                                                                     <spn style="color:darkslategrey;font-weight:600; margin-left:0px;">prescription?</spn>
+                                                                     <br />
+
+                                                                     <input id="hydroxyureadosage" ng-keyup="hydroxyureadosagekeyup()" tabindex="68" type="text" style="margin-left:0px; width:125px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" />,
+                                                                     <span style="font-size:13px;">Unknown<input id="hydroxyureadosageunknown" ng-keyup="hydroxyureadosageunknownkeyup()" tabindex="69" type="text" style="margin-left:5px; width:125px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+
+                                                                     <div style="height:15px;"></div>
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If unknown, what are the colors of your</span><br />
+                                                                     <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea</span> <span style="color:darkslategrey; font-weight:600; margin-left:0px;">capsules?</span>
+
+                                                                     <input id="hydroxyureacapsulescolor" ng-keyup="hydroxyureacapsulescolorkeyup()" tabindex="70" type="text" style="margin-left:0px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:120px; max-width:120px" autocomplete="off" />
+                                                                     <br />
+                                                                     <div style="height:15px;"></div>
+
+                                                                     <span style="color:darkslategrey; font-weight:600;">Date last taken?<input type="date" id="hydroxyureadatelasttaken" ng-keyup="hydroxyureadatelasttakenkeyuo()" tabindex="71" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:150px;max-width:135px; font-weight:500;" autocomplete="off" /></span>
+
+                                                                     <div style="height:15px;"></div>
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> What was the last date you picked up /</span><br />
+                                                                     <span style="color:darkslategrey; font-weight:600;"> received your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea</span> <span style="color:darkslategrey; font-weight:600;">prescription</span> </span> <br />
+                                                                     <span style="color:darkslategrey; font-weight:600;"> from the pharmacy? <input id="hydroxyureadatepickedup" tabindex="72" ng-keyup="hydroxyureadatepickedupkeyup()" type="date" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:150px;max-width:130px; font-weight:500" /></span>
+                                                                 </div>
+                                                                 <div style="height:8px;"></div>
+                                                             </div>
+
+                                                             @*-----------------------------------------------------------------------------------------------------------------------------------*@
+                                                             <div class="col-md-10" style="width:1105px; margin-top:3px;">
+                                                                 <div class="hydroxyurea2">
+                                                                     <span style="color:darkslateblue;font-weight:700"><img src="~/Images/two.png" height="31" width="31" /></span>
+                                                                     <div style="height:3px;"></div>
+                                                                     <span style="color:darkslategrey;font-weight:600;">Have you ever heard of <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta?</span></span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" tabindex="73" id="pharma1heardyes" ng-click="pharma1everheardyes()" /> Yes
+                                                                     <input type="radio" value="No" tabindex="74" id="pharma1heardno" ng-click="pharma1everheardno()" style="margin-left:15px;" /> No
+                                                                     <span style="color:darkslategrey;font-weight:600;margin-left:0px;" tabindex="75"></span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <span style="color:darkslategrey;font-weight:600; margin-left:0px;"><span style="margin-left:0px;"></span>Have you ever taken <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta</span> before?</span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" style="margin-left:0px;" tabindex="76" id="pharma1takenyes" ng-click="pharma1evertakenyes()" /> Yes
+                                                                     <input type="radio" value="No" style="margin-left:15px;" tabindex="77" id="pharma1takenno" ng-click="pharma1evertakenno()" /> No
+                                                                 </div>
+                                                             </div>
+
+                                                             <div class="col-md-10" style="width:1105px;">
+                                                                 <div class="curruse2">
+                                                                     <div style="height:20px;"></div>
+                                                                     <span style="color:darkslategrey;font-weight:600;">Do you currently use <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta?</span></span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" tabindex="78" id="pharma1currentlyyes" ng-click="pharma1curryes()" />   Yes
+                                                                     <input type="radio" value="No" tabindex="79" id="pharma1currentlyno" ng-click="pharma1currno()" style="margin-left:15px;" /> No
+                                                                     <br />
+                                                                     <div style="height:10px;"></div>
+
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If No: Have you taken it in the past?</span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+                                                                     <input type="radio" value="Yes" style="margin-left:3px;" tabindex="80" id="pharma1pasttakenyes" ng-click="pharma1takenpastyes()" /> Yes
+                                                                     <input type="radio" value="No" style="margin-left:4px;" tabindex="81" id="pharma1pasttakenno" ng-click="pharma1takenpastno()" /> No
+                                                                     <br />
+                                                                     <br />
+
+                                                                     <span style="color:darkslategrey;font-weight:600; margin-left:0px;">What is the dosage of your</span> <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta</span> <br />
+                                                                     <spn style="color:darkslategrey;font-weight:600; margin-left:0px;">prescription?</spn>
+                                                                     <br />
+
+                                                                     <input id="pharma1dosage" ng-keyup="pharma1dosagekeyup()" tabindex="82" type="text" style="margin-left:0px; width:225px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:125px; max-width:125px;" autocomplete="off" />,
+                                                                     <span>Unknown<input id="pharma1dosageunknown" ng-keyup="pharma1dosageunknownkeyup()" tabindex="83" type="text" style="margin-left:5px; width:222px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:125px; max-width:125px;" autocomplete="off" /></span>
+
+                                                                     <div style="height:15px;"></div>
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If unknown, what are the colors of your</span><br />
+                                                                     <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta</span> <span style="color:darkslategrey; font-weight:600; margin-left:0px;">capsules?</span>
+
+                                                                     <input id="pharma1capsulescolor" ng-keyup="pharma1capsulescolorkeyup()" tabindex="84" type="text" style="margin-left:3px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:120px; max-width:120px;" autocomplete="off" />
+                                                                     <br />
+                                                                     <div style="height:15px;"></div>
+
+                                                                     <span style="color:darkslategrey;">Date last taken?<input type="date" id="pharma1datelasttaken" ng-keyup="pharma1datelasttakenkeyuo()" tabindex="85" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:150px;max-width:135px; font-weight:500;" autocomplete="off" /></span>
+
+                                                                     <div style="height:15px;"></div>
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> What was the last date you picked up /</span><br />
+                                                                     <span style="color:darkslategrey; font-weight:600;"> received your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Oxbryta</span> <span style="color:darkslategrey; font-weight:600;">prescription</span> </span> <br />
+                                                                     <span style="color:darkslategrey; font-weight:600;"> from the pharmacy? <input id="pharma1datepickedup" tabindex="86" ng-keyup="pharma1datepickedupkeyup()" type="date" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:150px;max-width:130px; font-weight:500" /></span>
+
+                                                                 </div>
+                                                             </div>
+                                                             @*-----------------------------------------------------------------------------------------------------------------------------------*@
+
+                                                             @*-----------------------------------------------------------------------------------------------------------------------------------*@
+                                                             <div class="col-md-10" style="width:1105px; margin-top:3px;">
+                                                                 <div class="hydroxyurea2">
+                                                                     <span style="color:darkslateblue;font-weight:700"><img src="~/Images/three.png" height="31" width="31" /></span>
+                                                                     <div style="height:3px;"></div>
+                                                                     <span style="color:darkslategrey;font-weight:600;">Have you ever heard of <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Adakveo?</span></span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" tabindex="87" id="pharma2heardyes" ng-click="pharma2everheardyes()" /> Yes
+                                                                     <input type="radio" value="No" tabindex="88" id="pharma2heardno" ng-click="pharma2everheardno()" style="margin-left:15px;" /> No
+                                                                     <span style="color:darkslategrey;font-weight:600;margin-left:260px;" tabindex="89"></span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <span style="color:darkslategrey;font-weight:600; margin-left:0px;"><span style="margin-left:0px;"></span>Have you ever taken <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Adakveo</span> before?</span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" style="margin-left:2px;" tabindex="90" id="pharma2takenyes" ng-click="pharma2evertakenyes()" /> Yes
+                                                                     <input type="radio" value="No" style="margin-left:15px;" tabindex="91" id="pharma2takenno" ng-click="pharma2evertakenno()" /> No
+                                                                 </div>
+                                                             </div>
+
+                                                             <div class="col-md-10" style="width:1105px;">
+                                                                 <div class="curruse2">
+                                                                     <div style="height:20px;"></div>
+                                                                     <span style="color:darkslategrey;font-weight:600;">Do you currently use <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Adakveo?</span></span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" tabindex="92" id="pharma2currentlyyes" ng-click="pharma2curryes()" />   Yes
+                                                                     <input type="radio" value="No" tabindex="93" id="pharma2currentlyno" ng-click="pharma2currno()" style="margin-left:15px;" /> No
+                                                                     <br />
+                                                                     <div style="height:10px;"></div>
+
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If No: Have you taken it in the past?</span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+                                                                     <input type="radio" value="Yes" style="margin-left:3px;" tabindex="94" id="pharma2pasttakenyes" ng-click="pharma2takenpastyes()" /> Yes
+                                                                     <input type="radio" value="No" style="margin-left:4px;" tabindex="95" id="pharma2pasttakenno" ng-click="pharma2takenpastno()" /> No
+                                                                     <br />
+                                                                     <br />
+
+                                                                     <span style="color:darkslategrey;font-weight:600; margin-left:0px;">What is the dosage of your</span> <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Adakveo</span> <br />
+                                                                     <spn style="color:darkslategrey;font-weight:600; margin-left:0px;">prescription?</spn>
+                                                                     <br />
+
+                                                                     <input id="pharma2dosage" ng-keyup="pharma2dosagekeyup()" tabindex="96" type="text" style="margin-left:0px; width:125px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" />,
+                                                                     <span>Unknown<input id="pharma2dosageunknown" ng-keyup="pharma2dosageunknownkeyup()" tabindex="97" type="text" style="margin-left:5px; width:135px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+
+                                                                     <div style="height:15px;"></div>
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If unknown, what are the colors of your</span><br />
+                                                                     <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Adakveo</span> <span style="color:darkslategrey; font-weight:600; margin-left:0px;">capsules?</span>
+
+                                                                     <input id="pharma2capsulescolor" ng-keyup="pharma2capsulescolorkeyup()" tabindex="98" type="text" style="margin-left:3px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:120px; max-width:120px" autocomplete="off" />
+                                                                     <br />
+                                                                     <div style="height:15px;"></div>
+
+                                                                     <span style="color:darkslategrey;">Date last taken?<input type="date" id="pharma2datelasttaken" ng-keyup="pharma2datelasttakenkeyuo()" tabindex="99" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:150px;max-width:135px; font-weight:500;" autocomplete="off" /></span>
+
+                                                                     <div style="height:15px;"></div>
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> What was the last date you picked up /</span><br />
+                                                                     <span style="color:darkslategrey; font-weight:600;"> received your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea</span> <span style="color:darkslategrey; font-weight:600;">prescription</span> </span> <br />
+                                                                     <span style="color:darkslategrey; font-weight:600;"> from the pharmacy? <input id="pharma2datepickedup" tabindex="100" ng-keyup="pharma2datepickedupkeyup()" type="date" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:150px;max-width:130px; font-weight:500" /></span>
+                                                                 </div>
+                                                             </div>
+
+                                                             <div class="col-md-10" style="width:1105px; margin-top:3px;">
+                                                                 <div class="hydroxyurea2">
+                                                                     <span style="color:darkslateblue;font-weight:700"><img src="~/Images/four.png" height="31" width="31" /></span>
+                                                                     <div style="height:3px;"></div>
+                                                                     <span style="color:darkslategrey;font-weight:600;">Have you ever heard of <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Endari?</span></span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" tabindex="101" id="pharma3heardyes" ng-click="pharma3everheardyes()" /> Yes
+                                                                     <input type="radio" value="No" tabindex="102" id="pharma3heardno" ng-click="pharma3everheardno()" style="margin-left:15px;" /> No
+                                                                     <span style="color:darkslategrey;font-weight:600;margin-left:260px;" tabindex="89"></span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <span style="color:darkslategrey;font-weight:600; margin-left:0px;"><span style="margin-left:0px;"></span>Have you ever taken <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Endari</span> before?</span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" style="margin-left:2px;" tabindex="103" id="pharma3takenyes" ng-click="pharma3evertakenyes()" /> Yes
+                                                                     <input type="radio" value="No" style="margin-left:15px;" tabindex="104" id="pharma3takenno" ng-click="pharma3evertakenno()" /> No
+                                                                 </div>
+                                                             </div>
+
+                                                             <div class="col-md-10" style="width:1105px;">
+                                                                 <div class="curruse2">
+                                                                     <div style="height:20px;"></div>
+                                                                     <span style="color:darkslategrey;font-weight:600;">Do you currently use <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Endari?</span></span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input type="radio" value="Yes" tabindex="105" id="pharma3currentlyyes" ng-click="pharma3curryes()" />   Yes
+                                                                     <input type="radio" value="No" tabindex="106" id="pharma3currentlyno" ng-click="pharma3currno()" style="margin-left:15px;" /> No
+                                                                     <br />
+                                                                     <div style="height:10px;"></div>
+
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If No: Have you taken it in the past?</span>
+                                                                     <br />
+                                                                     <div style="height:5px;"></div>
+                                                                     <input type="radio" value="Yes" style="margin-left:0px;" tabindex="107" id="pharma3pasttakenyes" ng-click="pharma3takenpastyes()" /> Yes
+                                                                     <input type="radio" value="No" style="margin-left:4px;" tabindex="108" id="pharma3pasttakenno" ng-click="pharma3takenpastno()" /> No
+                                                                     <br />
+                                                                     <br />
+
+                                                                     <span style="color:darkslategrey;font-weight:600; margin-left:0px;">What is the dosage of your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Endari</span> prescription?</span>
+                                                                     <div style="height:5px;"></div>
+
+                                                                     <input id="pharma3dosage" ng-keyup="pharma2dosagekeyup()" tabindex="109" type="text" style="margin-left:0px; width:125px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" />,
+                                                                     <span>Unknown<input id="pharma3dosageunknown" ng-keyup="pharma3dosageunknownkeyup()" tabindex="110" type="text" style="margin-left:5px; width:125px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px;" autocomplete="off" /></span>
+
+                                                                     <div style="height:15px;"></div>
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> If unknown, what are the colors of your</span><br />
+                                                                     <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Endari</span> <span style="color:darkslategrey; font-weight:600; margin-left:0px;">capsules?</span>
+
+                                                                     <input id="pharma3capsulescolor" ng-keyup="pharma3capsulescolorkeyup()" tabindex="111" type="text" style="margin-left:3px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:120px; max-width:120px;" autocomplete="off" />
+                                                                     <br />
+                                                                     <div style="height:15px;"></div>
+
+                                                                     <span style="color:darkslategrey;">Date last taken?<input type="date" id="pharma3datelasttaken" ng-keyup="pharma3datelasttakenkeyuo()" tabindex="112" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:150px;max-width:135px; font-weight:500;" /></span>
+
+                                                                     <div style="height:15px;"></div>
+                                                                     <span style="color:darkslategrey; font-weight:600; margin-left:0px;"> What was the last date you picked up /</span><br />
+                                                                     <span style="color:darkslategrey; font-weight:600;"> received your <span style="font-weight:600;color:crimson;text-shadow: 1px 0px 0px #000000;">Hydroxyurea</span> <span style="color:darkslategrey; font-weight:600;">prescription</span> </span> <br />
+                                                                     <span style="color:darkslategrey; font-weight:600;"> from the pharmacy? <input id="pharma3datepickedup" tabindex="113" ng-keyup="pharma3datepickedupkeyup()" type="date" style="margin-left:4px; border-top-color:white;border-right-color:white;border-left-color:white; border-style:solid; border-width:1px; width:150px;max-width:130px; font-weight:500" /></span>
+                                                                 </div>
+                                                             </div>
+                                                             <br />
+                                                         </div>
+                                                         @*---------------------------------This is for Mobile Application-------------------------------------------------------------*@
+                                                     </div>
+
+                                                 </div>
+                                             </div>
+                                             <br />
+                                             <br />
+
+                                             <div class="row" style="width:300px; margin-left:-228px; margin-top:5px;" id="options1">
+                                                 <div class="col-md-4" style="width:685px;margin-top:-27px;">
+                                                     <input type="button" id="save" tabindex="101" value="Save" ng-click="Savedata()" style="margin-left:325px; width:90px; border-radius:05px; height:27px; margin-top:-10px; background-color:#436280;color:white;"/>
+                                                     <input type="button" id="update" tabindex="102" value="Update" ng-click="Update()" style="margin-left:0px; width:90px; border-radius:05px; height:27px; margin-top:-10px; background-color:#436280;color:white;"/>
+                                                 </div>
+                                                 <div class="col-md-4" style="width:100px;"></div>
+                                             </div>
+
+                                         </div>
+                                     </section>
+                                 </div>                                 
+
+                             </div>
+
+                         </form>
+
+                     </div>
+                 </div>
+                 <!--Start copyright area-->
+                 <section class="copyright-area" style="background-color:transparent;">
+                     <div class="container">
+                         <div class="row">
+                             <div class="col-md-6 col-sm-12" style="margin-left:198px;">
+                                 <div class="copyright">                                     
+                                     <p style="color:black; font-weight:900; font-size:9.70px;">&copy; @DateTime.Now.Year <a href="https://www.primeshire.tech/" onmouseover="mouseover()" onmouseout="mouseout()" rel="noopener noreferrer" target="_blank" style="text-shadow: 2px 1px 0px #000000; color:cornflowerblue;font-weight:bolder; font-size:14px;">Primeshire Technologies. </a> <span style="margin-left:1px;"><span style="margin-left:1px;">All Rights Reserved</span></span> <span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.5</span></p>
+                                 </div>
+                             </div>
+                             <script>
+                                 function mouseover() {
+                                     document.getElementById("footertips").style.visibility = "visible";
+                                 }
+
+                                 function mouseout() {
+                                     document.getElementById("footertips").style.visibility = "hidden";
+                                 }
+                             </script>
+                         </div>
+                     </div>
+                 </section>
+                 <!--End copyright area-->
+                 <!--Scroll to top-->
+                 <div class="scroll-to-top scroll-to-target" data-target="cshtml" id="trigger"><span class="fa fa-angle-up"></span></div>
+             </div>
+         </div>
+         <script src="../../Scripts/multi.js"></script>
+
+
+     </body>
+</html>

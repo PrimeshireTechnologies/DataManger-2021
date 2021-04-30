@@ -1,0 +1,223 @@
+﻿
+<link rel="stylesheet" href="../../Content/styling-2.css">
+<!-- Responsive stylesheet -->
+<link rel="stylesheet" href="../../Content/responsive.css">
+
+<link href="../../Content/stylingpatientoverview.css" rel="stylesheet"/>
+
+<link href="../../Content/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="../../Content/jquery.bxslider.css" rel="stylesheet" />
+<link href="../../Content/imp.css" rel="stylesheet" />
+
+<link href="../../Content/bootstrap.css" rel="stylesheet" />
+<link href="../../Content/multiview.css" rel="stylesheet" />
+<script src="../../Scripts/jquery-3.3.1.js"></script>
+
+<script src="../../Scripts/jquery-1.6.4.js"></script>
+
+<script src="../../Scripts/jquery-1.7.1.js"></script>
+<script src="../../Library/angular.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<!-- Modal content -->
+<div class="modal" id="myModal">
+    <span class="close">&times;</span>
+    <!-- <p>Some text in the Modal..</p>-->
+    <p id="spanmssg" style="color:darkslategray;font-weight:600;">/p>
+</div>
+
+@*<span class="searchby">Search by</span>
+<div class="mobileclass" ng-app="app">    
+    <span style="font-family:Tahoma;color:darkslategrey; font-weight:600;">ClientID :</span><input style="margin-top:0px; margin-left:5px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" ng-click="empname()" type="text" id="searchclient" placeholder="ClientID...." autocomplete="off">
+    <a href="#"><img src="../../Images/search3.png" width="30" height="28" style="margin-left:-2px; margin-top:-4px;" ng-click="searchclient()" ng-mouseover="buttonone()" /></a>
+    <input type="submit" value="List all Clients" id="listmembers" style="visibility:hidden;background-color:slategray;color:white; font-weight:600; margin-left:10px; border-radius:4px;" ng-click="listall()" /><br />
+    <div style="height:3px;"></div>
+    <span style="font-family:Tahoma;color:darkslategrey; font-weight:600;">Name :</span> <input style="margin-top:0px; margin-left:18px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" type="text" ng-click="empclientid()" id="firstname" placeholder="FirstName..">
+    <input style="margin-top:0px; margin-left:0px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" type="text" ng-click="empclientid()" id="lastname" placeholder="LastName..">
+    <input type="date" style="margin-top:0px; margin-left:0px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" id="dob" placeholder="Date Of Birth..">
+    <a href="#"><img src="../../Images/search3.png" width="30" height="28" style="margin-left:1px; margin-top:-4px;" ng-click="searchclient()" ng-mouseover="buttontwo()" /></a>
+    <span style="margin-left:50px;margin-top:15px; font-size:18px;" onclick="homepage()"><a href="#" style="color:#f37946; font-weight:600">SICKLE CELL CLIENT OVERVIEW</a></span>
+    <a href="#"><input ng-click="reportserver()" type="submit" value="Generate Report Server" style="margin-left:230px; font-weight:600; background-color:slategray; color:white; margin-top:-3px; border-radius:4px;" /></a>
+    <br />  
+</div>*@
+
+<!--Start Preloader -->
+<div class="preloader"></div>
+<p id="footertips" class="Tipfooter" style="margin-top:307px; font-size:12px; margin-left:-135px;">www.primeshire.tech</p>
+
+<section ng-app="app">
+  
+    <div class="MobilePatientOverviewbox" style="border-style: solid; border-color: red; border-width: 12px; border-radius: 1px; width:350px;max-width:1049px; background-color:pink; height:auto;">
+
+        <div class="container">
+
+            <div class="col-md-12">
+
+                @*<div  class="MobilePatientOverviewbox">*@
+                <div class="row">
+                    <div class="col-md-4">
+                        <!--    <br /> -->
+                    </div>
+
+                    <div class="col-md-4" style="position:fixed;top:50%;left:50%;margin-top:-15em;margin-left:-7em; font-size:18px;font-weight:600;">
+                        <div style="height:3px;"></div>
+                        <span onclick="homepage()"><a href="#" style="color:slategray;" id="golbalschoolname"></a></span><br />
+                        <div style="height:1px; margin-top:-3px;"></div>
+                    </div>
+                    <script>
+                        let vskip;
+                        globalSchool = localStorage.getItem("globalschool");
+
+                        function homepage() {
+                            vskip = 1;
+                            var varRole = localStorage.getItem("vRole");
+                            if (varRole === "Super Admin") {
+                                window.location.href = "/Home/index";
+                            } else { window.location.href = "/Home/Mobileindex"; }
+                        }
+
+                        let idleTime = 0;
+                        $(document).ready(function () {
+                            //Increment the idle time counter every minute.
+                            idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+
+                            //Zero the idle timer on mouse movement.
+                            $('body').mousemove(function (e) {
+                                idleTime = 0;
+                            });
+
+                            $('body').keypress(function (e) {
+                                idleTime = 0;
+                            });
+
+                            $('body').click(function () {
+                                idleTime = 0;
+                            });
+
+                            function timerIncrement() {
+                                idleTime = idleTime + 1;
+                                if (idleTime > 6) {
+                                    window.location.href = "/Home/MobileLogin";
+                                }
+                            }
+                        });
+
+                        function myFunction() {
+                            // Declare variables
+                            var input, filter, table, tr, td, i, txtValue;
+                            input = document.getElementById("myInput");
+                            filter = input.value.toUpperCase();
+                            table = document.getElementById("myTable");
+                            tr = table.getElementsByTagName("tr");
+
+                            // Loop through all table rows, and hide those who don't match the search query
+                            for (i = 0; i < tr.length; i++) {
+                                if (document.getElementById("searchoption").value === "ClientID") {
+                                    td = tr[i].getElementsByTagName("td")[0];
+                                } else if (document.getElementById("searchoption").value === "Name") {
+                                    td = tr[i].getElementsByTagName("td")[1];
+                                }
+                                if (td) {
+                                    txtValue = td.textContent || td.innerText;
+                                    //txtValue = td.textContent || td.innerText;
+                                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                        tr[i].style.display = "";
+                                    } else {
+                                        tr[i].style.display = "none";
+                                    }
+                                }
+                            }
+                        }
+                    </script>
+                    <div class="col-md-4"></div>
+                </div>
+
+                <span class="searchby">Search by</span>
+                <div class="mobileclass" ng-app="app">
+                    <span style="font-family:Tahoma;color:darkslategrey; font-weight:600;">ClientID :</span><input style="margin-top:0px; margin-left:5px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" ng-click="empname()" type="text" id="searchclient" placeholder="ClientID...." autocomplete="off">
+                    <a href="#"><img src="../../Images/search3.png" width="30" height="28" style="margin-left:-2px; margin-top:-4px;" ng-click="searchclient()" ng-mouseover="buttonone()" /></a>
+                    <input type="submit" value="List all Clients" id="listmembers" style="visibility:hidden;background-color:slategray;color:white; font-weight:600; margin-left:10px; border-radius:4px;" ng-click="listall()" /><br />
+                    <div style="height:3px;"></div>
+                    <span style="font-family:Tahoma;color:darkslategrey; font-weight:600;">Name :</span> <input style="margin-top:0px; margin-left:18px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" type="text" ng-click="empclientid()" id="firstname" placeholder="FirstName..">
+                    <input style="margin-top:0px; margin-left:0px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" type="text" ng-click="empclientid()" id="lastname" placeholder="LastName..">
+                    <input type="date" style="margin-top:0px; margin-left:0px; height:28px; border-radius:5px; width:130px; max-width:125px; font-size:13px;" id="dob" placeholder="Date Of Birth..">
+                    <a href="#"><img src="../../Images/search3.png" width="30" height="28" style="margin-left:1px; margin-top:-4px;" ng-click="searchclient()" ng-mouseover="buttontwo()" /></a>
+                    <span style="margin-left:50px;margin-top:15px; font-size:18px;" onclick="homepage()"><a href="#" style="color:#f37946; font-weight:600">SICKLE CELL CLIENT OVERVIEW</a></span>
+                    <a href="#"><input ng-click="reportserver()" type="submit" value="Generate Report Server" style="margin-left:230px; font-weight:600; background-color:slategray; color:white; margin-top:-3px; border-radius:4px;" /></a>
+                    <br />
+                </div>
+
+                <div class="lbloverview">
+                    <input id="assignments" class="assign0" type="text" ng-keyup="assignkeyup()" value="Client ID" disabled="disabled" />
+                    <input id="assignment1" class="assign1" onkeyup="assignment1keyup()" type="text" value="Name" disabled="disabled" />
+                    <input id="assignment2" class="assign2" onkeyup="assignment2keyup()" type="text" value="Date of Birth" disabled="disabled" />
+                    <input id="assignment3" class="assign3" onkeyup="assignment3keyup()" type="text" value="Gender" disabled="disabled" />
+                    <input id="assignment4" class="assign4" onkeyup="assignment4keyup()" type="text" value="Address" disabled="disabled" />
+                    <input id="assignment5" class="assign5" onkeyup="assignment5keyup()" type="text" value="City" disabled="disabled" />
+                    <input id="assignment6" class="assign6" onkeyup="assignment6keyup()" type="text" value="State" disabled="disabled" />
+                    <input id="assignment7" class="assign7" onkeyup="assignment7keyup()" type="text" value="Email Address" disabled="disabled" />
+                </div>
+
+                <div class="boxed_wrapper">
+
+                    <form role="form" onSubmit="return false;">
+
+                        <div class="col-md-12" style="width:120%; margin-left:-10px;">
+
+                            <div class="row">
+                                <div class="col-md-12" style="margin-left:-20px; width:100%;">
+
+                                    <div style="padding:0; width:1400px; max-width:1370px; margin-left:4px;">
+
+                                        <div class="col-md-12" style="width:100%;">
+                                            <div class="row">
+                                                <table id="myTable" class="mtable">
+                                                    <tr tabindex="0" id="myRow">
+                                                        <td id="col1" class="col1class"></td>
+                                                        <td id="col2" class="col2class"></td>
+                                                        <td id="col3" class="col3class"></td>
+                                                        <td id="col4" class="col4class"></td>
+                                                        <td id="col5" class="col5class"></td>
+                                                        <td id="col6" class="col6class"></td>
+                                                        <td id="col7" class="col7class"></td>
+                                                        <td id="col8" class="col8class"></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <div style="position:fixed;top:50%;left:50%;width:38em;height:18em;margin-top:26.70em;margin-left:-18em; color:black;font-weight:900; font-size:12px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        <p>&copy; @DateTime.Now.Year <a href="https://www.primeshire.tech/" onmouseover="mouseover()" onmouseout="mouseout()" rel="noopener noreferrer" target="_blank" style="text-shadow: 2px 1px 0px #000000; color:cornflowerblue;font-weight:bolder; font-size:15px;">Primeshire Technologies. </a> <span style="margin-left:1px;"><span style="margin-left:1px;">All Rights Reserved</span></span> <span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.5</span></p>
+                    </div>
+                    <script>
+                        function mouseover() {
+                            document.getElementById("footertips").style.visibility = "visible";
+                        }
+
+                        function mouseout() {
+                            document.getElementById("footertips").style.visibility = "hidden";
+                        }
+                    </script>
+
+                    <select id="comments3" class="inform2" ng-model="comments" name="comments" style="position:absolute; width:1145px; max-width:105%; margin-left: 1em; margin-top: 0em; font-weight:700; height:450px; max-height:450px;font-family:Courier New, Courier, monospace;font-size:16px;border-width:1px; border: 1px solid #f37946; resize:both; box-sizing: border-box; overflow:auto; border-radius:12px;" multiple="multiple"></select>
+                </div>
+
+                @*<select id="comments3" class="inform2" ng-model="comments" name="comments" style="position:absolute; width:1145px; margin-left: 1em; margin-top: 0em; font-weight:700; height:450px; max-height:450px;font-family:Courier New, Courier, monospace;font-size:16px;border-width:1px; border: 1px solid #f37946; resize:both; max-width: 100%;box-sizing: border-box; overflow:auto; border-radius:12px;" multiple="multiple"></select>*@
+
+                @*</div>*@
+
+            </div>
+        </div>
+    </div>
+    <script src="../../Scripts/multi.js"></script>
+
+</section>
+
