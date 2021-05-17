@@ -1,0 +1,70 @@
+﻿
+<link href="../../Content/styling.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="../../Content/multi.css" rel="stylesheet" />
+<script src="../../Scripts/jquery-3.3.1.js"></script>
+<script src="../../Library/angular.min.js"></script>
+
+<p id="footertips" class="Tipfooter" style="margin-top:307px; font-size:12px; margin-left:-125px;">www.primeshire.tech</p>
+<body>
+    <section ng-app="app" class="col-md-12" style="width:auto; touch-action: none;">
+        <br />
+        <br />
+        <div ng-controller="viewController" class="container">
+
+            <div id="image">
+
+                <div class="col-md-12">
+                    <div class="mobileloginbox">
+                        <div class="content-wrap" style="margin-left:25px;margin-top:25px;">
+                            <h2 style="font-size:23px;text-shadow: 1px 1px 1px #000000; color:lightgray;">Log In</h2>                           
+
+                                <div>                                   
+                                    <input class="form-control" type="email" placeholder="E-mail address" id="email" style="height:40px; width:360px; border-radius:7px;" autocomplete="off">
+                                    <div style="height:4px;"></div>
+                                    <input class="form-control" type="password" placeholder="Password" id="pwd" name="pwd" style="height:40px; width:360px; border-radius:7px;" autocomplete="off">
+                                    <div class="action" ng-click="login()">
+                                        <a class="btn btn-primary signup" style="width:120px; background-color:#436280; color:white;">Login</a>
+                                    </div>
+                                </div>
+                                <div class="showpass">
+                                    <input type="checkbox" id="show-hide" name="show-hide" value="" />
+                                    <label for="show-hide" style="color:#f37946; font-weight:700;">Show password</label>
+                                </div>                            
+
+                        </div>
+
+                        <div class="already">
+                            <p class="dont_have">
+                                Don't have an account yet? <a href="/Home/MobileSignup" style="font-size:15px; font-weight:700; text-shadow: 1px 0px 0px #000000;">Sign Up</a>
+                            </p>
+                            <p class="forgot">
+                                <span> <a href="/Home/MobileForgotPassword" style="font-weight:600;margin-left:5px;font-size:15px; color:#5f6caf;text-shadow: 1px 0px 0px #000000;" id="forgotpass">Forgot password?</a></span>
+                            </p>
+                        </div>
+
+                        <div class="mobileloginfooter">
+                            <p style="color:black; font-weight:900; font-size:9.70px;">&copy; @DateTime.Now.Year <a href="https://www.primeshire.tech/" onmouseover="mouseover()" onmouseout="mouseout()" rel="noopener noreferrer" target="_blank" style="text-shadow: 2px 1px 0px #000000; color:cornflowerblue;font-weight:bolder; font-size:14px;">Primeshire Technologies. </a> <span style="margin-left:1px;"><span style="margin-left:1px;">All Rights Reserved</span></span> <span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.5</span></p>
+                        </div>
+                    </div>
+                    <script>
+                        function mouseover() {
+                            document.getElementById("footertips").style.visibility = "visible";
+                        }
+
+                        function mouseout() {
+                            document.getElementById("footertips").style.visibility = "hidden";
+                        }
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
+        <!--</div>  -->
+        <br />
+
+        <script src="../../Scripts/login.js"></script>
+        <script src="../../Scripts/multi.js"></script>        
+    </section>
+</body>

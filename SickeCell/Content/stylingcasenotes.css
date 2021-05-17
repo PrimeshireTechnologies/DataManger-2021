@@ -1,0 +1,640 @@
+﻿
+@import url('../assets/preloader/spinners.css');
+@import url('../assets/preloader/pulse.css');
+
+/* Mobile Phone Styles Portrait */
+@media only screen and (min-width: 1px) and (max-width: 400px) {
+    .Mobilecasenotesbox {       
+        border-style: groove;
+        border-color: ghostwhite;
+        border-width: 2px;
+        border-radius: 12px;
+        height: 670px;
+        max-height: 660px;
+        width: 393px;
+        margin-top: -21em;
+        margin-left: -3em;      
+    }
+
+    .nav navbar-nav {
+        margin-left: 120px;
+    }
+
+    .navbar-toggle {
+        margin-left: -50px;
+    }
+    
+    .dropdown{         
+        margin-left: 20px;
+    }    
+
+    .content-wrap {
+        margin-left: -30px;
+        margin-top: 8px;
+        width: 300px;
+    }
+
+    .container {
+        width: auto;        
+    }    
+
+    .span {
+        visibility: hidden;
+    }      
+
+    .account3 {
+        background-color: #f37946;
+        color: white;
+        margin-top: -150px;
+        margin-left: 175px;
+        width: 100px;
+        border-color: ghostwhite;
+        border-width: 1px;
+        font-weight: 600;
+        font-size: 11px;
+        visibility: hidden;
+    }
+    .username3 {
+        font-size: 11px;
+        color: white;
+        font-weight: 500;
+        visibility: hidden;
+    }
+
+    .account4 {
+        width: 110px;
+        background-color: #f37946;
+        height: 20px;
+        color: white;
+        text-shadow: 1px 1px 1px #000000;
+        margin-top: -50px;
+        margin-left: 85px;
+        border-color: ghostwhite;
+        border-width: 0.90px;
+        font-weight: 600;
+        font-size: 9.30px;
+        visibility: hidden
+    }
+
+    .username4 {
+        width: auto;
+        font-size: 9.40px;
+        color: white;
+        text-shadow: 1px 1px 1px #000000;
+        font-weight: 600;
+        visibility: hidden;
+    }    
+
+    .group {        
+        display:none;
+    }
+
+    .group2 {
+        visibility: visible;
+    }
+
+    .commentsphone{
+        position: absolute;
+        font-weight: 900;
+        width: 390px;
+        max-width: 370px;
+        height: 285px;
+        max-height: 260px;
+        text-align: justify;
+        text-justify: inter-word;
+        Courier New, Courier, monospace;
+        font-size: 13px;
+        border-width: 2px;
+        margin-left: -123px;
+        margin-top: 17px;
+        border-style: solid;
+        border-width: 1px;
+        border-bottom-color: #28c4f4;
+        border-top-color: #28c4f4;
+        border-right-color: #28c4f4;
+        border-left-color: #28c4f4;
+        visibility: visible;
+        overflow-x: auto;
+    }
+
+    #comments2 {
+        height: 285px;
+        max-height: 260px;
+    }
+
+    .commentsdesktop {
+        visibility: hidden;
+        display: none;        
+    }
+
+    .newcomments {
+        color: darkslategray;
+        font-weight: 600;
+        width: 390px;
+        max-width: 370px;
+        background-color: transparent;
+        border-style: solid;
+        border-width: 1px;
+        border-top-color: none;
+        border-bottom-color: none;
+        border-right-color: #28c4f4;
+        border-left-color: #28c4f4;
+        border-width: 1px;
+        margin-left: -15px;
+    }
+
+    .textarea2 {
+        visibility: visible;
+        margin-left:-15px;
+        margin-top:-12.50px;
+        width:390px;
+        max-width:370px;
+    }
+
+    #notes2 {
+        height: 100px;
+        max-height: 75px;
+        width: 372px;
+        max-width: 370.20px;
+        margin-top: 12px;
+        border-left-color: #28c4f4;
+        border-right-color: #28c4f4;
+        border-bottom-color: #28c4f4;
+        border-top-color: none;
+        text-align: left;
+        overflow-x: auto;
+    }
+
+    .textarea1 {
+        visibility: hidden;
+    }
+
+    .div {
+        visibility: hidden;        
+    }
+    .submit1 {
+        visibility: hidden;     
+    }
+    .action {        
+        display: none;
+    }
+
+    .div2 {
+        margin-top: -58px;
+        margin-left: -15px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #28c4f4;
+        width: 350px;
+        max-width: 320px;
+        visibility: hidden;
+    }
+    .submit2 {
+        margin-left: -125px;
+        width: 90px;
+        border-radius: 05px;
+        height: 30px;
+        margin-top: 60px;
+        background-color: #436280;
+        color: white;        
+    }
+    .action2 {
+        visibility: visible;  
+        margin-top:-70px;
+        margin-left:215px;
+    }
+
+    .mobileclass {
+        visibility: visible;
+        width:390px;
+        max-width:370px;
+        overflow-x: auto;
+        margin-left:-20px;
+    }
+    
+    .desktopclass {
+        display:none;        
+    }
+
+    .casenotesfooter {
+        top: 50%;
+        left: 50%;        
+        width: 33em;
+        height: 18em;
+        margin-top: 05em;
+        margin-left: 0em;
+        color: black;
+        font-weight: 900;
+        font-size: 12px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }    
+}
+
+/* Mobile Phone Styles Landscape*/
+@media (min-width:401px) and (max-width: 767px) and (orientation: landscape) {
+    .Mobilecasenotesbox {
+        border-style: groove;
+        border-color: ghostwhite;
+        border-width: 2px;
+        border-radius: 12px;
+        height: 670px;
+        max-height: 662px;
+        width: 660px;
+        margin-top: -23em;
+        margin-left: -3em;
+    }
+
+    .nav navbar-nav {
+        margin-left: 120px;
+    }
+
+    .navbar-toggle {
+        margin-left: -50px;
+    }
+
+    .dropdown {
+        margin-left: 20px;
+    }
+
+    .content-wrap {
+        margin-left: -30px;
+        margin-top: 8px;
+        width: 300px;
+    }
+
+    .container {
+        width: auto;
+    }
+
+    .span {
+        visibility: hidden;
+    }
+
+    .account3 {
+        background-color: #f37946;
+        color: white;
+        margin-top: -150px;
+        margin-left: 175px;
+        width: 100px;
+        border-color: ghostwhite;
+        border-width: 1px;
+        font-weight: 600;
+        font-size: 11px;
+        visibility: hidden;
+    }
+
+    .username3 {
+        font-size: 11px;
+        color: white;
+        font-weight: 500;
+        visibility: hidden;
+    }
+
+    .account4 {
+        width: 120px;
+        max-width: 117px;
+        background-color: #f37946;
+        height: 20px;
+        color: white;
+        text-shadow: 1px 1px 1px #000000;
+        margin-top: -50px;
+        margin-left: 225px;
+        border-color: ghostwhite;
+        border-width: 0.90px;
+        font-weight: 600;
+        font-size: 9.30px;
+        visibility: hidden
+    }
+
+    .username4 {
+        width: auto;
+        font-size: 9.40px;
+        color: white;
+        text-shadow: 1px 1px 1px #000000;
+        font-weight: 600;
+        visibility: hidden;
+        margin-left: 5px;
+    }
+
+    .group {
+        display: none;
+    }
+
+    .group2 {
+        visibility: visible;
+    }
+
+    .commentsphone {
+        visibility: visible;
+        height: 285px;
+        max-height: 260px;
+        position: absolute;
+        font-weight: 900;
+        width: 645px;
+        max-width: 637px;
+        text-align: justify;
+        text-justify: inter-word;
+        Courier New, Courier, monospace;
+        font-size: 13px;
+        border-width: 2px;
+        margin-left: -123px;
+        margin-top: 17px;
+        border-style: solid;
+        border-width: 1px;
+        border-bottom-color: #28c4f4;
+        border-top-color: #28c4f4;
+        border-right-color: #28c4f4;
+        border-left-color: #28c4f4;
+        overflow-x: auto;
+    }
+
+    #comments2 {
+        height: 285px;
+        max-height: 260px;
+    }
+
+    .commentsdesktop {
+        visibility: hidden;
+        display: none;
+    }
+
+    .newcomments {
+        color: darkslategray;
+        font-weight: 600;
+        width: 645px;
+        max-width: 637px;
+        background-color: transparent;
+        border-style: solid;
+        border-width: 1px;
+        border-top-color: none;
+        border-bottom-color: none;
+        border-right-color: #28c4f4;
+        border-left-color: #28c4f4;
+        border-width: 1px;
+        margin-left: -15px;
+    }
+
+    .textarea2 {
+        visibility: visible;
+        margin-left: -15px;
+        margin-top: -12.50px;
+        width: 545px;
+        max-width: 537px;       
+    }
+
+    #notes2 {
+        height: 100px;
+        max-height: 75px;
+        width: 650px;
+        max-width: 637px;
+        margin-top: 12px;
+        border-left-color: #28c4f4;
+        border-right-color: #28c4f4;
+        border-bottom-color: #28c4f4;
+        border-top-color: none;
+        text-align: left;
+        overflow-x: auto;
+    }
+
+    .textarea1 {
+        visibility: hidden;
+    }
+
+    .div {
+        visibility: hidden;
+    }
+
+    .submit1 {
+        visibility: hidden;
+    }
+
+    .action {
+        display: none;
+    }
+
+    .div2 {
+        margin-top: -58px;
+        margin-left: -15px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #28c4f4;
+        width: 350px;
+        max-width: 320px;
+        visibility: hidden;
+    }
+
+    .submit2 {
+        margin-left: -125px;
+        width: 90px;
+        border-radius: 05px;
+        height: 30px;
+        margin-top: 60px;
+        background-color: #436280;
+        color: white;
+    }
+
+    .action2 {
+        visibility: visible;
+        margin-top: -70px;
+        margin-left: 360px;
+    }
+
+    .mobileclass {
+        visibility: visible;
+        width: 650px;
+        max-width: 640px;
+        overflow-x: auto;
+        margin-left: -20px;
+    }
+
+    .desktopclass {
+        display: none;
+    }
+
+    .casenotesfooter {
+        top: 50%;
+        left: 50%;
+        width: 33em;
+        height: 18em;
+        margin-top: 05em;
+        margin-left: 12em;
+        color: black;
+        font-weight: 900;
+        font-size: 12px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }    
+}
+
+ /*Tablet Styles1*/ 
+ /*this datalist for tablet
+        /* Tablet Styles2 */
+   @media only screen and (min-width: 601px) and (max-width: 960px) {
+   }
+        /* Desktop Styles */
+@media only screen and (min-width: 961px) {
+     .casenotesbox {
+          border-style: solid;
+          border-color: #28c4f4;
+          border-width: 2.50px;
+          border-radius: 10px;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          width: 96em; 
+          height: 39em;          
+          margin-top: -18em;
+          margin-left: -48em;
+     }
+
+     .content-wrap {
+          margin-left: -125px;
+          margin-top: 8px;
+          width: 675px;
+     }
+
+     .div2 {
+          visibility: hidden;
+     }
+
+     .submit2 {
+          visibility: hidden;
+     }
+
+     .action2 {
+          visibility: hidden;
+     }
+
+     .div {
+          visibility: visible;
+     }
+
+     .commentsphone {
+          visibility: hidden;
+     }
+
+     .commentsdesktop {
+          visibility: visible;
+     }
+
+     .newcomments {
+          color: darkslategray;
+          font-weight: 600;
+          width: 1320px;
+          max-width: 1318px;
+          background-color: white;
+          border-style: solid;
+          border-width: 1px;
+          border-top-color: none;
+          border-bottom-color: none;
+          border-right-color: #28c4f4;
+          border-left-color: #28c4f4;
+          border-width: 1px;
+     }
+
+     .textarea1 {
+          visibility: visible;
+     }
+
+     .textarea2 {
+          visibility: hidden;
+     }
+
+     .submit1 {
+          margin-left: 100px;
+          width: 90px;
+          border-radius: 05px;
+          height: 30px;
+          margin-top: 18px;
+          background-color: #436280;
+          color: white;
+     }
+
+     .group {
+          visibility: visible;
+      }
+
+     .group2 {
+          /*visibility: hidden;*/
+         display: none;
+     }
+
+     .desktopclass {
+         visibility: visible;
+     }
+
+     .mobileclass {
+        /*visibility: hidden;*/
+         display: none;
+     }
+
+     .casenotesfooter {
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         width: 38em;
+         height: 18em;
+         margin-top: 25em;
+         margin-left: -17em;      
+         color: black;
+         font-weight: 900;
+         font-size: 12px;
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     }
+
+     /* Modal Content */
+     .modal {     
+         background-color: whitesmoke;
+         padding: 0px;
+         padding-right: 0px;
+         border: 1px solid #888;
+         width: 30%;
+         margin-top: 5em;
+         margin-left: 50em;
+         display: none;
+         height: 200px;
+         max-height: 100px;
+     }
+
+     .close {     
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+     }
+
+     .close:hover,
+        .close:focus {
+           color: #000;
+           text-decoration: none;
+           cursor: pointer;
+     }
+
+     .swal-title {
+           margin: 0px;
+           font-size: 16px;
+           box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+           margin-bottom: 28px;
+     }
+
+     /*________________Preloader_______________ */
+     .preloader {
+           position: fixed;
+           left: 0px;
+           top: 0px;
+           width: 100%;
+           height: 100%;
+           z-index: 999999999999;
+           background-color: rgba(255,255,255,1);
+           background-position: center center;
+           background-repeat: no-repeat;
+           background-image: url('../Images/icon/preloader.gif');
+     }
+}
+
+
+
+
+
+
+
+
+

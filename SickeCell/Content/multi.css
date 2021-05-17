@@ -1,0 +1,296 @@
+﻿
+/* Mobile Phone Styles PORTRAIT*/
+@media only screen and (min-width: 1px) and (max-width: 400px) {
+    .MobileForgotbox {
+        border-radius: 12px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 28em;
+        max-width: 27.50em;
+        height: 27em;
+        margin-top: -12em;
+        margin-left: -13.80em;
+        background-color: white;
+        box-shadow: inset 0 0px #28c4f4;
+        border: 2px groove ghostwhite;
+    }
+
+    .form-group1 {
+        margin-top: 0px;
+    }
+
+    .forgottitle {
+        margin-left: 30px;
+        text-shadow: 1px 1px 1px #000000;
+        color: lightgray;
+    }
+
+    .forgotpassfooter {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 38em;
+        height: 18em;
+        margin-top: 25em;
+        margin-left: -16em;
+        color: black;
+        font-weight: 900;
+        font-size: 12px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .verifypP1 {
+        color: #f37946;
+        font-weight: 700;
+        font-size: 17px;
+    }
+
+    .verifypP2 {
+        margin-top: -10px;
+        font-size: 14.5px;
+        color: #333;
+        font-weight: 100;
+        margin-left: 20px;
+        overflow: auto;
+    }
+
+    .formP1 {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 30em;
+        height: 27em;
+        margin-top: -4em;
+        margin-left: -10em;
+    }
+
+    .Mobileresetpassbox {
+        border-radius: 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 30em;
+        max-width: 28em;
+        height: 30em;
+        margin-top: -15em;
+        margin-left: -14em;
+        border: 2px groove ghostwhite;
+        background-color: white;
+    }
+
+    .Resetpasstitle {
+        margin-left: 30px;
+        text-shadow: 1px 1px 1px #000000;
+        color: lightgray;
+    }
+
+    .resetpassfooter {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 38em;
+        height: 18em;
+        margin-top: 25em;
+        margin-left: -16em;
+        color: black;
+        font-weight: 900;
+        font-size: 12px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+}
+
+/* Mobile Phone Styles Landscape*/
+@media (min-width:401px) and (max-width: 767px) and (orientation: landscape) {
+    .MobileForgotbox {
+        border-radius: 12px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 48em;
+        max-width: 46em;
+        height: 21em;
+        margin-top: -9.40em;
+        margin-left: -23em;
+        background-color: white;
+        box-shadow: inset 0 0px #28c4f4;
+        border: 2px groove ghostwhite;
+    }
+
+    .form-group1 {
+        margin-left: 120px;
+    }
+
+    .form-group2 {
+        margin-top: -25px;
+        margin-left: 105px;
+    }
+
+    .forgottitle {
+        margin-left: 160px;
+        text-shadow: 1px 1px 1px #000000;
+        color: lightgray;
+    }
+
+    .forgotpassfooter {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 38em;
+        height: 18em;
+        margin-top: 14.30em;
+        margin-left: -16em;
+        color: black;
+        font-weight: 900;
+        font-size: 12px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .verifypP1 {
+        color: #f37946;
+        font-weight: 700;
+        font-size: 17px;
+        margin-top:117px;
+    }
+
+    .verifypP2 {
+        margin-top:-17px;
+        font-size: 14.5px;
+        color: #333;
+        font-weight: 100;
+        margin-left: 20px;
+        overflow: auto;
+    }
+
+    .formP1 {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 30em;
+        height: 27em;
+        margin-top: 3.60em;
+        margin-left: -10.70em;
+    }
+
+    .Mobileresetpassbox {
+        border-radius: 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 47em;
+        max-width: 46em;
+        height: 21.20em;
+        margin-top: -9.30em;
+        margin-left: -23em;
+        border: 2px groove ghostwhite;
+        background-color: white;
+    }
+
+    .form-group{
+        margin-top:-12px;
+    }
+
+    .form-horizontal{
+        margin-left:0px;
+    }
+
+    .form-horizonta12 {
+        margin-left: 100px;
+    }
+
+    .Resetpasstitle {
+        margin-left: 115px;
+        text-shadow: 1px 1px 1px #000000;
+        color: lightgray;
+    }
+
+    .resetpassfooter {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 38em;
+        height: 18em;
+        margin-top: 14.20em;
+        margin-left: -16em;
+        color: black;
+        font-weight: 900;
+        font-size: 12px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+}
+
+    /*this is for checkbox datalist*/
+    div.div {
+        display: inherit;
+    }
+
+    input.input {
+        width: 195px;
+        border-style: solid;
+        border-color: #FFDF00;
+        border-width: 2px;
+    }
+
+    span.span {
+        margin-left: 08px;
+        font-family: sans-serif;
+    }
+
+    fieldset.group {
+        margin: -5px;
+        padding: 0px;
+        margin-bottom: 1.25em;
+        padding: .125em;
+        border-style: groove;
+        border-color: #28c4f4;
+        border-width: 2px;
+        /*width: auto;*/
+        position: absolute;
+        margin-top: 50px;
+        background: #FFF;
+        overflow: auto;
+        height: 1280px;
+        width: 225px;
+    }
+
+        fieldset.group legend {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            margin-left: 05px;
+            font-size: 100%;
+            color: #293f50;
+        }
+
+    ul.checkbox {
+        margin: 0;
+        padding: 0;
+        margin-left: 25px;
+        list-style: none;
+    }
+
+        ul.checkbox li input {
+            margin-right: .25em;
+        }
+
+        ul.checkbox li {
+            border: 1px transparent solid;
+        }
+
+            ul.checkbox li label {
+                margin-left: 0px;
+            }
+
+            ul.checkbox li:hover,
+            ul.checkbox li.focus {
+                background-color: lightsteelblue;
+                border: 1px gray solid;
+                width: 12em;
+            }
+
+    .required {
+        font-size: 75%;
+        color: blue;
+    }
+    /*this is for checkbox datalist*/
+
