@@ -1,0 +1,105 @@
+﻿<link href="../../Content/styling.css" rel="stylesheet" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<link href="../../Content/bootstrap.css" rel="stylesheet" />
+<script src="../../Scripts/jquery-3.3.1.js"></script>
+<script src="../../Library/angular.min.js"></script>
+
+<!--Start Preloader -->
+<div class="preloader"></div>
+
+<p id="footertips" class="Tipfooter" style="margin-top:307px; font-size:12px; margin-left:-125px;">www.primeshire.tech</p>
+<section class="top-bar-area" ng-app="app">
+
+    <div class="container" style="margin-top:-150px;">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4" style="color:#f37946;position:fixed;top:50%;left:50%;margin-top:-11em;margin-left:-8em; font-size:18px;font-weight:600;">
+                    <span onclick="homepage()"><a href="#" style="color:#f37946;" id="golbalschoolname"></a></span><br />
+                </div>
+                <script>
+                    function homepage() {
+                        var varRole = localStorage.getItem("vRole");
+                        if (varRole === "Super Admin") {
+                            window.location.href = "/Home/MobileIndex";
+                        } else { window.location.href = "/Home/MobileIndex"; }
+                    }
+
+                    let idleTime = 0;
+                    $(document).ready(function () {
+                        //Increment the idle time counter every minute.
+                        idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+
+                        //Zero the idle timer on mouse movement.
+                        $('body').mousemove(function (e) {
+                            idleTime = 0;
+                        });
+
+                        $('body').keypress(function (e) {
+                            idleTime = 0;
+                        });
+
+                        $('body').click(function () {
+                            idleTime = 0;
+                        });
+
+                        function timerIncrement() {
+                            idleTime = idleTime + 1;
+                            if (idleTime > 6) {
+                                window.location.href = "/Home/MobileLogin";
+                            }
+                        }
+                    });
+
+                </script>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="containerid">    
+        <div class="col-md-12">
+            <div class="row">
+                <div class="Mobileindexbox">
+                    <div class="formclass" id="clmenu">
+                        <ul class="list-inline" ng-mouseleave="leave()">
+                            <li style="margin-left:35px; height:35px;width:345px; margin-top:-35px;" ng-mouseenter="mouseover1()" onclick="menu()" id="entry"><a href="@Url.Action("MobileEntry", "Home")" class="glyphicon glyphicon-baby-formula" style="position:absolute;margin-top:5px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CLIENT ENTRY FORM</span></a></li>
+                            <li style="margin-left:35px; height:35px;width:345px; margin-top:-13px;" ng-mouseenter="mouseover2()" onclick="menu()" id="case_notes"><a href="@Url.Action("MobileCasenotes", "Home")" class="glyphicon glyphicon-education" style="position:absolute;margin-top:34px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CASE NOTES</span></a></li>
+                            <li style="margin-left:35px; height:35px;width:345px; margin-top:-10px;" ng-mouseenter="mouseover3()" onclick="menu()" id="patient_overview"><a href="@Url.Action("MobilePatientOverview", "Home")" class="glyphicon glyphicon-home" style="position:absolute;margin-top:64px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CLIENT OVERVIEW</span></a></li>
+                            <li style="margin-left:35px; height:35px;width:345px; margin-top:-13px;" ng-mouseenter="mouseover4()" onclick="menu()" id="upload_csv"><a href="@Url.Action("MobileUploadcsv", "Home")" class="glyphicon glyphicon-sort-by-alphabet" style="position:absolute;margin-top:94px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">CLIENT UPLOAD</span></a></li>
+                            <li style="margin-left:35px; height:35px;width:345px; margin-top:-15px;" ng-mouseenter="mouseover5()" onclick="menu()" id="manageconsole"><a href="@Url.Action("MobileManageconsoleoption", "Home")" class="glyphicon glyphicon-th" style="position:absolute;margin-top:124px; margin-left:5px;"> <span style="color:#f37946; font-weight:600; font-size:21px;font-family:Arial, Helvetica, sans-serif;">MANAGEMENT CONSOLE</span></a></li>
+                        </ul>
+                    </div>
+
+                    <script>
+                        let vskip;
+                        $('.nav-stacked li').click(function () {
+                            $('.nav-stacked li').removeClass('active');
+                            $(this).addClass('active');
+                        });
+
+                        function menu() {
+                            vskip = 1;
+                        }
+                    </script>
+                    <div class="mobileindexfooter">
+                        <p style="color:black; font-weight:900; font-size:13px;">&copy; @DateTime.Now.Year <a href="https://www.primeshire.tech/" onmouseover="mouseover()" onmouseout="mouseout()" rel="noopener noreferrer" target="_blank" style="text-shadow: 2px 1px 0px #000000; color:cornflowerblue;font-weight:bolder; font-size:14px;">Primeshire Technologies. </a> <span style="margin-left:1px;"><span style="margin-left:1px;">All Rights Reserved</span></span> <span style="margin-left:5px;color:darkslategrey;font-weight:900;font-family:Tahoma;">V 1.0.6</span></p>
+                    </div>
+                </div>
+                <script>
+                    function mouseover() {
+                        document.getElementById("footertips").style.visibility = "visible";
+                    }
+
+                    function mouseout() {
+                        document.getElementById("footertips").style.visibility = "hidden";
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <script src="../../Scripts/multi.js"></script>
+</section>
+
+

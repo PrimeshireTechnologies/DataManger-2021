@@ -1,0 +1,122 @@
+﻿
+/* Tablet Style Sheet Portrait */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    .weclass {
+        color: #f37946;
+        font-weight: 700;
+        font-size: 33px;
+        margin-left: 250px;
+        margin-top:-85px;
+    }
+
+    .pleaseclass {
+        font-size: 17.5px;
+        /*color: #333;*/
+        color: darkgrey;
+        font-weight: 500;
+        overflow: auto;
+        margin-left: 370px;
+        text-shadow: 1.05px 1.05px 0px #000000;
+    }
+
+    .formclass {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 30em;
+        height: 27em;
+        margin-top: -15em;
+        margin-left: -12em;
+    }
+
+    .ifclass {
+        margin-top: -10px;
+        font-size: 17.5px;
+        /*color: #333;*/
+        color: darkgrey;
+        font-weight: 500;
+        margin-left: 275px;
+        text-shadow: 1.05px 1.05px 0px #000000;
+    }
+}
+
+/* Tablet Style Sheet Landscape*/
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    .weclass {
+        color: #f37946;
+        font-weight: 700;
+        font-size: 33px;
+        margin-left: 250px;
+        margin-top: 30px;
+    }
+
+    .pleaseclass {
+        font-size: 17.5px;
+        /*color: #333;*/
+        color: darkgrey;
+        font-weight: 500;
+        overflow: auto;
+        margin-left: 370px;
+        text-shadow: 1.05px 1.05px 0px #000000;
+    }
+
+    .formclass {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 30em;
+        height: 27em;
+        margin-top: -5em;
+        margin-left: -12em;
+    }
+
+    .ifclass {
+        margin-top: -10px;
+        font-size: 17.5px;
+        /*color: #333;*/
+        color: darkgrey;
+        font-weight: 500;
+        margin-left: 275px;
+        text-shadow: 1.05px 1.05px 0px #000000;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1025px) {
+    .weclass {
+        color: #f37946;
+        font-weight: 700;
+        font-size: 33px;
+        margin-left:250px;
+    }
+
+    .pleaseclass {
+        font-size: 16.5px;
+        /*color: #333;*/
+        color: darkgrey;
+        font-weight: 500;
+        overflow: auto;
+        margin-left: 370px;
+        text-shadow: 1.05px 1.05px 0px #000000;
+    }
+    
+    .formclass {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 30em;
+        height: 27em;
+        margin-top: -10em;
+        margin-left: -12em;
+    }
+
+    .ifclass {
+        margin-top: -10px;
+        font-size: 16.5px;
+        /*color: #333;*/
+        color: darkgrey;
+        font-weight: 500;
+        margin-left: 275px;
+        text-shadow: 1.05px 1.05px 0px #000000;
+    }
+}
