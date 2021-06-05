@@ -1,0 +1,2 @@
+﻿//let globalhistoryID;
+var globalhistoryID;

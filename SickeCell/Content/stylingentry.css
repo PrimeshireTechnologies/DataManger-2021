@@ -1,0 +1,1701 @@
+﻿
+@import url('../assets/preloader/spinners.css');
+@import url('../assets/preloader/pulse.css');
+
+/* Mobile Phone Styles Portrait*/
+@media only screen and (min-width: 1px) and (max-width: 400px) {
+    .lbltitle {
+        font-size: 15px;
+        font-weight: 700;
+        margin-left: 20px;
+        color: #f37946;
+    }
+
+    .boxed_wrapper{
+        margin-top:-305px;
+    }
+
+    .Mobileentrybox {
+        border-style: groove;
+        border-color: ghostwhite;
+        border-width: 2px;
+        border-radius: 12px;
+        height: 100%;
+        max-height: 100%;
+        width: auto;
+        max-width: 100%;
+        margin-left: 3px;
+    }
+
+    .div {
+        width: auto;        
+        margin-left:20px;
+    }
+    .addressstyle {
+        width: 26%;
+    }
+
+    .lbltitlesection {
+        color: darkslategray;
+        font-weight: 600;
+        font-size: 13px;
+        width: auto;
+    }
+    .lbltitlesection2 {
+        color: darkslategray;
+        font-weight: 700;
+        font-size: 10px;
+        width: auto;
+    }
+    .form-control {
+        max-width:80%;
+    }
+
+    input[type=search] {
+        width: 285px;
+        height: 30px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+    input[type=tel] {
+        width: 285px;
+        height: 28px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+    input[type=text] {
+        width: 285px;
+        height: 28px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+    input[type=date] {
+        width: 285px;
+        height: 28px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+    input[type=number] {
+        width: 285px;
+        height: 28px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+    input[type=email] {
+        width: 285px;
+        height: 28px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+
+    .reside1 {
+        visibility: hidden;
+        display: none;
+    }
+    .reside2 {
+        visibility: visible;
+    }
+
+    .cell1 {
+        visibility: hidden;
+        display: none;
+    }
+    .cell2 {
+        visibility: visible;
+    }
+
+    .hydroxyurea {
+        visibility: hidden;
+        display: none;
+    }
+    .hydroxyurea2 {        
+        visibility: visible;
+    }
+
+    .curruse {
+        visibility: hidden;
+        display: none;
+    }
+    .curruse2 {        
+        visibility: visible;
+    }
+
+    .copyright-area {       
+        background-color: #F0F2F6;
+        margin-top: 20px;        
+        margin-left: -343px;
+        width: 50em;        
+    }
+    .copyright {
+        margin-left: -60px;
+        overflow:scroll;
+    }
+
+    .Tooltip {
+        top: 50%;
+        left: 50%;
+        margin-top: -5em;
+        margin-left: 2em;
+        font-size: 12px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: silver;
+        width: 120px;
+        text-align: center;
+        background-color: ghostwhite;
+        visibility: hidden;
+        border-radius: 3px;
+        height: 24px;
+        position: fixed;
+    }
+
+    #dob1 {
+        margin-top: 3px;
+        margin-left: 62px;
+        height: 28px;
+        border-radius: 5px;
+        width: 200px;
+        max-width: 127px;
+        font-size: 13px;
+        background-color: white;
+        color: black;
+        border-style: solid;
+        border-width: 1.08px;
+        border-color:lightgray;
+    }
+
+    #save {
+        margin-left: 325px;
+        width: 90px;
+        border-radius: 05px;
+        height: 27px;
+        margin-top: -10px;
+        background-color: #436280;
+        color: white;
+    }
+
+    .account4{
+        width:120px;
+        max-width:117px;
+    }
+
+    #lblclientid {
+        color: darkslategrey;
+        font-weight: 600;        
+    }
+
+    #lbllastname {
+        color:darkslategrey;
+        font-weight:600;
+    }
+
+    #lblfirstname {
+        color: darkslategrey;
+        font-weight: 600;
+    }
+
+    #lblmi {
+        color: darkslategrey;
+        font-weight: 600;
+    }
+
+    #lbluniqueid {
+        color: darkslategrey;
+        font-weight: 600;
+    }
+
+    #countrycode {
+        width: 305px;
+        max-width: 305px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #countrycodedes {
+        width: 305px;
+        max-width: 305px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #cpnumber {
+        width: 305px;
+        max-width: 305px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #sickdiag {
+        width: 305px;
+        max-width: 305px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #address {
+        max-width:100%; 
+        height:30px;
+    }
+
+    #address2 {
+        max-width: 100%;
+        height: 30px;
+    }
+
+    #city {
+        width: 250px;
+        max-width: 250px;
+        height: 30px;
+    }
+
+    #state {
+        width: 250px;
+        max-width: 250px;
+        height: 30px;
+    }
+
+    #zipcode {
+        width: 250px;
+        max-width: 250px;
+        height: 30px;
+    }
+
+    #hphone {
+        width: 250px;
+        max-width: 250px;
+        height: 30px;
+    }
+
+    #wphone {
+        width: 250px;
+        max-width: 250px;
+        height: 30px;
+    }
+
+    #pmppro {
+        max-width: 366px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #speprovider {
+        max-width: 366px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #ccucase {
+        max-width: 366px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #email {
+        max-width: 366px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    #medication {
+        max-width: 263px;
+        margin-left: -20px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #medication3 {
+        max-width: 263px;
+        margin-left: -20px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #medication4 {
+        max-width: 263px;
+        margin-left: -20px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #medication5 {
+        max-width: 263px;
+        margin-left: -20px;
+        height: 28px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile Phone Styles Landscape*/
+@media (min-width:401px) and (max-width: 767px) and (orientation: landscape) {
+    .boxed_wrapper {
+        margin-top: -320px;
+    }
+
+    .Mobileentrybox {
+        border-style: groove;
+        border-color: ghostwhite;
+        border-width: 2px;
+        border-radius: 12px;
+        height: 100%;
+        max-height: 100%;
+        width: auto;
+        max-width: 100%;
+        margin-left: 3px;
+        margin-top: 0px;
+    }
+
+    .copyright-area {
+        background-color: #F0F2F6;
+        margin-top: 20px;
+        margin-left: -170px;
+        width: 50em;
+    }
+
+    .copyright {
+        margin-left: -60px;
+        overflow: scroll;
+    }
+
+    #dob1 {
+        margin-top: 3px;
+        margin-left: 0px;
+        height: 30px;
+        border-radius: 5px;
+        width: 200px;
+        max-width: 127px;
+        font-size: 13px;
+        background-color: white;
+        color: black;
+        border-style: solid;
+        border-width: 2px;
+        border-color:darkslategrey;
+    }
+
+    #save {
+        margin-left: 470px;
+        width: 90px;
+        border-radius: 05px;
+        height: 27px;
+        margin-top: -20px;
+        background-color: #436280;
+        color: white;
+    }
+
+    .lbltitle {
+        font-size: 15px;
+        font-weight: 700;
+        margin-left: 20px;
+        color: #f37946;
+    }
+
+    .addressstyle {
+        width: 40%;
+    }
+
+    .account4 {
+        width: 120px;
+        max-width: 117px;
+    }
+
+    #lblclientid {
+        color: darkslategrey;
+        font-weight: 600;
+    }
+
+    #lbllastname {
+        color: darkslategrey;
+        font-weight: 600;
+    }
+
+    #lblfirstname {
+        color: darkslategrey;
+        font-weight: 600;
+    }
+
+    #lblmi {
+        color: darkslategrey;
+        font-weight: 600;
+    }
+
+    #lbluniqueid {
+        color: darkslategrey;
+        font-weight: 600;
+    }
+
+
+    #countrycode {
+        width: 305px;
+        max-width: 305px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #countrycodedes {
+        width: 305px;
+        max-width: 305px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #cpnumber {
+        width: 305px;
+        max-width: 305px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #sickdiag {
+        width: 305px;
+        max-width: 305px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #address {
+        max-width: 100%;
+        height: 30px;
+    }
+
+    #address2 {
+        max-width: 100%;
+        height: 30px;
+    }
+
+
+    #city {
+        width: 250px;
+        max-width: 250px;
+        height: 30px;
+    }
+
+    #state {
+        width: 250px;
+        max-width: 250px;
+        height: 30px;
+    }
+
+    #zipcode {
+        width: 250px;
+        max-width: 250px;
+        height: 30px;
+    }
+
+    #hphone {
+        width: 250px;
+        max-width: 250px;
+        height: 30px;
+    }
+
+    #wphone {
+        width: 250px;
+        max-width: 250px;
+        height: 30px;
+    }
+
+
+    #pmppro {
+        max-width: 366px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #speprovider {
+        max-width: 366px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #ccucase {
+        max-width: 366px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #email {
+        max-width: 366px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    #medication {
+        max-width: 263px;
+        margin-left: -20px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #medication3 {
+        max-width: 263px;
+        margin-left: -20px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #medication4 {
+        max-width: 263px;
+        margin-left: -20px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #medication5 {
+        max-width: 263px;
+        margin-left: -20px;
+        height: 28px;
+        font-size: 14px;
+    }
+}
+
+    /* Tablet Style Sheet Portrait */
+    @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+        .lbltitle {
+            font-size: 15px;
+            font-weight: 700;
+            margin-left: 20px;
+            color: #f37946;
+        }
+
+        .boxed_wrapper {
+            margin-top: 35px;
+            width: auto;
+            height: auto;                   
+        }
+
+        .Mobileentrybox {
+            border-style: groove;
+            border-color: ghostwhite;
+            border-width: 2px;
+            border-radius: 12px;
+            height: 100%;
+            max-height: 100%;
+            width: auto;
+            max-width: 100%;
+            margin-left: 3px;
+        }
+
+        .div {
+            width: auto;
+            margin-left: 20px;
+        }
+
+        .addressstyle {
+            width: 26%;
+        }
+
+        .lbltitlesection {
+            color: darkslategray;
+            font-weight: 600;
+            font-size: 13px;
+            width: auto;
+            max-width: 100%;
+        }
+
+        .lbltitlesection2 {
+            color: darkslategray;
+            font-weight: 700;
+            font-size: 10px;
+            width: auto;
+        }
+
+        .form-control {
+            max-width: 80%;
+        }
+
+        input[type=search] {
+            width: 285px;
+            height: 30px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 22px;
+            border-radius: 6px;
+            border: 1px solid #bbb;
+        }
+
+        input[type=tel] {
+            width: 285px;
+            height: 28px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 22px;
+            border-radius: 6px;
+            border: 1px solid #bbb;
+        }
+
+        input[type=text] {
+            width: 285px;
+            height: 28px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 22px;
+            border-radius: 6px;
+            border: 1px solid #bbb;
+        }
+
+        input[type=date] {
+            width: 285px;
+            height: 28px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 22px;
+            border-radius: 6px;
+            border: 1px solid #bbb;
+        }
+
+        input[type=number] {
+            width: 285px;
+            height: 28px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 22px;
+            border-radius: 6px;
+            border: 1px solid #bbb;
+        }
+
+        input[type=email] {
+            width: 285px;
+            height: 28px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 22px;
+            border-radius: 6px;
+            border: 1px solid #bbb;
+        }
+
+        .reside1 {
+            visibility: hidden;
+            display: none;
+        }
+
+        .reside2 {
+            visibility: visible;
+        }
+
+        .cell1 {
+            visibility: hidden;
+            display: none;
+        }
+
+        .cell2 {
+            visibility: visible;
+        }
+
+        .hydroxyurea {
+            visibility: hidden;
+            display: none;
+        }
+
+        .hydroxyurea2 {
+            visibility: visible;
+        }
+
+        .curruse {
+            visibility: hidden;
+            display: none;
+        }
+
+        .curruse2 {
+            visibility: visible;
+        }
+
+        .copyright-area {
+            background-color: #F0F2F6;
+            margin-top: 20px;
+            margin-left: -343px;
+            width: 50em;
+        }
+
+        .copyright {
+            margin-left: -60px;
+            overflow: scroll;
+        }
+
+        .Tooltip {
+            top: 50%;
+            left: 50%;
+            margin-top: -21em;
+            margin-left: -5em;
+            font-size: 12px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: silver;
+            width: auto;
+            text-align: center;
+            background-color: ghostwhite;
+            visibility: hidden;
+            border-radius: 3px;
+            height: 22px;
+            vertical-align: middle;
+            position: fixed;
+        }
+
+        #dob1 {
+            margin-top: 3px;
+            margin-left:2px;
+            height: 28px;
+            border-radius: 5px;
+            width: 200px;
+            max-width: 127px;
+            font-size: 13px;
+            background-color: white;
+            color: black;
+            border-style: solid;
+            border-width: 1.08px;
+            border-color: lightgray;
+        }
+
+        #save {
+            margin-left: 510px;
+            width: 90px;
+            border-radius: 05px;
+            height: 27px;
+            margin-top: -20px;
+            background-color: #436280;
+            color: white;
+        }
+
+        .account4 {
+            width: 120px;
+            max-width: 117px;
+        }
+
+        #deceasedyes {
+            width: 20px;
+            height: 20px;
+        }
+
+        #deceasedno {
+            margin-top: 10px;
+            width: 50px;
+            height: 20px;
+            margin-left: 0px;
+        }
+
+        #lblclientid {
+            color: darkslategrey;
+            font-weight: 600;
+        }
+
+        #lbllastname {
+            color: darkslategrey;
+            font-weight: 600;
+        }
+
+        #lblfirstname {
+            color: darkslategrey;
+            font-weight: 600;
+        }
+
+        #lblmi {
+            color: darkslategrey;
+            font-weight: 600;
+        }
+
+        #lbluniqueid {
+            color: darkslategrey;
+            font-weight: 600;
+        }
+
+
+        #countrycode {
+            width: 305px;
+            max-width: 305px;
+            height: 28px;
+            font-size: 14px;
+        }
+
+        #countrycodedes {
+            width: 305px;
+            max-width: 305px;
+            height: 28px;
+            font-size: 14px;
+        }
+
+        #cpnumber {
+            width: 305px;
+            max-width: 305px;
+            height: 28px;
+            font-size: 14px;
+        }
+
+        #sickdiag {
+            width: 305px;
+            max-width: 305px;
+            height: 28px;
+            font-size: 14px;
+        }
+
+        #address {
+            max-width: 100%;
+            height: 30px;
+        }
+
+        #address2 {
+            max-width: 100%;
+            height: 30px;
+        }
+
+
+        #city {
+            width: 250px;
+            max-width: 250px;
+            height: 30px;
+        }
+
+        #state {
+            width: 250px;
+            max-width: 250px;
+            height: 30px;
+        }
+
+        #zipcode {
+            width: 250px;
+            max-width: 250px;
+            height: 30px;
+        }
+
+        #hphone {
+            width: 250px;
+            max-width: 250px;
+            height: 30px;
+        }
+
+        #wphone {
+            width: 250px;
+            max-width: 250px;
+            height: 30px;
+        }
+
+        #pmppro {
+            max-width: 366px;
+            height: 28px;
+            font-size: 14px;
+        }
+
+        #speprovider {
+            max-width: 366px;
+            height: 28px;
+            font-size: 14px;
+        }
+
+        #ccucase {
+            max-width: 366px;
+            height: 28px;
+            font-size: 14px;
+        }
+
+        #email {
+            max-width: 366px;
+            height: 28px;
+            font-size: 12px;
+        }
+
+        #medication {
+            max-width: 263px;
+            margin-left: -20px;
+            height: 28px;
+            font-size: 14px;
+        }
+        #medication3 {
+            max-width: 263px;
+            margin-left: -20px;
+            height: 28px;
+            font-size: 14px;
+        }
+        #medication4 {
+            max-width: 263px;
+            margin-left: -20px;
+            height: 28px;
+            font-size: 14px;
+        }
+        #medication5 {
+            max-width: 263px;
+            margin-left: -20px;
+            height: 28px;
+            font-size: 14px;
+        }
+    }
+
+    /* Tablet Style Sheet Landscape*/
+/*@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape) {
+    .lbltitle {
+        font-size: 15px;
+        font-weight: 700;
+        margin-left: 20px;
+        color: #f37946;
+    }
+
+    .boxed_wrapper {
+        margin-top: 35px;
+        width: auto;
+        height: auto;
+        border-style: groove;
+        border-color: ghostwhite;
+        border-width: 3px;
+        border-radius:12px;
+    }
+
+    .Mobileentrybox {
+        /*border-style: groove;*/
+        border-style:none;
+        border-color: ghostwhite;
+        border-width: 2px;
+        border-radius: 12px;
+        height: 100%;
+        max-height: 100%;
+        width: auto;
+        max-width: 100%;
+        margin-left: 3px;
+    }
+
+    .div {
+        width: auto;
+        margin-left: 20px;
+    }
+
+    .addressstyle {
+        width: 26%;
+    }
+
+    .lbltitlesection {
+        color: darkslategray;
+        font-weight: 600;
+        font-size: 13px;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .lbltitlesection2 {
+        color: darkslategray;
+        font-weight: 700;
+        font-size: 10px;
+        width: auto;
+    }
+
+    .form-control {
+        max-width: 80%;
+    }
+
+    input[type=search] {
+        width: 285px;
+        height: 30px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+
+    input[type=tel] {
+        width: 285px;
+        height: 28px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+
+    input[type=text] {
+        width: 285px;
+        height: 28px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+
+    input[type=date] {
+        width: 285px;
+        height: 28px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+
+    input[type=number] {
+        width: 285px;
+        height: 28px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+
+    input[type=email] {
+        width: 285px;
+        height: 28px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 22px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+
+    .reside1 {
+        visibility: hidden;
+        display: none;
+    }
+
+    .reside2 {
+        visibility: visible;
+    }
+
+    .cell1 {
+        visibility: hidden;
+        display: none;
+    }
+
+    .cell2 {
+        visibility: visible;
+    }
+
+    .hydroxyurea {
+        visibility: hidden;
+        display: none;
+    }
+
+    .hydroxyurea2 {
+        visibility: visible;
+    }
+
+    .curruse {
+        visibility: hidden;
+        display: none;
+    }
+
+    .curruse2 {
+        visibility: visible;
+    }
+
+    .copyright-area {
+        background-color: #F0F2F6;
+        margin-top: 20px;
+        margin-left: -343px;
+        width: 50em;
+    }
+
+    .copyright {
+        margin-left: -60px;
+        overflow: scroll;
+    }
+
+    .Tooltip {
+        top: 50%;
+        left: 50%;
+        margin-top: -21em;
+        margin-left: -5em;
+        font-size: 12px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: silver;
+        width: auto;
+        text-align: center;
+        background-color: ghostwhite;
+        visibility: hidden;
+        border-radius: 3px;
+        height: 22px;
+        vertical-align: middle;
+        position: fixed;
+    }
+
+    #dob1 {
+        margin-top: 3px;
+        margin-left: 2px;
+        height: 28px;
+        border-radius: 5px;
+        width: 200px;
+        max-width: 127px;
+        font-size: 13px;
+        background-color: white;
+        color: black;
+        border-style: solid;
+        border-width: 1.08px;
+        border-color: lightgray;
+    }
+
+    #save {
+        margin-left: 510px;
+        width: 90px;
+        border-radius: 05px;
+        height: 27px;
+        margin-top: -20px;
+        background-color: #436280;
+        color: white;
+    }
+
+    .account4 {
+        width: 120px;
+        max-width: 117px;
+    }
+
+    #deceasedyes {
+        width: 20px;
+        height: 20px;
+    }
+
+    #deceasedno {
+        margin-top: 10px;
+        width: 50px;
+        height: 20px;
+        margin-left: 0px;
+    }
+
+    #clientid {
+        width: 192px;
+        max-width: 191px;
+    }
+
+    #lname {
+        width: 192px;
+        max-width: 191px;
+        margin-left: -64px;
+    }
+
+    #fname {
+        width: 192px;
+        max-width: 191px;
+        margin-left: -129px;
+    }
+
+    #mi {
+        width: 192px;
+        max-width: 191px;
+        margin-left: -195px;
+    }
+
+    #uniqueid {
+        width: 192px;
+        max-width: 191px;
+        margin-left: -260px;
+    }
+
+    #lblclientid {
+        color: darkslategrey;
+        font-weight: 600;
+    }
+
+    #lbllastname {
+        color: darkslategrey;
+        font-weight: 600;
+        margin-left:-60px;
+    }
+
+    #lblfirstname {
+        color: darkslategrey;
+        font-weight: 600;
+        margin-left:-123px;
+    }
+
+    #lblmi {
+        color: darkslategrey;
+        font-weight: 600;
+        margin-left: -190px;
+    }
+
+    #lbluniqueid {
+        color: darkslategrey;
+        font-weight: 600;
+        margin-left: -250px;
+    }
+
+    #dob {
+        width: 192px;
+        max-width: 191px;
+    }
+    #age {
+        width: 192px;
+        max-width: 191px;
+        margin-left: -64px;
+    }
+    #agegroup {
+        width: 192px;
+        max-width: 191px;
+        margin-left: -129px;
+    }
+    #ageat {
+        width: 192px;
+        max-width: 191px;
+        margin-left: -195px;
+    }
+    #gender {
+        width: 192px;
+        max-width: 191px;
+        margin-left: -260px;
+    }
+
+    #lbldateofbirth{
+
+    }
+
+    #lblage {
+        margin-left:-60px;
+    }
+
+    #lblagegroup {
+        margin-left: -122px;
+    }
+
+    #lblageatrecruitement {
+        margin-left: -188px;
+    }
+
+    #lblgender {
+        margin-left: -253px;
+    }
+
+    #race {
+        width: 295px;
+        max-width: 294px;
+    }
+    #ethnicity {
+        width: 265px;
+        max-width: 264px;
+        margin-left:-80px;
+    }
+    #eligibility {
+        width: 203px;
+        max-width: 202px;
+        margin-left:-189px;
+        height:35px;
+        max-height:34px;
+    }
+    #sssno {
+        width: 203px;
+        max-width: 202px;
+        margin-left: -243px;
+        height: 35px;
+        max-height: 34px;
+    }
+
+    #lblraceethnicity{
+        margin-left:-75px;
+    }
+    #lbleligibility {
+        margin-left: -180px;
+    }
+    #lblsocialsecurity {
+        margin-left: -240px;
+    }
+
+    #deceasedyes{
+        margin-top:10px;  
+        margin-left:2px;
+    }
+
+    #deceasedno {
+        margin-top: 10px;        
+        margin-left:-5px;
+    }
+
+    #lblnooption{
+        margin-left:-53px;
+    }
+
+    #lblno_2 {
+        margin-left: -42px;
+    }
+
+    #countrycode {
+        width: 242px;
+        max-width: 241px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #countrycodedes {
+        width: 242px;
+        max-width: 241px;
+        height: 28px;
+        font-size: 14px;
+        margin-left: -78px;
+    }
+
+    #cpnumber {
+        width: 242px;
+        max-width: 241px;
+        height: 28px;
+        font-size: 14px;
+        margin-left: -154px;
+    }
+
+    #sickdiag {
+        width: 242px;
+        max-width: 241px;
+        height: 28px;
+        font-size: 14px;
+        margin-left: -230px;
+    }
+
+    #address {
+        width: 738px;
+        max-width: 736px;
+        height: 30px;
+    }
+
+    #address2 {
+        width: 738px;
+        max-width: 736px;
+        height: 30px;
+    }
+
+    #lblcountry_code_desc{
+        margin-left:-72px;
+    }
+    #lbl_phone_number {
+        margin-left: -150px;
+    }
+    #lbl_sicklecell_diag {
+        margin-left: -225px;
+    }
+
+    #city {
+        width: 193px;
+        max-width: 192px;
+        height: 30px;
+    }
+
+    #state {
+        width: 193px;
+        max-width: 192px;
+        height: 30px;
+        margin-left: -58px;
+    }
+
+    #zipcode {
+        width: 193px;
+        max-width: 192px;
+        height: 30px;
+        margin-left: -117px;
+    }
+
+    #hphone {
+        width: 193px;
+        max-width: 192px;
+        height: 30px;
+        margin-left: -175px;
+    }
+
+    #wphone {
+        width: 193px;
+        max-width: 192px;
+        height: 30px;
+        margin-left: -233px;
+    }
+
+    #lblcity{
+
+    }
+    #lblstate {
+      margin-left:-50px;
+    }
+    #lblzipcode {
+      margin-left: -110px;
+    }
+    #lblhomephone {
+      margin-left: -165px;
+    }
+    #lblworkphone {
+      margin-left: -227px;
+    }
+
+    
+    #pmppro {
+        max-width: 242px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    #speprovider {
+        max-width: 242px;
+        height: 28px;
+        font-size: 14px;
+        margin-left: 43px;
+    }
+
+    #ccucase {
+        max-width: 242px;
+        height: 28px;
+        font-size: 14px;
+        margin-left:86px;
+    }
+
+    #email {
+        max-width: 243px;
+        height: 28px;
+        font-size: 12px;
+        margin-left: 129px;
+    }
+
+    .reside2 {
+        margin-left:-110px;
+        margin-top:55px;
+        margin-left:-820px;
+    }
+
+    #mothertel{
+        margin-left:-290px;
+    }
+    #fathertel {
+        margin-left: -290px;
+    }
+    #guardiantel {
+        margin-left: -290px;
+    }
+    #emercont1cellphone {
+        margin-left: -290px;
+    }
+    #emercont2cellphone {
+        margin-left: -290px;       
+    }
+
+
+    #lblmothertel {
+        margin-left: -285px;
+    }
+    #lblfathertel {
+        margin-left: -285px;
+    }
+    #lblguardiantel {
+        margin-left: -285px;
+    }
+    #lblemercont1cellphone {
+        margin-left: -285px;
+    }
+    #lblemercont2cellphone {
+        margin-left: -285px;
+    }
+
+
+    #medication {
+        width:370px;
+        max-width: 369px;
+        margin-left: -20px;
+        height: 35px;
+        font-size: 16px;
+    }
+    #medication3 {
+        width: 370px;
+        max-width: 369px;
+        margin-left: -20px;
+        height: 35px;
+        font-size: 16px;
+    }
+    #medication4 {
+        width: 370px;
+        max-width: 369px;
+        margin-left: -20px;
+        height: 35px;
+        font-size: 16px;
+    }
+    #medication5 {
+        width: 370px;
+        max-width: 369px;
+        margin-left: -20px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    #saving {
+        margin-left: 130px;
+    }
+
+    .copyright-area {
+        margin-left:45px;
+        width: auto;
+    }
+}
+    
+    /* Desktop Styles */
+    /*@media only screen and (min-width: 961px) {*/
+     @media only screen and (min-width: 1025px) {
+        .moduletitle {
+            font-size: 18px;
+            font-weight: 700;
+            margin-left: 500px;
+            color: #f37946;
+        }
+
+        .lbltitle {
+            color: #f37946;
+        }
+
+        .entrybox {
+            top: 50%;
+            left: 50%;
+            border-style: solid;
+            border-color: #28c4f4;
+            border-width: 2px;
+            border-radius: 12px;
+            position: absolute;
+            /*height: 289%;*/
+            height: auto;
+            max-height: 173em;
+            width: 94em;
+            max-width: 100%;
+            margin-top: -20em;
+            /*margin-top: -22em;*/
+            margin-left: -47em;
+            /*border-style: solid;
+            border-color: #28c4f4;
+            border-width: 3px;
+            border-radius: 8px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 96em;
+            max-width:100%;
+            height: 40em;
+            margin-top: -18em;
+            margin-left: -48em;*/
+        }
+
+        .div {
+            width: 222px;
+            margin-left: -2px;
+        }
+
+        .addressstyle {
+            width: 100%;
+        }
+
+        .form-control {
+            max-width: 585px;
+            height: 28px;
+            font-size: 14px;
+        }
+
+        .lbltitlesection {
+            color: darkslategray;
+            font-weight: 600;
+            font-size: 14px;
+            width: auto;
+        }
+
+        .lbltitlesection2 {
+            color: darkslategray;
+            font-weight: 600;
+            font-size: 14px;
+            width: auto;
+        }
+
+        input[type=search] {
+            width: 560px;
+            height: 30px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 22px;
+            border-radius: 2px;
+            border: 1px solid #bbb;
+        }
+
+        .reside1 {
+            visibility: visible;
+        }
+
+        .reside2 {
+            visibility: hidden;
+            display: none;
+        }
+
+        .cell1 {
+            visibility: visible;
+        }
+
+        .cell2 {
+            visibility: hidden;
+            display: none;
+        }
+
+        .hydroxyurea {
+            visibility: visible;
+        }
+
+        .hydroxyurea2 {
+            visibility: hidden;
+            display: none;
+        }
+
+        .curruse {
+            visibility: visible;
+        }
+
+        .curruse2 {
+            visibility: hidden;
+            display: none;
+        }
+
+        .searbox {
+            visibility: hidden;
+        }
+
+        .copyright-area {
+            background-color: #F0F2F6;
+            margin-top: 1850px;
+            top: 50%;
+            left: 50%;
+            margin-left: -47em;
+            width: 94em;
+            position: absolute;
+            height: 20px;
+        }
+
+        .copyright {
+            margin-left: 150px;
+            margin-top: -10px;
+        }
+
+        #deceasedyes {
+            width: 20px;
+            height: 20px;
+        }
+
+        #deceasedno {
+            width: 50px;
+            height: 20px;
+            margin-left: -40px;
+        }
+
+        .swal-title {
+            margin: 0px;
+            font-size: 16px;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+            margin-bottom: 28px;
+        }
+
+        .Tooltip {
+            top: 50%;
+            left: 50%;
+            margin-top: -11.35em;
+            margin-left: -47em;
+            font-size: 12px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: silver;
+            width: 170px;
+            text-align: center;
+            background-color: ghostwhite;
+            visibility: hidden;
+            border-radius: 3px;
+            height: 22px;
+            position: fixed;
+        }
+
+        /*________________Preloader_______________ */
+        .preloader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 999999999999;
+            background-color: rgba(255,255,255,1);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url('../Images/icon/preloader.gif');
+            content: "Loading . . . . . .";
+        }
+    }
+
+
+
+
+
+
+
+
+
