@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SickeCellModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_A4EB57_SickleCell.dbo.Information' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Information">
+          <Key>
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="ClientID" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" />
+          <Property Name="Middle_Initial" Type="varchar" MaxLength="100" />
+          <Property Name="UniqueID" Type="varchar" MaxLength="100" />
+          <Property Name="DOB" Type="varchar" MaxLength="10" />
+          <Property Name="Age" Type="varchar" MaxLength="100" />
+          <Property Name="AgeGroup" Type="varchar" MaxLength="100" />
+          <Property Name="Ageat" Type="varchar" MaxLength="100" />
+          <Property Name="Gender" Type="varchar" MaxLength="100" />
+          <Property Name="Race" Type="varchar" MaxLength="100" />
+          <Property Name="Ethnicity" Type="varchar" MaxLength="100" />
+          <Property Name="SSN" Type="varchar" MaxLength="100" />
+          <Property Name="Mobile_Number" Type="varchar" MaxLength="50" />
+          <Property Name="FullStreetAddress" Type="varchar(max)" />
+          <Property Name="FullStreetAddress2" Type="varchar(max)" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="State" Type="varchar" MaxLength="100" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="100" />
+          <Property Name="HomePhone" Type="varchar" MaxLength="100" />
+          <Property Name="WorkPhone" Type="varchar" MaxLength="100" />
+          <Property Name="CountyCode" Type="varchar" MaxLength="100" />
+          <Property Name="CountyCodeDescription" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="100" />
+          <Property Name="Eligibility" Type="varchar" MaxLength="100" />
+          <Property Name="SickleCellDiagnosis" Type="varchar" MaxLength="100" />
+          <Property Name="PMPProviderName" Type="varchar" MaxLength="100" />
+          <Property Name="Specialist" Type="varchar" MaxLength="100" />
+          <Property Name="CCUCase" Type="varchar" MaxLength="100" />
+          <Property Name="Email_Address" Type="varchar" MaxLength="100" />
+          <Property Name="ClientresideinruralID" Type="varchar" MaxLength="100" />
+          <Property Name="Nameofmother" Type="varchar" MaxLength="100" />
+          <Property Name="Address_Of_Mother" Type="varchar" MaxLength="100" />
+          <Property Name="Telephone_Of_Mother" Type="varchar" MaxLength="100" />
+          <Property Name="Nameoffather" Type="varchar" MaxLength="100" />
+          <Property Name="Address_Of_Father" Type="varchar" MaxLength="100" />
+          <Property Name="Telephone_Of_Father" Type="varchar" MaxLength="100" />
+          <Property Name="Nameofguardian" Type="varchar" MaxLength="100" />
+          <Property Name="Address_Of_Guardian" Type="varchar" MaxLength="100" />
+          <Property Name="Guardian_Telephone" Type="varchar" MaxLength="100" />
+          <Property Name="Emergency_Contact1" Type="varchar" MaxLength="100" />
+          <Property Name="Emergency_Contact1_HomePhone" Type="varchar" MaxLength="100" />
+          <Property Name="Emergency_Contact1_CellPhone" Type="varchar" MaxLength="100" />
+          <Property Name="Emergency_Contact2" Type="varchar" MaxLength="100" />
+          <Property Name="Emergency_Contact2_HomePhone" Type="varchar" MaxLength="100" />
+          <Property Name="Emergency_Contact2_CellPhone" Type="varchar" MaxLength="100" />
+          <Property Name="SicklecelltypeID" Type="varchar" MaxLength="100" />
+          <Property Name="Medication" Type="varchar" MaxLength="100" />
+          <Property Name="Medication2" Type="varchar" MaxLength="100" />
+          <Property Name="Medication3" Type="varchar" MaxLength="100" />
+          <Property Name="Medication4" Type="varchar" MaxLength="100" />
+          <Property Name="HydroxyureaheardID" Type="varchar" MaxLength="100" />
+          <Property Name="HydroxyureatakenID" Type="varchar" MaxLength="100" />
+          <Property Name="HydroxyureacurrentlyID" Type="varchar" MaxLength="100" />
+          <Property Name="HydroxyureapasttakenID" Type="varchar" MaxLength="100" />
+          <Property Name="Hydroxyureadosage" Type="varchar" MaxLength="100" />
+          <Property Name="Hydroxyureadosageunknown" Type="varchar" MaxLength="100" />
+          <Property Name="Hydroxyureacapsulescolor" Type="varchar" MaxLength="100" />
+          <Property Name="Hydroxyureadatelasttaken" Type="varchar" MaxLength="10" />
+          <Property Name="Hydroxyureadatepickedup" Type="varchar" MaxLength="10" />
+          <Property Name="Pharma1heardID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma1takenID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma1currentlyID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma1pasttakenID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma1dosage" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma1dosageunknown" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma1capsulescolor" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma1datelasttaken" Type="varchar" MaxLength="10" />
+          <Property Name="Pharma1datepickedup" Type="varchar" MaxLength="10" />
+          <Property Name="Pharma2heardID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma2takenID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma2currentlyID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma2pasttakenID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma2dosage" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma2dosageunknown" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma2capsulescolor" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma2datelasttaken" Type="varchar" MaxLength="10" />
+          <Property Name="Pharma2datepickedup" Type="varchar" MaxLength="10" />
+          <Property Name="Pharma3heardID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma3takenID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma3currentlyID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma3pasttakenID" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma3dosage" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma3dosageunknown" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma3capsulescolor" Type="varchar" MaxLength="100" />
+          <Property Name="Pharma3datelasttaken" Type="varchar" MaxLength="10" />
+          <Property Name="Pharma3datepickedup" Type="varchar" MaxLength="10" />
+          <Property Name="Comments" Type="varchar(max)" />
+          <Property Name="UserFirstName" Type="varchar" MaxLength="100" />
+          <Property Name="UserLastName" Type="varchar" MaxLength="100" />
+          <Property Name="TimeStamp" Type="varchar" MaxLength="100" />
+          <Property Name="Datenotescreated" Type="date" />
+          <Property Name="Total_Reimbursement_YTD_2020" Type="varchar" MaxLength="100" />
+          <Property Name="No_of_Paid_Inpatient_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="Total_Reimbursement_for_Inpatient_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="No_of_Paid_Dental_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="Total_Reimbursement_for_Dental_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="No_of_Paid_Home_Health_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="Total_Reimbursement_for_Home_Health_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="No_of_Paid_Professional_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="Total_Reimbursement_for_Professional_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="No_of_Paid_Long_term_Care_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="Total_Reimbursement_for_Long_term_Care_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="No_of_Paid_Outpatient_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="Total_Reimbursement_for_Outpatient_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="No_of_Paid_Pharmacy_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="Total_Reimbursement_for_Pharmacy_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="No_of_Paid_Compound_Drug_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="Total_Reimbursement_for_Compound_Drugs_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="No_of_Paid_Crossover_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="Total_Reimbursement_for_Crossover_Claims" Type="varchar" MaxLength="100" />
+          <Property Name="Adult_Day_Care" Type="varchar" MaxLength="100" />
+          <Property Name="Advanced_Practice_Nurse" Type="varchar" MaxLength="100" />
+          <Property Name="ADvantage_Home_Delivered_Meals" Type="varchar" MaxLength="100" />
+          <Property Name="Ambulatory_Surgical_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Architectural_Modification" Type="varchar" MaxLength="100" />
+          <Property Name="Audiology_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Capitated_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Chiropractic_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Clinic" Type="varchar" MaxLength="100" />
+          <Property Name="Clinics_OSA_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Dental" Type="varchar" MaxLength="100" />
+          <Property Name="Direct_Support" Type="varchar" MaxLength="100" />
+          <Property Name="Employee_Training_Specialist" Type="varchar" MaxLength="100" />
+          <Property Name="End_Stage_Renal_Disease" Type="varchar" MaxLength="100" />
+          <Property Name="Eye_Care_and_Exams" Type="varchar" MaxLength="100" />
+          <Property Name="Eyewear" Type="varchar" MaxLength="100" />
+          <Property Name="Group_Home" Type="varchar" MaxLength="100" />
+          <Property Name="Home_Health" Type="varchar" MaxLength="100" />
+          <Property Name="Homemaker_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Hospice" Type="varchar" MaxLength="100" />
+          <Property Name="ICF_ID_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Inpatient_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Insure_Oklahoma_ESI_Out_of_Pocket" Type="varchar" MaxLength="100" />
+          <Property Name="Insure_Oklahoma_ESI_Premium" Type="varchar" MaxLength="100" />
+          <Property Name="Laboratory_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Medical_Supplies_DMEPOS" Type="varchar" MaxLength="100" />
+          <Property Name="Medicare_Part_A_and_B_Buy_In_Payments" Type="varchar" MaxLength="100" />
+          <Property Name="Medicare_Part_D_Payments" Type="varchar" MaxLength="100" />
+          <Property Name="Mid_Level_Practitioner" Type="varchar" MaxLength="100" />
+          <Property Name="Nursing_Facility" Type="varchar" MaxLength="100" />
+          <Property Name="Nursing_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Nutritionist_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Other_Practitioner" Type="varchar" MaxLength="100" />
+          <Property Name="Outpatient_Hospital" Type="varchar" MaxLength="100" />
+          <Property Name="Personal_Care" Type="varchar" MaxLength="100" />
+          <Property Name="Physician" Type="varchar" MaxLength="100" />
+          <Property Name="Podiatry" Type="varchar" MaxLength="100" />
+          <Property Name="Prescribed_Drugs" Type="varchar" MaxLength="100" />
+          <Property Name="Psychiatric_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Residential_Behavior_Mgmt" Type="varchar" MaxLength="100" />
+          <Property Name="Respite_Care" Type="varchar" MaxLength="100" />
+          <Property Name="Room_and_Board" Type="varchar" MaxLength="100" />
+          <Property Name="School_Based_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Self_Directed_Care" Type="varchar" MaxLength="100" />
+          <Property Name="Specialized_Foster_Care_or_ID_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Targeted_Case_Manager" Type="varchar" MaxLength="100" />
+          <Property Name="Therapy_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Transportation_Emergency" Type="varchar" MaxLength="100" />
+          <Property Name="Transportation_Non_Emergency" Type="varchar" MaxLength="100" />
+          <Property Name="X_Ray_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Behavioral_Health_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Community_Mental_Health" Type="varchar" MaxLength="100" />
+          <Property Name="ESI" Type="varchar" MaxLength="100" />
+          <Property Name="Uncategorized_Services" Type="varchar" MaxLength="100" />
+          <Property Name="Other" Type="varchar" MaxLength="100" />
+          <Property Name="Oxbryta" Type="varchar" MaxLength="100" />
+          <Property Name="Adakvedo" Type="varchar" MaxLength="100" />
+          <Property Name="Dual_or_Non_Dual" Type="varchar" MaxLength="100" />
+          <Property Name="Deceased" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityContainer Name="SickeCellModelStoreContainer">
+          <EntitySet Name="Information" EntityType="Self.Information" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Information].[ClientID] AS [ClientID], 
+[Information].[FirstName] AS [FirstName], 
+[Information].[LastName] AS [LastName], 
+[Information].[Middle_Initial] AS [Middle_Initial], 
+[Information].[UniqueID] AS [UniqueID], 
+[Information].[DOB] AS [DOB], 
+[Information].[Age] AS [Age], 
+[Information].[AgeGroup] AS [AgeGroup], 
+[Information].[Ageat] AS [Ageat], 
+[Information].[Gender] AS [Gender], 
+[Information].[Race] AS [Race], 
+[Information].[Ethnicity] AS [Ethnicity], 
+[Information].[SSN] AS [SSN], 
+[Information].[Mobile_Number] AS [Mobile_Number], 
+[Information].[FullStreetAddress] AS [FullStreetAddress], 
+[Information].[FullStreetAddress2] AS [FullStreetAddress2], 
+[Information].[City] AS [City], 
+[Information].[State] AS [State], 
+[Information].[ZipCode] AS [ZipCode], 
+[Information].[HomePhone] AS [HomePhone], 
+[Information].[WorkPhone] AS [WorkPhone], 
+[Information].[CountyCode] AS [CountyCode], 
+[Information].[CountyCodeDescription] AS [CountyCodeDescription], 
+[Information].[PhoneNumber] AS [PhoneNumber], 
+[Information].[Eligibility] AS [Eligibility], 
+[Information].[SickleCellDiagnosis] AS [SickleCellDiagnosis], 
+[Information].[PMPProviderName] AS [PMPProviderName], 
+[Information].[Specialist] AS [Specialist], 
+[Information].[CCUCase] AS [CCUCase], 
+[Information].[Email_Address] AS [Email_Address], 
+[Information].[ClientresideinruralID] AS [ClientresideinruralID], 
+[Information].[Nameofmother] AS [Nameofmother], 
+[Information].[Address_Of_Mother] AS [Address_Of_Mother], 
+[Information].[Telephone_Of_Mother] AS [Telephone_Of_Mother], 
+[Information].[Nameoffather] AS [Nameoffather], 
+[Information].[Address_Of_Father] AS [Address_Of_Father], 
+[Information].[Telephone_Of_Father] AS [Telephone_Of_Father], 
+[Information].[Nameofguardian] AS [Nameofguardian], 
+[Information].[Address_Of_Guardian] AS [Address_Of_Guardian], 
+[Information].[Guardian_Telephone] AS [Guardian_Telephone], 
+[Information].[Emergency_Contact1] AS [Emergency_Contact1], 
+[Information].[Emergency_Contact1_HomePhone] AS [Emergency_Contact1_HomePhone], 
+[Information].[Emergency_Contact1_CellPhone] AS [Emergency_Contact1_CellPhone], 
+[Information].[Emergency_Contact2] AS [Emergency_Contact2], 
+[Information].[Emergency_Contact2_HomePhone] AS [Emergency_Contact2_HomePhone], 
+[Information].[Emergency_Contact2_CellPhone] AS [Emergency_Contact2_CellPhone], 
+[Information].[SicklecelltypeID] AS [SicklecelltypeID], 
+[Information].[Medication] AS [Medication], 
+[Information].[Medication2] AS [Medication2], 
+[Information].[Medication3] AS [Medication3], 
+[Information].[Medication4] AS [Medication4], 
+[Information].[HydroxyureaheardID] AS [HydroxyureaheardID], 
+[Information].[HydroxyureatakenID] AS [HydroxyureatakenID], 
+[Information].[HydroxyureacurrentlyID] AS [HydroxyureacurrentlyID], 
+[Information].[HydroxyureapasttakenID] AS [HydroxyureapasttakenID], 
+[Information].[Hydroxyureadosage] AS [Hydroxyureadosage], 
+[Information].[Hydroxyureadosageunknown] AS [Hydroxyureadosageunknown], 
+[Information].[Hydroxyureacapsulescolor] AS [Hydroxyureacapsulescolor], 
+[Information].[Hydroxyureadatelasttaken] AS [Hydroxyureadatelasttaken], 
+[Information].[Hydroxyureadatepickedup] AS [Hydroxyureadatepickedup], 
+[Information].[Pharma1heardID] AS [Pharma1heardID], 
+[Information].[Pharma1takenID] AS [Pharma1takenID], 
+[Information].[Pharma1currentlyID] AS [Pharma1currentlyID], 
+[Information].[Pharma1pasttakenID] AS [Pharma1pasttakenID], 
+[Information].[Pharma1dosage] AS [Pharma1dosage], 
+[Information].[Pharma1dosageunknown] AS [Pharma1dosageunknown], 
+[Information].[Pharma1capsulescolor] AS [Pharma1capsulescolor], 
+[Information].[Pharma1datelasttaken] AS [Pharma1datelasttaken], 
+[Information].[Pharma1datepickedup] AS [Pharma1datepickedup], 
+[Information].[Pharma2heardID] AS [Pharma2heardID], 
+[Information].[Pharma2takenID] AS [Pharma2takenID], 
+[Information].[Pharma2currentlyID] AS [Pharma2currentlyID], 
+[Information].[Pharma2pasttakenID] AS [Pharma2pasttakenID], 
+[Information].[Pharma2dosage] AS [Pharma2dosage], 
+[Information].[Pharma2dosageunknown] AS [Pharma2dosageunknown], 
+[Information].[Pharma2capsulescolor] AS [Pharma2capsulescolor], 
+[Information].[Pharma2datelasttaken] AS [Pharma2datelasttaken], 
+[Information].[Pharma2datepickedup] AS [Pharma2datepickedup], 
+[Information].[Pharma3heardID] AS [Pharma3heardID], 
+[Information].[Pharma3takenID] AS [Pharma3takenID], 
+[Information].[Pharma3currentlyID] AS [Pharma3currentlyID], 
+[Information].[Pharma3pasttakenID] AS [Pharma3pasttakenID], 
+[Information].[Pharma3dosage] AS [Pharma3dosage], 
+[Information].[Pharma3dosageunknown] AS [Pharma3dosageunknown], 
+[Information].[Pharma3capsulescolor] AS [Pharma3capsulescolor], 
+[Information].[Pharma3datelasttaken] AS [Pharma3datelasttaken], 
+[Information].[Pharma3datepickedup] AS [Pharma3datepickedup], 
+[Information].[Comments] AS [Comments], 
+[Information].[UserFirstName] AS [UserFirstName], 
+[Information].[UserLastName] AS [UserLastName], 
+[Information].[TimeStamp] AS [TimeStamp], 
+[Information].[Datenotescreated] AS [Datenotescreated], 
+[Information].[Total_Reimbursement_YTD_2020] AS [Total_Reimbursement_YTD_2020], 
+[Information].[No_of_Paid_Inpatient_Claims] AS [No_of_Paid_Inpatient_Claims], 
+[Information].[Total_Reimbursement_for_Inpatient_Claims] AS [Total_Reimbursement_for_Inpatient_Claims], 
+[Information].[No_of_Paid_Dental_Claims] AS [No_of_Paid_Dental_Claims], 
+[Information].[Total_Reimbursement_for_Dental_Claims] AS [Total_Reimbursement_for_Dental_Claims], 
+[Information].[No_of_Paid_Home_Health_Claims] AS [No_of_Paid_Home_Health_Claims], 
+[Information].[Total_Reimbursement_for_Home_Health_Claims] AS [Total_Reimbursement_for_Home_Health_Claims], 
+[Information].[No_of_Paid_Professional_Claims] AS [No_of_Paid_Professional_Claims], 
+[Information].[Total_Reimbursement_for_Professional_Claims] AS [Total_Reimbursement_for_Professional_Claims], 
+[Information].[No_of_Paid_Long_term_Care_Claims] AS [No_of_Paid_Long_term_Care_Claims], 
+[Information].[Total_Reimbursement_for_Long_term_Care_Claims] AS [Total_Reimbursement_for_Long_term_Care_Claims], 
+[Information].[No_of_Paid_Outpatient_Claims] AS [No_of_Paid_Outpatient_Claims], 
+[Information].[Total_Reimbursement_for_Outpatient_Claims] AS [Total_Reimbursement_for_Outpatient_Claims], 
+[Information].[No_of_Paid_Pharmacy_Claims] AS [No_of_Paid_Pharmacy_Claims], 
+[Information].[Total_Reimbursement_for_Pharmacy_Claims] AS [Total_Reimbursement_for_Pharmacy_Claims], 
+[Information].[No_of_Paid_Compound_Drug_Claims] AS [No_of_Paid_Compound_Drug_Claims], 
+[Information].[Total_Reimbursement_for_Compound_Drugs_Claims] AS [Total_Reimbursement_for_Compound_Drugs_Claims], 
+[Information].[No_of_Paid_Crossover_Claims] AS [No_of_Paid_Crossover_Claims], 
+[Information].[Total_Reimbursement_for_Crossover_Claims] AS [Total_Reimbursement_for_Crossover_Claims], 
+[Information].[Adult_Day_Care] AS [Adult_Day_Care], 
+[Information].[Advanced_Practice_Nurse] AS [Advanced_Practice_Nurse], 
+[Information].[ADvantage_Home_Delivered_Meals] AS [ADvantage_Home_Delivered_Meals], 
+[Information].[Ambulatory_Surgical_Services] AS [Ambulatory_Surgical_Services], 
+[Information].[Architectural_Modification] AS [Architectural_Modification], 
+[Information].[Audiology_Services] AS [Audiology_Services], 
+[Information].[Capitated_Services] AS [Capitated_Services], 
+[Information].[Chiropractic_Services] AS [Chiropractic_Services], 
+[Information].[Clinic] AS [Clinic], 
+[Information].[Clinics_OSA_Services] AS [Clinics_OSA_Services], 
+[Information].[Dental] AS [Dental], 
+[Information].[Direct_Support] AS [Direct_Support], 
+[Information].[Employee_Training_Specialist] AS [Employee_Training_Specialist], 
+[Information].[End_Stage_Renal_Disease] AS [End_Stage_Renal_Disease], 
+[Information].[Eye_Care_and_Exams] AS [Eye_Care_and_Exams], 
+[Information].[Eyewear] AS [Eyewear], 
+[Information].[Group_Home] AS [Group_Home], 
+[Information].[Home_Health] AS [Home_Health], 
+[Information].[Homemaker_Services] AS [Homemaker_Services], 
+[Information].[Hospice] AS [Hospice], 
+[Information].[ICF_ID_Services] AS [ICF_ID_Services], 
+[Information].[Inpatient_Services] AS [Inpatient_Services], 
+[Information].[Insure_Oklahoma_ESI_Out_of_Pocket] AS [Insure_Oklahoma_ESI_Out_of_Pocket], 
+[Information].[Insure_Oklahoma_ESI_Premium] AS [Insure_Oklahoma_ESI_Premium], 
+[Information].[Laboratory_Services] AS [Laboratory_Services], 
+[Information].[Medical_Supplies_DMEPOS] AS [Medical_Supplies_DMEPOS], 
+[Information].[Medicare_Part_A_and_B_Buy_In_Payments] AS [Medicare_Part_A_and_B_Buy_In_Payments], 
+[Information].[Medicare_Part_D_Payments] AS [Medicare_Part_D_Payments], 
+[Information].[Mid_Level_Practitioner] AS [Mid_Level_Practitioner], 
+[Information].[Nursing_Facility] AS [Nursing_Facility], 
+[Information].[Nursing_Services] AS [Nursing_Services], 
+[Information].[Nutritionist_Services] AS [Nutritionist_Services], 
+[Information].[Other_Practitioner] AS [Other_Practitioner], 
+[Information].[Outpatient_Hospital] AS [Outpatient_Hospital], 
+[Information].[Personal_Care] AS [Personal_Care], 
+[Information].[Physician] AS [Physician], 
+[Information].[Podiatry] AS [Podiatry], 
+[Information].[Prescribed_Drugs] AS [Prescribed_Drugs], 
+[Information].[Psychiatric_Services] AS [Psychiatric_Services], 
+[Information].[Residential_Behavior_Mgmt] AS [Residential_Behavior_Mgmt], 
+[Information].[Respite_Care] AS [Respite_Care], 
+[Information].[Room_and_Board] AS [Room_and_Board], 
+[Information].[School_Based_Services] AS [School_Based_Services], 
+[Information].[Self_Directed_Care] AS [Self_Directed_Care], 
+[Information].[Specialized_Foster_Care_or_ID_Services] AS [Specialized_Foster_Care_or_ID_Services], 
+[Information].[Targeted_Case_Manager] AS [Targeted_Case_Manager], 
+[Information].[Therapy_Services] AS [Therapy_Services], 
+[Information].[Transportation_Emergency] AS [Transportation_Emergency], 
+[Information].[Transportation_Non_Emergency] AS [Transportation_Non_Emergency], 
+[Information].[X_Ray_Services] AS [X_Ray_Services], 
+[Information].[Behavioral_Health_Services] AS [Behavioral_Health_Services], 
+[Information].[Community_Mental_Health] AS [Community_Mental_Health], 
+[Information].[ESI] AS [ESI], 
+[Information].[Uncategorized_Services] AS [Uncategorized_Services], 
+[Information].[Other] AS [Other], 
+[Information].[Oxbryta] AS [Oxbryta], 
+[Information].[Adakvedo] AS [Adakvedo], 
+[Information].[Dual_or_Non_Dual] AS [Dual_or_Non_Dual], 
+[Information].[Deceased] AS [Deceased]
+FROM [dbo].[Information] AS [Information]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SickeCellModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SickeCellEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Information" EntityType="SickeCellModel.Information" />
+        </EntityContainer>
+        <EntityType Name="Information">
+          <Key>
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="ClientID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Middle_Initial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UniqueID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AgeGroup" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ageat" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Race" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ethnicity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SSN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FullStreetAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FullStreetAddress2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WorkPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CountyCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CountyCodeDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Eligibility" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SickleCellDiagnosis" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PMPProviderName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Specialist" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CCUCase" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ClientresideinruralID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nameofmother" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address_Of_Mother" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone_Of_Mother" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nameoffather" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address_Of_Father" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone_Of_Father" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nameofguardian" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address_Of_Guardian" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Guardian_Telephone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Emergency_Contact1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Emergency_Contact1_HomePhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Emergency_Contact1_CellPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Emergency_Contact2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Emergency_Contact2_HomePhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Emergency_Contact2_CellPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SicklecelltypeID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Medication" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Medication2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Medication3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Medication4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HydroxyureaheardID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HydroxyureatakenID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HydroxyureacurrentlyID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HydroxyureapasttakenID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Hydroxyureadosage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Hydroxyureadosageunknown" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Hydroxyureacapsulescolor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Hydroxyureadatelasttaken" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Hydroxyureadatepickedup" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma1heardID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma1takenID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma1currentlyID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma1pasttakenID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma1dosage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma1dosageunknown" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma1capsulescolor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma1datelasttaken" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma1datepickedup" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma2heardID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma2takenID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma2currentlyID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma2pasttakenID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma2dosage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma2dosageunknown" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma2capsulescolor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma2datelasttaken" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma2datepickedup" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma3heardID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma3takenID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma3currentlyID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma3pasttakenID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma3dosage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma3dosageunknown" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma3capsulescolor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma3datelasttaken" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pharma3datepickedup" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserFirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TimeStamp" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Datenotescreated" Type="DateTime" Precision="0" />
+          <Property Name="Total_Reimbursement_YTD_2020" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="No_of_Paid_Inpatient_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Reimbursement_for_Inpatient_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="No_of_Paid_Dental_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Reimbursement_for_Dental_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="No_of_Paid_Home_Health_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Reimbursement_for_Home_Health_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="No_of_Paid_Professional_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Reimbursement_for_Professional_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="No_of_Paid_Long_term_Care_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Reimbursement_for_Long_term_Care_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="No_of_Paid_Outpatient_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Reimbursement_for_Outpatient_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="No_of_Paid_Pharmacy_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Reimbursement_for_Pharmacy_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="No_of_Paid_Compound_Drug_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Reimbursement_for_Compound_Drugs_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="No_of_Paid_Crossover_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Reimbursement_for_Crossover_Claims" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Adult_Day_Care" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Advanced_Practice_Nurse" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ADvantage_Home_Delivered_Meals" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ambulatory_Surgical_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Architectural_Modification" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Audiology_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Capitated_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Chiropractic_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Clinic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Clinics_OSA_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Dental" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Direct_Support" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Employee_Training_Specialist" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="End_Stage_Renal_Disease" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Eye_Care_and_Exams" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Eyewear" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Group_Home" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Home_Health" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Homemaker_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Hospice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ICF_ID_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Inpatient_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Insure_Oklahoma_ESI_Out_of_Pocket" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Insure_Oklahoma_ESI_Premium" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Laboratory_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Medical_Supplies_DMEPOS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Medicare_Part_A_and_B_Buy_In_Payments" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Medicare_Part_D_Payments" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mid_Level_Practitioner" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nursing_Facility" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nursing_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nutritionist_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Other_Practitioner" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Outpatient_Hospital" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Personal_Care" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Physician" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Podiatry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Prescribed_Drugs" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Psychiatric_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Residential_Behavior_Mgmt" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Respite_Care" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Room_and_Board" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="School_Based_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Self_Directed_Care" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Specialized_Foster_Care_or_ID_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Targeted_Case_Manager" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Therapy_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Transportation_Emergency" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Transportation_Non_Emergency" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="X_Ray_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Behavioral_Health_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Community_Mental_Health" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ESI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Uncategorized_Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Other" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Oxbryta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Adakvedo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Dual_or_Non_Dual" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Deceased" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SickeCellModelStoreContainer" CdmEntityContainer="SickeCellEntities1">
+  <EntitySetMapping Name="Information">
+            <EntityTypeMapping TypeName="SickeCellModel.Information">
+              <MappingFragment StoreEntitySet="Information">
+                <ScalarProperty Name="Deceased" ColumnName="Deceased" />
+                <ScalarProperty Name="Dual_or_Non_Dual" ColumnName="Dual_or_Non_Dual" />
+                <ScalarProperty Name="Adakvedo" ColumnName="Adakvedo" />
+                <ScalarProperty Name="Oxbryta" ColumnName="Oxbryta" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="Uncategorized_Services" ColumnName="Uncategorized_Services" />
+                <ScalarProperty Name="ESI" ColumnName="ESI" />
+                <ScalarProperty Name="Community_Mental_Health" ColumnName="Community_Mental_Health" />
+                <ScalarProperty Name="Behavioral_Health_Services" ColumnName="Behavioral_Health_Services" />
+                <ScalarProperty Name="X_Ray_Services" ColumnName="X_Ray_Services" />
+                <ScalarProperty Name="Transportation_Non_Emergency" ColumnName="Transportation_Non_Emergency" />
+                <ScalarProperty Name="Transportation_Emergency" ColumnName="Transportation_Emergency" />
+                <ScalarProperty Name="Therapy_Services" ColumnName="Therapy_Services" />
+                <ScalarProperty Name="Targeted_Case_Manager" ColumnName="Targeted_Case_Manager" />
+                <ScalarProperty Name="Specialized_Foster_Care_or_ID_Services" ColumnName="Specialized_Foster_Care_or_ID_Services" />
+                <ScalarProperty Name="Self_Directed_Care" ColumnName="Self_Directed_Care" />
+                <ScalarProperty Name="School_Based_Services" ColumnName="School_Based_Services" />
+                <ScalarProperty Name="Room_and_Board" ColumnName="Room_and_Board" />
+                <ScalarProperty Name="Respite_Care" ColumnName="Respite_Care" />
+                <ScalarProperty Name="Residential_Behavior_Mgmt" ColumnName="Residential_Behavior_Mgmt" />
+                <ScalarProperty Name="Psychiatric_Services" ColumnName="Psychiatric_Services" />
+                <ScalarProperty Name="Prescribed_Drugs" ColumnName="Prescribed_Drugs" />
+                <ScalarProperty Name="Podiatry" ColumnName="Podiatry" />
+                <ScalarProperty Name="Physician" ColumnName="Physician" />
+                <ScalarProperty Name="Personal_Care" ColumnName="Personal_Care" />
+                <ScalarProperty Name="Outpatient_Hospital" ColumnName="Outpatient_Hospital" />
+                <ScalarProperty Name="Other_Practitioner" ColumnName="Other_Practitioner" />
+                <ScalarProperty Name="Nutritionist_Services" ColumnName="Nutritionist_Services" />
+                <ScalarProperty Name="Nursing_Services" ColumnName="Nursing_Services" />
+                <ScalarProperty Name="Nursing_Facility" ColumnName="Nursing_Facility" />
+                <ScalarProperty Name="Mid_Level_Practitioner" ColumnName="Mid_Level_Practitioner" />
+                <ScalarProperty Name="Medicare_Part_D_Payments" ColumnName="Medicare_Part_D_Payments" />
+                <ScalarProperty Name="Medicare_Part_A_and_B_Buy_In_Payments" ColumnName="Medicare_Part_A_and_B_Buy_In_Payments" />
+                <ScalarProperty Name="Medical_Supplies_DMEPOS" ColumnName="Medical_Supplies_DMEPOS" />
+                <ScalarProperty Name="Laboratory_Services" ColumnName="Laboratory_Services" />
+                <ScalarProperty Name="Insure_Oklahoma_ESI_Premium" ColumnName="Insure_Oklahoma_ESI_Premium" />
+                <ScalarProperty Name="Insure_Oklahoma_ESI_Out_of_Pocket" ColumnName="Insure_Oklahoma_ESI_Out_of_Pocket" />
+                <ScalarProperty Name="Inpatient_Services" ColumnName="Inpatient_Services" />
+                <ScalarProperty Name="ICF_ID_Services" ColumnName="ICF_ID_Services" />
+                <ScalarProperty Name="Hospice" ColumnName="Hospice" />
+                <ScalarProperty Name="Homemaker_Services" ColumnName="Homemaker_Services" />
+                <ScalarProperty Name="Home_Health" ColumnName="Home_Health" />
+                <ScalarProperty Name="Group_Home" ColumnName="Group_Home" />
+                <ScalarProperty Name="Eyewear" ColumnName="Eyewear" />
+                <ScalarProperty Name="Eye_Care_and_Exams" ColumnName="Eye_Care_and_Exams" />
+                <ScalarProperty Name="End_Stage_Renal_Disease" ColumnName="End_Stage_Renal_Disease" />
+                <ScalarProperty Name="Employee_Training_Specialist" ColumnName="Employee_Training_Specialist" />
+                <ScalarProperty Name="Direct_Support" ColumnName="Direct_Support" />
+                <ScalarProperty Name="Dental" ColumnName="Dental" />
+                <ScalarProperty Name="Clinics_OSA_Services" ColumnName="Clinics_OSA_Services" />
+                <ScalarProperty Name="Clinic" ColumnName="Clinic" />
+                <ScalarProperty Name="Chiropractic_Services" ColumnName="Chiropractic_Services" />
+                <ScalarProperty Name="Capitated_Services" ColumnName="Capitated_Services" />
+                <ScalarProperty Name="Audiology_Services" ColumnName="Audiology_Services" />
+                <ScalarProperty Name="Architectural_Modification" ColumnName="Architectural_Modification" />
+                <ScalarProperty Name="Ambulatory_Surgical_Services" ColumnName="Ambulatory_Surgical_Services" />
+                <ScalarProperty Name="ADvantage_Home_Delivered_Meals" ColumnName="ADvantage_Home_Delivered_Meals" />
+                <ScalarProperty Name="Advanced_Practice_Nurse" ColumnName="Advanced_Practice_Nurse" />
+                <ScalarProperty Name="Adult_Day_Care" ColumnName="Adult_Day_Care" />
+                <ScalarProperty Name="Total_Reimbursement_for_Crossover_Claims" ColumnName="Total_Reimbursement_for_Crossover_Claims" />
+                <ScalarProperty Name="No_of_Paid_Crossover_Claims" ColumnName="No_of_Paid_Crossover_Claims" />
+                <ScalarProperty Name="Total_Reimbursement_for_Compound_Drugs_Claims" ColumnName="Total_Reimbursement_for_Compound_Drugs_Claims" />
+                <ScalarProperty Name="No_of_Paid_Compound_Drug_Claims" ColumnName="No_of_Paid_Compound_Drug_Claims" />
+                <ScalarProperty Name="Total_Reimbursement_for_Pharmacy_Claims" ColumnName="Total_Reimbursement_for_Pharmacy_Claims" />
+                <ScalarProperty Name="No_of_Paid_Pharmacy_Claims" ColumnName="No_of_Paid_Pharmacy_Claims" />
+                <ScalarProperty Name="Total_Reimbursement_for_Outpatient_Claims" ColumnName="Total_Reimbursement_for_Outpatient_Claims" />
+                <ScalarProperty Name="No_of_Paid_Outpatient_Claims" ColumnName="No_of_Paid_Outpatient_Claims" />
+                <ScalarProperty Name="Total_Reimbursement_for_Long_term_Care_Claims" ColumnName="Total_Reimbursement_for_Long_term_Care_Claims" />
+                <ScalarProperty Name="No_of_Paid_Long_term_Care_Claims" ColumnName="No_of_Paid_Long_term_Care_Claims" />
+                <ScalarProperty Name="Total_Reimbursement_for_Professional_Claims" ColumnName="Total_Reimbursement_for_Professional_Claims" />
+                <ScalarProperty Name="No_of_Paid_Professional_Claims" ColumnName="No_of_Paid_Professional_Claims" />
+                <ScalarProperty Name="Total_Reimbursement_for_Home_Health_Claims" ColumnName="Total_Reimbursement_for_Home_Health_Claims" />
+                <ScalarProperty Name="No_of_Paid_Home_Health_Claims" ColumnName="No_of_Paid_Home_Health_Claims" />
+                <ScalarProperty Name="Total_Reimbursement_for_Dental_Claims" ColumnName="Total_Reimbursement_for_Dental_Claims" />
+                <ScalarProperty Name="No_of_Paid_Dental_Claims" ColumnName="No_of_Paid_Dental_Claims" />
+                <ScalarProperty Name="Total_Reimbursement_for_Inpatient_Claims" ColumnName="Total_Reimbursement_for_Inpatient_Claims" />
+                <ScalarProperty Name="No_of_Paid_Inpatient_Claims" ColumnName="No_of_Paid_Inpatient_Claims" />
+                <ScalarProperty Name="Total_Reimbursement_YTD_2020" ColumnName="Total_Reimbursement_YTD_2020" />
+                <ScalarProperty Name="Datenotescreated" ColumnName="Datenotescreated" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Pharma3datepickedup" ColumnName="Pharma3datepickedup" />
+                <ScalarProperty Name="Pharma3datelasttaken" ColumnName="Pharma3datelasttaken" />
+                <ScalarProperty Name="Pharma3capsulescolor" ColumnName="Pharma3capsulescolor" />
+                <ScalarProperty Name="Pharma3dosageunknown" ColumnName="Pharma3dosageunknown" />
+                <ScalarProperty Name="Pharma3dosage" ColumnName="Pharma3dosage" />
+                <ScalarProperty Name="Pharma3pasttakenID" ColumnName="Pharma3pasttakenID" />
+                <ScalarProperty Name="Pharma3currentlyID" ColumnName="Pharma3currentlyID" />
+                <ScalarProperty Name="Pharma3takenID" ColumnName="Pharma3takenID" />
+                <ScalarProperty Name="Pharma3heardID" ColumnName="Pharma3heardID" />
+                <ScalarProperty Name="Pharma2datepickedup" ColumnName="Pharma2datepickedup" />
+                <ScalarProperty Name="Pharma2datelasttaken" ColumnName="Pharma2datelasttaken" />
+                <ScalarProperty Name="Pharma2capsulescolor" ColumnName="Pharma2capsulescolor" />
+                <ScalarProperty Name="Pharma2dosageunknown" ColumnName="Pharma2dosageunknown" />
+                <ScalarProperty Name="Pharma2dosage" ColumnName="Pharma2dosage" />
+                <ScalarProperty Name="Pharma2pasttakenID" ColumnName="Pharma2pasttakenID" />
+                <ScalarProperty Name="Pharma2currentlyID" ColumnName="Pharma2currentlyID" />
+                <ScalarProperty Name="Pharma2takenID" ColumnName="Pharma2takenID" />
+                <ScalarProperty Name="Pharma2heardID" ColumnName="Pharma2heardID" />
+                <ScalarProperty Name="Pharma1datepickedup" ColumnName="Pharma1datepickedup" />
+                <ScalarProperty Name="Pharma1datelasttaken" ColumnName="Pharma1datelasttaken" />
+                <ScalarProperty Name="Pharma1capsulescolor" ColumnName="Pharma1capsulescolor" />
+                <ScalarProperty Name="Pharma1dosageunknown" ColumnName="Pharma1dosageunknown" />
+                <ScalarProperty Name="Pharma1dosage" ColumnName="Pharma1dosage" />
+                <ScalarProperty Name="Pharma1pasttakenID" ColumnName="Pharma1pasttakenID" />
+                <ScalarProperty Name="Pharma1currentlyID" ColumnName="Pharma1currentlyID" />
+                <ScalarProperty Name="Pharma1takenID" ColumnName="Pharma1takenID" />
+                <ScalarProperty Name="Pharma1heardID" ColumnName="Pharma1heardID" />
+                <ScalarProperty Name="Hydroxyureadatepickedup" ColumnName="Hydroxyureadatepickedup" />
+                <ScalarProperty Name="Hydroxyureadatelasttaken" ColumnName="Hydroxyureadatelasttaken" />
+                <ScalarProperty Name="Hydroxyureacapsulescolor" ColumnName="Hydroxyureacapsulescolor" />
+                <ScalarProperty Name="Hydroxyureadosageunknown" ColumnName="Hydroxyureadosageunknown" />
+                <ScalarProperty Name="Hydroxyureadosage" ColumnName="Hydroxyureadosage" />
+                <ScalarProperty Name="HydroxyureapasttakenID" ColumnName="HydroxyureapasttakenID" />
+                <ScalarProperty Name="HydroxyureacurrentlyID" ColumnName="HydroxyureacurrentlyID" />
+                <ScalarProperty Name="HydroxyureatakenID" ColumnName="HydroxyureatakenID" />
+                <ScalarProperty Name="HydroxyureaheardID" ColumnName="HydroxyureaheardID" />
+                <ScalarProperty Name="Medication4" ColumnName="Medication4" />
+                <ScalarProperty Name="Medication3" ColumnName="Medication3" />
+                <ScalarProperty Name="Medication2" ColumnName="Medication2" />
+                <ScalarProperty Name="Medication" ColumnName="Medication" />
+                <ScalarProperty Name="SicklecelltypeID" ColumnName="SicklecelltypeID" />
+                <ScalarProperty Name="Emergency_Contact2_CellPhone" ColumnName="Emergency_Contact2_CellPhone" />
+                <ScalarProperty Name="Emergency_Contact2_HomePhone" ColumnName="Emergency_Contact2_HomePhone" />
+                <ScalarProperty Name="Emergency_Contact2" ColumnName="Emergency_Contact2" />
+                <ScalarProperty Name="Emergency_Contact1_CellPhone" ColumnName="Emergency_Contact1_CellPhone" />
+                <ScalarProperty Name="Emergency_Contact1_HomePhone" ColumnName="Emergency_Contact1_HomePhone" />
+                <ScalarProperty Name="Emergency_Contact1" ColumnName="Emergency_Contact1" />
+                <ScalarProperty Name="Guardian_Telephone" ColumnName="Guardian_Telephone" />
+                <ScalarProperty Name="Address_Of_Guardian" ColumnName="Address_Of_Guardian" />
+                <ScalarProperty Name="Nameofguardian" ColumnName="Nameofguardian" />
+                <ScalarProperty Name="Telephone_Of_Father" ColumnName="Telephone_Of_Father" />
+                <ScalarProperty Name="Address_Of_Father" ColumnName="Address_Of_Father" />
+                <ScalarProperty Name="Nameoffather" ColumnName="Nameoffather" />
+                <ScalarProperty Name="Telephone_Of_Mother" ColumnName="Telephone_Of_Mother" />
+                <ScalarProperty Name="Address_Of_Mother" ColumnName="Address_Of_Mother" />
+                <ScalarProperty Name="Nameofmother" ColumnName="Nameofmother" />
+                <ScalarProperty Name="ClientresideinruralID" ColumnName="ClientresideinruralID" />
+                <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+                <ScalarProperty Name="CCUCase" ColumnName="CCUCase" />
+                <ScalarProperty Name="Specialist" ColumnName="Specialist" />
+                <ScalarProperty Name="PMPProviderName" ColumnName="PMPProviderName" />
+                <ScalarProperty Name="SickleCellDiagnosis" ColumnName="SickleCellDiagnosis" />
+                <ScalarProperty Name="Eligibility" ColumnName="Eligibility" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="CountyCodeDescription" ColumnName="CountyCodeDescription" />
+                <ScalarProperty Name="CountyCode" ColumnName="CountyCode" />
+                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="FullStreetAddress2" ColumnName="FullStreetAddress2" />
+                <ScalarProperty Name="FullStreetAddress" ColumnName="FullStreetAddress" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="Ethnicity" ColumnName="Ethnicity" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Ageat" ColumnName="Ageat" />
+                <ScalarProperty Name="AgeGroup" ColumnName="AgeGroup" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+                <ScalarProperty Name="Middle_Initial" ColumnName="Middle_Initial" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

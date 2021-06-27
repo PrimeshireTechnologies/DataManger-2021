@@ -1,0 +1,28 @@
+﻿
+<script src="~/Library/angular.min.js"></script>
+
+<div ng-app="app" ng-controller="viewController" style="width:2500px;max-width:2499px;position:fixed;top:50%;left:50%;height:27em;margin-top:-23em;margin-left:-17em;">
+    <br />
+    <br />
+    <br />
+    <br />
+    <p style="color:lightgray;text-shadow: 1px 1px 1px #000000; font-weight:700; font-size:27px; margin-left:60px; margin-top:180px;">Reset password successful</p>
+    <br />   
+    <form action="" method="post" id="verify" style="position:fixed;top:50%;left:50%;width:30em;height:27em;margin-top:-13em;margin-left:-12em;">
+
+        <div class="action" style="margin-top:185px;margin-left:105px;">
+            <a href="#" onclick="Login()" class="btn btn-primary signup" style="width:120px;">Ok</a>
+        </div>
+
+    </form>
+
+    <script>
+        function Login() {
+
+            window.location.href = "/Home/Login";
+
+        }
+    </script>
+</div>    
+<script src="~/Scripts/multi.js"></script>
+
